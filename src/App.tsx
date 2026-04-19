@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import primarchsIndex from './data/primarchs/index.json'
 import spaceMarinesIndex from './data/space-marines/index.json'
@@ -11,7 +11,6 @@ type RawEntry = {
   title: string
   page: string
   source: string
-  lore: string
   legionNumber?: string | null
   legion?: string | null
   primarch?: string | null
@@ -52,6 +51,23 @@ const sororitasModules = import.meta.glob<RawEntry>(
   './data/sororitas/*.json',
   { eager: true, import: 'default' },
 )
+
+// Lore markdown is loaded on demand to keep the initial bundle small.
+const loreLoaders = import.meta.glob<string>('./data/**/*.md', {
+  query: '?raw',
+  import: 'default',
+})
+
+function loreKey(datasetKey: DatasetKey, id: string): string {
+  const dir = datasetKey === 'primarchs' ? 'primarchs' : datasetKey
+  return `./data/${dir}/${id}.md`
+}
+
+async function loadLore(datasetKey: DatasetKey, id: string): Promise<string> {
+  const loader = loreLoaders[loreKey(datasetKey, id)]
+  if (!loader) return ''
+  return await loader()
+}
 
 function buildEntries(
   modules: Record<string, RawEntry>,
@@ -181,10 +197,28 @@ function App() {
     [dataset, selectedId],
   )
 
-  const parsed = useMemo(
-    () => (selected ? parseLore(selected.lore) : null),
-    [selected],
-  )
+  const [lore, setLore] = useState<string>('')
+  const [loreLoading, setLoreLoading] = useState(false)
+  useEffect(() => {
+    if (!selected) {
+      setLore('')
+      return
+    }
+    let cancelled = false
+    setLoreLoading(true)
+    loadLore(datasetKey, selected.id)
+      .then((text) => {
+        if (!cancelled) setLore(text)
+      })
+      .finally(() => {
+        if (!cancelled) setLoreLoading(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [datasetKey, selected])
+
+  const parsed = useMemo(() => (lore ? parseLore(lore) : null), [lore])
 
   const portrait = parsed?.gallery[0] ?? null
 
@@ -257,7 +291,9 @@ function App() {
               </ul>
 
               <article className="primarch-detail">
-                {selected && parsed ? (
+                {selected && loreLoading && !parsed ? (
+                  <p className="placeholder-detail">Decoding transmission…</p>
+                ) : selected && parsed ? (
                   <>
                     <header className="detail-header">
                       {portrait && (

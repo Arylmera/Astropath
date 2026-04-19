@@ -85,7 +85,9 @@ for (const e of ENTRIES) {
 
 mkdirSync(OUT_DIR, { recursive: true });
 for (const c of out) {
-  writeFileSync(join(OUT_DIR, `${c.id}.json`), JSON.stringify(c, null, 2) + "\n");
+  const { lore, ...meta } = c;
+  writeFileSync(join(OUT_DIR, `${c.id}.json`), JSON.stringify(meta, null, 2) + "\n");
+  writeFileSync(join(OUT_DIR, `${c.id}.md`), (lore ?? "").replace(/\s+$/, "") + "\n");
 }
 writeFileSync(join(OUT_DIR, "index.json"), JSON.stringify({
   fetchedAt: new Date().toISOString(),
