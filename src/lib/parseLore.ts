@@ -84,7 +84,9 @@ export function parseLore(lore: string): ParsedLore {
     // Categories (trailing)
     const cat = line.match(/^Category:(.+)$/)
     if (cat) {
-      categories.push(cat[1].replace(/_/g, ' ').trim())
+      const name = cat[1].replace(/_/g, ' ').trim()
+      // Skip single-letter alphabetical sort-key categories (e.g. "L" for Lorgar)
+      if (name.length > 1) categories.push(name)
       continue
     }
 
