@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import './App.css'
-import primarchsData from './data/primarchs.json'
+import primarchsIndex from './data/primarchs/index.json'
 import { parseLore } from './lib/parseLore'
 
 type Primarch = {
@@ -13,7 +13,20 @@ type Primarch = {
   lore: string
 }
 
-const primarchs = (primarchsData as { primarchs: Primarch[] }).primarchs
+const primarchModules = import.meta.glob<Primarch>(
+  './data/primarchs/*.json',
+  { eager: true, import: 'default' },
+)
+
+const byId = new Map<string, Primarch>()
+for (const [path, mod] of Object.entries(primarchModules)) {
+  if (path.endsWith('/index.json')) continue
+  byId.set(mod.id, mod)
+}
+
+const primarchs: Primarch[] = primarchsIndex.order
+  .map((id) => byId.get(id))
+  .filter((p): p is Primarch => Boolean(p))
 
 function App() {
   const [query, setQuery] = useState('')

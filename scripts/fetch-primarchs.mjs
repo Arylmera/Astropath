@@ -1,9 +1,9 @@
 import { writeFileSync, mkdirSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT = resolve(__dirname, "../src/data/primarchs.json");
+const OUT_DIR = resolve(__dirname, "../src/data/primarchs");
 
 const API = "https://warhammer40k.fandom.com/api.php";
 
@@ -87,11 +87,14 @@ for (const e of ENTRIES) {
   await new Promise(r => setTimeout(r, 400));
 }
 
-mkdirSync(dirname(OUT), { recursive: true });
-writeFileSync(OUT, JSON.stringify({
+mkdirSync(OUT_DIR, { recursive: true });
+for (const p of out) {
+  writeFileSync(join(OUT_DIR, `${p.id}.json`), JSON.stringify(p, null, 2) + "\n");
+}
+writeFileSync(join(OUT_DIR, "index.json"), JSON.stringify({
   fetchedAt: new Date().toISOString(),
   source: "Warhammer 40k Fandom Wiki (CC-BY-SA)",
   count: out.length,
-  primarchs: out,
-}, null, 2));
-console.log(`\nwrote ${OUT}`);
+  order: out.map(p => p.id),
+}, null, 2) + "\n");
+console.log(`\nwrote ${out.length} files + index.json to ${OUT_DIR}`);
