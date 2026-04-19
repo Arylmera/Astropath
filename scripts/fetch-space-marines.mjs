@@ -1,6 +1,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { polishLore } from "./lib/lore-cleaner.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(__dirname, "../src/data/space-marines");
@@ -72,7 +73,7 @@ for (const e of ENTRIES) {
   process.stdout.write(`fetching ${e.title}... `);
   try {
     const raw = await fetchPage(e.page);
-    const lore = stripWikitext(raw);
+    const lore = polishLore(stripWikitext(raw));
     out.push({ ...e, source: `https://warhammer40k.fandom.com/wiki/${e.page}`, lore });
     console.log(`ok (${lore.length} chars)`);
   } catch (err) {
