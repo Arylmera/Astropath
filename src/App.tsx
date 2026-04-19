@@ -1,51 +1,184 @@
 import { useMemo, useState } from 'react'
 import './App.css'
 import primarchsIndex from './data/primarchs/index.json'
+import spaceMarinesIndex from './data/space-marines/index.json'
+import admechIndex from './data/admech/index.json'
+import sororitasIndex from './data/sororitas/index.json'
 import { parseLore } from './lib/parseLore'
 
-type Primarch = {
+type RawEntry = {
   id: string
-  legionNumber: string | null
-  legion: string | null
   title: string
   page: string
   source: string
   lore: string
+  legionNumber?: string | null
+  legion?: string | null
+  primarch?: string | null
+  founding?: string | null
+  allegiance?: string | null
+  category?: string | null
 }
 
-const primarchModules = import.meta.glob<Primarch>(
+type Entry = RawEntry & {
+  badge: string
+  subtitle: string
+}
+
+type DatasetKey = 'primarchs' | 'space-marines' | 'admech' | 'sororitas'
+
+type DatasetConfig = {
+  key: DatasetKey
+  label: string
+  placeholder: string
+  empty: string
+  detailPlaceholder: string
+  entries: Entry[]
+}
+
+const primarchModules = import.meta.glob<RawEntry>(
   './data/primarchs/*.json',
   { eager: true, import: 'default' },
 )
+const spaceMarineModules = import.meta.glob<RawEntry>(
+  './data/space-marines/*.json',
+  { eager: true, import: 'default' },
+)
+const admechModules = import.meta.glob<RawEntry>(
+  './data/admech/*.json',
+  { eager: true, import: 'default' },
+)
+const sororitasModules = import.meta.glob<RawEntry>(
+  './data/sororitas/*.json',
+  { eager: true, import: 'default' },
+)
 
-const byId = new Map<string, Primarch>()
-for (const [path, mod] of Object.entries(primarchModules)) {
-  if (path.endsWith('/index.json')) continue
-  byId.set(mod.id, mod)
+function buildEntries(
+  modules: Record<string, RawEntry>,
+  order: string[],
+  decorate: (e: RawEntry) => { badge: string; subtitle: string },
+): Entry[] {
+  const byId = new Map<string, RawEntry>()
+  for (const [path, mod] of Object.entries(modules)) {
+    if (path.endsWith('/index.json')) continue
+    byId.set(mod.id, mod)
+  }
+  return order
+    .map((id) => byId.get(id))
+    .filter((e): e is RawEntry => Boolean(e))
+    .map((e) => ({ ...e, ...decorate(e) }))
 }
 
-const primarchs: Primarch[] = primarchsIndex.order
-  .map((id) => byId.get(id))
-  .filter((p): p is Primarch => Boolean(p))
+const primarchs = buildEntries(primarchModules, primarchsIndex.order, (e) => ({
+  badge: e.legionNumber ?? '—',
+  subtitle: e.legion ?? 'Unknown Legion',
+}))
+
+const spaceMarines = buildEntries(
+  spaceMarineModules,
+  spaceMarinesIndex.order,
+  (e) => ({
+    badge: e.legionNumber ?? '—',
+    subtitle: e.primarch
+      ? e.primarch
+      : e.founding
+        ? `${e.founding} Founding`
+        : (e.allegiance ?? 'Chapter'),
+  }),
+)
+
+const admech = buildEntries(admechModules, admechIndex.order, (e) => ({
+  badge: initials(e.title),
+  subtitle: e.category ?? 'Adeptus Mechanicus',
+}))
+
+const sororitas = buildEntries(sororitasModules, sororitasIndex.order, (e) => ({
+  badge: initials(e.title),
+  subtitle: e.category ?? 'Adepta Sororitas',
+}))
+
+function initials(title: string): string {
+  const words = title
+    .replace(/^(The|Saint|Order of|Sisters of the|Sisters of|Adeptus|Adepta)\s+/i, '')
+    .split(/\s+/)
+    .filter(Boolean)
+  if (!words.length) return '—'
+  return (words[0][0] + (words[1]?.[0] ?? '')).toUpperCase()
+}
+
+const DATASETS: DatasetConfig[] = [
+  {
+    key: 'primarchs',
+    label: 'Primarchs',
+    placeholder: 'Search by name or legion…',
+    empty: 'No transmission matches.',
+    detailPlaceholder: 'Select a Primarch to read the record.',
+    entries: primarchs,
+  },
+  {
+    key: 'space-marines',
+    label: 'Space Marines',
+    placeholder: 'Search by chapter, primarch or legion…',
+    empty: 'No chapter matches.',
+    detailPlaceholder: 'Select a Chapter to read the record.',
+    entries: spaceMarines,
+  },
+  {
+    key: 'admech',
+    label: 'Adeptus Mechanicus',
+    placeholder: 'Search the Omnissiah\u2019s archives…',
+    empty: 'No cogitation matches.',
+    detailPlaceholder: 'Select a record to access the archives.',
+    entries: admech,
+  },
+  {
+    key: 'sororitas',
+    label: 'Adepta Sororitas',
+    placeholder: 'Search by Order or Saint…',
+    empty: 'No hymn matches.',
+    detailPlaceholder: 'Select a Sister to read the record.',
+    entries: sororitas,
+  },
+]
 
 function App() {
+  const [datasetKey, setDatasetKey] = useState<DatasetKey>('primarchs')
   const [query, setQuery] = useState('')
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [selectedByDataset, setSelectedByDataset] = useState<
+    Record<DatasetKey, string | null>
+  >({
+    primarchs: null,
+    'space-marines': null,
+    admech: null,
+    sororitas: null,
+  })
+
+  const dataset = DATASETS.find((d) => d.key === datasetKey)!
+  const selectedId = selectedByDataset[datasetKey]
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
-    if (!q) return primarchs
-    return primarchs.filter((p) => {
-      const haystack = [p.title, p.legion ?? '', p.legionNumber ?? '']
+    if (!q) return dataset.entries
+    return dataset.entries.filter((e) => {
+      const haystack = [
+        e.title,
+        e.subtitle,
+        e.badge,
+        e.legion ?? '',
+        e.legionNumber ?? '',
+        e.primarch ?? '',
+        e.category ?? '',
+        e.founding ?? '',
+      ]
         .join(' ')
         .toLowerCase()
       return haystack.includes(q)
     })
-  }, [query])
+  }, [dataset, query])
 
   const selected = useMemo(
-    () => primarchs.find((p) => p.id === selectedId) ?? null,
-    [selectedId],
+    () => dataset.entries.find((e) => e.id === selectedId) ?? null,
+    [dataset, selectedId],
   )
 
   const parsed = useMemo(
@@ -55,6 +188,15 @@ function App() {
 
   const portrait = parsed?.gallery[0] ?? null
 
+  const selectEntry = (id: string) =>
+    setSelectedByDataset((prev) => ({ ...prev, [datasetKey]: id }))
+
+  const switchDataset = (key: DatasetKey) => {
+    if (key === datasetKey) return
+    setDatasetKey(key)
+    setQuery('')
+  }
+
   return (
     <main className="astropath">
       <header className="hero">
@@ -63,131 +205,153 @@ function App() {
       </header>
 
       <section className="browser">
-        <input
-          className="search"
-          type="search"
-          placeholder="Search by name or faction…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          autoFocus
-        />
-
-        <div className="browser-grid">
-          <ul className="primarch-list">
-            {filtered.length === 0 && (
-              <li className="empty">No transmission matches.</li>
-            )}
-            {filtered.map((p) => (
-              <li key={p.id}>
-                <button
-                  type="button"
-                  className={`primarch-item${selectedId === p.id ? ' active' : ''}`}
-                  onClick={() => setSelectedId(p.id)}
-                >
-                  <span className="legion-number">
-                    {p.legionNumber ?? '—'}
-                  </span>
-                  <span className="primarch-name">{p.title}</span>
-                  <span className="legion-name">
-                    {p.legion ?? 'Unknown Legion'}
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          <article className="primarch-detail">
-            {selected && parsed ? (
-              <>
-                <header className="detail-header">
-                  {portrait && (
-                    <img
-                      className="portrait"
-                      src={portrait.url}
-                      alt={portrait.caption || selected.title}
-                      loading="lazy"
-                    />
-                  )}
-                  <div className="detail-heading-text">
-                    <span className="legion-number big">
-                      {selected.legionNumber ?? '—'}
+        <div className="browser-layout">
+          <nav className="dataset-nav" aria-label="Datasets">
+            <span className="dataset-nav-label">Archives</span>
+            <ul>
+              {DATASETS.map((d) => (
+                <li key={d.key}>
+                  <button
+                    type="button"
+                    className={`dataset-nav-item${d.key === datasetKey ? ' active' : ''}`}
+                    onClick={() => switchDataset(d.key)}
+                  >
+                    <span className="dataset-nav-name">{d.label}</span>
+                    <span className="dataset-nav-count">
+                      {d.entries.length}
                     </span>
-                    <h2>{selected.title}</h2>
-                    <p className="legion-name">
-                      {selected.legion ?? 'Unknown Legion'}
-                    </p>
-                  </div>
-                </header>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-                <div className="lore">
-                  {parsed.sections.map((section, si) => (
-                    <section key={si} className="lore-section">
-                      {section.heading && <h3>{section.heading}</h3>}
-                      {section.blocks.map((b, bi) =>
-                        b.type === 'p' ? (
-                          <p key={bi}>{b.text}</p>
-                        ) : (
-                          <ul key={bi}>
-                            {b.items.map((it, ii) => (
-                              <li key={ii}>{it}</li>
-                            ))}
-                          </ul>
-                        ),
+          <div className="browser-main">
+            <input
+              className="search"
+              type="search"
+              placeholder={dataset.placeholder}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              autoFocus
+            />
+
+            <div className="browser-grid">
+              <ul className="primarch-list">
+                {filtered.length === 0 && (
+                  <li className="empty">{dataset.empty}</li>
+                )}
+                {filtered.map((e) => (
+                  <li key={e.id}>
+                    <button
+                      type="button"
+                      className={`primarch-item${selectedId === e.id ? ' active' : ''}`}
+                      onClick={() => selectEntry(e.id)}
+                    >
+                      <span className="legion-number">{e.badge}</span>
+                      <span className="primarch-name">{e.title}</span>
+                      <span className="legion-name">{e.subtitle}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              <article className="primarch-detail">
+                {selected && parsed ? (
+                  <>
+                    <header className="detail-header">
+                      {portrait && (
+                        <img
+                          className="portrait"
+                          src={portrait.url}
+                          alt={portrait.caption || selected.title}
+                          loading="lazy"
+                        />
                       )}
-                    </section>
-                  ))}
-                </div>
+                      <div className="detail-heading-text">
+                        <span className="legion-number big">
+                          {selected.badge}
+                        </span>
+                        <h2>{selected.title}</h2>
+                        <p className="legion-name">{selected.subtitle}</p>
+                      </div>
+                    </header>
 
-                {parsed.gallery.length > 1 && (
-                  <section className="lore-section">
-                    <h3>Gallery</h3>
-                    <div className="gallery">
-                      {parsed.gallery.slice(1).map((g) => (
-                        <figure key={g.file}>
-                          <img src={g.url} alt={g.caption || g.file} loading="lazy" />
-                          {g.caption && <figcaption>{g.caption}</figcaption>}
-                        </figure>
+                    <div className="lore">
+                      {parsed.sections.map((section, si) => (
+                        <section key={si} className="lore-section">
+                          {section.heading && <h3>{section.heading}</h3>}
+                          {section.blocks.map((b, bi) =>
+                            b.type === 'p' ? (
+                              <p key={bi}>{b.text}</p>
+                            ) : (
+                              <ul key={bi}>
+                                {b.items.map((it, ii) => (
+                                  <li key={ii}>{it}</li>
+                                ))}
+                              </ul>
+                            ),
+                          )}
+                        </section>
                       ))}
                     </div>
-                  </section>
-                )}
 
-                {parsed.categories.length > 0 && (
-                  <section className="lore-section">
-                    <h3>Categories</h3>
-                    <table className="categories-table">
-                      <tbody>
-                        {chunk(parsed.categories, 3).map((row, ri) => (
-                          <tr key={ri}>
-                            {row.map((c) => (
-                              <td key={c}>{c}</td>
+                    {parsed.gallery.length > 1 && (
+                      <section className="lore-section">
+                        <h3>Gallery</h3>
+                        <div className="gallery">
+                          {parsed.gallery.slice(1).map((g) => (
+                            <figure key={g.file}>
+                              <img
+                                src={g.url}
+                                alt={g.caption || g.file}
+                                loading="lazy"
+                              />
+                              {g.caption && <figcaption>{g.caption}</figcaption>}
+                            </figure>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+
+                    {parsed.categories.length > 0 && (
+                      <section className="lore-section">
+                        <h3>Categories</h3>
+                        <table className="categories-table">
+                          <tbody>
+                            {chunk(parsed.categories, 3).map((row, ri) => (
+                              <tr key={ri}>
+                                {row.map((c) => (
+                                  <td key={c}>{c}</td>
+                                ))}
+                                {row.length < 3 &&
+                                  Array.from({ length: 3 - row.length }).map(
+                                    (_, i) => <td key={`pad-${i}`} />,
+                                  )}
+                              </tr>
                             ))}
-                            {row.length < 3 &&
-                              Array.from({ length: 3 - row.length }).map((_, i) => (
-                                <td key={`pad-${i}`} />
-                              ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </section>
-                )}
+                          </tbody>
+                        </table>
+                      </section>
+                    )}
 
-                <a
-                  className="source"
-                  href={selected.source}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source ↗
-                </a>
-              </>
-            ) : (
-              <p className="placeholder-detail">
-                Select a Primarch to read the record.
-              </p>
-            )}
-          </article>
+                    <a
+                      className="source"
+                      href={selected.source}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Source ↗
+                    </a>
+                  </>
+                ) : (
+                  <p className="placeholder-detail">
+                    {dataset.detailPlaceholder}
+                  </p>
+                )}
+              </article>
+            </div>
+          </div>
         </div>
       </section>
     </main>
