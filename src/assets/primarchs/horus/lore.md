@@ -1,6 +1,3 @@
-'s sketch of the Warmaster Horus Lupercal, primarch of the Sons of Horus Legion taken late in the Great Crusade; illustration found in Carpinus' Speculum Historiale
-Horus, also called Horus Lupercal, or more simply The Lupercal during his lifetime by the Astartes of his Luna Wolves Legion, was one of the 20 genetically-engineered primarchs created by the Emperor of Mankind from the foundation of His own DNA before the start of the Great Crusade to lead the armies of the newborn Imperium of Man.
-
 Horus was the primarch and master of the XVIth Legion of Space Marines, the Luna Wolves, later renamed by him the Sons of Horus. He was also the first Imperial Warmaster, the most favoured son of the Emperor, and ultimately, the greatest traitor in the history of Mankind.
 
 Horus' homeworld was the Hive World of Cthonia which lay only a few light years from Terra. Horus was thus the first primarch to be rediscovered by the Emperor after the Great Crusade began in the late 30th Millennium.

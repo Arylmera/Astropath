@@ -1,4 +1,3 @@
-of Tzeentch, while leading his Thousand Sons Traitor Legion against the enemies of the Changer of Ways in the late 41st Millennium
 Magnus the Red, also known during the early years of the Imperium as the "Crimson King" and the "Red Cyclops," is the primarch of the Thousand Sons Traitor Legion and an extremely powerful Daemon Prince of the Chaos God Tzeentch.
 
 A giant in both physical and mental terms whilst still an inhabitant of the Materium, the copper-skinned Magnus possessed tremendous innate psychic ability, and constantly sought to understand the nature of the Warp, becoming a sorcerer of formidable power.
@@ -378,7 +377,6 @@ Known shards of Magnus the Red include:
 *The Horned Raiment - The Horned Raiment is the name still given to the unique and ancient suit of Artificer Armour worn by the Crimson King since the days of the Great Crusade and the Horus Heresy ten millennia ago. This plate armour covering Magnus' now-Daemonic body is embellished with Tzeentchian runes in the Dark Tongue, their profane symbology creating a tapestry of madness.
 
 * Blade of Magnus - Formerly known as the Blade of Ahn-Nunura before the primarch's fall to Chaos, this ancient Prosperine weapon forged in the shape of a khopesh sickle-sword changes form according to Magnus' will, and its mutagenic powers extend to his victims. With this he carves through the enemy's ranks, bisecting tank hulls and torsos, severing souls from their corporeal bodies. For those not instantly reduced to a pool of gore or puff of flame an even worse fate awaits -- the ensorcelled sword mutates the riven flesh of its victims, infusing them with empyric power to birth writhing Chaos Spawn.
-
 * Crown of the Crimson King - The blazing halo of psychic power that plays around Magnus' horns protects both his mind and body from harm. This great horned crown that adorns the Crimson King's head exudes an aura of protective Warp energy, shielding his physical and mental essence. The futility of defying Magnus' wrath becomes clear when enemy fire dissipates harmlessly before striking him; psychic bolts fizzle into innocuous sparks and gargantuan chainswords grind to a halt against this aetheric barrier.
 
 ## Canon Conflict

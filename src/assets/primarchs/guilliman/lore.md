@@ -1,4 +1,3 @@
-of the Ultramarines Legion and Lord of Ultramar, in battle with his Legion at the time of the Great Crusade
 Roboute Guilliman (pronounced Ruh-BOOT-ay GIL-li-man), sometimes referred to as the "Avenging Son", "The Victorious", "The Master of Ultramar" and "The Blade of Unity", is the primarch of the Ultramarines Space Marine Legion and its myriad subsequent Successor Chapters. He is the current Lord Commander of the Imperium and the ruling Imperial Regent who serves as the chair of the Senatorum Imperialis.
 
 Held by some as a paragon among the Emperor's gene-sons, Roboute Guilliman was as much a patrician statesman and empire-builder as he was an indefatigable warrior. A being of preternatural intelligence, cold reason and indomitable will, Guilliman forged his XIIIth Legion into a vast force of conquest and control, a weapon by which he made himself the master of a stellar domain in the Eastern Fringe of the galaxy, the Realm of Ultramar, which during his early lifetime spanned five hundred worlds.
@@ -757,25 +756,26 @@ This change now places the events of the Plague Wars in circa 012.M42 early in t
 *Angels of Caliban (Novel) by Gav Thorpe
 *Ruinstorm (Novel) by David Annandale
 *Slaves to Darkness (Novel) by John French, Chs. 1-3
+
 * The End and the Death: Volume III (Novel) by Dan Abnett, Interlude: Distant Sons-i, 10:vii
-*Warhammer 40,000 Rulebook (5th Edition), pg. 134
-*Warhammer 40,000 Rulebook (6th Edition), pp. 161, 187, 403
-*Warhammer 40,000: Rulebook (8th Edition), pp. 50-53, 154-159, 167
-*White Dwarf 40 (December 2019), "Worlds of Warhammer" by Phil Kelly, pg. 11
-*White Dwarf 264 (AU), "Index Astartes - Ultramarines"
-*White Dwarf 263 (US), "Index Astartes - First Founding: Warriors of Ultramar - The Ultramarines Space Marine Chapter", pp. 18-25
-*White Dwarf 97 (US), "Index Astartes - Ultramarines" by David Wise & Rick Priestley, pp. 39-49
-*Defenders of Ultramar (Graphic Novel) by Graham McNeill, Issue 1, pg. 5
-*The First Hertic (Novel) by Aaron Dembski-Bowden
-*Age of Darkness (Anthology) edited by Christian Dunn, "Rules of Engagement" by Graham McNeill
-*Know No Fear (Novel) by Dan Abnett
-*Betrayer (Novel) by Aaron Dembski-Bowden
-*Roboute Guilliman: Lord of Ultramar (Novel) by David Annandale
-*[https://www.warhammer-community.com/2020/12/05/the-warhammer-preview-online-black-library/ The Warhammer Preview Online: Black Library, Interview with Guy Haley December 5, 2020]
-*[https://www.forgeworld.co.uk/en-US/roboute-guilliman-primarch-of-the-ultramarines Forge World - Roboute Guilliman, Primarch of the Ultramarines]
-*[https://www.warhammer-community.com/2017/05/15/a-new-breed-of-hero-may15gw-homepage-post-1/ Warhammer Community - A New Breed of Hero]
-*[https://www.warhammer-community.com/2017/05/15/primaris-space-marines-faq-may15gw-homepage-post-2/ Warhammer Community - Primaris Space Marines: FAQ].
-*[https://www.warhammer-community.com/2018/06/16/black-library-live-the-big-reveals/ Warhammer Community - Black Library Live: The Big Reveals]
+  *Warhammer 40,000 Rulebook (5th Edition), pg. 134
+  *Warhammer 40,000 Rulebook (6th Edition), pp. 161, 187, 403
+  *Warhammer 40,000: Rulebook (8th Edition), pp. 50-53, 154-159, 167
+  *White Dwarf 40 (December 2019), "Worlds of Warhammer" by Phil Kelly, pg. 11
+  *White Dwarf 264 (AU), "Index Astartes - Ultramarines"
+  *White Dwarf 263 (US), "Index Astartes - First Founding: Warriors of Ultramar - The Ultramarines Space Marine Chapter", pp. 18-25
+  *White Dwarf 97 (US), "Index Astartes - Ultramarines" by David Wise & Rick Priestley, pp. 39-49
+  *Defenders of Ultramar (Graphic Novel) by Graham McNeill, Issue 1, pg. 5
+  *The First Hertic (Novel) by Aaron Dembski-Bowden
+  *Age of Darkness (Anthology) edited by Christian Dunn, "Rules of Engagement" by Graham McNeill
+  *Know No Fear (Novel) by Dan Abnett
+  *Betrayer (Novel) by Aaron Dembski-Bowden
+  *Roboute Guilliman: Lord of Ultramar (Novel) by David Annandale
+  *[https://www.warhammer-community.com/2020/12/05/the-warhammer-preview-online-black-library/ The Warhammer Preview Online: Black Library, Interview with Guy Haley December 5, 2020]
+  *[https://www.forgeworld.co.uk/en-US/roboute-guilliman-primarch-of-the-ultramarines Forge World - Roboute Guilliman, Primarch of the Ultramarines]
+  *[https://www.warhammer-community.com/2017/05/15/a-new-breed-of-hero-may15gw-homepage-post-1/ Warhammer Community - A New Breed of Hero]
+  *[https://www.warhammer-community.com/2017/05/15/primaris-space-marines-faq-may15gw-homepage-post-2/ Warhammer Community - Primaris Space Marines: FAQ].
+  *[https://www.warhammer-community.com/2018/06/16/black-library-live-the-big-reveals/ Warhammer Community - Black Library Live: The Big Reveals]
 
 es:Roboute Guilliman
 Category:R

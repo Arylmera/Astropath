@@ -1,4 +1,3 @@
-Vulkan of the Salamanders Legion wielding the warhammer Dawnbringer
 Vulkan was one of the 20 superhuman primarchs and a Perpetual created by the Emperor of Mankind from altered versions of His own DNA to lead His Great Crusade and reunite the scattered peoples of Humanity within the Imperium of Man.
 
 The XVIIIth Legion, created from Vulkan's genome and originally known as the Dragon Warriors, was re-named the Salamanders after the great fire-resistant reptiles native to his volcanic homeworld of Nocturne in memory of the legendary contest between the Emperor and Vulkan in 832.M30 that had involved slaying one of those dangerous beasts. The outcome of this contest had revealed the Emperor's identity to Vulkan and restored the primarch to the Imperium.

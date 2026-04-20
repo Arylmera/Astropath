@@ -1,4 +1,3 @@
-sketch taken from Carpinus' Speculum Historiale depicting Fulgrim during the Great Crusade, before his ascension to Daemonhood
 Fulgrim (pronounced FULL-grim), also known in the time before the Horus Heresy as "The Phoenician," is the primarch of the Emperor's Children Traitor Legion. He possessed silvery-white hair and was quite vainglorious, as his entire life was dedicated to the pursuit of perfection in all things; physical, mental and spiritual.
 
  Fulgrim as a Daemon Prince of Slaanesh
@@ -660,11 +659,12 @@ The novel Angel Exterminatus retconned this so that Fulgrim ascended to daemonho
 *Fulgrim: The Palatine Phoenix (Novella) by Josh Reynolds, Chs. 3, 5
 *Mortis (Novel) by John French, Limited Edition Artwork
 *Sons of the Emperor (Anthology), "The Ancient Awaits" by Graham McNeill, pp. 133-149
+
 * Fulgrim: The Perfect Son (Novel) by Jude Reid, Ch. 25
-*[http://www.forgeworld.co.uk/New_Stuff/FULGRIM_PRIMARCH_OF_THE_EMPEROR%27S_CHILDREN.html Forge World - Fulgrim, Primarch of the Emperor's Children]
-*[https://www.youtube.com/watch?v=kpApZeG3GuQ Forge World - Genesis of a Primarch: Fulgrim the Illuminator]
-*Fabius Bile: Clonelord (Novel) by Josh Reynolds, pp. 117, 129, 143, 246, 272-273, Ch. 9
-*[https://www.warhammer-community.com/en-us/articles/7d4knyuv/kneel-before-the-immaculate-form-of-fulgrim-daemon-primarch-of-slaanesh/ Warhammer Community - Kneel before the immaculate form of Fulgrim, Daemon Primarch of Slaanesh]
+  *[http://www.forgeworld.co.uk/New_Stuff/FULGRIM_PRIMARCH_OF_THE_EMPEROR%27S_CHILDREN.html Forge World - Fulgrim, Primarch of the Emperor's Children]
+  *[https://www.youtube.com/watch?v=kpApZeG3GuQ Forge World - Genesis of a Primarch: Fulgrim the Illuminator]
+  *Fabius Bile: Clonelord (Novel) by Josh Reynolds, pp. 117, 129, 143, 246, 272-273, Ch. 9
+  *[https://www.warhammer-community.com/en-us/articles/7d4knyuv/kneel-before-the-immaculate-form-of-fulgrim-daemon-primarch-of-slaanesh/ Warhammer Community - Kneel before the immaculate form of Fulgrim, Daemon Primarch of Slaanesh]
 
 es:Fulgrim
 Category:F
