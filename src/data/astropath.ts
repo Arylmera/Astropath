@@ -305,25 +305,6 @@ const DATA: AstropathData = {
       ],
     },
     {
-      id: 'white-scars', num: 'V',
-      name: 'White Scars',
-      motto: 'Ride swift as the wind, strike hard as lightning',
-      primarchId: 'jaghatai-khan',
-      primarch: 'Jaghatai Khan',
-      homeworld: 'Chogoris',
-      allegiance: 'Loyalist',
-      founding: 'First',
-      colors: 'White & red',
-      strength: 'Full Codex strength',
-      source: 'https://wh40k-fr.lexicanum.com/wiki/Cicatrices_Blanches',
-      image: 'https://artwork.40k.gallery/wp-content/uploads/2020/12/The-Hunt-for-Voldorius.jpg',
-      lore: [
-        'The White Scars are the Vth Legion of Jaghatai Khan — the fastest of all the Space Marine Legions, born of the wind-swept steppes of Chogoris. They transformed the nomadic hit-and-run warfare of their homeworld into a martial doctrine of breathtaking lethality: strike from nowhere, vanish before the enemy can react.',
-        'Their culture reveres the hunt and the open sky. Battle-brothers compose sagas between campaigns and shave victory-marks into their armour. They are among the most insular of Chapters, guarding their traditions fiercely against outside scrutiny — a trait that has bred suspicion from Inquisitors and admiration from every commander who has ridden to war beside them.',
-        'At the Siege of Terra, the Khan led the White Scars in a series of devastating counter-attacks that broke Traitor supply lines and bought critical time for the defence. After the Heresy he pursued the Dark Eldar who preyed upon Chogoris into the Webway — and never returned. His sons ride still, waiting for the Warhawk to come home.',
-      ],
-    },
-    {
       id: 'space-wolves', num: 'VI',
       name: 'Space Wolves',
       motto: 'For the Allfather and Russ!',
@@ -410,6 +391,7 @@ const DATA: AstropathData = {
       colors: 'Bone white & black (Ist Legion) / Dark green (current)',
       strength: 'Full chapter strength — Inner Circle vigilant',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Dark_Angels',
+      image: 'https://i.redd.it/giuggenglqqa1.jpg',
       lore: [
         "The Ist Legion of Lion El'Jonson — the oldest and most secretive of all the First Founding Chapters. Their history is a palimpsest of redaction: what the Imperium knows of them is a fraction of what they know of themselves.",
         "At the end of the Horus Heresy, Caliban was torn apart in a civil war between the Lion and Luther, his brother-in-arms. The fallen Dark Angels who sided with Luther were scattered across time and space by the Warp. They are known only as the Fallen — and hunting them is the Chapter's true crusade.",
@@ -428,6 +410,7 @@ const DATA: AstropathData = {
       colors: 'White & red',
       strength: 'At full operational strength',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Cicatrices_Blanches',
+      image: 'https://artwork.40k.gallery/wp-content/uploads/2020/12/The-Hunt-for-Voldorius.jpg',
       lore: [
         'The Vth Legion of Jaghatai Khan. Born of the steppe-warriors of Chogoris, the White Scars are the masters of lightning warfare — striking from impossible angles, never holding ground, never standing still long enough to be pinned.',
         'Their doctrine of constant movement and overwhelming momentum made them the most feared fast-assault force in the Great Crusade. Where other Legions crushed worlds, the White Scars swept over them like a storm and were gone.',
@@ -446,6 +429,7 @@ const DATA: AstropathData = {
       colors: 'Imperial yellow & black',
       strength: 'Multiple successor chapters',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Poings_Imp%C3%A9riaux',
+      image: 'https://static.wikia.nocookie.net/chapterquest/images/2/2b/Imperial_Fists_1st_Company.jpg/revision/latest?cb=20130403161447',
       lore: [
         "The VIIth Legion of Rogal Dorn. The Emperor's chosen siege-masters, and the Legion that fortified the Imperial Palace against the Traitors. They paid for every inch of that wall in blood.",
         "They have no homeworld — their fortress-monastery is the Phalanx, a star fort of staggering scale that drifts the void. To earn the right to serve aboard the Phalanx is the highest honour an Imperial Fist can receive.",
