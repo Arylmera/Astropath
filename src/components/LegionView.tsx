@@ -66,6 +66,9 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
               <div className="side-list">
                 <div className="row"><span className="k">Primarch</span><span className="v">{legion.primarch}</span></div>
                 <div className="row"><span className="k">Motto</span><span className="v" style={{ fontStyle: 'italic' }}>{legion.motto}</span></div>
+                {legion.source && (
+                  <div className="row"><span className="k">Lexicanum</span><span className="v"><a href={legion.source} target="_blank" rel="noopener noreferrer">{legion.name}</a></span></div>
+                )}
               </div>
             </div>
           </aside>
