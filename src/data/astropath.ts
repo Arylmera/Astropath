@@ -661,6 +661,7 @@ const DATA: AstropathData = {
       colors: 'Dark red & silver',
       strength: 'Grand Host — intact and zealous',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Word_Bearers',
+      image: 'https://i.redd.it/d0suw23oy8e61.jpg',
       lore: [
         "The XVIIth Legion of Lorgar Aurelian. They were the first to turn — and the reason any others turned. Lorgar converted the Legion to Chaos long before the Heresy began, hiding it beneath a century of apparent compliance.",
         'The Word Bearers are the most organised and theologically coherent of the Traitor Legions. Where the others fight for warlords, vengeance, or raw sensation, the Word Bearers fight for faith — for the propagation of the Ruinous Powers as legitimate gods.',
