@@ -259,6 +259,7 @@ const DATA: AstropathData = {
       colors: 'Sea-green & black',
       strength: 'Fractured — reborn as Black Legion',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Fils_d%27Horus',
+      image: 'https://www.warhammerart.com/cdn/shop/files/Sons-Of-Horus-On-The-Vengefule-Spirit.jpg?v=1741515063&width=1200',
       lore: [
         'Originally the Luna Wolves, the XVIth Legion was the instrument of the Warmaster and the first among equals during the Great Crusade. They were renamed the Sons of Horus after Ullanor.',
         "When their primarch fell to Chaos they followed him without question. They bled the Imperium at Isstvan, on the route to Terra, and at the final Siege itself. The Legion died when Horus died.",
