@@ -109,7 +109,7 @@ export default function GalaxyMap({ primarchs: allPrimarchs, onOpen }: Props) {
         </div>
 
         <div className="galaxy-hint">
-          Hover a node · click to focus · open lexicon · <a href="https://github.com/Arylmera/astropath" target="_blank" rel="noopener noreferrer" className="galaxy-hint-link">github.com/Arylmera/astropath</a>
+          Hover a node · click to focus · open lexicon
         </div>
       </div>
     </div>

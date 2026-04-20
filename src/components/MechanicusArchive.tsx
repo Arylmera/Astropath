@@ -246,7 +246,7 @@ export default function MechanicusArchive({ forges, onOpen }: ArchiveProps) {
         )}
 
         <div className="mech-hint">
-          Hover a forge node · click to open the schematic · <a href="https://github.com/Arylmera/astropath" target="_blank" rel="noopener noreferrer" className="mech-hint-link">github.com/Arylmera/astropath</a>
+          Hover a forge node · click to open the schematic
         </div>
       </div>
     </div>
