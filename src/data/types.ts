@@ -29,6 +29,7 @@ export interface Legion {
   colors: string
   strength: string
   source?: string
+  image?: string
   lore: string[]
 }
 

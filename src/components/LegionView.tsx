@@ -13,9 +13,12 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
   return (
     <div className="view">
       <div className="legion-scene">
-        {primarch && (
+        {(legion.image || primarch) && (
           <div className="legion-portrait-bg">
-            <img src={primarch.portrait} alt={primarch.name} />
+            <img
+              src={legion.image ?? primarch!.portrait}
+              alt={legion.name}
+            />
           </div>
         )}
         <div className="legion">
