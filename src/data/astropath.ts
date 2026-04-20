@@ -623,7 +623,7 @@ const DATA: AstropathData = {
       colors: 'Midnight blue & lightning',
       strength: 'Warbands — no unified structure',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Night_Lords',
-      image: 'https://artwork.40k.gallery/wp-content/uploads/2025/06/Drop-Site-Massacre-768x474.jpg.webp',
+      image: 'assets/legions/night-lords.webp',
       lore: [
         'The VIIIth Legion of Konrad Curze. Born of the nightmare hive-world Nostramo, they learned terror before they learned war. They were the Emperor\'s instruments of dread — sent ahead of the Crusade to break worlds psychologically before a shot was fired.',
         'They fell when Curze fell, or perhaps Curze fell because they were always falling. Fear as a weapon has no restraint; the Night Lords became the very horror they once wielded on behalf of the Imperium.',
