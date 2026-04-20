@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="vbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#060a10"/>
+      <stop offset="0.5" stop-color="#0a0f18"/>
+      <stop offset="1" stop-color="#020408"/>
+    </linearGradient>
+
+    <filter id="vapor1" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="4" seed="3" result="noise1">
+        <animate attributeName="baseFrequency" values="0.012 0.018;0.014 0.022;0.012 0.018" dur="12s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise1" scale="80" xChannelSelector="R" yChannelSelector="G" result="disp1"/>
+      <feGaussianBlur in="disp1" stdDeviation="6" result="blur1"/>
+    </filter>
+
+    <filter id="vapor2" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.012" numOctaves="4" seed="7" result="noise2">
+        <animate attributeName="baseFrequency" values="0.018 0.012;0.015 0.020;0.018 0.012" dur="18s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise2" scale="60" xChannelSelector="G" yChannelSelector="R" result="disp2"/>
+      <feGaussianBlur in="disp2" stdDeviation="10" result="blur2"/>
+    </filter>
+
+    <filter id="vapor3" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feTurbulence type="turbulence" baseFrequency="0.008 0.010" numOctaves="5" seed="12" result="noise3">
+        <animate attributeName="seed" values="12;19;12" dur="25s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise3" scale="120" xChannelSelector="R" yChannelSelector="B"/>
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="18" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <radialGradient id="centerglow" cx="50%" cy="42%" r="40%">
+      <stop offset="0" stop-color="#8ab4d4" stop-opacity="0.18"/>
+      <stop offset="0.6" stop-color="#3a6080" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bottomfade" cx="50%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#020408" stop-opacity="1"/>
+      <stop offset="1" stop-color="#020408" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="600" height="800" fill="url(#vbg)"/>
+
+  <!-- deep vapor layer 3 — slow, wide drift -->
+  <g filter="url(#vapor3)" opacity="0.30">
+    <ellipse cx="300" cy="500" rx="260" ry="180" fill="#aac8e0">
+      <animate attributeName="cy" values="500;480;500" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="200" cy="300" rx="200" ry="130" fill="#c8dce8">
+      <animate attributeName="cx" values="200;230;200" dur="28s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="420" cy="380" rx="180" ry="110" fill="#b0ccd8">
+      <animate attributeName="cy" values="380;360;380" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- mid vapor layer 2 -->
+  <g filter="url(#vapor2)" opacity="0.40">
+    <ellipse cx="300" cy="420" rx="220" ry="160" fill="#d0e4f0">
+      <animate attributeName="ry" values="160;140;160" dur="16s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="160" cy="600" rx="180" ry="120" fill="#b8d4e8">
+      <animate attributeName="cx" values="160;190;160" dur="19s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="460" cy="280" rx="160" ry="100" fill="#c0d8e8">
+      <animate attributeName="cy" values="280;260;280" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="300" cy="700" rx="240" ry="100" fill="#a8c8e0"/>
+  </g>
+
+  <!-- fine vapor layer 1 — fastest, most detailed -->
+  <g filter="url(#vapor1)" opacity="0.55">
+    <ellipse cx="300" cy="380" rx="180" ry="140" fill="#e8f2f8">
+      <animate attributeName="cy" values="380;360;380" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="220" cy="520" rx="150" ry="100" fill="#dceef8">
+      <animate attributeName="cx" values="220;250;220" dur="13s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="400" cy="460" rx="140" ry="90" fill="#d8eaf6">
+      <animate attributeName="cy" values="460;440;460" dur="11s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="300" cy="250" rx="130" ry="80" fill="#e0eff8">
+      <animate attributeName="ry" values="80;65;80" dur="15s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="150" cy="350" rx="110" ry="70" fill="#d4e8f4">
+      <animate attributeName="cx" values="150;170;150" dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="450" cy="600" rx="120" ry="75" fill="#cce4f0">
+      <animate attributeName="cy" values="600;580;600" dur="17s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- faint humanoid silhouette through the mist -->
+  <g opacity="0.07">
+    <!-- head -->
+    <ellipse cx="300" cy="220" rx="55" ry="65" fill="#c8dce8"/>
+    <!-- shoulders/torso -->
+    <path d="M200,320 Q230,290 300,285 Q370,290 400,320 L420,480 L180,480 Z" fill="#b8ccd8"/>
+    <!-- legs hint -->
+    <rect x="220" y="478" width="55" height="120" rx="20" fill="#a8c0cc"/>
+    <rect x="325" y="478" width="55" height="120" rx="20" fill="#a8c0cc"/>
+  </g>
+
+  <!-- centre ambient glow -->
+  <ellipse cx="300" cy="380" rx="300" ry="360" fill="url(#centerglow)"/>
+
+  <!-- subtle "?" mark in mist -->
+  <text x="300" y="430" font-family="serif" font-size="160" text-anchor="middle" fill="#b8d4e8" opacity="0.04" filter="url(#softglow)">?</text>
+
+  <!-- vignette top -->
+  <rect width="600" height="800" fill="url(#bottomfade)" transform="scale(1,-1) translate(0,-800)"/>
+  <!-- vignette bottom -->
+  <rect width="600" height="800" fill="url(#bottomfade)"/>
+
+  <!-- radial dark edge vignette -->
+  <radialGradient id="edgevign" cx="50%" cy="50%" r="60%">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect width="600" height="800" fill="url(#edgevign)"/>
+</svg>

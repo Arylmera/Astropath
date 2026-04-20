@@ -234,7 +234,7 @@ const DATA: AstropathData = {
       homeworld: 'Unknown — purged',
       allegiance: 'Loyalist',
       status: 'Unknown — expunged from all records',
-      portrait: 'assets/portraits/emperor.svg',
+      portrait: 'assets/portraits/redacted.svg',
       hue: 0,
       lore: [
         'The second primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge. Even the method of their removal is unknown.',
@@ -302,7 +302,7 @@ const DATA: AstropathData = {
       homeworld: 'Unknown — purged',
       allegiance: 'Loyalist',
       status: 'Unknown — expunged from all records',
-      portrait: 'assets/portraits/emperor.svg',
+      portrait: 'assets/portraits/redacted.svg',
       hue: 0,
       lore: [
         'The eleventh primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge.',
