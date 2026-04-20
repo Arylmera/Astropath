@@ -169,6 +169,16 @@ export default function App() {
       <main className="app-main">
         {renderView()}
       </main>
+      <footer className="app-footer">
+        <a
+          href="https://github.com/Arylmera/astropath"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="app-footer-link"
+        >
+          github.com/Arylmera/astropath
+        </a>
+      </footer>
       <Tweaks theme={theme} setTheme={setTheme} />
     </>
   )
