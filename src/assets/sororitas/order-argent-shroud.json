@@ -2,6 +2,11 @@
   "id": "order-argent-shroud",
   "category": "order-militant",
   "title": "Order of the Argent Shroud",
+  "matriarch": "Saint Silvana",
+  "epithet": "The Silent Sisters",
+  "dogma": "Deeds, not words",
+  "icon": "shroud",
+  "glass": ["#8a8c93", "#1a1b1f", "#e6e7eb"],
   "page": "Order_of_the_Argent_Shroud",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Argent_Shroud"
 }

@@ -2,6 +2,11 @@
   "id": "order-sacred-rose",
   "category": "order-militant",
   "title": "Order of the Sacred Rose",
+  "matriarch": "Saint Arabella",
+  "epithet": "Beacons of Hope",
+  "dogma": "Faith against despair",
+  "icon": "rose-bloom",
+  "glass": ["#f1e9d8", "#d5a37a", "#8fa7c1"],
   "page": "Order_of_the_Sacred_Rose",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Sacred_Rose"
 }

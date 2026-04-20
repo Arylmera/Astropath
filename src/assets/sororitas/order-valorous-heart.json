@@ -2,6 +2,11 @@
   "id": "order-valorous-heart",
   "category": "order-militant",
   "title": "Order of the Valorous Heart",
+  "matriarch": "Saint Lucia",
+  "epithet": "The Penitent",
+  "dogma": "Atonement through endurance",
+  "icon": "heart-and-thorn",
+  "glass": ["#1c1c26", "#3a5061", "#cfcfd4"],
   "page": "Order_of_the_Valorous_Heart",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Valorous_Heart"
 }
