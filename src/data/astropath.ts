@@ -389,6 +389,7 @@ const DATA: AstropathData = {
       colors: 'Bone & blood',
       strength: 'Eight Warbands',
       source: 'https://wh40k-fr.lexicanum.com/wiki/D%C3%A9voreurs_de_Mondes',
+      image: 'https://www.warhammerart.com/cdn/shop/files/World-Eaters.jpg?v=1741514824&width=1200',
       lore: [
         "The XIIth Legion of Angron. Once the War Hounds — reforged by their primarch's Butcher's Nails into frenzied berserkers who know no command but the kill.",
         "They worship Khorne not by choice but by inescapable physiology. The Nails drive every son of Angron toward violence the way hunger drives lesser men toward food.",
