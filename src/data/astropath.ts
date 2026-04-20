@@ -351,6 +351,7 @@ const DATA: AstropathData = {
       colors: 'Porcelain & violet',
       strength: 'Warband fragments',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Enfants_de_l%27Empereur',
+      image: 'https://assets.warhammer-community.com/40k_ecfaction-image1_wide-np2esvztls.jpg',
       lore: [
         "The IIIrd Legion of Fulgrim. The only Legion permitted to wear the Emperor's palatine aquila upon their armour. Their pursuit of perfection in war became a cult, and the cult became damnation.",
         "At Isstvan III they turned on their loyalist brothers. By the end of the Heresy they were no longer the Legion the Emperor had recognised — they were Slaanesh's eldest children.",
