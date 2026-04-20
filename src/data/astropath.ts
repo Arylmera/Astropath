@@ -297,6 +297,7 @@ const DATA: AstropathData = {
       colors: 'Crimson & gold',
       strength: 'Cabals of Rubricae + sorcerers',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Mille_Fils',
+      image: 'https://cdnb.artstation.com/p/assets/images/images/009/607/605/4k/johan-grenier-thousands-sons-dps12.jpg?1519915173',
       lore: [
         "The XVth Legion of Magnus the Red. Scholars, sorcerers, seekers of forbidden knowledge; their library on Prospero was once the greatest in the Imperium.",
         "After the Council of Nikaea forbade the use of sorcery, Magnus broke the decree. The Space Wolves were unleashed upon Prospero; in the aftermath, Magnus' desperate sorcery turned most of his Legion to dust inside their own armour — the Rubricae, still marching, still loyal, forever silent.",
