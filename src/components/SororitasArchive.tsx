@@ -57,10 +57,6 @@ export default function SororitasArchive({ orders, onOpen }: Props) {
         <span>In His Name we Burn</span>
         <span>·</span>
         <span>VI Orders of the Six Daughters</span>
-        <span>·</span>
-        <a href="https://github.com/Arylmera/astropath" target="_blank" rel="noopener noreferrer" className="sor-footer-link">
-          github.com/Arylmera/astropath
-        </a>
       </div>
     </div>
   )
