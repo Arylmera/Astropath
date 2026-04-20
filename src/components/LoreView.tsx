@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import type { Primarch } from '@/data/types'
 import { loadLore } from '@/lib/datasets'
+import { allegianceClass } from '@/lib/lexicon'
 
 // ---- lore markdown loader --------------------------------------------------
 
@@ -143,7 +144,7 @@ interface Props {
 export default function LoreView({ primarch, onBack }: Props) {
   const metaLabel  = primarch.isEmperor ? 'EMPEROR' : 'PRIMARCH'
   const doc        = useLoreDocument(primarch.id)
-  const loyalClass = primarch.allegiance === 'Loyalist' ? 'loyal' : 'traitor'
+  const loyalClass = allegianceClass(primarch.allegiance)
   const filename   = `FILE-${primarch.num}-${primarch.id.toUpperCase().replace(/-/g, '‑')}`
 
   const passages     = doc.status === 'ready' ? doc.sections!.reduce((n, s) => n + s.paragraphs.length, 0) : null

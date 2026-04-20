@@ -1,4 +1,7 @@
 import type { Legion, Primarch } from '@/data/types'
+import { allegianceClass } from '@/lib/lexicon'
+import BackButton from './BackButton'
+import LoreList from './LoreList'
 
 interface Props {
   legion: Legion
@@ -8,7 +11,7 @@ interface Props {
 }
 
 export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }: Props) {
-  const loyalClass = legion.allegiance === 'Loyalist' ? 'loyal' : 'traitor'
+  const loyalClass = allegianceClass(legion.allegiance)
 
   return (
     <div className="view">
@@ -22,9 +25,7 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
           </div>
         )}
         <div className="legion">
-          <div style={{ marginBottom: 16 }}>
-            <button className="back-btn" onClick={onBack}>← Galaxy Map</button>
-          </div>
+          <BackButton label="Galaxy Map" onClick={onBack} />
 
           <header className="legion-header">
             <div className="legion-num">{legion.num}</div>
@@ -39,9 +40,7 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
           </header>
 
           <div className="legion-body">
-            <div className="legion-lore">
-              {legion.lore.map((p, i) => <p key={i}>{p}</p>)}
-            </div>
+            <LoreList lore={legion.lore} className="legion-lore" />
 
             <aside className="legion-side">
               {primarch && (

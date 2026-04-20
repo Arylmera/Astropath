@@ -1,4 +1,5 @@
 import type { Primarch } from '@/data/types'
+import { allegianceClass } from '@/lib/lexicon'
 
 interface Props {
   focus: Primarch | null
@@ -24,9 +25,7 @@ export default function GalaxyFocusPanel({ focus, onOpen }: Props) {
         </div>
         <div>
           <div className="label">Allegiance</div>
-          <div className="value" style={{
-            color: focus.allegiance === 'Loyalist' ? 'var(--loyal)' : 'var(--traitor)'
-          }}>
+          <div className={`value ${allegianceClass(focus.allegiance)}`}>
             {focus.allegiance}
           </div>
         </div>

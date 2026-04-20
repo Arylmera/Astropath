@@ -1,3 +1,5 @@
+import type { Allegiance } from './Allegiance'
+
 export interface Primarch {
   id: string
   num: string
@@ -8,7 +10,7 @@ export interface Primarch {
   legion: string
   roleLabel?: string
   homeworld: string
-  allegiance: 'Loyalist' | 'Traitor'
+  allegiance: Allegiance
   status: string
   portrait: string
   isEmperor?: boolean

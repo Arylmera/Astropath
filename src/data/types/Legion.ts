@@ -1,3 +1,5 @@
+import type { Allegiance } from './Allegiance'
+
 export interface Legion {
   id: string
   num: string
@@ -6,7 +8,7 @@ export interface Legion {
   primarchId: string
   primarch: string
   homeworld: string
-  allegiance: 'Loyalist' | 'Traitor'
+  allegiance: Allegiance
   founding: string
   colors: string
   strength: string

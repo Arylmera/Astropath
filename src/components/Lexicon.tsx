@@ -1,102 +1,74 @@
-import type { Primarch, Legion } from '@/data/types'
+import type { ReactNode } from 'react'
+import BackButton from './BackButton'
+import LoreList from './LoreList'
 
-interface Props {
-  primarch: Primarch
-  legion: Legion | null
-  onOpenLegion: (id: string) => void
-  onOpenLore: (id: string) => void
-  onBack: () => void
+interface Chip {
+  label?: string
+  value: string
+  className?: string
 }
 
-export default function Lexicon({ primarch, legion, onOpenLegion, onOpenLore, onBack }: Props) {
-  const loyalClass = primarch.allegiance === 'Loyalist' ? 'loyal' : 'traitor'
-  const roleLabel  = primarch.roleLabel ?? 'Primarch'
-  const metaLabel  = primarch.isEmperor ? 'EMPEROR' : 'PRIMARCH'
-  const intro      = (primarch.lore ?? []).slice(0, 1)
+interface LexiconProps {
+  variant: 'primarch' | 'forge' | 'order' | 'emperor'
+  portrait: ReactNode
+  portraitClass?: string
+  meta: [string, string, string]
+  roman: ReactNode
+  romanClass?: string
+  backLabel: string
+  onBack: () => void
+  kicker: ReactNode
+  name: string
+  epithet: string
+  chips: Chip[]
+  lore: string[]
+  children?: ReactNode
+}
 
+const VARIANT_CLASS: Record<LexiconProps['variant'], string> = {
+  emperor: 'emperor-lexicon',
+  forge:   'forge-lexicon',
+  order:   'order-lexicon',
+  primarch: '',
+}
+
+export default function Lexicon({
+  variant, portrait, portraitClass, meta, roman, romanClass,
+  backLabel, onBack, kicker, name, epithet, chips, lore, children,
+}: LexiconProps) {
+  const variantCls = VARIANT_CLASS[variant]
   return (
-    <div className={`view lexicon ${primarch.isEmperor ? 'emperor-lexicon' : ''}`}>
+    <div className={`view lexicon${variantCls ? ` ${variantCls}` : ''}`}>
       <div className="lexicon-hero">
-        <div className="lexicon-portrait">
-          <img src={primarch.portrait} alt={primarch.name} />
+        <div className={`lexicon-portrait${portraitClass ? ` ${portraitClass}` : ''}`}>
+          {portrait}
           <div className="lexicon-corner tl" />
           <div className="lexicon-corner tr" />
           <div className="lexicon-portrait-meta">
-            <span>{metaLabel} · {primarch.num}</span>
-            <span>{primarch.homeworld.toUpperCase()}</span>
-            <span>FILE · {primarch.id.toUpperCase().replace('-', '‑')}</span>
+            <span>{meta[0]}</span>
+            <span>{meta[1]}</span>
+            <span>{meta[2]}</span>
           </div>
         </div>
 
         <div className="lexicon-info">
-          <div className="lexicon-roman">{primarch.roman}</div>
-
-          <div style={{ marginBottom: 28 }}>
-            <button className="back-btn" onClick={onBack}>← Galaxy Map</button>
-          </div>
-
-          <div className="lexicon-kicker">
-            <span className="lexicon-kicker-num">
-              {roleLabel}{primarch.isEmperor ? '' : ` ${primarch.num}`}
-            </span>
-            <span>·</span>
-            <span>{primarch.legion}</span>
-          </div>
-
-          <h1 className="lexicon-name">{primarch.name}</h1>
-          <p className="lexicon-epithet">"{primarch.epithet}"</p>
+          <div className={`lexicon-roman${romanClass ? ` ${romanClass}` : ''}`}>{roman}</div>
+          <BackButton label={backLabel} onClick={onBack} />
+          <div className="lexicon-kicker">{kicker}</div>
+          <h1 className="lexicon-name">{name}</h1>
+          <p className="lexicon-epithet">"{epithet}"</p>
 
           <div className="lexicon-chips">
-            <span className="chip">
-              <span className="chip-label">Homeworld</span>
-              <span className="chip-value">{primarch.homeworld}</span>
-            </span>
-            <span className={`chip ${loyalClass}`}>
-              <span className="chip-value">{primarch.allegiance}</span>
-            </span>
-            {!primarch.isEmperor && (
-              <span className="chip">
-                <span className="chip-label">Legion</span>
-                <span className="chip-value">{primarch.num}</span>
+            {chips.map((c, i) => (
+              <span key={i} className={`chip${c.className ? ` ${c.className}` : ''}`}>
+                {c.label && <span className="chip-label">{c.label}</span>}
+                <span className="chip-value">{c.value}</span>
               </span>
-            )}
-            <span className="chip">
-              <span className="chip-label">Status</span>
-              <span className="chip-value">{primarch.status}</span>
-            </span>
+            ))}
           </div>
 
-          <div className="lexicon-lore">
-            {intro.map((p, i) => <p key={i}>{p}</p>)}
-          </div>
-
-          <div
-            className="lexicon-links lore-link"
-            onClick={() => onOpenLore(primarch.id)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={e => e.key === 'Enter' && onOpenLore(primarch.id)}
-          >
-            <div className="lexicon-links-l">
-              <div className="lexicon-links-kicker">
-                Full Archive Record · {metaLabel} · {primarch.num}
-              </div>
-              <div className="lexicon-links-name">
-                Read the complete file on {primarch.name.replace(/^The\s+/, '')}
-              </div>
-            </div>
-            <div className="lexicon-links-arrow">Open record →</div>
-          </div>
-
-          {legion && (
-            <div className="lexicon-links" onClick={() => onOpenLegion(legion.id)} role="button" tabIndex={0} onKeyDown={e => e.key === 'Enter' && onOpenLegion(legion.id)}>
-              <div className="lexicon-links-l">
-                <div className="lexicon-links-kicker">His Legion · {legion.num} · {legion.allegiance}</div>
-                <div className="lexicon-links-name">{legion.name}</div>
-              </div>
-              <div className="lexicon-links-arrow">Open file →</div>
-            </div>
-          )}
+          <LoreList lore={lore} />
+          {children}
         </div>
       </div>
     </div>
