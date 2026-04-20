@@ -699,6 +699,7 @@ const DATA: AstropathData = {
       colors: 'Iridescent blue-green',
       strength: 'Unknown — cells operate independently',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Alpha_Legion',
+      image: 'https://i.redd.it/what-is-your-favorite-alpha-legion-color-scheme-v0-ri79i1knclsb1.jpg?width=512&format=pjpg&auto=webp&s=e20a81875a02032d7251e3ae9508f00a1dd539d3',
       lore: [
         "The XXth and last Legion — the Alpha Legion. Last to be founded, last to join the Great Crusade, first to confound anyone trying to understand them. Their methods, their loyalties, and even the number of their primarchs remain genuinely disputed.",
         'They are the masters of infiltration, sleeper agents, disinformation and long-horizon manipulation. Every enemy who thinks they have outwitted the Alpha Legion may simply be executing the plan the Alpha Legion laid for them.',
