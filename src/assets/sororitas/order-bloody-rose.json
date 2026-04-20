@@ -2,6 +2,11 @@
   "id": "order-bloody-rose",
   "category": "order-militant",
   "title": "Order of the Bloody Rose",
+  "matriarch": "Saint Mina",
+  "epithet": "Blades in Earnest",
+  "dogma": "Martial prowess above all",
+  "icon": "rose-and-sword",
+  "glass": ["#6d0f1d", "#1a0a0c", "#9aa0a8"],
   "page": "Order_of_the_Bloody_Rose",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Bloody_Rose"
 }

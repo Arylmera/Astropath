@@ -10,12 +10,15 @@ import LegionView from '@/components/LegionView'
 import LoreView from '@/components/LoreView'
 import MechanicusArchive from '@/components/MechanicusArchive'
 import SororitasArchive from '@/components/SororitasArchive'
+import SororitasRecordView from '@/components/SororitasRecordView'
 import ForgeSchematic from '@/components/ForgeSchematic'
 import StainedGlass from '@/components/StainedGlass'
+import { DATASETS } from '@/lib/datasets'
 import { allegianceClass, formatFileId } from '@/lib/lexicon'
 
 const NAV_KEY   = 'astropath.nav'
 const THEME_KEY = 'astropath.theme'
+const sororitasDataset = DATASETS.find((dataset) => dataset.key === 'sororitas')
 
 function loadNav(): Nav {
   try {
@@ -55,12 +58,13 @@ export default function App() {
   const legion    = nav.id ? (DATA.legions.find(l   => l.id  === nav.id) ?? null) : null
   const forge     = nav.id ? (DATA.mechanicus.find(f => f.id === nav.id) ?? null) : null
   const order     = nav.id ? (DATA.sororitas.find(o  => o.id === nav.id) ?? null) : null
+  const sororitasEntry = nav.id ? (sororitasDataset?.entries.find((entry) => entry.id === nav.id) ?? null) : null
 
   const currentLabel: string | null = (() => {
     if (nav.view === 'primarch' || nav.view === 'lore') return primarch?.name ?? null
     if (nav.view === 'legion')  return legion?.name ?? null
     if (nav.view === 'forge')   return forge?.name ?? null
-    if (nav.view === 'order')   return order?.name ?? null
+    if (nav.view === 'order')   return order?.name ?? sororitasEntry?.title ?? null
     return null
   })()
 
@@ -216,12 +220,20 @@ export default function App() {
       case 'sororitas':
         return (
           <SororitasArchive
-            orders={DATA.sororitas}
+            entries={sororitasDataset?.entries ?? []}
             onOpen={id => go('order', id)}
           />
         )
 
       case 'order': {
+        if (!order && sororitasEntry) {
+          return (
+            <SororitasRecordView
+              entry={sororitasEntry}
+              onBack={() => go('sororitas')}
+            />
+          )
+        }
         if (!order) return <div className="view"><p>Not found.</p></div>
         const [halo, gold, stroke] = order.glass
         return (

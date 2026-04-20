@@ -2,6 +2,11 @@
   "id": "order-martyred-lady",
   "category": "order-militant",
   "title": "Order of Our Martyred Lady",
+  "matriarch": "Saint Katherine",
+  "epithet": "Fire of the Righteous",
+  "dogma": "Unrelenting pursuit of the faithless",
+  "icon": "skull-and-tears",
+  "glass": ["#a31622", "#1b1a1c", "#e5dccd"],
   "page": "Order_of_Our_Martyred_Lady",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_Our_Martyred_Lady"
 }

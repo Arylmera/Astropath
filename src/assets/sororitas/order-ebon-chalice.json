@@ -2,6 +2,11 @@
   "id": "order-ebon-chalice",
   "category": "order-militant",
   "title": "Order of the Ebon Chalice",
+  "matriarch": "Saint Alicia Dominica",
+  "epithet": "The Eldest Daughters",
+  "dogma": "Keepers of the first truth",
+  "icon": "chalice",
+  "glass": ["#0a0a0c", "#c9a042", "#efe6cd"],
   "page": "Order_of_the_Ebon_Chalice",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Ebon_Chalice"
 }

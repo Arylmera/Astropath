@@ -8,6 +8,11 @@ export type RawEntry = {
   title: string
   page: string
   source: string
+  icon?: string | null
+  matriarch?: string | null
+  epithet?: string | null
+  dogma?: string | null
+  glass?: [string, string, string] | null
   legionNumber?: string | null
   legion?: string | null
   primarch?: string | null
