@@ -351,6 +351,8 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .side-list .row .v { color: var(--text); text-align: right; }
 .side-list .row .v.loyal { color: var(--loyal); }
 .side-list .row .v.traitor { color: var(--traitor); }
+.side-list .row .v a { color: var(--accent); text-decoration: underline; text-decoration-color: oklch(from var(--accent) l c h / 0.35); text-underline-offset: 3px; transition: text-decoration-color 0.15s ease, color 0.15s ease; }
+.side-list .row .v a:hover { color: var(--accent-2); text-decoration-color: var(--accent-2); }
 .primarch-card { position: relative; border: 1px solid var(--border); background: var(--bg-raised); overflow: hidden; cursor: pointer; transition: border-color 0.15s ease; }
 .primarch-card:hover { border-color: var(--accent); }
 .primarch-card:hover .primarch-card-arrow { color: var(--accent); transform: translateX(3px); }
