@@ -1,127 +1,175 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import { DATASETS, loadLore, type DatasetKey } from './lib/datasets'
-import { parseLore } from './lib/parseLore'
-import { DatasetNav } from './components/DatasetNav'
-import { EntryList } from './components/EntryList'
-import { EntryDetail } from './components/EntryDetail'
+import type { Nav, Theme, View } from '@/data/types'
+import DATA from '@/data/astropath'
+import Chrome from '@/components/Chrome'
+import Tweaks from '@/components/Tweaks'
+import GalaxyMap from '@/components/GalaxyMap'
+import Dossier from '@/components/Dossier'
+import LegionView from '@/components/LegionView'
+import LoreView from '@/components/LoreView'
+import MechanicusArchive from '@/components/MechanicusArchive'
+import ForgeDossier from '@/components/ForgeDossier'
+import SororitasArchive from '@/components/SororitasArchive'
+import OrderDossier from '@/components/OrderDossier'
 
-function App() {
-  const [datasetKey, setDatasetKey] = useState<DatasetKey>('primarchs')
-  const [query, setQuery] = useState('')
-  const [selectedByDataset, setSelectedByDataset] = useState<
-    Record<DatasetKey, string | null>
-  >({
-    primarchs: null,
-    'space-marines': null,
-    admech: null,
-    sororitas: null,
-  })
+const NAV_KEY   = 'astropath.nav'
+const THEME_KEY = 'astropath.theme'
 
-  const dataset = DATASETS.find((d) => d.key === datasetKey)!
-  const selectedId = selectedByDataset[datasetKey]
+function loadNav(): Nav {
+  try {
+    const s = localStorage.getItem(NAV_KEY)
+    return s ? JSON.parse(s) : { view: 'galaxy', id: null }
+  } catch {
+    return { view: 'galaxy', id: null }
+  }
+}
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    if (!q) return dataset.entries
-    return dataset.entries.filter((e) => {
-      const haystack = [
-        e.title,
-        e.subtitle,
-        e.badge,
-        e.legion ?? '',
-        e.legionNumber ?? '',
-        e.primarch ?? '',
-        e.category ?? '',
-        e.founding ?? '',
-      ]
-        .join(' ')
-        .toLowerCase()
-      return haystack.includes(q)
-    })
-  }, [dataset, query])
+function loadTheme(): Theme {
+  return (localStorage.getItem(THEME_KEY) as Theme) || 'void'
+}
 
-  const selected = useMemo(
-    () => dataset.entries.find((e) => e.id === selectedId) ?? null,
-    [dataset, selectedId],
-  )
+function archiveOf(view: View): string {
+  if (view === 'mechanicus' || view === 'forge') return 'mechanicus'
+  if (view === 'sororitas'  || view === 'order') return 'sororitas'
+  return 'primarchs'
+}
 
-  const [lore, setLore] = useState<string>('')
-  const [loreLoading, setLoreLoading] = useState(false)
+export default function App() {
+  const [nav,   setNav]   = useState<Nav>(loadNav)
+  const [theme, setTheme] = useState<Theme>(loadTheme)
+
   useEffect(() => {
-    if (!selected) {
-      setLore('')
-      return
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem(THEME_KEY, theme)
+  }, [theme])
+
+  useEffect(() => {
+    localStorage.setItem(NAV_KEY, JSON.stringify(nav))
+  }, [nav])
+
+  const go = (view: View, id: string | null = null) => setNav({ view, id })
+
+  // resolve entities for the current nav
+  const primarch  = nav.id ? (DATA.primarchs.find(p  => p.id  === nav.id) ?? null) : null
+  const legion    = nav.id ? (DATA.legions.find(l   => l.id  === nav.id) ?? null) : null
+  const forge     = nav.id ? (DATA.mechanicus.find(f => f.id === nav.id) ?? null) : null
+  const order     = nav.id ? (DATA.sororitas.find(o  => o.id === nav.id) ?? null) : null
+
+  const currentLabel: string | null = (() => {
+    if (nav.view === 'primarch' || nav.view === 'lore') return primarch?.name ?? null
+    if (nav.view === 'legion')  return legion?.name ?? null
+    if (nav.view === 'forge')   return forge?.name ?? null
+    if (nav.view === 'order')   return order?.name ?? null
+    return null
+  })()
+
+  const handleArchive = (v: View) => go(v)
+  const handleHome    = () => go('galaxy')
+
+  const getPrimarchLegion = (p: typeof primarch) => {
+    if (!p || !p.legionId) return null
+    return DATA.legions.find(l => l.id === p.legionId) ?? null
+  }
+  const getLegionPrimarch = (l: typeof legion) => {
+    if (!l) return null
+    return DATA.primarchs.find(p => p.id === l.primarchId) ?? null
+  }
+
+  const renderView = () => {
+    switch (nav.view) {
+      case 'galaxy':
+        return (
+          <GalaxyMap
+            primarchs={DATA.primarchs}
+            onOpen={id => go('primarch', id)}
+          />
+        )
+
+      case 'primarch':
+        if (!primarch) return <div className="view"><p>Not found.</p></div>
+        return (
+          <Dossier
+            primarch={primarch}
+            legion={getPrimarchLegion(primarch)}
+            onOpenLegion={id => go('legion', id)}
+            onOpenLore={id => go('lore', id)}
+            onBack={() => go('galaxy')}
+          />
+        )
+
+      case 'lore':
+        if (!primarch) return <div className="view"><p>Not found.</p></div>
+        return (
+          <LoreView
+            primarch={primarch}
+            onBack={() => go('primarch', primarch.id)}
+          />
+        )
+
+      case 'legion':
+        if (!legion) return <div className="view"><p>Not found.</p></div>
+        return (
+          <LegionView
+            legion={legion}
+            primarch={getLegionPrimarch(legion)}
+            onOpenPrimarch={id => go('primarch', id)}
+            onBack={() => go('galaxy')}
+          />
+        )
+
+      case 'mechanicus':
+        return (
+          <MechanicusArchive
+            forges={DATA.mechanicus}
+            onOpen={id => go('forge', id)}
+          />
+        )
+
+      case 'forge':
+        if (!forge) return <div className="view"><p>Not found.</p></div>
+        return (
+          <ForgeDossier
+            forge={forge}
+            onBack={() => go('mechanicus')}
+          />
+        )
+
+      case 'sororitas':
+        return (
+          <SororitasArchive
+            orders={DATA.sororitas}
+            onOpen={id => go('order', id)}
+          />
+        )
+
+      case 'order':
+        if (!order) return <div className="view"><p>Not found.</p></div>
+        return (
+          <OrderDossier
+            order={order}
+            onBack={() => go('sororitas')}
+          />
+        )
+
+      default:
+        return <div className="view"><p>Unknown view.</p></div>
     }
-    let cancelled = false
-    setLoreLoading(true)
-    loadLore(datasetKey, selected.id)
-      .then((text) => {
-        if (!cancelled) setLore(text)
-      })
-      .finally(() => {
-        if (!cancelled) setLoreLoading(false)
-      })
-    return () => {
-      cancelled = true
-    }
-  }, [datasetKey, selected])
-
-  const parsed = useMemo(() => (lore ? parseLore(lore) : null), [lore])
-
-  const selectEntry = (id: string) =>
-    setSelectedByDataset((prev) => ({ ...prev, [datasetKey]: id }))
-
-  const switchDataset = (key: DatasetKey) => {
-    if (key === datasetKey) return
-    setDatasetKey(key)
-    setQuery('')
   }
 
   return (
-    <main className="astropath">
-      <header className="hero">
-        <h1>Astropath</h1>
-        <p className="subtitle">Lore from the void.</p>
-      </header>
-
-      <section className="browser">
-        <div className="browser-layout">
-          <DatasetNav
-            datasets={DATASETS}
-            activeKey={datasetKey}
-            onSelect={switchDataset}
-          />
-
-          <div className="browser-main">
-            <input
-              className="search"
-              type="search"
-              placeholder={dataset.placeholder}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              autoFocus
-            />
-
-            <div className="browser-grid">
-              <EntryList
-                entries={filtered}
-                emptyLabel={dataset.empty}
-                selectedId={selectedId}
-                onSelect={selectEntry}
-              />
-              <EntryDetail
-                selected={selected}
-                parsed={parsed}
-                loreLoading={loreLoading}
-                placeholder={dataset.detailPlaceholder}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      <Chrome
+        view={nav.view}
+        archive={archiveOf(nav.view)}
+        onHome={handleHome}
+        onArchive={handleArchive}
+        currentLabel={currentLabel}
+      />
+      <main className="app-main">
+        {renderView()}
+      </main>
+      <Tweaks theme={theme} setTheme={setTheme} />
+    </>
   )
 }
-
-export default App
