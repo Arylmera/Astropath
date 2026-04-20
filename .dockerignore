@@ -1,0 +1,7 @@
+.git
+.github
+node_modules
+dist
+deploy
+*.md
+.DS_Store

@@ -1,0 +1,22 @@
+# Astropath — deploy on TrueNAS via Arcane.
+# Install path suggestion: ${App}/Astropath/
+#
+# Pulls the latest image built by .github/workflows/publish-image.yml.
+# Tugtainer on this host watches the container and hot-swaps on new digests.
+
+services:
+  astropath:
+    image: ghcr.io/arylmera/astropath:latest
+    container_name: astropath
+    restart: unless-stopped
+    ports:
+      - "30303:80"
+    labels:
+      # Tugtainer / Watchtower opt-in
+      - "com.centurylinklabs.watchtower.enable=true"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
