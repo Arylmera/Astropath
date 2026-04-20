@@ -149,7 +149,7 @@ const DATA: AstropathData = {
       homeworld: 'Nuceria',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Khorne',
-      portrait: 'assets/portraits/angron.jpg',
+      portrait: 'assets/portraits/angron.webp',
       hue: 8,
       lore: [
         "Angron — the Red Angel — primarch of the World Eaters, the XIIth Legion. Taken as a slave-gladiator on Nuceria, his skull fused with the Butcher's Nails: crude neural implants that drowned every thought in rage.",
