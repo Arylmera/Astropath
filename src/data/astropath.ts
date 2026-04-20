@@ -680,6 +680,7 @@ const DATA: AstropathData = {
       colors: 'Black & white',
       strength: 'Multiple successor chapters',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Raven_Guard',
+      image: 'https://i.pinimg.com/736x/1e/2b/e3/1e2be3172a40ad7f89fd3a0377c6c042.jpg',
       lore: [
         'The XIXth Legion of Corvus Corax. Sons of the shadow and the void — specialists in infiltration, stealth operations, and precision strikes. They do not hold ground; they erase threats before the enemy knows they are there.',
         "At Isstvan V they were almost destroyed in the Drop Site Massacre, betrayed alongside the Iron Hands and Salamanders. Corax rebuilt them with accelerated geneseed from the Emperor himself — a process that produced mutations and haunted him forever.",
