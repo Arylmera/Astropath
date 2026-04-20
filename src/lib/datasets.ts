@@ -34,7 +34,7 @@ export type DatasetConfig = {
 }
 
 const primarchModules = import.meta.glob<RawEntry>(
-  '../assets/primarchs/*.json',
+  '../assets/primarchs/*/data.json',
   { eager: true, import: 'default' },
 )
 const spaceMarineModules = import.meta.glob<RawEntry>(
@@ -56,15 +56,28 @@ const loreLoaders = import.meta.glob<string>('../assets/**/*.md', {
   import: 'default',
 })
 
-// Local portrait assets, keyed by `<datasetDir>/<id>`.
-const portraitUrls = import.meta.glob<string>(
-  '../assets/**/assets/**/portrait.{jpg,jpeg,png,webp,gif}',
-  { eager: true, query: '?url', import: 'default' },
-)
+// Portraits:
+//   - New colocated layout: ../assets/<dataset>/<id>/portrait.*
+//   - Legacy layout:        ../assets/<dataset>/assets/<id>/portrait.*
+const portraitUrls = {
+  ...import.meta.glob<string>(
+    '../assets/*/*/portrait.{jpg,jpeg,png,webp,gif}',
+    { eager: true, query: '?url', import: 'default' },
+  ),
+  ...import.meta.glob<string>(
+    '../assets/**/assets/**/portrait.{jpg,jpeg,png,webp,gif}',
+    { eager: true, query: '?url', import: 'default' },
+  ),
+}
 const portraitByKey = new Map<string, string>()
 for (const [path, url] of Object.entries(portraitUrls)) {
-  const m = path.match(/\/assets\/([^/]+)\/assets\/([^/]+)\/portrait\./)
-  if (m) portraitByKey.set(`${m[1]}/${m[2]}`, url)
+  const legacy = path.match(/\/assets\/([^/]+)\/assets\/([^/]+)\/portrait\./)
+  if (legacy) {
+    portraitByKey.set(`${legacy[1]}/${legacy[2]}`, url)
+    continue
+  }
+  const colocated = path.match(/\/assets\/([^/]+)\/([^/]+)\/portrait\./)
+  if (colocated) portraitByKey.set(`${colocated[1]}/${colocated[2]}`, url)
 }
 
 function portraitFor(datasetKey: DatasetKey, id: string): string | null {
@@ -72,8 +85,10 @@ function portraitFor(datasetKey: DatasetKey, id: string): string | null {
 }
 
 function loreKey(datasetKey: DatasetKey, id: string): string {
-  const dir = datasetKey === 'primarchs' ? 'primarchs' : datasetKey
-  return `../assets/${dir}/${id}.md`
+  if (datasetKey === 'primarchs') {
+    return `../assets/primarchs/${id}/lore.md`
+  }
+  return `../assets/${datasetKey}/${id}.md`
 }
 
 export async function loadLore(
