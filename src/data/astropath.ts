@@ -604,6 +604,7 @@ const DATA: AstropathData = {
       colors: 'Iron & hazard-stripe',
       strength: 'Grand Companies — uncounted',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Iron_Warriors',
+      image: 'https://i.redd.it/w2jzqdk5vtxd1.jpeg',
       lore: [
         'The IVth Legion of Perturabo. The siege-masters of the Great Crusade — no wall they could not breach, no fortress they could not reduce to rubble. They were indispensable and utterly thankless, assigned the grinding garrison work while other Legions won glory.',
         "They turned. In their fury they annihilated Olympia — their own homeworld — and then joined the Warmaster. They directed the Traitor siege of the Imperial Palace and came closer to breaching it than any force since.",
