@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import type { Primarch } from '@/data/types'
+import { loadLore } from '@/lib/datasets'
 
 // ---- lore markdown loader --------------------------------------------------
 
@@ -75,8 +76,7 @@ function useLoreDocument(id: string | null): LoreState {
     let cancelled = false
     _loreCache[id] = { status: 'loading' }
     setState(_loreCache[id])
-    fetch(`assets/lore/${id}.md`)
-      .then(r => r.ok ? r.text() : Promise.reject(r.status))
+    loadLore('primarchs', id)
       .then(text => {
         const parsed = parseLoreMarkdown(text)
         _loreCache[id] = { status: 'ready', sections: parsed }
