@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { polishLore } from "./lib/lore-cleaner.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = resolve(__dirname, "../src/data/space-marines");
+const OUT_DIR = resolve(__dirname, "../src/assets/space-marines");
 
 const API = "https://warhammer40k.fandom.com/api.php";
 

@@ -15,10 +15,14 @@
     "noEmit": true,
 
     /* Linting */
+    "strict": true,
+    "useUnknownInCatchVariables": true,
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["vite.config.ts"]
 }

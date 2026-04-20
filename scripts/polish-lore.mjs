@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 // Polish lore text files.
 //
-// Lore is stored as `src/data/<dataset>/<id>.md` (plain text, `## Heading`
+// Lore is stored as `src/assets/<dataset>/<id>.md` (plain text, `## Heading`
 // markers, bullet lists). This script applies the shared cleaner from
 // scripts/lib/lore-cleaner.mjs to any file or directory passed in.
 //
 // Usage:
-//   node scripts/polish-lore.mjs                  # polish all src/data/**/*.md
+//   node scripts/polish-lore.mjs                  # polish all src/assets/**/*.md
 //   node scripts/polish-lore.mjs path/to/file.md [more.md ...]
-//   node scripts/polish-lore.mjs src/data/primarchs
+//   node scripts/polish-lore.mjs src/assets/primarchs
 
 import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
@@ -17,7 +17,7 @@ import { polishLore } from "./lib/lore-cleaner.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const DEFAULT_DIR = resolve(ROOT, "src/data");
+const DEFAULT_DIR = resolve(ROOT, "src/assets");
 
 function collectMdFiles(path) {
   const st = statSync(path);
