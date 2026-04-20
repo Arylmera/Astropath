@@ -31,16 +31,20 @@ export function EntryDetail({ selected, parsed, loreLoading, placeholder }: Prop
     )
   }
 
-  const portrait = parsed.gallery[0] ?? null
+  const remotePortrait = parsed.gallery[0] ?? null
+  const portraitSrc = selected.portrait ?? remotePortrait?.url ?? null
+  const portraitAlt =
+    (selected.portrait ? selected.title : remotePortrait?.caption) ||
+    selected.title
 
   return (
     <article className="primarch-detail">
       <header className="detail-header">
-        {portrait && (
+        {portraitSrc && (
           <img
             className="portrait"
-            src={portrait.url}
-            alt={portrait.caption || selected.title}
+            src={portraitSrc}
+            alt={portraitAlt}
             loading="lazy"
           />
         )}

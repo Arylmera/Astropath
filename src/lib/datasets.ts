@@ -19,6 +19,7 @@ export type RawEntry = {
 export type Entry = RawEntry & {
   badge: string
   subtitle: string
+  portrait: string | null
 }
 
 export type DatasetKey = 'primarchs' | 'space-marines' | 'admech' | 'sororitas'
@@ -55,6 +56,21 @@ const loreLoaders = import.meta.glob<string>('../data/**/*.md', {
   import: 'default',
 })
 
+// Local portrait assets, keyed by `<datasetDir>/<id>`.
+const portraitUrls = import.meta.glob<string>(
+  '../data/**/assets/**/portrait.{jpg,jpeg,png,webp,gif}',
+  { eager: true, query: '?url', import: 'default' },
+)
+const portraitByKey = new Map<string, string>()
+for (const [path, url] of Object.entries(portraitUrls)) {
+  const m = path.match(/\/data\/([^/]+)\/assets\/([^/]+)\/portrait\./)
+  if (m) portraitByKey.set(`${m[1]}/${m[2]}`, url)
+}
+
+function portraitFor(datasetKey: DatasetKey, id: string): string | null {
+  return portraitByKey.get(`${datasetKey}/${id}`) ?? null
+}
+
 function loreKey(datasetKey: DatasetKey, id: string): string {
   const dir = datasetKey === 'primarchs' ? 'primarchs' : datasetKey
   return `../data/${dir}/${id}.md`
@@ -70,6 +86,7 @@ export async function loadLore(
 }
 
 function buildEntries(
+  datasetKey: DatasetKey,
   modules: Record<string, RawEntry>,
   order: string[],
   decorate: (e: RawEntry) => { badge: string; subtitle: string },
@@ -82,7 +99,11 @@ function buildEntries(
   return order
     .map((id) => byId.get(id))
     .filter((e): e is RawEntry => Boolean(e))
-    .map((e) => ({ ...e, ...decorate(e) }))
+    .map((e) => ({
+      ...e,
+      ...decorate(e),
+      portrait: portraitFor(datasetKey, e.id),
+    }))
 }
 
 function initials(title: string): string {
@@ -94,12 +115,18 @@ function initials(title: string): string {
   return (words[0][0] + (words[1]?.[0] ?? '')).toUpperCase()
 }
 
-const primarchs = buildEntries(primarchModules, primarchsIndex.order, (e) => ({
-  badge: e.legionNumber ?? '—',
-  subtitle: e.legion ?? 'Unknown Legion',
-}))
+const primarchs = buildEntries(
+  'primarchs',
+  primarchModules,
+  primarchsIndex.order,
+  (e) => ({
+    badge: e.legionNumber ?? '—',
+    subtitle: e.legion ?? 'Unknown Legion',
+  }),
+)
 
 const spaceMarines = buildEntries(
+  'space-marines',
   spaceMarineModules,
   spaceMarinesIndex.order,
   (e) => ({
@@ -112,15 +139,20 @@ const spaceMarines = buildEntries(
   }),
 )
 
-const admech = buildEntries(admechModules, admechIndex.order, (e) => ({
+const admech = buildEntries('admech', admechModules, admechIndex.order, (e) => ({
   badge: initials(e.title),
   subtitle: e.category ?? 'Adeptus Mechanicus',
 }))
 
-const sororitas = buildEntries(sororitasModules, sororitasIndex.order, (e) => ({
-  badge: initials(e.title),
-  subtitle: e.category ?? 'Adepta Sororitas',
-}))
+const sororitas = buildEntries(
+  'sororitas',
+  sororitasModules,
+  sororitasIndex.order,
+  (e) => ({
+    badge: initials(e.title),
+    subtitle: e.category ?? 'Adepta Sororitas',
+  }),
+)
 
 export const DATASETS: DatasetConfig[] = [
   {
