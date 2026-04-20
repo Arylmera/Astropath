@@ -316,6 +316,7 @@ const DATA: AstropathData = {
       colors: 'Storm-grey & ochre',
       strength: 'Twelve Great Companies',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Space_Wolves',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8lqG7pz9w_z8kJzRRUPgMiuQV0iAE0BeMqQ&s',
       lore: [
         "The VIth Legion of Leman Russ. Sagas, not doctrines; pack-loyalty, not Codex. The Space Wolves have never adopted Guilliman's reorganisation and still fight as twelve Great Companies under their Wolf Lords.",
         "They are the Emperor's executioners — the Legion sent when the others cannot be trusted, sent to Prospero, sent to unthinkable silences. They pay for that trust with an unrelenting hatred from their fellow Chapters.",
