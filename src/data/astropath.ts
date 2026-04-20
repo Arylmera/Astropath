@@ -335,6 +335,7 @@ const DATA: AstropathData = {
       colors: 'Bone & verdigris',
       strength: 'Seven Plague Companies',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Garde_de_la_Mort',
+      image: 'https://w0.peakpx.com/wallpaper/393/133/HD-wallpaper-warhammer-40k-death-guard-army-guide-nurgle.jpg',
       lore: [
         'The XIVth Legion of Mortarion. Once the Dusk Raiders — warriors of implacable endurance, siege-breakers without peer in the Great Crusade.',
         "They fell to Chaos in the Warp en route to Terra, when a pox of unnatural origin swept their fleet. Mortarion bargained with Nurgle for their survival; Nurgle granted it, and they have been his ever since.",
