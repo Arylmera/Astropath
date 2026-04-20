@@ -642,6 +642,7 @@ const DATA: AstropathData = {
       colors: 'Black & silver',
       strength: 'Ten Clans — full operational strength',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Iron_Hands',
+      image: 'https://www.wargamer.com/wp-content/sites/wargamer/2023/01/warhammer-40k-iron-hands-vs-orks.jpg',
       lore: [
         "The Xth Legion of Ferrus Manus — the Iron Hands. Their creed is simple and brutal: the flesh is weak. Replace it. Every weakness of the body is a failure to be corrected with iron and bionics.",
         "At Isstvan V they watched their primarch die, and something broke in them that has never healed. They withdrew from feeling, from mercy, from the very humanness that makes a warrior more than a weapon.",
