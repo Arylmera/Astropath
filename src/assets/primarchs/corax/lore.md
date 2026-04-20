@@ -231,11 +231,6 @@ The following represents the wargear possessed by Corvus Corax during the late G
 
 *Two Archeotech Pistols
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
-
 ## Trivia
 
 The Latin word corvus means "raven," while corax also translates to "Raven" in Ancient Greek. Corvus corax is the Linnaean binomial species name for the common raven.

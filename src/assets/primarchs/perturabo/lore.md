@@ -339,11 +339,6 @@ Following the massacre on Olympia, Perturabo's humours had become ever more vola
 *Frag Grenades - A Frag Grenade is an anti-personnel grenade commonly used by the military forces of the Imperium of Man. It produces a blast of shrapnel that can shred unarmoured troops. The blast has the tactical advantage of forcing the enemy to duck into cover to avoid damage. In effect, the blast of a Frag Grenade neutralises any movement advantage held by an opposing force by pinning them to their position.
 *Tormentor - Tormentor was a converted Shadowsword super-heavy tank, with additional armour plating on all sides and extended command and control functions. To accommodate the Lord of Iron's scale and his automaton bodyguards, the vehicle's superstructure and engine had been radically overhauled by the Pneumachina. Its main weapons were enhanced, and no more effective a killing machine existed in the Iron Warriors Legion’s vehicle pool.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-
 ## Sources
 
 *Codex: Chaos Space Marines (6th Edition), pg. 22

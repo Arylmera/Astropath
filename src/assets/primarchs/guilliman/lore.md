@@ -727,14 +727,6 @@ However in 2021 Black Library retconned the events of the novels to take place o
 
 This change now places the events of the Plague Wars in circa 012.M42 early in the Indomitus Crusade by the chronology of the original Imperial Calendar.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 16 – The Perfect City
-File:Warhammer 40,000 Grim Dark Lore Part 24 – Dark Gambits
-File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
-File:Warhammer 40,000 Grim Dark Lore Part 39 – Resurrection
-File:Warhammer 40,000 Grim Dark Lore Part 40 – Indomitus
-
 ## See Also
 
 *Ultramar

@@ -271,11 +271,6 @@ The Tome of Fire claims that only when all of these artefacts are recovered by t
 
 *Urdrakule - Urdrakule was a monstrously powerful weapon and Vulkan's most formidable warhammer. This arcane warhammer was capable of spitting great burning arcs of flame from within its core and was strong enough to easily shatter one of the metallic necrodermis arms of Ferrus Manus, once thought unbreakable.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
-
 ## Trivia
 
 The name Vulkan is derived from Vulcan, the Roman god of fire, volcanoes and the forge. Vulcan is often depicted by a blacksmith's hammer.

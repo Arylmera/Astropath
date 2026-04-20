@@ -571,11 +571,6 @@ The true nature of this empyric travel is known only to the primarch himself, bu
 
 *Emperor's Shield - What truly marks Lion El'Jonson out as a warrior of truly singular provenance isn't even his sword, but rather the Emperor's Shield. This auramite shield was once wielded by the Emperor Himself, and aside from its indomitable protective powers it reflects the force of any incoming attacks right back at the Lion's foe with a sonorous boom.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 24 – Dark Gambits
-File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
-
 ## Sources
 
 *Citadel Journal 47, "Angels of Death", pp. 21–25
@@ -608,22 +603,3 @@ File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
 *Luther: First of the Fallen (Novel) by Gav Thorpe, "Tale of the Lion," "Tale of the Book"
 *[https://www.warhammer-community.com/2023/03/23/lion-eljonson-primarch-of-the-dark-angels-returns-to-warhammer-40000/ Warhammer Community - Lion El'Jonson, Primarch of the Dark Angels, Returns to Warhammer 40,000]
 *[https://www.warhammer-community.com/2023/03/29/lion-eljonson-rules-revealed-10000-years-of-rest-havent-dulled-his-epic-combat-skills/?utm_source=CUSTOMERS&utm_medium=email&utm_campaign=GW_29th_March_Lion_ENG_&utm_content=&utm_term= Warhammer Community - Lion El'Jonson Rules Revealed - 10,000 Years of Rest Haven’t Dulled His Epic Combat Skills]
-
-## Gallery
-
-File:LionElJonsonWolfBladeMini.jpg|Primarch Lion El'Jonson wearing the Lion Panopoly, the Lion Helm and wielding the Lion Sword during the Horus Heresy.
-File:LionElJonsonIndomitusMiniDetails1.jpg|Details of Primarch Lion El'Jonson's new Lion Panopoly and his Power Sword Fealty after his awakening in the Era Indomitus of the 41st Millennium.
-File:LionElJonsonIndomitusMiniDetails2.jpg|Details of Primarch Lion El'Jonson's new Lion Panopoly and his various headgear, including the Lion Helm, after his awakening in the Era Indomitus of the 41st Millennium.
-File:LionElJonsonIndomitusMiniDetails3.jpg|Details of Primarch Lion El'Jonson's new Lion Panopoly Artificer Armour as well as his Watchers in the Dark attendants after his awakening in the Era Indomitus of the 41st Millennium.
-File:TheLionVersusAngron.jpg|The Primarch Lion El'Jonson faced off against his brother, the Daemon Primarch Angron of the World Eaters, during the Arks of Omen Campaign of the Era Indomitus.
-
-es:Lion El'Jonson
-Category:L
-Category:E
-Category:Dark Angels
-Category:Characters
-Category:History
-Category:Imperial_Characters
-Category:Imperium
-Category:Primarchs
-Category:Space Marines
