@@ -1,4 +1,3 @@
-Corvus Corax leading his Raven Guard Legion against the Traitor Legion of the World Eaters during the Horus Heresy
 Corvus Corax, also known as the "Raven Lord," "The Liberator," "The Deliverer," "Chooser of the Slain" and the "Shadowed Lord," is the currently missing primarch of the Raven Guard Chapter of Space Marines and its Successor Chapters.
 
 Corax presented a striking countenance, at least when he wished to be seen. His skin was alabaster white and he was possessed of shoulder length hair as black as the feathers of his namesake, the raven.

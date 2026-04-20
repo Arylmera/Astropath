@@ -1,4 +1,3 @@
-Lion El'Jonson of the Dark Angels Legion made during the Great Crusade
 Lion El'Jonson, often times referred to as "the Lion" during his lifetime, known also by the cognomen "The First," and the honourific "Primaris Angelus Mortis," was the primarch of the Ist Legion of Space Marines, the Dark Angels.
 
 Following the events of the Horus Heresy, El'Jonson and his crusading fleet returned to his homeworld of Caliban. Inexplicably, they were fired upon by the Dark Angel forces garrisoned there under the command of his once-trusted mentor and surrogate father, Luther, who had been entrusted with the custodianship of Caliban in the Lion's absence.

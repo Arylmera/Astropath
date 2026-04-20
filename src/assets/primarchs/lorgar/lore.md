@@ -1,4 +1,3 @@
-of the Word Bearers Legion and Chosen of the Chaos Gods during the Great Crusade
 Lorgar, also once called Lorgar Aurelian and the Urizen (Colchisian for "wisest of the wise") before the Horus Heresy, is a Daemon Prince of Chaos Undivided and the primarch of the Word Bearers Traitor Legion.
 
 Always determined to uplift Humanity through spreading his deep belief in the divine, once the Emperor of Mankind rejected his attempts at worship, Lorgar discovered new gods more worthy of his devotion, the Ruinous Powers of Chaos, during his infamous pilgrimage some forty standard years before the start of the Horus Heresy.
@@ -89,8 +88,8 @@ When a city burned or a people were put to death, the deed was done with the sol
 
 ## Great Crusade
 
- - Lorgar Aurelian (center) with two of his brothers: Jaghatai Khan (left) and Rogal Dorn (right)
-Lorgar led his Legion throughout the Great Crusade, as the Imperial Heralds sought to eliminate all blasphemy and heresy within the new Imperium of Man. Ancient texts and icons of other faiths were burned. The construction of vast monuments and cathedrals venerating the Emperor was supervised. The greatest Chaplains of the Imperial Heralds produced enormous works on the divinity and righteousness of the Emperor, and gave grand speeches and sermons to the masses.
+- Lorgar Aurelian (center) with two of his brothers: Jaghatai Khan (left) and Rogal Dorn (right)
+  Lorgar led his Legion throughout the Great Crusade, as the Imperial Heralds sought to eliminate all blasphemy and heresy within the new Imperium of Man. Ancient texts and icons of other faiths were burned. The construction of vast monuments and cathedrals venerating the Emperor was supervised. The greatest Chaplains of the Imperial Heralds produced enormous works on the divinity and righteousness of the Emperor, and gave grand speeches and sermons to the masses.
 
 The progress of the Imperial Heralds was slow in bringing new worlds into Imperial Compliance, but domination of the defeated was complete.
 

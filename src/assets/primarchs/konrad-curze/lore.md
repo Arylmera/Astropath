@@ -1,4 +1,3 @@
-Konrad Curze of the Night Lords Legion. He preferred a different name for himself, the "Night Haunter."
 Konrad Curze, better known as the "Night Haunter," the name he preferred, and sometimes as the "Dark King," the "King of Terrors," and "The Last Judge," was one of the 20 superhuman primarchs created by the Emperor of Mankind in the late 30th Millennium and was the master of the Night Lords Traitor Legion of Heretic Astartes.
 
 Night Haunter was tortured all his life by terrible, dark precognitive visions of the future, and this generated a level of psychic anguish and despair that set him apart from his fellow primarchs. His psyche badly damaged by the difficulties of his early life, Curze never recovered his mental balance and sought only oblivion from the pain of his existence.

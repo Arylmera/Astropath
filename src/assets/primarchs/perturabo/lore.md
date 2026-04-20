@@ -1,4 +1,3 @@
-of the Iron Warriors Legion during the Horus Heresy
 Perturabo, sometimes called the "Lord of Iron," "The Breaker" and "The Hammer of Olympia," is the primarch of the Iron Warriors Traitor Legion, one of the original twenty Space Marine Legions. Weaned on war and intrigue in the strife-ridden courts of his homeworld of Olympia, Perturabo was a grim warrior and master of technological arcana who wielded logic and the mathematics of warfare as keenly as he did a blade and bolter.
 
 The Lord of Iron was taciturn to the point of insult, preferring to harbour his thoughts against the threat of treachery, even amongst his kin. Few would call him friend, but none could fault his ability to wage a campaign and plot the most direct course to victory regardless of the cost and despite the strain put on him and his IVth Legion during the long years of the Great Crusade. His word was as unbreakable as iron.

@@ -1,4 +1,3 @@
-'s sketch of Primarch Jaghatai Khan
 Jaghatai Khan (pronounced Jagg-a-tie KAAN), also known as "The Great Khan," "the Khagan" and "the Warhawk," was the primarch of the V Legion of Space Marines, the White Scars, who led them through the years of the Great Crusade and the Horus Heresy.
 
 Jaghatai fought alongside his White Scars for another 70 standard years following the end of the Heresy, eventually disappearing in 084.M31 into a region of space known as the Maelstrom, a large Warp rift in the Ultima Segmentum that is a smaller counterpart of the Eye of Terror.
