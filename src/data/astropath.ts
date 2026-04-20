@@ -240,6 +240,7 @@ const DATA: AstropathData = {
       colors: 'Blue & gold',
       strength: 'At full Codex strength',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Ultramarines',
+      image: 'https://i.pinimg.com/736x/b5/c8/f5/b5c8f59e4a82f2272076c1f369f09ca4.jpg',
       lore: [
         'One of the strongest and most honoured of all Space Marine Chapters. The Ultramarines were responsible for almost single-handedly holding the Imperium together after the Horus Heresy — and for a thousand successor chapters that have followed them.',
         "Highly-disciplined and courageous warriors, the Ultramarines have remained true to the teachings of Primarch Roboute Guilliman for 10,000 standard years. Of all the thousand and more Chapters in the Imperium, it is the blue-clad Ultramarines that, in the mind of the countless billions of the Emperor's subjects, personify everything the Adeptus Astartes stands for.",
