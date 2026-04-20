@@ -51,7 +51,7 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
             )}
 
             <div className="side-section">
-              <h3>Dossier</h3>
+              <h3>Lexicon</h3>
               <div className="side-list">
                 <div className="row"><span className="k">Founding</span><span className="v">{legion.founding}</span></div>
                 <div className="row"><span className="k">Legion №</span><span className="v">{legion.num}</span></div>

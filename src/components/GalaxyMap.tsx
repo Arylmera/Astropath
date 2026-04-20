@@ -151,7 +151,7 @@ export default function GalaxyMap({ primarchs: allPrimarchs, onOpen }: Props) {
             <text x={cx} y={cy + 92} className="galaxy-core-label galaxy-core-label-sm">Sol · Terra</text>
             {coreHover && (
               <text x={cx} y={cy + 112} className="galaxy-core-label galaxy-core-label-open">
-                Open Dossier →
+                Open Lexicon →
               </text>
             )}
           </g>
@@ -167,8 +167,8 @@ export default function GalaxyMap({ primarchs: allPrimarchs, onOpen }: Props) {
               <g key={p.id}
                 className={`galaxy-node ${isActive ? 'active' : ''}`}
                 onMouseEnter={() => setHoveredId(p.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                onClick={() => setFocusedId(p.id)}
+                onMouseLeave={() => { setFocusedId(p.id); setHoveredId(null) }}
+                onClick={() => onOpen(p.id)}
               >
                 <circle cx={x} cy={y} r="14" className="galaxy-node-ring" />
                 <circle cx={x} cy={y} r={isActive ? 7 : 5} className={`galaxy-node-dot ${cls}`} />
@@ -211,7 +211,7 @@ export default function GalaxyMap({ primarchs: allPrimarchs, onOpen }: Props) {
               </div>
             </div>
             <button className="galaxy-focus-open" onClick={() => onOpen(focus.id)}>
-              Open Dossier →
+              Open Lexicon →
             </button>
           </aside>
         )}
@@ -227,7 +227,7 @@ export default function GalaxyMap({ primarchs: allPrimarchs, onOpen }: Props) {
           </div>
         </div>
 
-        <div className="galaxy-hint">Hover a node · click to focus · open dossier</div>
+        <div className="galaxy-hint">Hover a node · click to focus · open lexicon</div>
       </div>
     </div>
   )
