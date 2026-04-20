@@ -3,7 +3,7 @@ import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = resolve(__dirname, "../src/data/primarchs/assets");
+const OUT_DIR = resolve(__dirname, "../src/assets/primarchs/assets");
 
 const API = "https://warhammer40k.fandom.com/api.php";
 

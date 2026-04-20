@@ -1,7 +1,7 @@
-import primarchsIndex from '../data/primarchs/index.json'
-import spaceMarinesIndex from '../data/space-marines/index.json'
-import admechIndex from '../data/admech/index.json'
-import sororitasIndex from '../data/sororitas/index.json'
+import primarchsIndex from '../assets/primarchs/index.json'
+import spaceMarinesIndex from '../assets/space-marines/index.json'
+import admechIndex from '../assets/admech/index.json'
+import sororitasIndex from '../assets/sororitas/index.json'
 
 export type RawEntry = {
   id: string
@@ -34,36 +34,36 @@ export type DatasetConfig = {
 }
 
 const primarchModules = import.meta.glob<RawEntry>(
-  '../data/primarchs/*.json',
+  '../assets/primarchs/*.json',
   { eager: true, import: 'default' },
 )
 const spaceMarineModules = import.meta.glob<RawEntry>(
-  '../data/space-marines/*.json',
+  '../assets/space-marines/*.json',
   { eager: true, import: 'default' },
 )
 const admechModules = import.meta.glob<RawEntry>(
-  '../data/admech/*.json',
+  '../assets/admech/*.json',
   { eager: true, import: 'default' },
 )
 const sororitasModules = import.meta.glob<RawEntry>(
-  '../data/sororitas/*.json',
+  '../assets/sororitas/*.json',
   { eager: true, import: 'default' },
 )
 
 // Lore markdown is loaded on demand to keep the initial bundle small.
-const loreLoaders = import.meta.glob<string>('../data/**/*.md', {
+const loreLoaders = import.meta.glob<string>('../assets/**/*.md', {
   query: '?raw',
   import: 'default',
 })
 
 // Local portrait assets, keyed by `<datasetDir>/<id>`.
 const portraitUrls = import.meta.glob<string>(
-  '../data/**/assets/**/portrait.{jpg,jpeg,png,webp,gif}',
+  '../assets/**/assets/**/portrait.{jpg,jpeg,png,webp,gif}',
   { eager: true, query: '?url', import: 'default' },
 )
 const portraitByKey = new Map<string, string>()
 for (const [path, url] of Object.entries(portraitUrls)) {
-  const m = path.match(/\/data\/([^/]+)\/assets\/([^/]+)\/portrait\./)
+  const m = path.match(/\/assets\/([^/]+)\/assets\/([^/]+)\/portrait\./)
   if (m) portraitByKey.set(`${m[1]}/${m[2]}`, url)
 }
 
@@ -73,7 +73,7 @@ function portraitFor(datasetKey: DatasetKey, id: string): string | null {
 
 function loreKey(datasetKey: DatasetKey, id: string): string {
   const dir = datasetKey === 'primarchs' ? 'primarchs' : datasetKey
-  return `../data/${dir}/${id}.md`
+  return `../assets/${dir}/${id}.md`
 }
 
 export async function loadLore(
