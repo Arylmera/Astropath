@@ -105,13 +105,6 @@ One of the most physically powerful of the Primarchs, whose skills as an artific
 - **The Medusan Carapace** — Ferrus Manus operated a wide variety of arms and armour, almost all of which were the products of his craft and genius. Never fully satisfied with his work, he was always looking to improve upon it and test new prototype designs, the fruits of his labour later forming the basis of many Space Marine Legion designs such as the early Cataphractii Pattern Terminator Armour. The Medusan Carapace is an exemplar of these armour designs, incorporating servo-mechanisms and a plethora of systems.
 - **Forgebreaker** — Fashioned by his close comrade and later hated enemy, the Primarch Fulgrim of the Emperor's Children Legion, this exquisitely fashioned Thunder Hammer would prove to have a dark infamy of its own and serve the hands of many masters before the Horus Heresy ended.
 
-## Videos
-
-- Warhammer 40,000 Grim Dark Lore Part 13 – Lost and Found
-- Warhammer 40,000 Grim Dark Lore Part 25 – Heresy
-- Warhammer 40,000 Grim Dark Lore Part 26 – Flight of the Eisenstein
-- Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-
 ## Sources
 
 - Deathwatch: First Founding (RPG), pp. 6-13

@@ -409,11 +409,6 @@ From the second he landed on Nostramo, Curze was forced to fend for himself, rel
 
 This constant loneliness was likely the defining cause of Curze's mental instability, constant depression and ultimate death as his inability to empathise and reach out to others made him easy prey for Horus' recruitment. His failure to express his inner demons only drove him further towards the edge and by the time he realised what a monster he had become, it was far too late.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 24 – Dark Gambits
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-
 ## Trivia
 
 Curze's name is inspired by the novel Heart of Darkness by Joseph Conrad, where a former ivory trader in the Belgian Congo named Kurtz rules over the native population as a charismatic demigod even as he degenerates into a barbaric and inhuman tyrant.

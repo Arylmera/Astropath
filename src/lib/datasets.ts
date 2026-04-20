@@ -50,54 +50,47 @@ const sororitasModules = import.meta.glob<RawEntry>(
   { eager: true, import: 'default' },
 )
 
-// Lore markdown is loaded on demand to keep the initial bundle small.
 const loreLoaders = import.meta.glob<string>('../assets/**/*.md', {
   query: '?raw',
   import: 'default',
 })
 
-// Portraits:
-//   - New colocated layout: ../assets/<dataset>/<id>/portrait.*
-//   - Legacy layout:        ../assets/<dataset>/assets/<id>/portrait.*
-const portraitUrls = {
-  ...import.meta.glob<string>(
-    '../assets/*/*/portrait.{jpg,jpeg,png,webp,gif}',
-    { eager: true, query: '?url', import: 'default' },
-  ),
-  ...import.meta.glob<string>(
-    '../assets/**/assets/**/portrait.{jpg,jpeg,png,webp,gif}',
-    { eager: true, query: '?url', import: 'default' },
-  ),
-}
-const portraitByKey = new Map<string, string>()
-for (const [path, url] of Object.entries(portraitUrls)) {
-  const legacy = path.match(/\/assets\/([^/]+)\/assets\/([^/]+)\/portrait\./)
-  if (legacy) {
-    portraitByKey.set(`${legacy[1]}/${legacy[2]}`, url)
-    continue
-  }
-  const colocated = path.match(/\/assets\/([^/]+)\/([^/]+)\/portrait\./)
-  if (colocated) portraitByKey.set(`${colocated[1]}/${colocated[2]}`, url)
-}
+const portraitUrls = import.meta.glob<string>(
+  '../assets/*/*/portrait.{jpg,jpeg,png,webp,gif,svg}',
+  { eager: true, query: '?url', import: 'default' },
+)
+
+const portraitByKey = new Map<string, string>(
+  Object.entries(portraitUrls).flatMap(([path, url]) => {
+    const m = path.match(/\/assets\/([^/]+)\/([^/]+)\/portrait\./)
+    return m ? [[`${m[1]}/${m[2]}`, url] as const] : []
+  }),
+)
 
 function portraitFor(datasetKey: DatasetKey, id: string): string | null {
   return portraitByKey.get(`${datasetKey}/${id}`) ?? null
 }
 
-function loreKey(datasetKey: DatasetKey, id: string): string {
-  if (datasetKey === 'primarchs') {
-    return `../assets/primarchs/${id}/lore.md`
-  }
-  return `../assets/${datasetKey}/${id}.md`
+function lorePath(datasetKey: DatasetKey, id: string): string {
+  return datasetKey === 'primarchs'
+    ? `../assets/primarchs/${id}/lore.md`
+    : `../assets/${datasetKey}/${id}.md`
 }
 
 export async function loadLore(
   datasetKey: DatasetKey,
   id: string,
 ): Promise<string> {
-  const loader = loreLoaders[loreKey(datasetKey, id)]
-  if (!loader) return ''
-  return await loader()
+  return (await loreLoaders[lorePath(datasetKey, id)]?.()) ?? ''
+}
+
+function initials(title: string): string {
+  const words = title
+    .replace(/^(The|Saint|Order of|Sisters of the|Sisters of|Adeptus|Adepta)\s+/i, '')
+    .split(/\s+/)
+    .filter(Boolean)
+  if (!words.length) return '—'
+  return (words[0][0] + (words[1]?.[0] ?? '')).toUpperCase()
 }
 
 function buildEntries(
@@ -114,60 +107,8 @@ function buildEntries(
   return order
     .map((id) => byId.get(id))
     .filter((e): e is RawEntry => Boolean(e))
-    .map((e) => ({
-      ...e,
-      ...decorate(e),
-      portrait: portraitFor(datasetKey, e.id),
-    }))
+    .map((e) => ({ ...e, ...decorate(e), portrait: portraitFor(datasetKey, e.id) }))
 }
-
-function initials(title: string): string {
-  const words = title
-    .replace(/^(The|Saint|Order of|Sisters of the|Sisters of|Adeptus|Adepta)\s+/i, '')
-    .split(/\s+/)
-    .filter(Boolean)
-  if (!words.length) return '—'
-  return (words[0][0] + (words[1]?.[0] ?? '')).toUpperCase()
-}
-
-const primarchs = buildEntries(
-  'primarchs',
-  primarchModules,
-  primarchsIndex.order,
-  (e) => ({
-    badge: e.legionNumber ?? '—',
-    subtitle: e.legion ?? 'Unknown Legion',
-  }),
-)
-
-const spaceMarines = buildEntries(
-  'space-marines',
-  spaceMarineModules,
-  spaceMarinesIndex.order,
-  (e) => ({
-    badge: e.legionNumber ?? '—',
-    subtitle: e.primarch
-      ? e.primarch
-      : e.founding
-        ? `${e.founding} Founding`
-        : (e.allegiance ?? 'Chapter'),
-  }),
-)
-
-const admech = buildEntries('admech', admechModules, admechIndex.order, (e) => ({
-  badge: initials(e.title),
-  subtitle: e.category ?? 'Adeptus Mechanicus',
-}))
-
-const sororitas = buildEntries(
-  'sororitas',
-  sororitasModules,
-  sororitasIndex.order,
-  (e) => ({
-    badge: initials(e.title),
-    subtitle: e.category ?? 'Adepta Sororitas',
-  }),
-)
 
 export const DATASETS: DatasetConfig[] = [
   {
@@ -176,7 +117,10 @@ export const DATASETS: DatasetConfig[] = [
     placeholder: 'Search by name or legion…',
     empty: 'No transmission matches.',
     detailPlaceholder: 'Select a Primarch to read the record.',
-    entries: primarchs,
+    entries: buildEntries('primarchs', primarchModules, primarchsIndex.order, (e) => ({
+      badge: e.legionNumber ?? '—',
+      subtitle: e.legion ?? 'Unknown Legion',
+    })),
   },
   {
     key: 'space-marines',
@@ -184,7 +128,10 @@ export const DATASETS: DatasetConfig[] = [
     placeholder: 'Search by chapter, primarch or legion…',
     empty: 'No chapter matches.',
     detailPlaceholder: 'Select a Chapter to read the record.',
-    entries: spaceMarines,
+    entries: buildEntries('space-marines', spaceMarineModules, spaceMarinesIndex.order, (e) => ({
+      badge: e.legionNumber ?? '—',
+      subtitle: e.primarch ?? (e.founding ? `${e.founding} Founding` : (e.allegiance ?? 'Chapter')),
+    })),
   },
   {
     key: 'admech',
@@ -192,7 +139,10 @@ export const DATASETS: DatasetConfig[] = [
     placeholder: 'Search the Omnissiah\u2019s archives…',
     empty: 'No cogitation matches.',
     detailPlaceholder: 'Select a record to access the archives.',
-    entries: admech,
+    entries: buildEntries('admech', admechModules, admechIndex.order, (e) => ({
+      badge: initials(e.title),
+      subtitle: e.category ?? 'Adeptus Mechanicus',
+    })),
   },
   {
     key: 'sororitas',
@@ -200,6 +150,9 @@ export const DATASETS: DatasetConfig[] = [
     placeholder: 'Search by Order or Saint…',
     empty: 'No hymn matches.',
     detailPlaceholder: 'Select a Sister to read the record.',
-    entries: sororitas,
+    entries: buildEntries('sororitas', sororitasModules, sororitasIndex.order, (e) => ({
+      badge: initials(e.title),
+      subtitle: e.category ?? 'Adepta Sororitas',
+    })),
   },
 ]

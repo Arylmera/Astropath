@@ -1,16 +1,18 @@
-interface GlassIconProps {
-  name: string
-  a: string
-  b: string
-  c: string
+import { useId } from 'react'
+
+type GlassColors = {
+  halo: string
+  gold: string
+  stroke: string
 }
 
-function GlassIcon({ name, a, b, c }: GlassIconProps) {
-  const stroke = c
-  const fill   = '#0a0a0c'
-  const gold   = b
-  const halo   = a
-  const sw     = 3
+interface GlassIconProps extends GlassColors {
+  name: string
+}
+
+function GlassIcon({ name, halo, gold, stroke }: GlassIconProps) {
+  const fill = '#0a0a0c'
+  const sw   = 3
 
   switch (name) {
     case 'skull-and-tears':
@@ -137,44 +139,41 @@ function GlassIcon({ name, a, b, c }: GlassIconProps) {
   }
 }
 
-interface StainedGlassProps {
+interface StainedGlassProps extends GlassColors {
   icon: string
-  a: string
-  b: string
-  c: string
 }
 
-export default function StainedGlass({ icon, a, b, c }: StainedGlassProps) {
-  const uid = icon
+export default function StainedGlass({ icon, halo, gold, stroke }: StainedGlassProps) {
+  const id = useId()
   return (
     <svg viewBox="0 0 600 800" className="glass-svg" preserveAspectRatio="xMidYMid slice">
       <defs>
-        <clipPath id={`arch-${uid}`}>
+        <clipPath id={`arch-${id}`}>
           <path d="M 40 800 L 40 260 A 260 260 0 0 1 560 260 L 560 800 Z" />
         </clipPath>
-        <linearGradient id={`glow-${uid}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0"    stopColor={a} stopOpacity="1" />
-          <stop offset="0.55" stopColor={b} stopOpacity="0.95" />
-          <stop offset="1"    stopColor="#000" stopOpacity="1" />
+        <linearGradient id={`glow-${id}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0"    stopColor={halo}   stopOpacity="1" />
+          <stop offset="0.55" stopColor={gold}   stopOpacity="0.95" />
+          <stop offset="1"    stopColor="#000"   stopOpacity="1" />
         </linearGradient>
       </defs>
 
       <rect width="600" height="800" fill="#101014" />
-      <g clipPath={`url(#arch-${uid})`}>
-        <rect width="600" height="800" fill={`url(#glow-${uid})`} />
+      <g clipPath={`url(#arch-${id})`}>
+        <rect width="600" height="800" fill={`url(#glow-${id})`} />
         <g transform="translate(300 340)" opacity="0.45">
           {Array.from({ length: 16 }, (_, i) => {
             const ang = (i / 16) * 360
             return (
               <rect key={i} x="-2" y="-260" width="4" height="260"
-                fill={c} opacity="0.35" transform={`rotate(${ang})`} />
+                fill={stroke} opacity="0.35" transform={`rotate(${ang})`} />
             )
           })}
-          <circle r="130" fill="none" stroke={c} strokeOpacity="0.4" strokeWidth="1" />
-          <circle r="70"  fill="none" stroke={c} strokeOpacity="0.4" strokeWidth="1" />
+          <circle r="130" fill="none" stroke={stroke} strokeOpacity="0.4" strokeWidth="1" />
+          <circle r="70"  fill="none" stroke={stroke} strokeOpacity="0.4" strokeWidth="1" />
         </g>
         <g transform="translate(300 380)">
-          <GlassIcon name={icon} a={a} b={b} c={c} />
+          <GlassIcon name={icon} halo={halo} gold={gold} stroke={stroke} />
         </g>
         <path d="M 40 800 L 40 260 A 260 260 0 0 1 560 260 L 560 800"
           fill="none" stroke="#07070a" strokeWidth="10" />

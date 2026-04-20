@@ -22,19 +22,21 @@ export default function SororitasArchive({ orders, onOpen }: Props) {
       </div>
 
       <div className="sor-nave">
-        {orders.map(o => (
+        {orders.map(o => {
+          const [halo, gold, stroke] = o.glass
+          return (
           <article
             key={o.id}
             className="sor-panel"
             style={{
-              '--glass-a': o.glass[0],
-              '--glass-b': o.glass[1],
-              '--glass-c': o.glass[2],
+              '--glass-a': halo,
+              '--glass-b': gold,
+              '--glass-c': stroke,
             } as React.CSSProperties}
             onClick={() => onOpen(o.id)}
           >
             <div className="sor-panel-glass">
-              <StainedGlass icon={o.icon} a={o.glass[0]} b={o.glass[1]} c={o.glass[2]} />
+              <StainedGlass icon={o.icon} halo={halo} gold={gold} stroke={stroke} />
             </div>
             <div className="sor-panel-plate">
               <div className="sor-panel-matriarch">Saint · {o.matriarch}</div>
@@ -44,7 +46,8 @@ export default function SororitasArchive({ orders, onOpen }: Props) {
             </div>
             <div className="sor-panel-rule" />
           </article>
-        ))}
+          )
+        })}
       </div>
 
       <div className="sor-floor-rule" />
@@ -54,6 +57,10 @@ export default function SororitasArchive({ orders, onOpen }: Props) {
         <span>In His Name we Burn</span>
         <span>·</span>
         <span>VI Orders of the Six Daughters</span>
+        <span>·</span>
+        <a href="https://github.com/Arylmera/astropath" target="_blank" rel="noopener noreferrer" className="sor-footer-link">
+          github.com/Arylmera/astropath
+        </a>
       </div>
     </div>
   )

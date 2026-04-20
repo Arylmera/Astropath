@@ -609,13 +609,6 @@ After Lorgar turned fully to the worship of the Chaos Gods in the wake of his pi
 
 *Frag Grenades- A Frag Grenade is an anti-personnel grenade commonly used by the military forces of the Imperium of Man. It produces a blast of shrapnel that can shred unarmoured troops. The blast has the tactical advantage of forcing the enemy to duck into cover to avoid damage. In effect, the blast of a Frag Grenade neutralises any movement advantage held by an opposing force by pinning them to their position.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 15 – Bearer of the Word
-File:Warhammer 40,000 Grim Dark Lore Part 16 – The Perfect City
-File:Warhammer 40,000 Grim Dark Lore Part 20 – Serpent in the Garden
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-
 ## Trivia
 
 One of Lorgar's titles, that of [https://en.wikipedia.org/wiki/Urizen Urizen], refers to the embodiment of conventional law and reason found in the complex mythology created by the [https://en.wikipedia.org/wiki/Romanticism Romantic] English poet and painter [https://en.wikipedia.org/wiki/William_Blake William Blake].

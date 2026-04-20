@@ -620,14 +620,6 @@ Some of his weapons are actually manifestations of Fulgrim's sheer will, others 
 
 Those of the Emperor's Children who have been lucky enough to observe Fulgrim wield this fine but unadorned blade with quicksilver speed say that it bears a great resemblance to a weapon once given to him by someone of great importance many millennia past...
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 22 – Traitors
-File:Warhammer 40,000 Grim Dark Lore Part 25 – Heresy
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
-
 ## Canon Conflict
 
 The Index Astartes I originally claimed that Fulgrim was not raised to Daemon Prince status until after the end of the Horus Heresy.

@@ -595,13 +595,6 @@ He used this empathic power to calm the other child slaves in the caves of Nucer
 
 *Samni'arius - Samni'arius is a Daemonsword that Angron wields in the Era Indomitus alongside his chainaxe Spinegrinder. This Daemonic sword is of prodigious size and contains the essence of a powerful Slaaneshi Daemon named Samni'arius, whose gladiatorial posturing offended the Daemon Primarch enough for him to administer the beating of a lifetime using nothing more than an unworked iron bar -- forging the new blade that he forced Samni'arius into in the process.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 22 – Traitors
-File:Warhammer 40,000 Grim Dark Lore Part 25 – Heresy
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-
 ## Sources
 
 *Angron: The Red Angel (Novel) by David Guymer, Chs. 4-5, 7-10, 17-20

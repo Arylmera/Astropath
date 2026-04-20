@@ -552,25 +552,6 @@ The reach of the Astronomican is said to be around 70,000 light years, which by 
 
 According to some sources, the decaying Emperor is a cause of the Astronomican's slowly weakening intensity. Presumably, this would progressively affect Warp navigation over the centuries in the outer limits of the Imperium.
 
-## Videos
-
-Ave Imperator- His Angels - Warhammer 40,000
-File:Warhammer 40,000 Grim Dark Lore Part 4 – Rise of the Emperor
-File:Warhammer 40,000 Grim Dark Lore Part 5 – Unity
-File:Warhammer 40,000 Grim Dark Lore Part 6 – Lords of Mars
-File:Warhammer 40,000 Grim Dark Lore Part 8 – Imperium
-File:Warhammer 40,000 Grim Dark Lore Part 10 – Gods and Daemons
-File:Warhammer 40,000 Grim Dark Lore Part 11 – Great Crusade Begins
-File:Warhammer 40,000 Grim Dark Lore Part 12 – The Son of Strife
-File:Warhammer 40,000 Grim Dark Lore Part 17 – Triumph at Ullanor
-File:Warhammer 40,000 Grim Dark Lore Part 18 – Return to Terra
-File:Warhammer 40,000 Grim Dark Lore Part 19 – Council of Nikaea
-File:Warhammer 40,000 Grim Dark Lore Part 23 – Folly of Magnus
-File:Warhammer 40,000 Grim Dark Lore Part 28 – Requiem for a Dream
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-File:Warhammer 40,000 Grim Dark Lore Part 30 – Imperium Invictus
-File:Warhammer 40,000 Grim Dark Lore Part 35 – Age of Apostasy
-
 ## Sources
 
 *Codex: Adeptus Custodes (8th Edition), pg. 9

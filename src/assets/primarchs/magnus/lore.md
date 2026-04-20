@@ -381,17 +381,6 @@ Known shards of Magnus the Red include:
 
 * Crown of the Crimson King - The blazing halo of psychic power that plays around Magnus' horns protects both his mind and body from harm. This great horned crown that adorns the Crimson King's head exudes an aura of protective Warp energy, shielding his physical and mental essence. The futility of defying Magnus' wrath becomes clear when enemy fire dissipates harmlessly before striking him; psychic bolts fizzle into innocuous sparks and gargantuan chainswords grind to a halt against this aetheric barrier.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 14 – A Thousand Sons
-File:Warhammer 40,000 Grim Dark Lore Part 19 – Council of Nikaea
-File:Warhammer 40,000 Grim Dark Lore Part 21 – Horus Falling
-File:Warhammer 40,000 Grim Dark Lore Part 22 – Traitors
-File:Warhammer 40,000 Grim Dark Lore Part 23 – Folly of Magnus
-File:Warhammer 40,000 Grim Dark Lore Part 24 – Dark Gambits
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-File:Warhammer 40,000 Grim Dark Lore Part 40 – Indomitus
-
 ## Canon Conflict
 
 In Magnus the Red: Master of Prospero, Magnus puts his date of discovery by the Emperor at 840.M30. This is contradictory to another account.

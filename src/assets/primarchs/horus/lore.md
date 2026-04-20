@@ -405,19 +405,6 @@ And so Ezekyle Abaddon became something more than he had been, something more th
 *Worldbreaker - Worldbreaker was a Power Maul the size of a mortal man marked out with the Imperial Aquila at the base of its grip. As well as being a weapon capable of shattering armoured ceramite, it was also a signifier of Horus' rank as the Warmaster of the Imperium. It is said to have been created by the hand of the Emperor Himself and presented as a gift to his favoured son on the day Horus was raised to become the Warmaster and the Emperor announced that he was returning to Terra.
 *Warmaster's Talon - The Warmaster's Talon is a unique Lightning Claw which incorporated a baroquely styled twin-Bolter that was a precursor of a modern Storm Bolter. The Talon had long been Horus' favoured weapon. Some apocryphal sources claim it was an antediluvian relic that was found deep within the planet Cthonia, and was a product of Mankind's Dark Age of Technology.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 12 – The Son of Strife
-File:Warhammer 40,000 Grim Dark Lore Part 17 – Triumph at Ullanor
-File:Warhammer 40,000 Grim Dark Lore Part 20 – Serpent in the Garden
-File:Warhammer 40,000 Grim Dark Lore Part 21 – Horus Falling
-File:Warhammer 40,000 Grim Dark Lore Part 22 – Traitors
-File:Warhammer 40,000 Grim Dark Lore Part 24 – Dark Gambits
-File:Warhammer 40,000 Grim Dark Lore Part 25 – Heresy
-File:Warhammer 40,000 Grim Dark Lore Part 27 – Massacre
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-File:Warhammer 40,000 Grim Dark Lore Part 30 – Imperium Invictus
-
 ## Sources
 
 *Codex: Chaos Space Marines (6th Edition), pp. 6, 8-12, 14, 20, 23, 40, 48, 57, 62, 69

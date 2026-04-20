@@ -24,21 +24,17 @@ export type ParsedLore = {
 const SKIP_SECTIONS = new Set(['gallery', 'videos', 'sources'])
 
 function fileUrl(file: string): string {
-  const clean = file.replace(/\s+/g, '_')
-  return `https://warhammer40k.fandom.com/wiki/Special:FilePath/${encodeURIComponent(clean)}`
+  return `https://warhammer40k.fandom.com/wiki/Special:FilePath/${encodeURIComponent(file.replace(/\s+/g, '_'))}`
 }
 
 function parseFileLine(line: string): GalleryItem | null {
   const m = line.match(/^File:([^|]+)(?:\|(.+))?$/)
   if (!m) return null
   const file = m[1].trim()
-  const caption = (m[2] ?? '').trim()
-  return { file, caption, url: fileUrl(file) }
+  return { file, caption: (m[2] ?? '').trim(), url: fileUrl(file) }
 }
 
 export function parseLore(lore: string): ParsedLore {
-  const rawLines = lore.split('\n')
-
   const sections: LoreSection[] = []
   const gallery: GalleryItem[] = []
   const categories: string[] = []
@@ -46,56 +42,43 @@ export function parseLore(lore: string): ParsedLore {
   const videos: string[] = []
 
   let current: LoreSection = { heading: null, blocks: [] }
-  let currentList: string[] | null = null
   let currentKey = ''
+  let pendingList: string[] | null = null
 
-  const flushList = () => {
-    if (currentList && currentList.length) {
-      current.blocks.push({ type: 'ul', items: currentList })
-    }
-    currentList = null
+  function flushList() {
+    if (pendingList?.length) current.blocks.push({ type: 'ul', items: pendingList })
+    pendingList = null
   }
 
-  const pushSection = () => {
+  function commitSection() {
     flushList()
-    if (current.heading !== null || current.blocks.length) {
+    const isSkip = current.heading !== null && SKIP_SECTIONS.has(currentKey)
+    if (!isSkip && (current.heading !== null || current.blocks.length)) {
       sections.push(current)
     }
     current = { heading: null, blocks: [] }
   }
 
-  for (const rawLine of rawLines) {
+  for (const rawLine of lore.split('\n')) {
     const line = rawLine.trim()
-    if (!line) {
-      flushList()
-      continue
-    }
+    if (!line) { flushList(); continue }
 
-    // Headings
-    const h = line.match(/^##\s+(.+?)\s*$/)
-    if (h) {
-      pushSection()
-      const heading = h[1].trim()
+    const heading = line.match(/^##\s+(.+?)\s*$/)?.[1]
+    if (heading) {
+      commitSection()
       currentKey = heading.toLowerCase()
       current = { heading, blocks: [] }
       continue
     }
 
-    // Categories (trailing)
-    const cat = line.match(/^Category:(.+)$/)
-    if (cat) {
-      const name = cat[1].replace(/_/g, ' ').trim()
-      // Skip single-letter alphabetical sort-key categories (e.g. "L" for Lorgar)
-      if (name.length > 1) categories.push(name)
+    const category = line.match(/^Category:(.+)$/)?.[1]?.replace(/_/g, ' ').trim()
+    if (category) {
+      if (category.length > 1) categories.push(category)
       continue
     }
 
-    // Interwiki prefixes like "es:Foo", "de:Bar"
-    if (/^[a-z]{2,3}:[A-Z]/.test(line) && !line.startsWith('File:')) {
-      continue
-    }
+    if (/^[a-z]{2,3}:[A-Z]/.test(line) && !line.startsWith('File:')) continue
 
-    // Files (gallery images or video thumbs)
     if (line.startsWith('File:')) {
       const item = parseFileLine(line)
       if (item) {
@@ -108,34 +91,20 @@ export function parseLore(lore: string): ParsedLore {
       continue
     }
 
-    // Bullets
     if (line.startsWith('*')) {
       const item = line.replace(/^\*+\s*/, '').trim()
       if (!item) continue
-      if (currentKey === 'sources') {
-        sources.push(item)
-        continue
-      }
+      if (currentKey === 'sources') { sources.push(item); continue }
       if (SKIP_SECTIONS.has(currentKey)) continue
-      if (!currentList) currentList = []
-      currentList.push(item)
+      ;(pendingList ??= []).push(item)
       continue
     }
 
-    // Plain paragraph — skip if inside gallery/videos/sources
     if (SKIP_SECTIONS.has(currentKey)) continue
-
     flushList()
     current.blocks.push({ type: 'p', text: line })
   }
 
-  pushSection()
-
-  // Drop sections we handled specially
-  const cleanSections = sections.filter((s) => {
-    if (s.heading && SKIP_SECTIONS.has(s.heading.toLowerCase())) return false
-    return s.heading !== null || s.blocks.length > 0
-  })
-
-  return { sections: cleanSections, gallery, categories, sources, videos }
+  commitSection()
+  return { sections, gallery, categories, sources, videos }
 }

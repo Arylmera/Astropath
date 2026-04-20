@@ -823,12 +823,6 @@ Thus, when Horus brought civil war to the fledgling Imperium, few looked to the 
 
 *Sojutsu Pattern Voidbike - The Sojutsu Pattern Voidbike, the favoured mount of the Great Khan, is an early prototype Jetbike that predated the more common Scimitar Pattern Jetbike in use with the Legiones Astartes. During initial trials its thrusters were capable of providing sufficient thrust to grant the bike limited periods of true flight, and even some manoeuvrability in deep space, and it was classed by the Logisticae Imperialis as an ultralight fighter craft instead of a Jetbike.
 
-## Videos
-
-File:Warhammer 40,000 Grim Dark Lore Part 29 – The Siege
-File:Warhammer 40,000 Grim Dark Lore Part 30 – Imperium Invictus
-File:Warhammer 40,000 Grim Dark Lore Part 31 – The Age of Rebirth
-
 ## Sources
 
 *Codex Adeptus Astartes - Space Marines (8th Edition) "The Fate of the Great Khan," "Victories of the Khans," pp. 33-34
