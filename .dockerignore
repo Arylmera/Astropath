@@ -2,6 +2,6 @@
 .github
 node_modules
 dist
-deploy
+deploy/docker-compose.yml
 *.md
 .DS_Store
