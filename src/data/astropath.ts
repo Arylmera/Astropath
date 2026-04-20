@@ -276,6 +276,7 @@ const DATA: AstropathData = {
       colors: 'Crimson & gold',
       strength: 'Scarred by Hive Fleet Leviathan',
       source: 'https://wh40k-fr.lexicanum.com/wiki/Anges_Sanglants',
+      image: 'https://www.loadeddice.uk/cdn/shop/collections/warhammer-40-000-blood-angels-hd-wallpaper-preview.jpg?v=1682805735&width=728',
       lore: [
         'The IXth Legion — the Angels of Baal. The noblest warriors of the Adeptus Astartes and heirs to the greatest tragedy of its gene-seed: the twin curses of the Red Thirst and the Black Rage.',
         "Those curses are the shadow cast by their primarch's death. Sanguinius fell defending the Emperor, and every Blood Angel who survives long enough feels the echo of that final battle in his own flesh.",
