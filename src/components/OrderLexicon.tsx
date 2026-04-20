@@ -7,11 +7,12 @@ interface Props {
 }
 
 export default function OrderLexicon({ order, onBack }: Props) {
+  const [halo, gold, stroke] = order.glass
   return (
     <div className="view lexicon order-lexicon">
       <div className="lexicon-hero">
         <div className="lexicon-portrait order-portrait">
-          <StainedGlass icon={order.icon} a={order.glass[0]} b={order.glass[1]} c={order.glass[2]} />
+          <StainedGlass icon={order.icon} halo={halo} gold={gold} stroke={stroke} />
           <div className="lexicon-corner tl" />
           <div className="lexicon-corner tr" />
           <div className="lexicon-portrait-meta">
