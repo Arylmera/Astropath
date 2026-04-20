@@ -1,0 +1,13 @@
+Morvenn Vahl is the Abbess Sanctorum of the Adepta Sororitas, one of the High Lords of Terra, and the most powerful living temporal authority within the Sisterhood. She is renowned as a warrior, strategist and uncompromising defender of the Imperial Creed, embodying the fusion of faith, discipline and martial authority that defines the Adepta Sororitas.
+
+Raised within the strict devotional culture of the Sororitas, Vahl earned distinction through relentless service, personal austerity and a refusal to demand of others what she would not endure herself. Her rise through the ranks marked her as a commander of unusual resolve, one who combined spiritual conviction with practical battlefield judgement.
+
+As Abbess Sanctorum, Morvenn Vahl oversees the great convents, the Orders Militant and the wider interests of the Sisterhood across the Imperium. Her office places her at the heart of Imperial politics, but she is depicted less as a courtly schemer than as a stern reformer who expects clarity of purpose, doctrinal purity and active service from those beneath her.
+
+Vahl is especially associated with the difficult era following the Great Rift, when the Imperium was fractured by warp storms, invasion and internal crisis. In that age, the Adepta Sororitas did not simply guard shrines and purge heretics; they also acted as stabilising agents of Imperial authority on worlds where civil order, faith and command structures had collapsed. Morvenn Vahl's leadership reflects that broader role.
+
+Unlike many ecclesiastical figures whose power is expressed through ceremony alone, Vahl leads from the front. She is famed for entering battle in the Paragon Warsuit known as Purgator Mirabilis, striking at enemy leaders and rallying the faithful through personal example. This reinforces one of the central Sororitas themes: authority is sanctified through sacrifice, not comfort.
+
+In lore terms, Morvenn Vahl is important because she gives the Adepta Sororitas a major contemporary figure in the wider Imperial narrative. Older Sororitas history is often anchored in saints, founders and martyrs such as Alicia Dominica or Saint Katherine. Vahl, by contrast, represents living command in the current age of the Imperium, linking the ancient traditions of the Sisterhood to its modern wars.
+
+Her character also highlights a useful contrast inside the faction. Saint Celestine represents miracle, transcendence and divine intervention. Morvenn Vahl represents discipline, command, institution and the hard burden of governing a militant faith across a collapsing empire. Together, they show the two strongest faces of Sororitas identity: sanctity and steel.

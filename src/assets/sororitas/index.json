@@ -1,9 +1,11 @@
 {
   "fetchedAt": "2026-04-19T17:47:26.327Z",
   "source": "Warhammer 40k Fandom Wiki (CC-BY-SA)",
-  "count": 17,
+  "count": 20,
   "order": [
     "overview",
+    "abbess-sanctorum",
+    "morvenn-vahl",
     "ecclesiarchy",
     "order-ebon-chalice",
     "order-fiery-heart",
@@ -18,6 +20,7 @@
     "silvana",
     "living-saint",
     "canoness",
+    "battle-sister",
     "sisters-silence",
     "sisters-battle"
   ]
