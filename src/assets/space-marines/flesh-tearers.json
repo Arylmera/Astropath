@@ -5,6 +5,11 @@
   "primarch": "Sanguinius",
   "allegiance": "Loyalist",
   "title": "Flesh Tearers",
+  "homeworld": "Cretacia",
+  "fortressMonastery": "Blood Reaper (vaisseau amiral)",
+  "colors": ["Rouge sang", "Noir"],
+  "battleCry": "None shall stay our wrath!",
+  "specialty": "Assaut berserk, Rage Noire sévère, guerriers frénétiques",
   "page": "Flesh_Tearers",
-  "source": "https://warhammer40k.fandom.com/wiki/Flesh_Tearers"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/D%C3%A9chireurs_de_Chair"
 }

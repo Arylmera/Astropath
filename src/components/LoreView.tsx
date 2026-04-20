@@ -170,7 +170,7 @@ export default function LoreView({ primarch, onBack }: Props) {
           </div>
         </div>
 
-        <button className="back-btn lore-mast-back" onClick={onBack}>← Back to dossier</button>
+        <button className="back-btn lore-mast-back" onClick={onBack}>← Back to lexicon</button>
 
         <div className="lore-mast-body">
           <div className="lore-mast-numeral" aria-hidden>{primarch.roman}</div>
@@ -237,7 +237,7 @@ export default function LoreView({ primarch, onBack }: Props) {
           </footer>
           <div className="lore-article-back">
             <button className="back-btn" onClick={onBack}>
-              ← Return to {primarch.name.replace(/^The\s+/, '')} dossier
+              ← Return to {primarch.name.replace(/^The\s+/, '')} lexicon
             </button>
           </div>
         </article>

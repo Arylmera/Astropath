@@ -28,6 +28,7 @@ export interface Legion {
   founding: string
   colors: string
   strength: string
+  source?: string
   lore: string[]
 }
 

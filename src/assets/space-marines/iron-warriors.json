@@ -5,6 +5,11 @@
   "primarch": "Perturabo",
   "allegiance": "Traitor",
   "title": "Iron Warriors",
+  "homeworld": "Olympia (détruite)",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Fer", "Argent", "Jaune et noir (marques d'avertissement)"],
+  "battleCry": "Iron within, Iron without!",
+  "specialty": "Guerre de siège, artillerie lourde, fortification",
   "page": "Iron_Warriors",
-  "source": "https://warhammer40k.fandom.com/wiki/Iron_Warriors"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Guerriers_de_Fer"
 }

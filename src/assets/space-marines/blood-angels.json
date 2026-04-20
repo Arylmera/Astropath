@@ -5,6 +5,11 @@
   "primarch": "Sanguinius",
   "allegiance": "Loyalist",
   "title": "Blood Angels",
+  "homeworld": "Baal",
+  "fortressMonastery": "Arx Angelicum",
+  "colors": ["Rouge sang", "Or"],
+  "battleCry": "For the Emperor and Sanguinius! Death! Death! Death!",
+  "specialty": "Assaut, combat rapproché, Rage Noire",
   "page": "Blood_Angels",
-  "source": "https://warhammer40k.fandom.com/wiki/Blood_Angels"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Anges_Sanglants"
 }

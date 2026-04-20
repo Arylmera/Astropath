@@ -5,6 +5,11 @@
   "primarch": "Konrad Curze",
   "allegiance": "Traitor",
   "title": "Night Lords",
+  "homeworld": "Nostramo (détruite)",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Bleu nuit", "Éclairs d'or"],
+  "battleCry": "Ave Dominus Nox!",
+  "specialty": "Terreur, guerre psychologique, sabotage",
   "page": "Night_Lords",
-  "source": "https://warhammer40k.fandom.com/wiki/Night_Lords"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Seigneurs_de_la_Nuit"
 }

@@ -5,13 +5,13 @@ import DATA from '@/data/astropath'
 import Chrome from '@/components/Chrome'
 import Tweaks from '@/components/Tweaks'
 import GalaxyMap from '@/components/GalaxyMap'
-import Dossier from '@/components/Dossier'
+import Lexicon from '@/components/Lexicon'
 import LegionView from '@/components/LegionView'
 import LoreView from '@/components/LoreView'
 import MechanicusArchive from '@/components/MechanicusArchive'
-import ForgeDossier from '@/components/ForgeDossier'
+import ForgeLexicon from '@/components/ForgeLexicon'
 import SororitasArchive from '@/components/SororitasArchive'
-import OrderDossier from '@/components/OrderDossier'
+import OrderLexicon from '@/components/OrderLexicon'
 
 const NAV_KEY   = 'astropath.nav'
 const THEME_KEY = 'astropath.theme'
@@ -89,7 +89,7 @@ export default function App() {
       case 'primarch':
         if (!primarch) return <div className="view"><p>Not found.</p></div>
         return (
-          <Dossier
+          <Lexicon
             primarch={primarch}
             legion={getPrimarchLegion(primarch)}
             onOpenLegion={id => go('legion', id)}
@@ -129,7 +129,7 @@ export default function App() {
       case 'forge':
         if (!forge) return <div className="view"><p>Not found.</p></div>
         return (
-          <ForgeDossier
+          <ForgeLexicon
             forge={forge}
             onBack={() => go('mechanicus')}
           />
@@ -146,7 +146,7 @@ export default function App() {
       case 'order':
         if (!order) return <div className="view"><p>Not found.</p></div>
         return (
-          <OrderDossier
+          <OrderLexicon
             order={order}
             onBack={() => go('sororitas')}
           />

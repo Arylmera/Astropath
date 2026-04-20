@@ -5,6 +5,11 @@
   "primarch": "Fulgrim",
   "allegiance": "Traitor",
   "title": "Emperor's Children",
+  "homeworld": "Chemos",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Violet", "Or"],
+  "battleCry": "None shall find us wanting!",
+  "specialty": "Perfection au combat, armes soniques, dédié à Slaanesh",
   "page": "Emperor's_Children",
-  "source": "https://warhammer40k.fandom.com/wiki/Emperor's_Children"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Enfants_de_l%27Empereur"
 }

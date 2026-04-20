@@ -5,6 +5,11 @@
   "primarch": "Rogal Dorn",
   "allegiance": "Loyalist",
   "title": "Crimson Fists",
+  "homeworld": "Rynn's World",
+  "fortressMonastery": "Arx Tyrannus",
+  "colors": ["Bleu", "Poings cramoisis"],
+  "battleCry": "Send me thy worst!",
+  "specialty": "Combat défensif, résilience, contre-attaque",
   "page": "Crimson_Fists",
-  "source": "https://warhammer40k.fandom.com/wiki/Crimson_Fists"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Poings_Cramoisis"
 }

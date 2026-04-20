@@ -149,7 +149,7 @@ const DATA: AstropathData = {
       homeworld: 'Nuceria',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Khorne',
-      portrait: 'assets/portraits/angron.jpg',
+      portrait: 'assets/portraits/angron.webp',
       hue: 8,
       lore: [
         "Angron — the Red Angel — primarch of the World Eaters, the XIIth Legion. Taken as a slave-gladiator on Nuceria, his skull fused with the Butcher's Nails: crude neural implants that drowned every thought in rage.",
@@ -239,6 +239,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Blue & gold',
       strength: 'At full Codex strength',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Ultramarines',
       lore: [
         'One of the strongest and most honoured of all Space Marine Chapters. The Ultramarines were responsible for almost single-handedly holding the Imperium together after the Horus Heresy — and for a thousand successor chapters that have followed them.',
         "Highly-disciplined and courageous warriors, the Ultramarines have remained true to the teachings of Primarch Roboute Guilliman for 10,000 standard years. Of all the thousand and more Chapters in the Imperium, it is the blue-clad Ultramarines that, in the mind of the countless billions of the Emperor's subjects, personify everything the Adeptus Astartes stands for.",
@@ -256,6 +257,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Sea-green & black',
       strength: 'Fractured — reborn as Black Legion',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Fils_d%27Horus',
       lore: [
         'Originally the Luna Wolves, the XVIth Legion was the instrument of the Warmaster and the first among equals during the Great Crusade. They were renamed the Sons of Horus after Ullanor.',
         "When their primarch fell to Chaos they followed him without question. They bled the Imperium at Isstvan, on the route to Terra, and at the final Siege itself. The Legion died when Horus died.",
@@ -273,6 +275,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Crimson & gold',
       strength: 'Scarred by Hive Fleet Leviathan',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Anges_Sanglants',
       lore: [
         'The IXth Legion — the Angels of Baal. The noblest warriors of the Adeptus Astartes and heirs to the greatest tragedy of its gene-seed: the twin curses of the Red Thirst and the Black Rage.',
         "Those curses are the shadow cast by their primarch's death. Sanguinius fell defending the Emperor, and every Blood Angel who survives long enough feels the echo of that final battle in his own flesh.",
@@ -290,6 +293,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Crimson & gold',
       strength: 'Cabals of Rubricae + sorcerers',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Mille_Fils',
       lore: [
         "The XVth Legion of Magnus the Red. Scholars, sorcerers, seekers of forbidden knowledge; their library on Prospero was once the greatest in the Imperium.",
         "After the Council of Nikaea forbade the use of sorcery, Magnus broke the decree. The Space Wolves were unleashed upon Prospero; in the aftermath, Magnus' desperate sorcery turned most of his Legion to dust inside their own armour — the Rubricae, still marching, still loyal, forever silent.",
@@ -307,6 +311,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Storm-grey & ochre',
       strength: 'Twelve Great Companies',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Space_Wolves',
       lore: [
         "The VIth Legion of Leman Russ. Sagas, not doctrines; pack-loyalty, not Codex. The Space Wolves have never adopted Guilliman's reorganisation and still fight as twelve Great Companies under their Wolf Lords.",
         "They are the Emperor's executioners — the Legion sent when the others cannot be trusted, sent to Prospero, sent to unthinkable silences. They pay for that trust with an unrelenting hatred from their fellow Chapters.",
@@ -324,6 +329,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Bone & verdigris',
       strength: 'Seven Plague Companies',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Garde_de_la_Mort',
       lore: [
         'The XIVth Legion of Mortarion. Once the Dusk Raiders — warriors of implacable endurance, siege-breakers without peer in the Great Crusade.',
         "They fell to Chaos in the Warp en route to Terra, when a pox of unnatural origin swept their fleet. Mortarion bargained with Nurgle for their survival; Nurgle granted it, and they have been his ever since.",
@@ -341,6 +347,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Porcelain & violet',
       strength: 'Warband fragments',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/Enfants_de_l%27Empereur',
       lore: [
         "The IIIrd Legion of Fulgrim. The only Legion permitted to wear the Emperor's palatine aquila upon their armour. Their pursuit of perfection in war became a cult, and the cult became damnation.",
         "At Isstvan III they turned on their loyalist brothers. By the end of the Heresy they were no longer the Legion the Emperor had recognised — they were Slaanesh's eldest children.",
@@ -358,6 +365,7 @@ const DATA: AstropathData = {
       founding: 'First',
       colors: 'Bone & blood',
       strength: 'Eight Warbands',
+      source: 'https://wh40k-fr.lexicanum.com/wiki/D%C3%A9voreurs_de_Mondes',
       lore: [
         "The XIIth Legion of Angron. Once the War Hounds — reforged by their primarch's Butcher's Nails into frenzied berserkers who know no command but the kill.",
         "They worship Khorne not by choice but by inescapable physiology. The Nails drive every son of Angron toward violence the way hunger drives lesser men toward food.",

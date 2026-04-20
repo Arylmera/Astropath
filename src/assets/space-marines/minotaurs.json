@@ -5,6 +5,11 @@
   "primarch": "Unknown",
   "allegiance": "Loyalist",
   "title": "Minotaurs",
+  "homeworld": "Inconnu (probablement Daedelos Krata)",
+  "fortressMonastery": "Daedelos Krata (vaisseau de bataille)",
+  "colors": ["Bronze", "Rouge"],
+  "battleCry": "Inconnu",
+  "specialty": "Assaut de choc brutal, application des décrets des Hauts Seigneurs",
   "page": "Minotaurs",
-  "source": "https://warhammer40k.fandom.com/wiki/Minotaurs"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Minotaures"
 }

@@ -5,6 +5,11 @@
   "primarch": "Jaghatai Khan",
   "allegiance": "Loyalist",
   "title": "White Scars",
+  "homeworld": "Chogoris",
+  "fortressMonastery": "Quan Zhou",
+  "colors": ["Blanc"],
+  "battleCry": "For the Khan and the Emperor!",
+  "specialty": "Assaut de cavalerie éclair, motos",
   "page": "White_Scars",
-  "source": "https://warhammer40k.fandom.com/wiki/White_Scars"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Cicatrices_Blanches"
 }

@@ -5,6 +5,11 @@
   "primarch": "The Emperor",
   "allegiance": "Loyalist",
   "title": "Grey Knights",
+  "homeworld": "Titan",
+  "fortressMonastery": "La Citadelle de Titan",
+  "colors": ["Argent", "Rouge (détails)"],
+  "battleCry": "Sanctic Astartes!",
+  "specialty": "Chasse aux démons, psykers d'élite, armes de force Némésis",
   "page": "Grey_Knights",
-  "source": "https://warhammer40k.fandom.com/wiki/Grey_Knights"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Chevaliers_Gris"
 }

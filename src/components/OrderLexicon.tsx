@@ -6,38 +6,38 @@ interface Props {
   onBack: () => void
 }
 
-export default function OrderDossier({ order, onBack }: Props) {
+export default function OrderLexicon({ order, onBack }: Props) {
   return (
-    <div className="view dossier order-dossier">
-      <div className="dossier-hero">
-        <div className="dossier-portrait order-portrait">
+    <div className="view lexicon order-lexicon">
+      <div className="lexicon-hero">
+        <div className="lexicon-portrait order-portrait">
           <StainedGlass icon={order.icon} a={order.glass[0]} b={order.glass[1]} c={order.glass[2]} />
-          <div className="dossier-corner tl" />
-          <div className="dossier-corner tr" />
-          <div className="dossier-portrait-meta">
+          <div className="lexicon-corner tl" />
+          <div className="lexicon-corner tr" />
+          <div className="lexicon-portrait-meta">
             <span>ORDER MILITANT · {order.matriarch.toUpperCase()}</span>
             <span>{order.convent.toUpperCase()}</span>
             <span>FILE · {order.id.toUpperCase().replace('-', '‑')}</span>
           </div>
         </div>
 
-        <div className="dossier-info">
-          <div className="dossier-roman order-roman">✚</div>
+        <div className="lexicon-info">
+          <div className="lexicon-roman order-roman">✚</div>
 
           <div style={{ marginBottom: 28 }}>
             <button className="back-btn" onClick={onBack}>← Orders Militant</button>
           </div>
 
-          <div className="dossier-kicker">
-            <span className="dossier-kicker-num">Order Militant</span>
+          <div className="lexicon-kicker">
+            <span className="lexicon-kicker-num">Order Militant</span>
             <span>·</span>
             <span>Founded {order.founded}</span>
           </div>
 
-          <h1 className="dossier-name">{order.name}</h1>
-          <p className="dossier-epithet">"{order.epithet}"</p>
+          <h1 className="lexicon-name">{order.name}</h1>
+          <p className="lexicon-epithet">"{order.epithet}"</p>
 
-          <div className="dossier-chips">
+          <div className="lexicon-chips">
             <span className="chip">
               <span className="chip-label">Matriarch</span>
               <span className="chip-value">{order.matriarch}</span>
@@ -56,7 +56,7 @@ export default function OrderDossier({ order, onBack }: Props) {
             </span>
           </div>
 
-          <div className="dossier-lore">
+          <div className="lexicon-lore">
             {order.lore.map((p, i) => <p key={i}>{p}</p>)}
           </div>
         </div>

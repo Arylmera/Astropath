@@ -5,6 +5,11 @@
   "primarch": "Mortarion",
   "allegiance": "Traitor",
   "title": "Death Guard",
+  "homeworld": "Barbarus",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Vert pâle (origine)", "Vert putride et brun (après corruption)"],
+  "battleCry": "Life is nothing! Death is everything!",
+  "specialty": "Endurance, guerre biologique, bénédiction de Nurgle",
   "page": "Death_Guard",
-  "source": "https://warhammer40k.fandom.com/wiki/Death_Guard"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Garde_de_la_Mort"
 }
