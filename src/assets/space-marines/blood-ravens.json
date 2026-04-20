@@ -5,6 +5,11 @@
   "primarch": "Unknown",
   "allegiance": "Loyalist",
   "title": "Blood Ravens",
+  "homeworld": "Inconnu",
+  "fortressMonastery": "Omnis Arcanum (vaisseau amiral)",
+  "colors": ["Rouge sang", "Noir"],
+  "battleCry": "With knowledge comes power!",
+  "specialty": "Guerriers psykers, quête du savoir, origines mystérieuses",
   "page": "Blood_Ravens",
-  "source": "https://warhammer40k.fandom.com/wiki/Blood_Ravens"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Corbeaux_de_Sang"
 }

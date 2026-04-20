@@ -5,6 +5,11 @@
   "primarch": "Various",
   "allegiance": "Loyalist",
   "title": "Deathwatch",
+  "homeworld": "N/A (recrutement inter-chapitres)",
+  "fortressMonastery": "Forteresses de Veille (multiples)",
+  "colors": ["Noir", "Épaulette argentée gauche (symbole du chapitre d'origine)"],
+  "battleCry": "For the Emperor and humanity!",
+  "specialty": "Chasse aux xénos, équipes de tueurs d'élite",
   "page": "Deathwatch",
-  "source": "https://warhammer40k.fandom.com/wiki/Deathwatch"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Deathwatch"
 }

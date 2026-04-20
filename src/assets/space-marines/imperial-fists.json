@@ -5,6 +5,11 @@
   "primarch": "Rogal Dorn",
   "allegiance": "Loyalist",
   "title": "Imperial Fists",
+  "homeworld": "Phalanx (forteresse mobile)",
+  "fortressMonastery": "Phalanx",
+  "colors": ["Jaune"],
+  "battleCry": "If I die, I die. But I shall not falter.",
+  "specialty": "Guerre de siège, fortification",
   "page": "Imperial_Fists",
-  "source": "https://warhammer40k.fandom.com/wiki/Imperial_Fists"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Poings_Imp%C3%A9riaux"
 }

@@ -5,6 +5,11 @@
   "primarch": "Lorgar Aurelian",
   "allegiance": "Traitor",
   "title": "Word Bearers",
+  "homeworld": "Colchis (détruite)",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Rouge sombre", "Cramoisi"],
+  "battleCry": "We bring the truth to the unenlightened!",
+  "specialty": "Invocation de démons, liturgie noire, endoctrinement",
   "page": "Word_Bearers",
-  "source": "https://warhammer40k.fandom.com/wiki/Word_Bearers"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Porteurs_de_la_Parole"
 }

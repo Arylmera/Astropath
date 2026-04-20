@@ -5,6 +5,11 @@
   "primarch": "Unknown",
   "allegiance": "Loyalist",
   "title": "Exorcists",
+  "homeworld": "Banish",
+  "fortressMonastery": "Basilica Malefex",
+  "colors": ["Noir", "Violet sombre"],
+  "battleCry": "Inconnu",
+  "specialty": "Chasse aux démons, rite de possession et d'exorcisme",
   "page": "Exorcists",
-  "source": "https://warhammer40k.fandom.com/wiki/Exorcists"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Exorcistes"
 }

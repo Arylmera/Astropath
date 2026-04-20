@@ -5,6 +5,11 @@
   "primarch": "Lion El'Jonson",
   "allegiance": "Loyalist",
   "title": "Dark Angels",
+  "homeworld": "The Rock (forteresse mobile, anciennement Caliban)",
+  "fortressMonastery": "The Rock",
+  "colors": ["Vert sombre", "Noir"],
+  "battleCry": "Repent! For tomorrow you die!",
+  "specialty": "Chasse aux Déchus, armes plasma",
   "page": "Dark_Angels",
-  "source": "https://warhammer40k.fandom.com/wiki/Dark_Angels"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Ang%C3%A9lus_Sombres"
 }

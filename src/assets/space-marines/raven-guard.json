@@ -5,6 +5,11 @@
   "primarch": "Corvus Corax",
   "allegiance": "Loyalist",
   "title": "Raven Guard",
+  "homeworld": "Deliverance (Kiavahr)",
+  "fortressMonastery": "Ravenspire",
+  "colors": ["Noir"],
+  "battleCry": "Victorus aut Mortis!",
+  "specialty": "Infiltration, frappes dans l'ombre, guérilla",
   "page": "Raven_Guard",
-  "source": "https://warhammer40k.fandom.com/wiki/Raven_Guard"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Garde_du_Corbeau"
 }

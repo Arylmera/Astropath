@@ -5,6 +5,11 @@
   "primarch": "Alpharius Omegon",
   "allegiance": "Traitor",
   "title": "Alpha Legion",
+  "homeworld": "Inconnu",
+  "fortressMonastery": "Inconnu",
+  "colors": ["Bleu-vert", "Argent"],
+  "battleCry": "We are all Alpharius.",
+  "specialty": "Infiltration, déception, opérations en cellules",
   "page": "Alpha_Legion",
-  "source": "https://warhammer40k.fandom.com/wiki/Alpha_Legion"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/L%C3%A9gion_Alpha"
 }

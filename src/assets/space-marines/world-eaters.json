@@ -5,6 +5,11 @@
   "primarch": "Angron",
   "allegiance": "Traitor",
   "title": "World Eaters",
+  "homeworld": "Nuceria (détruite par Angron)",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Blanc et bleu (origine)", "Rouge et laiton (après corruption)"],
+  "battleCry": "Blood for the Blood God! Skulls for the Skull Throne!",
+  "specialty": "Assaut berserk, combat rapproché, dédié à Khorne",
   "page": "World_Eaters",
-  "source": "https://warhammer40k.fandom.com/wiki/World_Eaters"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/D%C3%A9voreurs_de_Mondes"
 }

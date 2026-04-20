@@ -5,6 +5,11 @@
   "primarch": "Ferrus Manus",
   "allegiance": "Loyalist",
   "title": "Iron Hands",
+  "homeworld": "Medusa",
+  "fortressMonastery": "Clan Barracks, Medusa",
+  "colors": ["Noir", "Argent"],
+  "battleCry": "The Flesh is Weak!",
+  "specialty": "Cybernétique, alliance avec le Mechanicum, puissance de feu lourde",
   "page": "Iron_Hands",
-  "source": "https://warhammer40k.fandom.com/wiki/Iron_Hands"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Mains_de_Fer"
 }

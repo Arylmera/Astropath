@@ -5,6 +5,11 @@
   "primarch": "Magnus the Red",
   "allegiance": "Traitor",
   "title": "Thousand Sons",
+  "homeworld": "Prospero (détruite)",
+  "fortressMonastery": "Sortiarius (Planète des Sorciers)",
+  "colors": ["Rouge", "Or"],
+  "battleCry": "All is Dust!",
+  "specialty": "Sorcellerie, pouvoirs psykers, dédié à Tzeentch",
   "page": "Thousand_Sons",
-  "source": "https://warhammer40k.fandom.com/wiki/Thousand_Sons"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Mille_Fils"
 }

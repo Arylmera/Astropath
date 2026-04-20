@@ -5,6 +5,11 @@
   "primarch": "Horus Lupercal",
   "allegiance": "Traitor",
   "title": "Sons of Horus",
+  "homeworld": "Cthonia (détruite)",
+  "fortressMonastery": "N/A (Légion Traitre)",
+  "colors": ["Vert-de-mer", "Gris"],
+  "battleCry": "Let the galaxy burn!",
+  "specialty": "Assaut combiné d'élite, tactiques de guérilla, commandement",
   "page": "Sons_of_Horus",
-  "source": "https://warhammer40k.fandom.com/wiki/Sons_of_Horus"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Fils_d%27Horus"
 }

@@ -5,6 +5,11 @@
   "primarch": "Leman Russ",
   "allegiance": "Loyalist",
   "title": "Space Wolves",
+  "homeworld": "Fenris",
+  "fortressMonastery": "The Fang (Aett)",
+  "colors": ["Gris"],
+  "battleCry": "For Russ and the Allfather!",
+  "specialty": "Combat rapproché, traque, résistance aux psykers",
   "page": "Space_Wolves",
-  "source": "https://warhammer40k.fandom.com/wiki/Space_Wolves"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Space_Wolves"
 }

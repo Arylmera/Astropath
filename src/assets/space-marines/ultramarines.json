@@ -5,6 +5,11 @@
   "primarch": "Roboute Guilliman",
   "allegiance": "Loyalist",
   "title": "Ultramarines",
+  "homeworld": "Macragge",
+  "fortressMonastery": "Fortress of Hera",
+  "colors": ["Blue", "Gold"],
+  "battleCry": "Courage and Honour!",
+  "specialty": "Tactical flexibility, Codex Astartes doctrine",
   "page": "Ultramarines",
-  "source": "https://warhammer40k.fandom.com/wiki/Ultramarines"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Ultramarines"
 }

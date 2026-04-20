@@ -5,6 +5,11 @@
   "primarch": "Vulkan",
   "allegiance": "Loyalist",
   "title": "Salamanders",
+  "homeworld": "Nocturne",
+  "fortressMonastery": "Prométhée (lune de Nocturne)",
+  "colors": ["Vert sombre", "Noir"],
+  "battleCry": "Into the fires of battle, unto the anvil of war!",
+  "specialty": "Flammes, armes à fusion, armurerie maîtresse, protection des civils",
   "page": "Salamanders",
-  "source": "https://warhammer40k.fandom.com/wiki/Salamanders"
+  "source": "https://wh40k-fr.lexicanum.com/wiki/Salamandres"
 }
