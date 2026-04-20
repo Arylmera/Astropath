@@ -1,5 +1,14 @@
 import type { AstropathData } from './types'
 
+const portraitModules = import.meta.glob<string>(
+  '../assets/primarchs/*/portrait.{jpg,jpeg,png,webp,svg,gif}',
+  { eager: true, query: '?url', import: 'default' },
+)
+function p(id: string): string {
+  const key = Object.keys(portraitModules).find(k => k.includes(`/${id}/portrait.`))
+  return key ? portraitModules[key] : ''
+}
+
 const DATA: AstropathData = {
   primarchs: [
     {
@@ -12,7 +21,7 @@ const DATA: AstropathData = {
       homeworld: 'Terra',
       allegiance: 'Loyalist',
       status: 'Interred — The Golden Throne',
-      portrait: 'assets/portraits/emperor.jpg',
+      portrait: p('emperor'),
       isEmperor: true,
       hue: 45,
       lore: [
@@ -30,7 +39,7 @@ const DATA: AstropathData = {
       homeworld: 'Macragge',
       allegiance: 'Loyalist',
       status: 'Active — Lord Commander',
-      portrait: 'assets/portraits/guilliman.jpg',
+      portrait: p('guilliman'),
       hue: 38,
       lore: [
         'Roboute Guilliman — the Avenging Son, Master of Ultramar, the Blade of Unity — is as much a patrician statesman as he is an indefatigable warrior. A being of preternatural intelligence, cold reason and indomitable will.',
@@ -47,7 +56,7 @@ const DATA: AstropathData = {
       homeworld: 'Cthonia',
       allegiance: 'Traitor',
       status: 'Slain, M31 — Siege of Terra',
-      portrait: 'assets/portraits/horus.jpg',
+      portrait: p('horus'),
       hue: 18,
       lore: [
         'Horus Lupercal — the Warmaster, the most favoured son, and ultimately the greatest traitor in the history of Mankind. Master of the XVIth Legion, the Luna Wolves, later renamed the Sons of Horus.',
@@ -64,7 +73,7 @@ const DATA: AstropathData = {
       homeworld: 'Baal',
       allegiance: 'Loyalist',
       status: 'Slain — Siege of Terra',
-      portrait: 'assets/portraits/sanguinius.jpg',
+      portrait: p('sanguinius'),
       hue: 12,
       lore: [
         'Sanguinius — the Great Angel, the Brightest One — primarch of the Blood Angels Legion and genetic ancestor of the Sanguinary Brotherhood of the 41st Millennium.',
@@ -81,7 +90,7 @@ const DATA: AstropathData = {
       homeworld: 'Prospero',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Tzeentch',
-      portrait: 'assets/portraits/magnus.jpg',
+      portrait: p('magnus'),
       hue: 280,
       lore: [
         'Magnus the Red — the Crimson King, the Red Cyclops — primarch of the Thousand Sons and an extremely powerful Daemon Prince of Tzeentch.',
@@ -98,7 +107,7 @@ const DATA: AstropathData = {
       homeworld: 'Fenris',
       allegiance: 'Loyalist',
       status: 'Missing — gone to the Wolftime',
-      portrait: 'assets/portraits/leman-russ.jpg',
+      portrait: p('leman-russ'),
       hue: 210,
       lore: [
         "Leman Russ — the Wolf King, the Great Wolf — currently missing primarch of the Space Wolves. He led the VIth Legion during the Great Crusade and the Horus Heresy, famed in Imperial history for his hatred of sorcery.",
@@ -115,7 +124,7 @@ const DATA: AstropathData = {
       homeworld: 'Barbarus',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Nurgle',
-      portrait: 'assets/portraits/mortarion.jpg',
+      portrait: p('mortarion'),
       hue: 85,
       lore: [
         'Mortarion — the Pale King, the Death Lord, the Prince of Decay — master of the Death Guard Space Marine Legion, turned to the service of Chaos during the Horus Heresy.',
@@ -132,7 +141,7 @@ const DATA: AstropathData = {
       homeworld: 'Chemos',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Slaanesh',
-      portrait: 'assets/portraits/fulgrim.jpg',
+      portrait: p('fulgrim'),
       hue: 320,
       lore: [
         "Fulgrim — the Phoenician — primarch of the Emperor's Children, the IIIrd Legion. A being obsessed with perfection in all things: in war, in art, in craft, in beauty.",
@@ -149,7 +158,7 @@ const DATA: AstropathData = {
       homeworld: 'Nuceria',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Khorne',
-      portrait: 'assets/portraits/angron.webp',
+      portrait: p('angron'),
       hue: 8,
       lore: [
         "Angron — the Red Angel — primarch of the World Eaters, the XIIth Legion. Taken as a slave-gladiator on Nuceria, his skull fused with the Butcher's Nails: crude neural implants that drowned every thought in rage.",
@@ -166,7 +175,7 @@ const DATA: AstropathData = {
       homeworld: 'Nocturne',
       allegiance: 'Loyalist',
       status: 'Perpetual — whereabouts unknown',
-      portrait: 'assets/portraits/vulkan.jpg',
+      portrait: p('vulkan'),
       hue: 28,
       lore: [
         'Vulkan — the Lord of Drakes — primarch of the Salamanders, the XVIIIth Legion. Raised on the volcanic death-world of Nocturne, he was a smith before he was a warlord, and he never forgot it.',
@@ -183,7 +192,7 @@ const DATA: AstropathData = {
       homeworld: 'Caliban',
       allegiance: 'Loyalist',
       status: 'Returned — Era Indomitus',
-      portrait: 'assets/portraits/lion.jpg',
+      portrait: p('lion'),
       hue: 130,
       lore: [
         "Lion El'Jonson — the First — primarch of the Ist Legion, the Dark Angels. Found alone in the forests of the death-world Caliban, he was the first primarch to be recovered by the Emperor.",
@@ -200,7 +209,7 @@ const DATA: AstropathData = {
       homeworld: 'Inwit',
       allegiance: 'Loyalist',
       status: 'Missing — presumed dead',
-      portrait: 'assets/portraits/rogal-dorn.jpg',
+      portrait: p('rogal-dorn'),
       hue: 48,
       lore: [
         "Rogal Dorn — the Praetorian of Terra — primarch of the Imperial Fists. Implacable, unbreakable, the Emperor's chosen shield.",
@@ -217,7 +226,7 @@ const DATA: AstropathData = {
       homeworld: 'Chogoris',
       allegiance: 'Loyalist',
       status: 'Missing — lost in the Webway',
-      portrait: 'assets/portraits/jaghatai-khan.jpg',
+      portrait: p('jaghatai-khan'),
       hue: 190,
       lore: [
         'Jaghatai Khan — the Warhawk — primarch of the White Scars, the Vth Legion. Born into the steppe-clans of Chogoris, he took the strategic arts of horse-nomad warfare and adapted them to the warp-speed void.',
@@ -234,7 +243,7 @@ const DATA: AstropathData = {
       homeworld: 'Unknown — purged',
       allegiance: 'Loyalist',
       status: 'Unknown — expunged from all records',
-      portrait: 'assets/portraits/redacted.svg',
+      portrait: p('primarch-ii'),
       hue: 0,
       lore: [
         'The second primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge. Even the method of their removal is unknown.',
@@ -251,7 +260,7 @@ const DATA: AstropathData = {
       homeworld: 'Olympia (destroyed)',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Chaos Undivided',
-      portrait: 'assets/portraits/perturabo.jpg',
+      portrait: p('perturabo'),
       hue: 200,
       lore: [
         'Perturabo — the Lord of Iron — primarch of the Iron Warriors, the IVth Legion. A polymath of cold brilliance: mathematician, engineer, architect, and the finest siege-master the Great Crusade produced.',
@@ -268,7 +277,7 @@ const DATA: AstropathData = {
       homeworld: 'Nostramo (destroyed)',
       allegiance: 'Traitor',
       status: "Slain — M31, assassinated by M'shen",
-      portrait: 'assets/portraits/konrad-curze.jpg',
+      portrait: p('konrad-curze'),
       hue: 240,
       lore: [
         "Konrad Curze — the Night Haunter — primarch of the Night Lords, the VIIIth Legion. Found on Nostramo, a lightless hive world ruled by crime and cruelty, he imposed order through terror before the Emperor came.",
@@ -285,7 +294,7 @@ const DATA: AstropathData = {
       homeworld: 'Medusa',
       allegiance: 'Loyalist',
       status: 'Slain — Isstvan V, Drop Site Massacre',
-      portrait: 'assets/portraits/ferrus-manus.jpg',
+      portrait: p('ferrus-manus'),
       hue: 200,
       lore: [
         'Ferrus Manus — the Gorgon — primarch of the Iron Hands, the Xth Legion. His hands were encased in living metal from a battle with the great silver wyrm Asirnoth, and they became the symbol of his creed: flesh is weak; iron endures.',
@@ -302,7 +311,7 @@ const DATA: AstropathData = {
       homeworld: 'Unknown — purged',
       allegiance: 'Loyalist',
       status: 'Unknown — expunged from all records',
-      portrait: 'assets/portraits/redacted.svg',
+      portrait: p('primarch-xi'),
       hue: 0,
       lore: [
         'The eleventh primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge.',
@@ -319,7 +328,7 @@ const DATA: AstropathData = {
       homeworld: 'Colchis',
       allegiance: 'Traitor',
       status: 'Daemon Primarch of Chaos Undivided',
-      portrait: 'assets/portraits/lorgar.jpg',
+      portrait: p('lorgar'),
       hue: 20,
       lore: [
         "Lorgar Aurelian — the Urizen — primarch of the Word Bearers, the XVIIth Legion. A scholar, theologian, and prophet who loved the Emperor as a god — and was humiliated for it when the Emperor razed Monarchia and forbade his worship.",
@@ -336,7 +345,7 @@ const DATA: AstropathData = {
       homeworld: 'Deliverance',
       allegiance: 'Loyalist',
       status: 'Missing — self-imposed exile into the Eye of Terror',
-      portrait: 'assets/portraits/corax.jpg',
+      portrait: p('corax'),
       hue: 250,
       lore: [
         'Corvus Corax — the Ravenlord — primarch of the Raven Guard, the XIXth Legion. Born into the slave-mines of Lycaeus, he led a revolution before he ever led a Legion, carving freedom from a tyrant world with nothing but shadow and will.',
@@ -353,7 +362,7 @@ const DATA: AstropathData = {
       homeworld: 'Unknown',
       allegiance: 'Traitor',
       status: 'Alpharius slain by Rogal Dorn (disputed) — Omegon status unknown',
-      portrait: 'assets/portraits/alpharius.jpg',
+      portrait: p('alpharius'),
       hue: 170,
       lore: [
         'Alpharius Omegon — the Hydra — primarch of the Alpha Legion, the XXth and last. Perhaps two primarchs in one body; perhaps a single being with a twin legend. The Alpha Legion built ambiguity into the very foundation of their identity.',
