@@ -51,7 +51,14 @@ export default function SororitasRecordView({ entry, onBack }: Props) {
   const sourceIsUrl = /^https?:\/\//.test(entry.source)
 
   return (
-    <div className="view lore-view">
+    <div className="view">
+      <div className="sororitas-scene">
+      {entry.portrait && (
+        <div className="sororitas-portrait-bg">
+          <img src={entry.portrait} alt={entry.title} />
+        </div>
+      )}
+      <div className="sororitas-content">
       <header className="lore-mast">
         <div className="lore-mast-top">
           <div className="lore-mast-rail">
@@ -188,6 +195,8 @@ export default function SororitasRecordView({ entry, onBack }: Props) {
             </button>
           </div>
         </article>
+      </div>
+      </div>
       </div>
     </div>
   )
