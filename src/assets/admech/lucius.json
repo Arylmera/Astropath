@@ -3,5 +3,18 @@
   "category": "Forge World",
   "title": "Lucius",
   "page": "Lucius",
-  "source": "https://warhammer40k.fandom.com/wiki/Lucius"
+  "source": "https://warhammer40k.fandom.com/wiki/Lucius",
+  "epithet": "The Hollow Forge",
+  "segmentum": "Obscurus",
+  "titanLegion": "Legio Astorum — \"Warp Runners\"",
+  "fabricator": "Magos Dominus of the Solar Blessing",
+  "dogma": "The Solar Blessing",
+  "colors": "Mars-red · solar-scorched black · cream",
+  "primacy": "Hollow-world sun-core",
+  "iconSeed": "lucius",
+  "lore": [
+    "Lucius — the Hollow Forge. At its centre, where a planetary core should be, burns an artificial sun: a titanic fusion reactor that powers the industrial sprawl coating the inside of the world.",
+    "No one living knows how that sun came to be, though the priesthood will claim the credit if asked. The Solar Blessing it grants forges Luciun alloy — scorched black, reserved for masterworks and bionics.",
+    "The Warp Runners of Legio Astorum are the only god-engines sophisticated enough to teleport directly into battle. It is a point of pride among the Lucians, and a point of envy amongst every other Legion."
+  ]
 }

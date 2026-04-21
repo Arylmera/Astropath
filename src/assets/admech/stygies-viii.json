@@ -3,5 +3,18 @@
   "category": "Forge World",
   "title": "Stygies VIII",
   "page": "Stygies_VIII",
-  "source": "https://warhammer40k.fandom.com/wiki/Stygies_VIII"
+  "source": "https://warhammer40k.fandom.com/wiki/Stygies_VIII",
+  "epithet": "The Ever-Staring Cyclops",
+  "segmentum": "Pacificus",
+  "titanLegion": "Legio Honorum — \"Death Bolts\"",
+  "fabricator": "Xenarite Conclave (unofficial)",
+  "dogma": "Xenos technology is sacred data",
+  "colors": "Void-black · bronze · violet trim",
+  "primacy": "Least-trusted forge in the Imperium",
+  "iconSeed": "stygies",
+  "lore": [
+    "Stygies VIII — the Ever-Staring Cyclops. No Forge World is less trusted by the Imperium. Its priesthood pursues xenos war-tech with a fervour the orthodox find heretical and the Deathwatch find actionable.",
+    "In the Horus Heresy the world was saved from Chaos only by the intervention of the Aeldari of Saim-Hann, who came to deny Chaos the forge — not to save its inhabitants. From that event rose the secretive Xenarite sect.",
+    "A quiet war still unfolds in its reliquary-halls: Kill-teams of the Ordo Xenos hunt Radical magi who would plunder the Black Library itself for the Quest for Knowledge."
+  ]
 }
