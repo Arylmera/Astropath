@@ -154,7 +154,7 @@ export default function MechanicusArchive({ forges, onOpen }: ArchiveProps) {
       </div>
 
       <div className="mech-stage">
-        <svg className="mech-diagram" viewBox="-400 -400 800 800" preserveAspectRatio="xMidYMid meet">
+        <svg className="mech-diagram" viewBox="-500 -450 1000 900" preserveAspectRatio="xMidYMid meet">
           <defs>
             <radialGradient id="mech-bg" cx="50%" cy="50%" r="50%">
               <stop offset="0"   stopColor="var(--mech-glow)" stopOpacity="1" />
