@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Electro-Priest",
   "page": "Electro-Priest",
-  "source": "https://warhammer40k.fandom.com/wiki/Electro-Priest"
+  "source": "https://warhammer40k.fandom.com/wiki/Electro-Priest",
+  "epithet": "Devoted of the Motive Force",
+  "specialty": "Electrokinetic melee combat · fanatical close-assault",
+  "strength": "Congregation",
+  "lore": [
+    "Electro-Priests are zealots of the Cult Mechanicus who worship the Motive Force — the electrical energy that animates machines — as a divine emanation of the Omnissiah. They channel this energy through their own bodies, becoming living lightning conductors.",
+    "Two main orders exist: Fulgurite Electro-Priests who drain electrical energy from their enemies, storing it to supercharge their own abilities; and Corpuscarii Electro-Priests who channel the Motive Force outward in blazing arcs that kill in waves.",
+    "In combat, Electro-Priests are terrifying. They sprint into melee with complete disregard for their own survival, their bodies crackling with lethal charge. The Motive Force sustains them through wounds that would kill others, and their ecstatic devotion makes them utterly immune to fear."
+  ]
 }

@@ -3,5 +3,15 @@
   "category": "Organisation",
   "title": "Mechanicum (pre-Heresy)",
   "page": "Mechanicum",
-  "source": "https://warhammer40k.fandom.com/wiki/Mechanicum"
+  "source": "https://warhammer40k.fandom.com/wiki/Mechanicum",
+  "epithet": "Masters of the Machine",
+  "founded": "Age of Strife",
+  "dogma": "All is Mechanism — the universe itself is a great machine",
+  "colors": "Red · silver · gold",
+  "specialty": "Pre-Heresy technological dominion across the Sol System",
+  "lore": [
+    "The Mechanicum was the pre-Heresy precursor to the Adeptus Mechanicus — a vast techno-theocratic empire centred on Mars that commanded the greatest concentration of scientific knowledge in human history.",
+    "During the Great Crusade the Mechanicum provided the Emperor's forces with Titans, warships, and weapons of terrible power. Its Fabricator-General sat at the Emperor's right hand on the Council of Terra.",
+    "The Horus Heresy shattered the Mechanicum. Kelbor-Hal's pact with the Warmaster split it in two: the Loyalist Mechanicum that would become the Adeptus Mechanicus, and the Dark Mechanicum that fell to Chaos and fled to the Eye of Terror."
+  ]
 }

@@ -3,5 +3,18 @@
   "category": "Forge World",
   "title": "Graia",
   "page": "Graia",
-  "source": "https://warhammer40k.fandom.com/wiki/Graia"
+  "source": "https://warhammer40k.fandom.com/wiki/Graia",
+  "epithet": "Crown of Miracles",
+  "segmentum": "Tempestus",
+  "titanLegion": "Legio Astraman — \"Morning Stars\"",
+  "fabricator": "Archimandrite of the Graian Crown",
+  "dogma": "Refusal to Yield",
+  "colors": "Crimson · bleached bone · funereal black",
+  "primacy": "Only foundry for Warlord-class Titans",
+  "iconSeed": "graia",
+  "lore": [
+    "Graia — the Crown of Miracles. Its defenders reside not upon a planet but within the Graian Crown, a geometrically perfect lattice of void-stations crowning the sphere like a diadem.",
+    "The Crown is a secret: its fusion engines allow it to slip gravity and translate the Warp, carrying Graia's armies and forges to any world worth the plundering. That secret has drawn both Necron raiders and Chaos Daemons in turn.",
+    "The Ajakis Manufactorum is one of the few facilities in the Imperium still capable of constructing a Warlord-class Titan — which makes Graia a prize worth any war."
+  ]
 }

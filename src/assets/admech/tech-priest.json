@@ -3,5 +3,13 @@
   "category": "Rank",
   "title": "Tech-Priest",
   "page": "Tech-Priest",
-  "source": "https://warhammer40k.fandom.com/wiki/Tech-Priest"
+  "source": "https://warhammer40k.fandom.com/wiki/Tech-Priest",
+  "epithet": "Servant of the Cog",
+  "tier": "Initiate — the backbone rank of the Adeptus Mechanicus",
+  "specialty": "Machine maintenance, ritual operation, field repair across all Imperial forces",
+  "lore": [
+    "The Tech-Priest is the basic ordained rank of the Adeptus Mechanicus — a holy engineer who has taken the first steps on the Long Path of augmentation and knowledge. Every Tech-Priest has undergone at least partial cybernetic conversion, replacing flesh with sacred machine.",
+    "They are ubiquitous across the Imperium, attached to every significant military force, starship, and manufactorum. Without Tech-Priests to perform the sacred rites of maintenance, the Imperium's machinery would grind to a halt within a generation.",
+    "A Tech-Priest who shows exceptional promise may specialise into one of the many Divisiones of the Mechanicus — becoming a Magos of Biologis, Logis, Fabricator, Reductor, or one of dozens of other disciplines — eventually ascending to the rank of Magos and beyond."
+  ]
 }

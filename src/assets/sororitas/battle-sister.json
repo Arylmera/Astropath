@@ -2,6 +2,8 @@
   "id": "battle-sister",
   "category": "concept",
   "title": "Battle Sister",
+  "icon": "rose-and-sword",
+  "glass": ["#120808", "#c9a060", "#7a1010"],
   "page": "Battle_Sister",
   "source": "Curated Warhammer 40,000 lore summary"
 }

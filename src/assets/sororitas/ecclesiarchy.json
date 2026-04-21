@@ -2,6 +2,8 @@
   "id": "ecclesiarchy",
   "category": "overview",
   "title": "Adeptus Ministorum",
+  "icon": "aquila",
+  "glass": ["#4a0808", "#d4a840", "#180404"],
   "page": "Adeptus_Ministorum",
   "source": "https://warhammer40k.fandom.com/wiki/Adeptus_Ministorum"
 }

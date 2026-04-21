@@ -3,5 +3,18 @@
   "category": "Forge World",
   "title": "Metalica",
   "page": "Metalica",
-  "source": "https://warhammer40k.fandom.com/wiki/Metalica"
+  "source": "https://warhammer40k.fandom.com/wiki/Metalica",
+  "epithet": "Gleaming Giant of Ultima",
+  "segmentum": "Ultima",
+  "titanLegion": "Legio Metalica — \"Iron Skulls\"",
+  "fabricator": "Archimagos of the Hissing Forge",
+  "dogma": "Anarchy is Anathema",
+  "colors": "Gunmetal · bone · white stripe",
+  "primacy": "Sole-source foundry to Armageddon",
+  "iconSeed": "metalica",
+  "lore": [
+    "Metalica — formed almost entirely of metal. No rocky crust covers its dull silver surface, no flora nor fauna has been suffered to endure, and its atmosphere is inimical to life.",
+    "The engine-driven monstrosities that grind out of its furnaces are born by the hundred every dawn. All weapons produced here share a signature blaring note — made deliberately loud so that the foe might hear the industrial glory of the Omnissiah before they perish.",
+    "The Iron Skulls of Legio Metalica have fought — and bled — in all three Wars for Armageddon. Their priesthood bears a special revulsion for anarchy, and answers Armageddon's call whenever it rings."
+  ]
 }

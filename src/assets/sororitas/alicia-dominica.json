@@ -2,6 +2,8 @@
   "id": "alicia-dominica",
   "category": "character",
   "title": "Alicia Dominica",
+  "icon": "aquila",
+  "glass": ["#1a0a2a", "#d4a840", "#0a0818"],
   "page": "Alicia_Dominica",
   "source": "https://warhammer40k.fandom.com/wiki/Alicia_Dominica"
 }

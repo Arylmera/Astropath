@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Collegia Titanica",
   "page": "Collegia_Titanica",
-  "source": "https://warhammer40k.fandom.com/wiki/Collegia_Titanica"
+  "source": "https://warhammer40k.fandom.com/wiki/Collegia_Titanica",
+  "epithet": "Brotherhood of the God-Machines",
+  "specialty": "Titan Legion command and coordination · strategic deployment of god-engines",
+  "strength": "Multiple Titan Legions across hundreds of Forge Worlds",
+  "lore": [
+    "The Collegia Titanica is the governing body of all Titan Legions within the Adeptus Mechanicus — the supreme organisation that oversees the creation, training, deployment, and traditions of the Titan brotherhoods that serve the Omnissiah.",
+    "Each Titan Legion is named, numbered, and based on a specific Forge World. They maintain their own heraldry, customs, and doctrines distinct from those of their parent Forge World, though they remain ultimately answerable to it. Legendary Legions such as Legio Ignatum, Legio Tempestus, and Legio Mortis have histories stretching back ten thousand years.",
+    "The Collegia Titanica maintains strict records of every god-engine ever constructed, every battle fought, and every crew who served. The death of a Titan is mourned as a profound loss — not just of a weapon, but of a sacred machine whose spirit had been shaped over centuries of war."
+  ]
 }

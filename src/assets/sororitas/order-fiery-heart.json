@@ -2,6 +2,8 @@
   "id": "order-fiery-heart",
   "category": "order-militant",
   "title": "Order of the Fiery Heart",
+  "icon": "flaming-heart",
+  "glass": ["#c44010", "#e8920a", "#f5deb0"],
   "page": "Order_of_the_Fiery_Heart",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Fiery_Heart"
 }

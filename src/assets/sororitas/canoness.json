@@ -2,6 +2,8 @@
   "id": "canoness",
   "category": "concept",
   "title": "Canoness",
+  "icon": "warrior-saint",
+  "glass": ["#1a3a6a", "#d4a030", "#0a0a14"],
   "page": "Canoness",
   "source": "https://warhammer40k.fandom.com/wiki/Canoness"
 }

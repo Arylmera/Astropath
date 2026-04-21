@@ -62,6 +62,18 @@ const sororitas: Order[] = [
     ],
   },
   {
+    id: 'fiery-heart', name: 'Order of the Fiery Heart', epithet: 'The Burning Faithful',
+    matriarch: 'Saint Katherine', convent: 'Convent Sanctorum · Ophelia VII',
+    founded: '36th Millennium', parish: 'Segmentum Solar · the Ember Worlds',
+    dogma: 'Faith purified through flame', colors: 'White · flame-red · gold',
+    icon: 'flaming-heart', glass: ['#c44010', '#e8920a', '#f5deb0'],
+    lore: [
+      "The Order of the Fiery Heart — Saint Katherine's own line, eldest daughters of righteous fire. Where the Martyred Lady mourns, the Fiery Heart burns. Their faith is not a shield; it is a pyre.",
+      "They are recorded as the hammer to the Valorous Heart's anvil — drawn forward into the hottest engagements, trusting that the Emperor's will ignites them where lesser warriors would break.",
+      "Many of their sanctuaries were consumed in the opening of the Great Rift. The surviving sisters did not retreat. They advanced into the flame.",
+    ],
+  },
+  {
     id: 'sacred-rose', name: 'Order of the Sacred Rose', epithet: 'Beacons of Hope',
     matriarch: 'Saint Arabella', convent: 'Convent Prioris · Terra',
     founded: '38th Millennium', parish: 'Ultima Segmentum · light in the dark',

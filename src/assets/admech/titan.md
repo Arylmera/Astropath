@@ -1,5 +1,3 @@
-This article concerns Titan combat walkers; for the Grey Knights' homeworld see Titan (moon).
-
 A Titan, sometimes colloquially called a "god-engine" or "god-machine", is any one of several classes of massive, crewed, robotic combat walkers fielded by the Titan Legions of the Adeptus Mechanicus's Collegia Titanica or by the forces of Chaos' Dark Mechanicum.
 
 Originally, this term referred to many types of large combat walkers used by all of the different intelligent starfaring species of the Milky Way galaxy. Titans are always considered the largest and most powerful types of war engines available to the different factions of the galaxy.

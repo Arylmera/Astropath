@@ -2,6 +2,8 @@
   "id": "morvenn-vahl",
   "category": "character",
   "title": "Morvenn Vahl",
+  "icon": "lance",
+  "glass": ["#0a0c10", "#a89060", "#6e0a08"],
   "page": "Morvenn_Vahl",
   "source": "Curated Warhammer 40,000 lore summary"
 }

@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import type { Nav, Theme, View } from '@/data/types'
 import DATA from '@/data/astropath'
-import Chrome from '@/components/Chrome'
-import Tweaks from '@/components/Tweaks'
-import GalaxyMap from '@/components/GalaxyMap'
-import Lexicon from '@/components/Lexicon'
-import LegionView from '@/components/LegionView'
-import LoreView from '@/components/LoreView'
-import MechanicusArchive from '@/components/MechanicusArchive'
-import SororitasArchive from '@/components/SororitasArchive'
-import SororitasRecordView from '@/components/SororitasRecordView'
-import ForgeSchematic from '@/components/ForgeSchematic'
-import StainedGlass from '@/components/StainedGlass'
+import Chrome from '@/components/shared/Chrome'
+import Tweaks from '@/components/shared/Tweaks'
+import Lexicon from '@/components/shared/Lexicon'
+import LegionView from '@/components/primarchs/LegionView'
+import LoreView from '@/components/primarchs/LoreView'
+import ForgeSchematic from '@/components/adeptusMechanicus/ForgeSchematic'
+import SororitasRecordView from '@/components/adeptaSororitas/SororitasRecordView'
+import StainedGlass from '@/components/adeptaSororitas/StainedGlass'
+import PrimarchsScreen from '@/screens/PrimarchsScreen'
+import AdeptusMechanicusScreen from '@/screens/AdeptusMechanicusScreen'
+import AdeptaSororitasScreen from '@/screens/AdeptaSororitasScreen'
 import { DATASETS } from '@/lib/datasets'
 import { allegianceClass, formatFileId } from '@/lib/lexicon'
 
@@ -84,7 +84,7 @@ export default function App() {
     switch (nav.view) {
       case 'galaxy':
         return (
-          <GalaxyMap
+          <PrimarchsScreen
             primarchs={DATA.primarchs}
             onOpen={id => go('primarch', id)}
           />
@@ -177,8 +177,9 @@ export default function App() {
 
       case 'mechanicus':
         return (
-          <MechanicusArchive
+          <AdeptusMechanicusScreen
             forges={DATA.mechanicus}
+            entries={DATA.mechCategories}
             onOpen={id => go('forge', id)}
           />
         )
@@ -211,15 +212,17 @@ export default function App() {
               { label: 'Dogma',        value: forge.dogma },
               { label: 'Colours',      value: forge.colors },
               { label: 'Primacy',      value: forge.primacy },
+              { label: 'Fabricator',   value: forge.fabricator },
             ]}
             lore={forge.lore}
+            loreLabel="Lore"
           />
         )
       }
 
       case 'sororitas':
         return (
-          <SororitasArchive
+          <AdeptaSororitasScreen
             entries={sororitasDataset?.entries ?? []}
             onOpen={id => go('order', id)}
           />

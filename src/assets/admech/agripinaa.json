@@ -3,5 +3,18 @@
   "category": "Forge World",
   "title": "Agripinaa",
   "page": "Agripinaa",
-  "source": "https://warhammer40k.fandom.com/wiki/Agripinaa"
+  "source": "https://warhammer40k.fandom.com/wiki/Agripinaa",
+  "epithet": "Orb of a Million Scars",
+  "segmentum": "Obscurus",
+  "titanLegion": "Legio Praesidium Vortex",
+  "fabricator": "Fabricator-Locum — ranks decimated",
+  "dogma": "Staunch Defenders",
+  "colors": "Black · reversed crimson",
+  "primacy": "Borderworld to the Eye",
+  "iconSeed": "agrip",
+  "lore": [
+    "Agripinaa — industrial heartland of the old Cadian Gate, now an orb of a million scars. A world of sealed hives and toxic skies, whose only purpose is to arm the fronts that face the Eye of Terror.",
+    "Its Skitarii wear the heraldry of Mars reversed — black over crimson — and accent their plate with metals distilled from strata yet unscarred by the Eye's unclean light.",
+    "Since the Fall of Cadia and the opening of the Great Rift, Agripinaa has been besieged without end. Its priesthood has become expert in defensive warfare and the particular hatred reserved for the servants of Chaos."
+  ]
 }

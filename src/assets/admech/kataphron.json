@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Kataphron",
   "page": "Kataphron",
-  "source": "https://warhammer40k.fandom.com/wiki/Kataphron"
+  "source": "https://warhammer40k.fandom.com/wiki/Kataphron",
+  "epithet": "Breacher-Servitors",
+  "specialty": "Heavy fire support · siege breaking · close-range destruction",
+  "strength": "Squad to maniple",
+  "lore": [
+    "Kataphron Breachers and Destroyers are heavy battle-servitors of the Adeptus Mechanicus — human bodies fused to tracked lower carriages and armed with weapons too massive for a standard infantryman to carry. They are among the most heavily armed ground units the Mechanicus fields.",
+    "Unlike Skitarii, Kataphrons retain almost no higher cognition. They are fully lobotomised, their minds replaced with targeting algorithms and obedience subroutines. They feel no fear, take no cover, and advance until destroyed or ordered to halt.",
+    "Breachers carry heavy arc weapons for tearing apart armour and fortifications at close range; Destroyers are equipped with phosphor blasters or heavy grav-cannons for mid-range suppression. Both variants are accompanied by a Tech-Priest who maintains them between engagements."
+  ]
 }

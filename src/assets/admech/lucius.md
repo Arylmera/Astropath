@@ -1,5 +1,3 @@
-Note: This page is for the Forge World; for the Chaos Lord, see Lucius the Eternal.
-
 Lucius, known as "The Hollow Forge," is an Imperial Forge World of the Adeptus Mechanicus that is located in the Segmentum Obscurus of the Milky Way Galaxy. The planet is home to the Legio Astorum, a Loyalist Titan Legion, that is also known as the "Warp Runners."
 
 Lucius is a large Forge World that produces everything from Astra Militarum infantry weapons to Space Marine battle tanks and mighty Battle Titans of the Collegia Titanica. It is known that Lucius is a Production Grade III-Prima Forge World with a Tithe Grade of Aptus Non, meaning it pays no tithe to the Administratum, as its industrial output is considered of potent strategic value for the Imperium in and of itself.

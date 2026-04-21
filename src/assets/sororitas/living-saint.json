@@ -2,6 +2,8 @@
   "id": "living-saint",
   "category": "concept",
   "title": "Living Saint",
+  "icon": "flaming-heart",
+  "glass": ["#fffff0", "#ffc820", "#d46008"],
   "page": "Living_Saint",
   "source": "https://warhammer40k.fandom.com/wiki/Living_Saint"
 }

@@ -3,5 +3,13 @@
   "category": "Rank",
   "title": "Archmagos",
   "page": "Archmagos",
-  "source": "https://warhammer40k.fandom.com/wiki/Archmagos"
+  "source": "https://warhammer40k.fandom.com/wiki/Archmagos",
+  "epithet": "Sage of the Omnissiah",
+  "tier": "Apex — among the highest ranks below Fabricator-General",
+  "specialty": "High council governance · extreme specialisation · command of forge fleets",
+  "lore": [
+    "An Archmagos is one of the most senior ranks within the Adeptus Mechanicus — a figure of immense power, ancient knowledge, and terrifying augmentation who has often lived for centuries or longer through repeated biological replacement.",
+    "Archmagi sit on the ruling councils of Forge Worlds, command Explorator fleets sent into the deep void searching for lost technology, and sometimes lead entire crusades of their own in pursuit of sacred STC fragments.",
+    "At this rank, the boundary between machine and organism is essentially dissolved. An Archmagos may inhabit a towering mechanical body, a drifting cogitation sphere, or a vast vat-grown construct. Their biological brain — or what remains of it — is typically the only original organic component still present."
+  ]
 }

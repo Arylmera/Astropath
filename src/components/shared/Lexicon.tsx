@@ -22,6 +22,7 @@ interface LexiconProps {
   epithet: string
   chips: Chip[]
   lore: string[]
+  loreLabel?: string
   children?: ReactNode
 }
 
@@ -34,7 +35,7 @@ const VARIANT_CLASS: Record<LexiconProps['variant'], string> = {
 
 export default function Lexicon({
   variant, portrait, portraitClass, meta, roman, romanClass,
-  backLabel, onBack, kicker, name, epithet, chips, lore, children,
+  backLabel, onBack, kicker, name, epithet, chips, lore, loreLabel, children,
 }: LexiconProps) {
   const variantCls = VARIANT_CLASS[variant]
   return (
@@ -67,6 +68,9 @@ export default function Lexicon({
             ))}
           </div>
 
+          {loreLabel && lore.length > 0 && (
+            <div className="lexicon-section-label">{loreLabel}</div>
+          )}
           <LoreList lore={lore} />
           {children}
         </div>

@@ -3,5 +3,18 @@
   "category": "Forge World",
   "title": "Mars",
   "page": "Mars",
-  "source": "https://warhammer40k.fandom.com/wiki/Mars"
+  "source": "https://warhammer40k.fandom.com/wiki/Mars",
+  "epithet": "The Red Planet",
+  "segmentum": "Solar",
+  "titanLegion": "Legio Ignatum · Legio Tempestus",
+  "fabricator": "Fabricator-General of Mars",
+  "dogma": "Glory to the Omnissiah",
+  "colors": "Crimson · silver · black",
+  "primacy": "Forge World Principal",
+  "iconSeed": "mars",
+  "lore": [
+    "Mars — the first and greatest of all Forge Worlds, the Red Planet, the birthplace of the Cult Mechanicus. Headquarters of the Adeptus Mechanicus and a world sacred to the Omnissiah.",
+    "Millennia of incessant construction have turned the surface into a smog-choked hellscape of forge complexes, refineries and sky-scraping weapons shops. Above the equator turns the Ring of Iron — a vast geosynchronous lattice of drydocks that built the Great Crusade fleet and still builds Battlefleet Solar today.",
+    "Beneath the Noctis Labyrinth, Mechanicus legend holds that the Void Dragon — an entity of the C'tan — sleeps. Should it ever wake, the very heart of the Imperium will tremble."
+  ]
 }

@@ -1,4 +1,4 @@
-import type { DatasetConfig, DatasetKey } from '../lib/datasets'
+import type { DatasetConfig, DatasetKey } from '@/lib/datasets'
 
 type Props = {
   datasets: DatasetConfig[]
