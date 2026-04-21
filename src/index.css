@@ -412,8 +412,8 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 
 /* ====== Sororitas Record ====== */
-.sororitas-scene { position: relative; min-height: 100vh; overflow: hidden; }
-.sororitas-portrait-bg { position: absolute; top: 0; right: 0; width: 50%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.sororitas-scene { position: relative; min-height: 100vh; overflow-x: clip; }
+.sororitas-portrait-bg { position: absolute; top: 0; right: 0; bottom: 0; width: 50%; pointer-events: none; z-index: 0; overflow: hidden; }
 .sororitas-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
 .sororitas-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
 .sororitas-content { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
@@ -504,6 +504,21 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .mech-focus-grid b { color: var(--text); font-weight: 500; text-align: right; max-width: 60%; }
 .mech-focus-open { width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; background: var(--mech-line); color: var(--bg); border: none; cursor: pointer; transition: filter 0.15s; }
 .mech-focus-open:hover { filter: brightness(1.15); }
+.mech-tabs { display: flex; flex-wrap: wrap; gap: 2px; max-width: 960px; margin: 0 auto 32px; border-bottom: 1px solid color-mix(in oklab, var(--mech-line) 30%, transparent); padding-bottom: 0; }
+.mech-tab { background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 8px 16px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mech-label-dim); cursor: pointer; transition: color 0.15s, border-color 0.15s; }
+.mech-tab:hover { color: var(--mech-label); }
+.mech-tab.active { color: var(--mech-line); border-bottom-color: var(--mech-line); }
+.mech-cat-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: color-mix(in oklab, var(--mech-line) 20%, transparent); border: 1px solid color-mix(in oklab, var(--mech-line) 20%, transparent); }
+.mech-card { background: var(--bg); padding: 24px 22px 20px; display: flex; flex-direction: column; position: relative; }
+.mech-card::before { content: ""; position: absolute; top: 0; left: 0; width: 24px; height: 24px; border-top: 1px solid var(--mech-line); border-left: 1px solid var(--mech-line); opacity: 0.5; }
+.mech-card-kicker { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mech-line); opacity: 0.8; margin-bottom: 8px; }
+.mech-card-title { font-family: var(--font-display); font-weight: 400; font-size: 20px; color: var(--text); margin: 0 0 4px; line-height: 1.15; }
+.mech-card-epithet { font-size: 12px; font-style: italic; color: var(--text-dim); margin: 0 0 14px; line-height: 1.4; }
+.mech-card-fields { display: flex; flex-direction: column; gap: 4px; margin: 0 0 14px; }
+.mech-card-field { display: flex; justify-content: space-between; gap: 10px; border-top: 1px solid var(--border-soft); padding-top: 4px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; }
+.mech-card-field dt { color: var(--text-muted); text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+.mech-card-field dd { color: var(--text); text-align: right; margin: 0; }
+.mech-card-lore { font-family: var(--font-sans); font-size: 13px; line-height: 1.65; color: var(--text-dim); margin: 0; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* ====== Sororitas Archive ====== */
 .sororitas-view { padding: 120px 48px 80px; min-height: 100vh; background: radial-gradient(ellipse at 50% 10%, oklch(0.22 0.08 280 / 0.5) 0%, transparent 55%), var(--bg); }
