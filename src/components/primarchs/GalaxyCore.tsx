@@ -1,5 +1,5 @@
 import type { Primarch } from '@/data/types'
-import { cx, cy } from './utils'
+import { cx, cy } from './galaxyUtils'
 
 interface Props {
   emperor: Primarch | undefined

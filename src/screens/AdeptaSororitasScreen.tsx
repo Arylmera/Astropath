@@ -1,14 +1,14 @@
 import { Fragment } from 'react'
 import type { CSSProperties } from 'react'
 import type { Entry } from '@/lib/datasets'
-import StainedGlass from './StainedGlass'
+import StainedGlass from '@/components/adeptaSororitas/StainedGlass'
 import {
   CATEGORY_ORDER,
   CATEGORY_COPY,
   ARCHIVE_HEADER,
   ARCHIVE_FOOTER,
   PANEL_DEFAULTS,
-} from './SororitasArchive.config'
+} from '@/components/adeptaSororitas/SororitasArchive.config'
 
 interface Props {
   entries: Entry[]
@@ -45,7 +45,7 @@ function groupEntries(entries: Entry[]) {
   }))
 }
 
-export default function SororitasArchive({ entries, onOpen }: Props) {
+export default function AdeptaSororitasScreen({ entries, onOpen }: Props) {
   const sections = groupEntries(entries)
 
   return (

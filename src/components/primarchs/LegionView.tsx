@@ -1,7 +1,7 @@
 import type { Legion, Primarch } from '@/data/types'
 import { allegianceClass } from '@/lib/lexicon'
-import BackButton from './BackButton'
-import LoreList from './LoreList'
+import BackButton from '@/components/shared/BackButton'
+import LoreList from '@/components/shared/LoreList'
 
 interface Props {
   legion: Legion

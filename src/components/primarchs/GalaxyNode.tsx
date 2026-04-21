@@ -1,5 +1,5 @@
-import type { Node } from './utils'
-import { cx } from './utils'
+import type { Node } from './galaxyUtils'
+import { cx } from './galaxyUtils'
 
 interface Props {
   node: Node

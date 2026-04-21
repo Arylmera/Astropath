@@ -1,4 +1,4 @@
-import type { Entry } from '../lib/datasets'
+import type { Entry } from '@/lib/datasets'
 
 type Props = {
   entries: Entry[]

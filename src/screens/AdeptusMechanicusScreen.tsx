@@ -201,7 +201,7 @@ function MechCard({ entry }: { entry: MechEntry }) {
   )
 }
 
-// ---- MechanicusArchive -----------------------------------------------------
+// ---- AdeptusMechanicusScreen -----------------------------------------------
 
 interface ArchiveProps {
   forges: Forge[]
@@ -209,7 +209,7 @@ interface ArchiveProps {
   onOpen: (id: string) => void
 }
 
-export default function MechanicusArchive({ forges, entries, onOpen }: ArchiveProps) {
+export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: ArchiveProps) {
   const [hoverId, setHover] = useState<string | null>(null)
   const [tab, setTab]       = useState<Tab>('Forge Worlds')
   const hovered = useMemo(() => forges.find(f => f.id === hoverId) ?? null, [hoverId, forges])

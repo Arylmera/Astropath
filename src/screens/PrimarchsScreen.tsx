@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react'
 import type { Primarch } from '@/data/types'
-import { W, H, cx, cy, r1, r2, generateStars, interleaveByAllegiance, computePositions } from './utils'
-import GalaxyCore from './GalaxyCore'
-import GalaxyNode from './GalaxyNode'
-import GalaxyFocusPanel from './GalaxyFocusPanel'
+import { W, H, cx, cy, r1, r2, generateStars, interleaveByAllegiance, computePositions } from '@/components/primarchs/galaxyUtils'
+import GalaxyCore from '@/components/primarchs/GalaxyCore'
+import GalaxyNode from '@/components/primarchs/GalaxyNode'
+import GalaxyFocusPanel from '@/components/primarchs/GalaxyFocusPanel'
 
 interface Props {
   primarchs: Primarch[]
@@ -12,7 +12,7 @@ interface Props {
 
 const STARS = generateStars()
 
-export default function GalaxyMap({ primarchs: allPrimarchs, onOpen }: Props) {
+export default function PrimarchsScreen({ primarchs: allPrimarchs, onOpen }: Props) {
   const primarchs = useMemo(() => allPrimarchs.filter(p => !p.isEmperor), [allPrimarchs])
   const emperor   = useMemo(() => allPrimarchs.find(p => p.isEmperor),    [allPrimarchs])
 
