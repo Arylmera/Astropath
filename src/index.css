@@ -317,6 +317,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .chip.traitor { border-color: var(--traitor); color: var(--traitor); }
 .chip.loyal .chip-value { color: var(--loyal); }
 .chip.traitor .chip-value { color: var(--traitor); }
+.lexicon-section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
 .lexicon-lore { font-family: var(--font-display); font-weight: 300; font-size: 18px; line-height: 1.7; color: var(--text); max-width: 60ch; }
 .lexicon-lore p { margin: 0 0 18px; }
 .lexicon-lore p:first-child::first-letter { font-family: var(--font-display); font-weight: 300; font-size: 72px; line-height: 0.8; float: left; padding: 6px 12px 0 0; color: var(--accent); }

@@ -211,8 +211,10 @@ export default function App() {
               { label: 'Dogma',        value: forge.dogma },
               { label: 'Colours',      value: forge.colors },
               { label: 'Primacy',      value: forge.primacy },
+              { label: 'Fabricator',   value: forge.fabricator },
             ]}
             lore={forge.lore}
+            loreLabel="Lore"
           />
         )
       }
