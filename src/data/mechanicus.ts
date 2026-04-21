@@ -35,14 +35,14 @@ const CATEGORY_ORDER: MechCategory[] = ['Organisation', 'Theology', 'Rank', 'Cha
 
 const mechCategories = Object.fromEntries(
   CATEGORY_ORDER.map(cat => [cat, []])
-) as Record<MechCategory, MechEntry[]>
+) as unknown as Record<MechCategory, MechEntry[]>
 
 for (const id of admechIndex.order) {
   const m = byId.get(id)
   if (!m) continue
   const cat = m['category'] as string
   if (cat === 'Forge World' || !(cat in mechCategories)) continue
-  mechCategories[cat].push({
+  mechCategories[cat as MechCategory].push({
     id:          m['id']          as string,
     category:    cat,
     title:       m['title']       as string,
