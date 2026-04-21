@@ -2,6 +2,8 @@
   "id": "canoness",
   "category": "concept",
   "title": "Canoness",
+  "icon": "chalice",
+  "glass": ["#1a1208", "#c9a84c", "#5a3a00"],
   "page": "Canoness",
   "source": "https://warhammer40k.fandom.com/wiki/Canoness"
 }

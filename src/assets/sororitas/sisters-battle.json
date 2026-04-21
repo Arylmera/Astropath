@@ -2,6 +2,8 @@
   "id": "sisters-battle",
   "category": "related",
   "title": "Sisters of Battle",
+  "icon": "rose-and-sword",
+  "glass": ["#1c1008", "#c9a84c", "#8b0000"],
   "page": "Sisters_of_Battle",
   "source": "https://warhammer40k.fandom.com/wiki/Sisters_of_Battle"
 }

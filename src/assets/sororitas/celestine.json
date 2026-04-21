@@ -2,6 +2,8 @@
   "id": "celestine",
   "category": "character",
   "title": "Saint Celestine",
+  "icon": "flaming-heart",
+  "glass": ["#fff5c0", "#f4c430", "#b87020"],
   "page": "Celestine",
   "source": "https://warhammer40k.fandom.com/wiki/Celestine"
 }

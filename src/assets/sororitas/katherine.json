@@ -2,6 +2,8 @@
   "id": "katherine",
   "category": "character",
   "title": "Saint Katherine",
+  "icon": "rose-and-sword",
+  "glass": ["#c8102e", "#c9a84c", "#8b0000"],
   "page": "Katherine",
   "source": "https://warhammer40k.fandom.com/wiki/Katherine"
 }

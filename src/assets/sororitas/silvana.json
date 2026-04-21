@@ -2,6 +2,8 @@
   "id": "silvana",
   "category": "character",
   "title": "Saint Silvana",
+  "icon": "shroud",
+  "glass": ["#d4d0c8", "#c9a84c", "#7a7a8a"],
   "page": "Silvana",
   "source": "https://warhammer40k.fandom.com/wiki/Silvana"
 }
