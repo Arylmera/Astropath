@@ -243,6 +243,68 @@ function GlassIcon({ name, halo, gold, stroke }: GlassIconProps) {
         </g>
       )
 
+    case 'warrior-saint':
+      return (
+        <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
+          <circle r="88" fill="none" stroke={gold} strokeWidth="1" opacity="0.5" />
+
+          {/* Fleur-de-lis */}
+          <path d="M 0 -88 C -5 -78 -10 -66 0 -60 C 10 -66 5 -78 0 -88 Z" fill={gold} stroke={gold} strokeWidth="1.5" />
+          <path d="M -4 -76 C -18 -82 -28 -70 -18 -62 C -14 -58 -8 -64 -6 -70 C -4 -62 -1 -62 0 -60 Z" fill={gold} stroke={gold} strokeWidth="1" />
+          <path d="M  4 -76 C  18 -82  28 -70  18 -62 C  14 -58   8 -64   6 -70 C   4 -62   1 -62   0 -60 Z" fill={gold} stroke={gold} strokeWidth="1" />
+          <rect x="-5" y="-60" width="10" height="8" rx="2" fill={gold} stroke={stroke} strokeWidth="1" />
+
+          {/* Wings */}
+          <g>
+            <path d="M -6 -30 C -26 -44 -62 -38 -82 -48 C -70 -30 -46 -26 -30 -22 C -54 -14 -72 0 -74 12 C -54 12 -34 2 -18 8 C -36 18 -50 34 -48 46 C -30 38 -14 22 -6 10 Z" fill={halo} stroke={stroke} strokeWidth="2" />
+            <path d="M -6 -30 C -26 -36 -52 -30 -66 -40" fill="none" stroke={gold} strokeWidth="1" opacity="0.55" />
+            <path d="M -10 -8 C -28 -10 -50 -4 -60 6"   fill="none" stroke={gold} strokeWidth="1" opacity="0.55" />
+            <path d="M -14 12 C -28 16 -40 28 -42 38"   fill="none" stroke={gold} strokeWidth="1" opacity="0.45" />
+          </g>
+          <g transform="scale(-1 1)">
+            <path d="M -6 -30 C -26 -44 -62 -38 -82 -48 C -70 -30 -46 -26 -30 -22 C -54 -14 -72 0 -74 12 C -54 12 -34 2 -18 8 C -36 18 -50 34 -48 46 C -30 38 -14 22 -6 10 Z" fill={halo} stroke={stroke} strokeWidth="2" />
+            <path d="M -6 -30 C -26 -36 -52 -30 -66 -40" fill="none" stroke={gold} strokeWidth="1" opacity="0.55" />
+            <path d="M -10 -8 C -28 -10 -50 -4 -60 6"   fill="none" stroke={gold} strokeWidth="1" opacity="0.55" />
+            <path d="M -14 12 C -28 16 -40 28 -42 38"   fill="none" stroke={gold} strokeWidth="1" opacity="0.45" />
+          </g>
+
+          {/* Armored body */}
+          <path d="M -18 -28 L -26 -14 L -26 24 L 26 24 L 26 -14 L 18 -28 Z" />
+          <path d="M -18 -28 L -34 -20 L -34 -8 L -26 -8 L -26 -14 Z" fill={halo} stroke={stroke} strokeWidth="1.5" />
+          <g transform="scale(-1 1)">
+            <path d="M -18 -28 L -34 -20 L -34 -8 L -26 -8 L -26 -14 Z" fill={halo} stroke={stroke} strokeWidth="1.5" />
+          </g>
+
+          {/* Skull chest emblem */}
+          <ellipse cx="0" cy="-2" rx="9" ry="10" fill={fill} stroke={gold} strokeWidth="1.5" />
+          <ellipse cx="-3" cy="-5" rx="2.2" ry="2.8" fill={gold} stroke="none" />
+          <ellipse cx="3"  cy="-5" rx="2.2" ry="2.8" fill={gold} stroke="none" />
+          <path d="M -4 2 L -2 7 M 0 2 L 0 7 M 4 2 L 2 7" stroke={gold} strokeWidth="1" />
+
+          {/* Crossed arms */}
+          <path d="M -26 -2 L -26 20 L -14 20 L -14 8 L -4 20 L 4 20 L 14 8 L 14 20 L 26 20 L 26 -2" fill={fill} stroke={stroke} strokeWidth="1.5" />
+
+          {/* Sword — vertical, point down */}
+          <rect x="-3" y="16" width="6" height="46" fill={stroke} />
+          <line x1="0" y1="16" x2="0" y2="62" stroke={gold} strokeWidth="1.5" />
+          <path d="M -16 22 L 16 22 L 14 28 L -14 28 Z" fill={gold} stroke={stroke} strokeWidth="1.5" />
+          <path d="M -5 14 L 0 6 L 5 14 Z" fill={gold} stroke={stroke} strokeWidth="1" />
+          <path d="M -4 60 L 0 70 L 4 60 Z" fill={halo} stroke={stroke} strokeWidth="1" />
+
+          {/* Flames */}
+          <path d="M -24 56 C -22 40 -12 36 -10 50 C -8 36 0 30 0 48 C 0 30 8 36 10 50 C 12 36 22 40 24 56 Z" fill={gold} stroke="none" opacity="0.9" />
+          <path d="M -14 56 C -12 44 -4 42 -2 52 C 2 42 12 44 10 56 Z" fill={halo} stroke={halo} strokeWidth="1" opacity="0.8" />
+
+          {/* Chalice / brazier */}
+          <path d="M -28 56 L 28 56 L 22 68 L 8 68 L 8 76 L 18 76 L 18 82 L -18 82 L -18 76 L -8 76 L -8 68 L -22 68 Z" />
+          <rect x="-26" y="56" width="52" height="5" fill={gold} stroke="none" />
+          <circle cx="-14" cy="64" r="3" fill={halo} stroke={stroke} strokeWidth="1" />
+          <circle cx="0"   cy="64" r="3" fill={gold} stroke={stroke} strokeWidth="1" />
+          <circle cx="14"  cy="64" r="3" fill={halo} stroke={stroke} strokeWidth="1" />
+          <rect x="-18" y="76" width="36" height="4" fill={gold} stroke="none" />
+        </g>
+      )
+
     default:
       return <circle r="30" fill={fill} stroke={stroke} strokeWidth={sw} />
   }
