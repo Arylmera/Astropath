@@ -230,6 +230,19 @@ function GlassIcon({ name, halo, gold, stroke }: GlassIconProps) {
         </g>
       )
 
+    case 'silence':
+      return (
+        <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
+          <circle r="88" fill="none" stroke={gold} strokeWidth="1" opacity="0.5" />
+          <path d="M -56 -8 C -38 -30 -14 -36 0 -28 C 14 -36 38 -30 56 -8 Q 28 -4 0 -2 Q -28 -4 -56 -8 Z" fill={halo} stroke={stroke} strokeWidth="2" />
+          <path d="M -56 -8 Q -28 -4 0 -2 Q 28 -4 56 -8 C 50 20 28 38 0 40 C -28 38 -50 20 -56 -8 Z" fill={halo} stroke={stroke} strokeWidth="2" />
+          <path d="M -56 -8 Q 0 -2 56 -8" fill="none" stroke={gold} strokeWidth="2" />
+          {([[-38,-20,4],[-19,-22,6],[0,-22,8],[19,-22,6],[38,-20,4]] as const).map(([x,y1,y2]) => (
+            <line key={x} x1={x} y1={y1} x2={x} y2={y2} stroke={gold} strokeWidth="2.5" />
+          ))}
+        </g>
+      )
+
     default:
       return <circle r="30" fill={fill} stroke={stroke} strokeWidth={sw} />
   }
