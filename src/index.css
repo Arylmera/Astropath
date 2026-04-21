@@ -466,7 +466,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-article-back { margin-top: 24px; }
 
 /* ====== Mechanicus Archive ====== */
-.mechanicus-view { padding: 120px 48px 80px; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, var(--mech-glow) 0%, transparent 55%), var(--bg); }
+.mechanicus-view { padding: 60px 48px 80px; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, var(--mech-glow) 0%, transparent 55%), var(--bg); }
 .mech-header { max-width: 760px; margin: 0 auto 36px; text-align: center; }
 .mech-header-kicker { display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mech-line); opacity: 0.9; margin-bottom: 18px; }
 .mech-cog-sm { font-size: 14px; }
@@ -556,7 +556,7 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
   .sor-sections { gap: 28px; }
   .sor-nave { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .mech-header h1, .sor-header h1 { font-size: 40px; }
-  .mechanicus-view, .sororitas-view, .sororitas-record-view { padding: 100px 20px 60px; }
+  .mechanicus-view, .sororitas-view, .sororitas-record-view { padding: 60px 20px 60px; }
 }
 
 /* ====== Forge + Order lexicon portraits ====== */
