@@ -110,6 +110,24 @@ function GlassIcon({ name, halo, gold, stroke }: GlassIconProps) {
         </g>
       )
 
+    case 'flaming-heart':
+      return (
+        <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
+          <circle r="88" fill="none" stroke={gold} strokeWidth="1" opacity="0.5" />
+          <path d="M 0 -80 C -6 -60 -28 -52 -20 -28 C -14 -10 -4 -18 0 -24 C 4 -18 14 -10 20 -28 C 28 -52 6 -60 0 -80 Z" fill={gold} stroke={gold} strokeWidth="1.5" />
+          <path d="M -24 -62 C -30 -46 -44 -40 -38 -20 C -34 -8 -26 -14 -24 -22 C -20 -10 -10 -4 -8 -20 C -4 -44 -18 -50 -24 -62 Z" fill={halo} stroke={stroke} strokeWidth="1" opacity="0.85" />
+          <path d="M 24 -62 C 30 -46 44 -40 38 -20 C 34 -8 26 -14 24 -22 C 20 -10 10 -4 8 -20 C 4 -44 18 -50 24 -62 Z" fill={halo} stroke={stroke} strokeWidth="1" opacity="0.85" />
+          <path d="M 0 68 C -66 22 -74 -28 -38 -48 C -18 -58 -4 -44 0 -28 C 4 -44 18 -58 38 -48 C 74 -28 66 22 0 68 Z" fill={halo} stroke={stroke} strokeWidth="3" />
+          <line x1="0" y1="-14" x2="0" y2="36" stroke={gold} strokeWidth="2.5" opacity="0.7" />
+          <line x1="-22" y1="8" x2="22" y2="8" stroke={gold} strokeWidth="2.5" opacity="0.7" />
+          {Array.from({ length: 6 }, (_, i) => {
+            const ang = (i / 6) * Math.PI - Math.PI
+            const r = 74
+            return <circle key={i} cx={Math.cos(ang) * r} cy={Math.sin(ang) * r * 0.6 - 10} r="3" fill={gold} stroke="none" opacity="0.6" />
+          })}
+        </g>
+      )
+
     case 'rose-bloom':
       return (
         <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
