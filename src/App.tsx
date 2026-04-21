@@ -179,6 +179,7 @@ export default function App() {
         return (
           <MechanicusArchive
             forges={DATA.mechanicus}
+            entries={DATA.mechCategories}
             onOpen={id => go('forge', id)}
           />
         )

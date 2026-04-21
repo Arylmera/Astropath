@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import type { Forge } from '@/data/types'
-import type { MechEntry } from '@/data/types/MechEntry'
+import type { MechEntry, MechCategory } from '@/data/types/MechEntry'
 
 // ---- MechanicalCog ---------------------------------------------------------
 
@@ -184,7 +184,6 @@ function MechCard({ entry }: { entry: MechEntry }) {
   const fields = entryFields(entry)
   return (
     <article className="mech-card">
-      <div className="mech-card-kicker">{entry.category.toUpperCase()}</div>
       <h3 className="mech-card-title">{entry.title}</h3>
       <p className="mech-card-epithet">"{entry.epithet}"</p>
       {fields.length > 0 && (
@@ -206,7 +205,7 @@ function MechCard({ entry }: { entry: MechEntry }) {
 
 interface ArchiveProps {
   forges: Forge[]
-  entries: Record<string, MechEntry[]>
+  entries: Record<MechCategory, MechEntry[]>
   onOpen: (id: string) => void
 }
 
