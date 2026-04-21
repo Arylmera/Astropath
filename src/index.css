@@ -411,6 +411,14 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .see-more-btn { margin-top: 4px; padding: 12px 20px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); background: transparent; border: 1px solid var(--border); cursor: pointer; transition: all 0.15s ease; }
 .see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 
+/* ====== Sororitas Record ====== */
+.sororitas-scene { position: relative; min-height: 100vh; overflow: hidden; }
+.sororitas-portrait-bg { position: absolute; top: 0; right: 0; width: 50%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.sororitas-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
+.sororitas-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
+.sororitas-content { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
+@media (max-width: 720px) { .sororitas-portrait-bg { width: 100%; opacity: 0.12; } }
+
 /* ====== Lore record view ====== */
 .lore-view { max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
 .lore-mast { position: relative; border: 1px solid var(--border-soft); background: linear-gradient(180deg, oklch(from var(--bg-raised) l c h / 0.6), oklch(from var(--bg) l c h / 0.4)), radial-gradient(1200px 280px at 80% -40%, var(--glow), transparent 60%); padding: 18px 28px 24px; margin-bottom: 40px; overflow: hidden; }
@@ -423,6 +431,9 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-mast-sep { color: var(--border); opacity: 0.7; }
 .lore-mast-back { position: relative; z-index: 1; margin-bottom: 22px; }
 .lore-mast-body { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; padding: 8px 0 20px; }
+.lore-mast-portrait-bg { position: absolute; top: 0; right: 0; width: 46%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.lore-mast-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.28; }
+.lore-mast-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 18%, transparent 55%, var(--bg) 96%), linear-gradient(to bottom, transparent 60%, var(--bg) 100%); pointer-events: none; }
 .lore-mast-numeral { font-family: var(--font-display); font-size: clamp(88px, 16vw, 176px); font-weight: 300; line-height: 0.9; letter-spacing: -0.04em; color: var(--text); opacity: 0.08; padding: 0 8px; border-left: 2px solid var(--accent); text-align: center; min-width: 140px; }
 .lore-mast-title { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .lore-mast-kicker { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); }
@@ -437,7 +448,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-manifest dd { margin: 0; font-family: var(--font-display); font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.3; overflow-wrap: break-word; }
 .lore-manifest-v.loyal { color: var(--loyal); }
 .lore-manifest-v.traitor { color: var(--traitor); }
-@media (max-width: 720px) { .lore-view { padding: 20px 20px 60px; } .lore-mast { padding: 14px 18px 18px; } .lore-mast-body { grid-template-columns: 1fr; gap: 12px; } .lore-mast-numeral { display: none; } .lore-manifest { grid-template-columns: repeat(2, 1fr); } .lore-manifest > div { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 10px 0; } .lore-manifest > div:nth-child(odd) { padding-right: 16px; } }
+@media (max-width: 720px) { .lore-view { padding: 20px 20px 60px; } .lore-mast { padding: 14px 18px 18px; } .lore-mast-body { grid-template-columns: 1fr; gap: 12px; } .lore-mast-numeral { display: none; } .lore-mast-portrait-bg { display: none; } .lore-manifest { grid-template-columns: repeat(2, 1fr); } .lore-manifest > div { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 10px 0; } .lore-manifest > div:nth-child(odd) { padding-right: 16px; } }
 .lore-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; }
 @media (max-width: 960px) { .lore-grid { grid-template-columns: 1fr; gap: 28px; } }
 .lore-toc { position: sticky; top: 24px; align-self: start; font-family: var(--font-mono); font-size: 12px; max-height: calc(100vh - 48px); overflow-y: auto; padding-right: 8px; }
@@ -466,14 +477,14 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-article-back { margin-top: 24px; }
 
 /* ====== Mechanicus Archive ====== */
-.mechanicus-view { padding: 60px 48px 80px; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, var(--mech-glow) 0%, transparent 55%), var(--bg); }
-.mech-header { max-width: 760px; margin: 0 auto 36px; text-align: center; }
-.mech-header-kicker { display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mech-line); opacity: 0.9; margin-bottom: 18px; }
+.mechanicus-view { padding: 40px 24px 40px; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, var(--mech-glow) 0%, transparent 55%), var(--bg); }
+.mech-header { max-width: 760px; margin: 0 auto 16px; text-align: center; }
+.mech-header-kicker { display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mech-line); opacity: 0.9; margin-bottom: 10px; }
 .mech-cog-sm { font-size: 14px; }
-.mech-header h1 { font-family: var(--font-display); font-weight: 300; font-size: 56px; letter-spacing: -0.01em; line-height: 1; margin: 0 0 16px; color: var(--text); }
+.mech-header h1 { font-family: var(--font-display); font-weight: 300; font-size: 56px; letter-spacing: -0.01em; line-height: 1; margin: 0 0 10px; color: var(--text); }
 .mech-header-lede { font-family: var(--font-sans); font-size: 15px; line-height: 1.6; color: var(--text-dim); max-width: 560px; margin: 0 auto; }
-.mech-stage { position: relative; max-width: 1280px; margin: 0 auto; min-height: 780px; display: grid; place-items: center; }
-.mech-diagram { width: min(780px, 90vw); height: min(780px, 90vw); max-height: 85vh; }
+.mech-stage { position: relative; max-width: 1280px; margin: 0 auto; display: grid; place-items: center; }
+.mech-diagram { width: min(980px, 95vw); height: min(980px, 95vw); max-height: 90vh; }
 .mech-node { cursor: pointer; transition: opacity 0.18s ease; }
 .mech-stage:has(.mech-node:hover) .mech-node:not(:hover) { opacity: 0.45; }
 .mech-focus { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 300px; pointer-events: none; text-align: center; z-index: 5; color: var(--text); padding: 22px 22px 20px; opacity: 0; transition: opacity 0.18s ease; background: var(--mech-bg); border: 1px solid var(--mech-line); border-radius: 2px; box-shadow: 0 0 0 4px var(--mech-bg), 0 0 0 5px color-mix(in oklab, var(--mech-line) 40%, transparent), 0 16px 48px rgba(0,0,0,0.55); }
