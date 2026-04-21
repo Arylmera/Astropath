@@ -2,8 +2,8 @@
   "id": "abbess-sanctorum",
   "category": "concept",
   "title": "Abbess Sanctorum",
-  "icon": "skull-and-tears",
-  "glass": ["#0e0a04", "#d4a840", "#2a1a08"],
+  "icon": "crown",
+  "glass": ["#1a0820", "#d4a840", "#08060e"],
   "page": "Abbess_Sanctorum",
   "source": "Curated Warhammer 40,000 lore summary"
 }

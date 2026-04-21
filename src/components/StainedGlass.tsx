@@ -152,6 +152,84 @@ function GlassIcon({ name, halo, gold, stroke }: GlassIconProps) {
         </g>
       )
 
+    case 'aquila':
+      return (
+        <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
+          <circle r="88" fill="none" stroke={gold} strokeWidth="1" opacity="0.5" />
+          <path d="M -8 -12 C -28 -24 -62 -20 -80 -44 C -66 -56 -46 -50 -30 -38 C -46 -60 -38 -72 -18 -60 C -26 -78 -8 -82 -8 -60 L -8 -12 Z" fill={halo} stroke={stroke} strokeWidth={sw} />
+          <path d="M -10 14 C -32 16 -64 28 -74 54 C -58 60 -38 52 -22 40 C -38 62 -28 74 -12 58 L -10 14 Z" fill={halo} stroke={stroke} strokeWidth={sw} opacity="0.85" />
+          <g transform="scale(-1 1)">
+            <path d="M -8 -12 C -28 -24 -62 -20 -80 -44 C -66 -56 -46 -50 -30 -38 C -46 -60 -38 -72 -18 -60 C -26 -78 -8 -82 -8 -60 L -8 -12 Z" fill={halo} stroke={stroke} strokeWidth={sw} />
+            <path d="M -10 14 C -32 16 -64 28 -74 54 C -58 60 -38 52 -22 40 C -38 62 -28 74 -12 58 L -10 14 Z" fill={halo} stroke={stroke} strokeWidth={sw} opacity="0.85" />
+          </g>
+          <path d="M -10 -20 L 0 -50 L 10 -20 L 12 30 L 0 52 L -12 30 Z" />
+          <path d="M -10 -42 C -14 -58 -28 -64 -30 -52 C -26 -40 -14 -38 -10 -46 Z" fill={gold} stroke={gold} strokeWidth="1.5" />
+          <path d="M -30 -52 L -42 -46 L -34 -42 Z" fill={gold} stroke={gold} strokeWidth="1" />
+          <g transform="scale(-1 1)">
+            <path d="M -10 -42 C -14 -58 -28 -64 -30 -52 C -26 -40 -14 -38 -10 -46 Z" fill={gold} stroke={gold} strokeWidth="1.5" />
+            <path d="M -30 -52 L -42 -46 L -34 -42 Z" fill={gold} stroke={gold} strokeWidth="1" />
+          </g>
+          <path d="M -12 46 L -16 66 L -6 60 L -10 76 L 0 68 L 10 76 L 6 60 L 16 66 L 12 46 Z" />
+          <path d="M -8 -8 L 0 -20 L 8 -8 L 6 10 L 0 16 L -6 10 Z" fill={gold} stroke={stroke} strokeWidth="1" />
+        </g>
+      )
+
+    case 'crown':
+      return (
+        <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
+          <circle r="88" fill="none" stroke={gold} strokeWidth="1" opacity="0.5" />
+          {/* Crown band */}
+          <rect x="-60" y="0" width="120" height="30" />
+          {/* Center tall spike */}
+          <path d="M -8 0 L 0 -62 L 8 0 Z" fill={halo} stroke={stroke} strokeWidth="2" />
+          {/* Left-inner spike */}
+          <path d="M -26 0 L -20 -42 L -14 0 Z" fill={halo} stroke={stroke} strokeWidth="1.5" />
+          {/* Right-inner spike */}
+          <path d="M 14 0 L 20 -42 L 26 0 Z" fill={halo} stroke={stroke} strokeWidth="1.5" />
+          {/* Left-outer spike */}
+          <path d="M -50 0 L -44 -24 L -38 0 Z" fill={halo} stroke={stroke} strokeWidth="1.5" />
+          {/* Right-outer spike */}
+          <path d="M 38 0 L 44 -24 L 50 0 Z" fill={halo} stroke={stroke} strokeWidth="1.5" />
+          {/* Band gold trim top & bottom */}
+          <rect x="-60" y="0" width="120" height="6" fill={gold} stroke="none" />
+          <rect x="-60" y="24" width="120" height="6" fill={gold} stroke="none" />
+          {/* Gems on band */}
+          <circle cx="0" cy="13" r="7" fill={gold} stroke={stroke} strokeWidth="1.5" />
+          <circle cx="-28" cy="13" r="5" fill={halo} stroke={stroke} strokeWidth="1" />
+          <circle cx="28" cy="13" r="5" fill={halo} stroke={stroke} strokeWidth="1" />
+          <circle cx="-50" cy="13" r="4" fill={gold} stroke={stroke} strokeWidth="1" />
+          <circle cx="50" cy="13" r="4" fill={gold} stroke={stroke} strokeWidth="1" />
+          {/* Center spike top gem */}
+          <circle cx="0" cy="-58" r="9" fill={gold} stroke={stroke} strokeWidth="2" />
+          <circle cx="0" cy="-58" r="5" fill={halo} stroke="none" />
+        </g>
+      )
+
+    case 'lance':
+      return (
+        <g stroke={stroke} strokeWidth={sw} strokeLinejoin="round" fill={fill}>
+          <circle r="88" fill="none" stroke={gold} strokeWidth="1" opacity="0.5" />
+          {/* Shaft */}
+          <rect x="-3" y="-34" width="6" height="118" fill={stroke} />
+          <line x1="0" y1="-34" x2="0" y2="84" stroke={gold} strokeWidth="1.5" opacity="0.7" />
+          {/* Spearhead */}
+          <path d="M 0 -84 L -14 -48 L 0 -34 L 14 -48 Z" fill={halo} stroke={stroke} strokeWidth="2" />
+          <line x1="0" y1="-84" x2="0" y2="-34" stroke={gold} strokeWidth="1" opacity="0.6" />
+          {/* Crossguard left */}
+          <path d="M -40 -22 L -8 -20 L -8 -16 L -40 -18 Z" fill={gold} stroke={stroke} strokeWidth="1.5" />
+          <circle cx="-40" cy="-20" r="5" fill={gold} stroke={stroke} strokeWidth="1" />
+          {/* Crossguard right */}
+          <path d="M 40 -22 L 8 -20 L 8 -16 L 40 -18 Z" fill={gold} stroke={stroke} strokeWidth="1.5" />
+          <circle cx="40" cy="-20" r="5" fill={gold} stroke={stroke} strokeWidth="1" />
+          {/* Grip bands */}
+          {[0, 12, 24, 36, 48].map((y) => (
+            <rect key={y} x="-5" y={y} width="10" height="5" rx="1" fill={gold} opacity="0.55" stroke="none" />
+          ))}
+          {/* Pommel */}
+          <path d="M -8 72 L 0 86 L 8 72 L 6 64 L -6 64 Z" fill={gold} stroke={stroke} strokeWidth="1.5" />
+        </g>
+      )
+
     default:
       return <circle r="30" fill={fill} stroke={stroke} strokeWidth={sw} />
   }

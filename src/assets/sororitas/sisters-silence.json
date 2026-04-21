@@ -3,7 +3,7 @@
   "category": "related",
   "title": "Sisters of Silence",
   "icon": "shroud",
-  "glass": ["#c8c8d0", "#b0a898", "#606070"],
+  "glass": ["#08080e", "#888898", "#303040"],
   "page": "Sisters_of_Silence",
   "source": "https://warhammer40k.fandom.com/wiki/Sisters_of_Silence"
 }
