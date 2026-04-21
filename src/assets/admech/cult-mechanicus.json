@@ -3,5 +3,15 @@
   "category": "Organisation",
   "title": "Cult Mechanicus",
   "page": "Cult_Mechanicus",
-  "source": "https://warhammer40k.fandom.com/wiki/Cult_Mechanicus"
+  "source": "https://warhammer40k.fandom.com/wiki/Cult_Mechanicus",
+  "epithet": "Priests of the Omnissiah",
+  "founded": "Dark Age of Technology",
+  "dogma": "The Sixteen Universal Laws — sacred algorithms of existence",
+  "colors": "Red · black",
+  "specialty": "Theological and technical orthodoxy — the religious arm of the Mechanicus",
+  "lore": [
+    "The Cult Mechanicus is the religious doctrine at the heart of the Adeptus Mechanicus. It holds that all knowledge is sacred, that the Omnissiah is the divine aspect of the Emperor, and that the pursuit of understanding is the highest act of worship.",
+    "Its priests observe the Sixteen Universal Laws — metaphysical axioms that govern how the universe operates as a vast machine. Violation of these tenets is heresy as grave as the worship of Chaos.",
+    "The Cult's rituals permeate every act of the Mechanicus: maintenance rites are prayers, machine noises are hymns, and the blueprint is scripture. It is simultaneously a religion, a philosophy, and a technical curriculum."
+  ]
 }

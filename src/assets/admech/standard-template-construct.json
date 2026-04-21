@@ -3,5 +3,13 @@
   "category": "Technology",
   "title": "Standard Template Construct",
   "page": "Standard_Template_Construct",
-  "source": "https://warhammer40k.fandom.com/wiki/Standard_Template_Construct"
+  "source": "https://warhammer40k.fandom.com/wiki/Standard_Template_Construct",
+  "epithet": "The Holy Grail of the Mechanicus",
+  "specialty": "Pre-Heresy manufacturing blueprints — complete technical specifications for any device",
+  "status": "Mostly lost — fragments are the most prized artifacts in the Imperium",
+  "lore": [
+    "The Standard Template Construct — the STC — was the greatest technological achievement of the Dark Age of Technology: a self-contained computer system containing the complete technical knowledge to construct every device humanity had ever designed, from hab-blocks to starships.",
+    "Colonists leaving Terra were given STC systems so that any world they reached could immediately reproduce the full spectrum of human technology without needing trained engineers. For centuries, humanity spread across the galaxy sustained by these machines.",
+    "Every STC was lost or destroyed during the Age of Strife. What remains are fragments — data-prints, partial outputs, physical exemplars — treated as holy relics by the Mechanicus. The discovery of even a single STC fragment can launch a crusade. A complete, functioning STC system has not been seen for ten thousand years."
+  ]
 }

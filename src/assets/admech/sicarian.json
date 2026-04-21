@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Sicarian Infiltrator",
   "page": "Sicarian_Infiltrator",
-  "source": "https://warhammer40k.fandom.com/wiki/Sicarian_Infiltrator"
+  "source": "https://warhammer40k.fandom.com/wiki/Sicarian_Infiltrator",
+  "epithet": "Razor-born Assassins",
+  "specialty": "Infiltration · close-quarters elimination · electronic warfare",
+  "strength": "Kill-team",
+  "lore": [
+    "Sicarian Infiltrators and Ruststalkers are the elite close-combat specialists of the Skitarii — warriors so extensively modified that they occupy a niche between assassin and machine. Their augmentations prioritise stealth, speed, and lethality over durability.",
+    "Sicarian Infiltrators are masters of electronic infiltration, equipped with stubcarbines that fire rounds laced with mindscramble neurotoxins, and power swords capable of disrupting energy fields. They are deployed ahead of the main Skitarii advance to sow confusion and eliminate command targets.",
+    "Ruststalkers are a crueller variant — stripped of almost all ranged capability and equipped with transonic razors and chordclaw that vibrate at frequencies that shred armour and flesh alike. They are described even within the Mechanicus as machines wearing a human body."
+  ]
 }

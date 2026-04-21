@@ -3,5 +3,14 @@
   "category": "Theology",
   "title": "Machine Spirit",
   "page": "Machine_Spirit",
-  "source": "https://warhammer40k.fandom.com/wiki/Machine_Spirit"
+  "source": "https://warhammer40k.fandom.com/wiki/Machine_Spirit",
+  "epithet": "The Ghost in the Machine",
+  "aspect": "Spiritual consciousness residing within every significant mechanism",
+  "dogma": "Honour the spirit within — a machine well-tended is a machine that serves faithfully",
+  "worship": "Ritual anointing with sacred oils, incantation of activation litanies, respectful operation",
+  "lore": [
+    "The Machine Spirit is the Mechanicus belief that complex machines possess a form of spiritual essence — a dim but real consciousness that must be respected, placated, and communicated with. Tech-Priests speak to their machines not merely as metaphor, but as genuine theological practice.",
+    "In truth, many Machine Spirits in advanced Imperial equipment are genuine artificial intelligences of pre-Heresy origin, dimmed and constrained so as not to violate the Men of Iron prohibition. The Mechanicus treats them as sacred without fully understanding what they are.",
+    "A machine whose spirit is angered — through misuse, disrespect, or poor maintenance — may malfunction at critical moments. This is not superstition to a Tech-Priest but observable reality, backed by ten thousand years of field data."
+  ]
 }

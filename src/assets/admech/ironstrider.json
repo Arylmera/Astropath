@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Ironstrider",
   "page": "Ironstrider",
-  "source": "https://warhammer40k.fandom.com/wiki/Ironstrider"
+  "source": "https://warhammer40k.fandom.com/wiki/Ironstrider",
+  "epithet": "Walker of the Motive Force",
+  "specialty": "Rapid-strike walker cavalry · precision fire support",
+  "strength": "Lance",
+  "lore": [
+    "The Ironstrider Ballistarius and Sydonian Dragoon are two variants of the Ironstrider chassis — tall, bipedal walker platforms piloted by a single Skitarii warrior who is neurally bonded to the machine through a cranial interface.",
+    "The neural link between pilot and Ironstrider is so deep that the walker effectively becomes an extension of the rider's body. Over time, pilot and machine become interdependent — the Skitarii cannot function without the Ironstrider's sensory feeds, and the walker's systems are calibrated to the pilot's neural rhythms alone.",
+    "Ironstriders move with a distinctive swaying gait that covers ground with surprising speed. Ballistarius variants carry twin cognis autocannon or twin cognis lascannon for long-range fire; Dragoons carry taser lances for devastating close-combat charges."
+  ]
 }

@@ -3,5 +3,15 @@
   "category": "Organisation",
   "title": "Adeptus Mechanicus",
   "page": "Adeptus_Mechanicus",
-  "source": "https://warhammer40k.fandom.com/wiki/Adeptus_Mechanicus"
+  "source": "https://warhammer40k.fandom.com/wiki/Adeptus_Mechanicus",
+  "epithet": "Omnissiah's Chosen",
+  "founded": "M31 (Treaty of Mars)",
+  "dogma": "Knowledge is power — guard it well",
+  "colors": "Red · silver · black",
+  "specialty": "Technology preservation, manufacture, and religious orthodoxy",
+  "lore": [
+    "The Adeptus Mechanicus is the official organisation of the Imperium of Man that oversees and monopolises all scientific and technological knowledge. Headquartered on Mars, its priests are the sole custodians of the ancient arts of construction and maintenance.",
+    "Bound to the Imperium by the ancient Treaty of Mars, the Mechanicus supplies the armies of the Emperor with weapons, vehicles, and starships in exchange for autonomy and the right to pursue their own religious agenda — the veneration of the Omnissiah.",
+    "Its members progressively replace flesh with machine, believing that the biological form is weak and impure. The most senior adepts are more machine than human, their organics reduced to a brain and spine encased in baroque cybernetic frames."
+  ]
 }

@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Titan",
   "page": "Titan",
-  "source": "https://warhammer40k.fandom.com/wiki/Titan"
+  "source": "https://warhammer40k.fandom.com/wiki/Titan",
+  "epithet": "God-Machines of the Omnissiah",
+  "specialty": "Siege · city destruction · anti-armour · battlefield dominance",
+  "strength": "Maniple · demi-legio · full Titan Legion",
+  "lore": [
+    "Titans are colossal bipedal war engines — the largest and most powerful war machines in the Imperium's arsenal, towering over battlefields and carrying weapons capable of levelling city blocks with a single salvo. They are the physical embodiment of the Mechanicus's power.",
+    "Classes range from the Warhound Scout Titan at fifteen metres tall, through the Reaver and Warlord Battle Titans, to the towering Imperator and Warmonger Emperor-class Titans that stand over forty metres and are classified as walking fortresses rather than mere war engines.",
+    "Each Titan is bonded to a crew of Princeps and Moderati who interface with the machine through a MIU — a Mind Impulse Unit that links human consciousness to the Titan's machine spirit. The bond is so deep that Titan crews often struggle to distinguish their own thoughts from the machine's instincts."
+  ]
 }

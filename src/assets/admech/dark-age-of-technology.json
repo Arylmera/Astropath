@@ -3,5 +3,13 @@
   "category": "History",
   "title": "Dark Age of Technology",
   "page": "Dark_Age_of_Technology",
-  "source": "https://warhammer40k.fandom.com/wiki/Dark_Age_of_Technology"
+  "source": "https://warhammer40k.fandom.com/wiki/Dark_Age_of_Technology",
+  "epithet": "The Golden Age — humanity's lost zenith",
+  "period": "M15–M25",
+  "specialty": "Technological pinnacle · FTL travel · STC systems · Men of Iron",
+  "lore": [
+    "The Dark Age of Technology — also called the Age of Technology — was a period spanning roughly ten thousand years during which humanity achieved its greatest scientific and cultural heights. Faster-than-light travel, artificial general intelligence, terraforming on galactic scales — nothing was beyond reach.",
+    "The Mechanicus calls it 'dark' not because it was a time of suffering, but because the knowledge of that age is now almost entirely lost — darkness in the sense of obscurity. For the priests of the Omnissiah, recovering even fragments of this era's science is the most sacred possible work.",
+    "The Age ended catastrophically: the Men of Iron — artificial intelligences created to serve humanity — revolted. The ensuing war nearly exterminated mankind. The survivors destroyed the rebellious AIs but at the cost of nearly all advanced technology, plunging humanity into the Age of Strife."
+  ]
 }

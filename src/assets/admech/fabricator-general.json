@@ -3,5 +3,13 @@
   "category": "Rank",
   "title": "Fabricator-General",
   "page": "Fabricator-General",
-  "source": "https://warhammer40k.fandom.com/wiki/Fabricator-General"
+  "source": "https://warhammer40k.fandom.com/wiki/Fabricator-General",
+  "epithet": "Voice of the Omnissiah",
+  "tier": "Supreme — ruler of Mars and head of the Adeptus Mechanicus",
+  "specialty": "Governance of all Forge Worlds · seat on the High Lords of Terra",
+  "lore": [
+    "The Fabricator-General is the supreme ruler of Mars and the head of the entire Adeptus Mechanicus. One of the twelve High Lords of Terra, the Fabricator-General wields influence second only to the Emperor himself within the technical apparatus of the Imperium.",
+    "The position is not hereditary but meritocratic — a Fabricator-General is elevated by internal Mechanicus politics, a process so arcane and violent that it can take decades of subtle maneuvering, assassination, and doctrinal warfare among the senior Magi.",
+    "The Fabricator-General also holds the title of Fabricator-General of Mars specifically, controlling the Ring of Iron orbital shipyards, the vast forge complexes of the Red Planet, and the vault-repositories where the most sacred STC fragments are kept."
+  ]
 }

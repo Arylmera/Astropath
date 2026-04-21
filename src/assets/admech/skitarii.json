@@ -3,5 +3,13 @@
   "category": "Military",
   "title": "Skitarii",
   "page": "Skitarii",
-  "source": "https://warhammer40k.fandom.com/wiki/Skitarii"
+  "source": "https://warhammer40k.fandom.com/wiki/Skitarii",
+  "epithet": "Legions of the Machine God",
+  "specialty": "Front-line combined-arms infantry · mechanized assault",
+  "strength": "Maniple · cohort · full Skitarii Legion",
+  "lore": [
+    "The Skitarii are the cybernetic warrior-priests of the Adeptus Mechanicus — soldiers who have been extensively augmented with mechanical replacements, neurally bonded to their weapons, and surgically altered to endure environments lethal to unmodified humans.",
+    "They form the core military force of every Forge World, deployed in disciplined maniples of Rangers, Vanguard, and heavier support elements. Where a Forge World's interests are threatened, the Skitarii march — tireless, emotionless, and utterly precise.",
+    "Skitarii do not serve willingly in the human sense. Their free will is suppressed by the Doctrina Imperatives — data-commands beamed from Tech-Priest Overseers that override higher cognition and direct the warriors with machine precision. Off the battlefield, many Skitarii barely function independently."
+  ]
 }

@@ -3,5 +3,14 @@
   "category": "Character",
   "title": "Kelbor-Hal",
   "page": "Kelbor-Hal",
-  "source": "https://warhammer40k.fandom.com/wiki/Kelbor-Hal"
+  "source": "https://warhammer40k.fandom.com/wiki/Kelbor-Hal",
+  "epithet": "The Betrayer of Mars",
+  "homeworld": "Mars",
+  "allegiance": "Chaos · Horus Heresy · Dark Mechanicum",
+  "specialty": "Daemonic pacts · forbidden STC access · corruption of the Mechanicum",
+  "lore": [
+    "Kelbor-Hal was the Fabricator-General of Mars at the time of the Horus Heresy — the most powerful figure in the Mechanicum, whose betrayal of the Emperor ranks among the worst treacheries of that dark age.",
+    "Horus offered Kelbor-Hal access to forbidden vaults of pre-Imperial technology sealed beneath the surface of Mars, knowledge so vast and dangerous that the Emperor himself had locked it away. Kelbor-Hal accepted, opening the vaults and unleashing the Chaos-tainted constructs within — igniting the Schism of Mars.",
+    "The resulting civil war devastated the Red Planet and split the Mechanicum in two. Kelbor-Hal and his followers fled to the Eye of Terror with the Traitor Legions, becoming the Dark Mechanicum — twisted tech-heretics who bind daemons into machines and practice the most forbidden techno-sorcery."
+  ]
 }
