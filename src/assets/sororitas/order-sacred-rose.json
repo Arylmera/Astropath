@@ -2,11 +2,21 @@
   "id": "order-sacred-rose",
   "category": "order-militant",
   "title": "Order of the Sacred Rose",
+  "name": "Order of the Sacred Rose",
   "matriarch": "Saint Arabella",
   "epithet": "Beacons of Hope",
+  "convent": "Convent Prioris · Terra",
+  "founded": "38th Millennium",
+  "parish": "Ultima Segmentum · light in the dark",
   "dogma": "Faith against despair",
+  "colors": "White · rose-gold · pale blue",
   "icon": "rose-bloom",
   "glass": ["#f1e9d8", "#d5a37a", "#8fa7c1"],
+  "lore": [
+    "The Order of the Sacred Rose — Saint Arabella's heirs, canonised only after her death. She was a miracle-worker in life, walking the stars as a commander and beacon of faith for solar decades before her martyrdom.",
+    "The circumstances of her death are not recorded in any Ecclesiarchal text. The Sacred Rose do not ask. They carry her flame instead.",
+    "Where the light of the Imperium has grown faint, they establish sanctuaries — outposts of divinity in the most remote corners of the galaxy. The rose blooms where nothing else will."
+  ],
   "page": "Order_of_the_Sacred_Rose",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Sacred_Rose"
 }

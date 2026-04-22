@@ -11,7 +11,7 @@ import ForgeSchematic from '@/components/adeptusMechanicus/ForgeSchematic'
 import SororitasRecordView from '@/components/adeptaSororitas/SororitasRecordView'
 import StainedGlass from '@/components/adeptaSororitas/StainedGlass'
 import PrimarchsScreen from '@/screens/PrimarchsScreen'
-import AdeptusMechanicusScreen from '@/screens/AdeptusMechanicusScreen'
+import AdeptusMechanicusScreen, { MechanicalCog } from '@/screens/AdeptusMechanicusScreen'
 import AdeptaSororitasScreen from '@/screens/AdeptaSororitasScreen'
 import { DATASETS } from '@/lib/datasets'
 import { allegianceClass, formatFileId } from '@/lib/lexicon'
@@ -34,7 +34,7 @@ function loadTheme(): Theme {
 }
 
 function archiveOf(view: View): string {
-  if (view === 'mechanicus' || view === 'forge') return 'mechanicus'
+  if (view === 'mechanicus' || view === 'forge' || view === 'mech-entry') return 'mechanicus'
   if (view === 'sororitas'  || view === 'order') return 'sororitas'
   return 'primarchs'
 }
@@ -56,7 +56,8 @@ export default function App() {
 
   const primarch  = nav.id ? (DATA.primarchs.find(p  => p.id  === nav.id) ?? null) : null
   const legion    = nav.id ? (DATA.legions.find(l   => l.id  === nav.id) ?? null) : null
-  const forge     = nav.id ? (DATA.mechanicus.find(f => f.id === nav.id) ?? null) : null
+  const forge      = nav.id ? (DATA.mechanicus.find(f => f.id === nav.id) ?? null) : null
+  const mechEntry  = nav.id ? (Object.values(DATA.mechCategories).flat().find(e => e.id === nav.id) ?? null) : null
   const order     = nav.id ? (DATA.sororitas.find(o  => o.id === nav.id) ?? null) : null
   const sororitasEntry = nav.id ? (sororitasDataset?.entries.find((entry) => entry.id === nav.id) ?? null) : null
 
@@ -180,7 +181,7 @@ export default function App() {
           <AdeptusMechanicusScreen
             forges={DATA.mechanicus}
             entries={DATA.mechCategories}
-            onOpen={id => go('forge', id)}
+            onOpen={id => go(DATA.mechanicus.some(f => f.id === id) ? 'forge' : 'mech-entry', id)}
           />
         )
 
@@ -215,6 +216,48 @@ export default function App() {
               { label: 'Fabricator',   value: forge.fabricator },
             ]}
             lore={forge.lore}
+            loreLabel="Lore"
+          />
+        )
+      }
+
+      case 'mech-entry': {
+        if (!mechEntry) return <div className="view"><p>Not found.</p></div>
+        const mechChips: { label: string; value: string }[] = []
+        if (mechEntry.founded)    mechChips.push({ label: 'Founded',    value: mechEntry.founded })
+        if (mechEntry.tier)       mechChips.push({ label: 'Tier',       value: mechEntry.tier })
+        if (mechEntry.period)     mechChips.push({ label: 'Period',     value: mechEntry.period })
+        if (mechEntry.homeworld)  mechChips.push({ label: 'Homeworld',  value: mechEntry.homeworld })
+        if (mechEntry.allegiance) mechChips.push({ label: 'Allegiance', value: mechEntry.allegiance })
+        if (mechEntry.aspect)     mechChips.push({ label: 'Aspect',     value: mechEntry.aspect })
+        if (mechEntry.worship)    mechChips.push({ label: 'Worship',    value: mechEntry.worship })
+        if (mechEntry.dogma)      mechChips.push({ label: 'Dogma',      value: mechEntry.dogma })
+        if (mechEntry.colors)     mechChips.push({ label: 'Colors',     value: mechEntry.colors })
+        if (mechEntry.strength)   mechChips.push({ label: 'Strength',   value: mechEntry.strength })
+        if (mechEntry.specialty)  mechChips.push({ label: 'Specialty',  value: mechEntry.specialty })
+        if (mechEntry.status)     mechChips.push({ label: 'Status',     value: mechEntry.status })
+        return (
+          <Lexicon
+            variant="forge"
+            portrait={<svg viewBox="-180 -180 360 360" width="100%" height="100%"><MechanicalCog teeth={24} outer={170} inner={148} /></svg>}
+            portraitClass="forge-portrait"
+            meta={[
+              `${mechEntry.category.toUpperCase()} · ADEPTUS MECHANICUS`,
+              `FILE · ${formatFileId(mechEntry.id)}`,
+            ]}
+            roman="⚙"
+            romanClass="forge-roman"
+            backLabel={mechEntry.category}
+            onBack={() => go('mechanicus')}
+            kicker={<>
+              <span className="lexicon-kicker-num">{mechEntry.category}</span>
+              <span>·</span>
+              <span>Adeptus Mechanicus</span>
+            </>}
+            name={mechEntry.title}
+            epithet={mechEntry.epithet}
+            chips={mechChips}
+            lore={mechEntry.lore}
             loreLabel="Lore"
           />
         )

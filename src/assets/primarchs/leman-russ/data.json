@@ -1,8 +1,22 @@
 {
   "id": "leman-russ",
+  "num": "VI",
+  "roman": "VI",
   "legionNumber": "VI",
+  "legionId": "space-wolves",
   "legion": "Space Wolves",
   "title": "Leman Russ",
+  "name": "Leman Russ",
+  "epithet": "The Wolf King",
+  "homeworld": "Fenris",
+  "allegiance": "Loyalist",
+  "status": "Missing — gone to the Wolftime",
+  "hue": 210,
+  "lore": [
+    "Leman Russ — the Wolf King, the Great Wolf — currently missing primarch of the Space Wolves. He led the VIth Legion during the Great Crusade and the Horus Heresy, famed in Imperial history for his hatred of sorcery.",
+    "After receiving a disturbing vision during the annual Feast of the Emperor's Ascension in 211.M31, he proclaimed to his Chapter that he was dying. He disappeared with the warriors of his Varagyr bodyguard — his destination and fate unknown.",
+    "Yet the primarch promised he would return at the time of prophesied apocalypse called the Wolftime. He considered himself the Emperor's most loyal son and executioner; among the forces of Chaos he was known simply as the Brawler."
+  ],
   "page": "Leman_Russ",
   "source": "https://warhammer40k.fandom.com/wiki/Leman_Russ"
 }

@@ -1,8 +1,22 @@
 {
   "id": "primarch-xi",
+  "num": "XI",
+  "roman": "XI",
   "legionNumber": "XI",
+  "legionId": null,
   "legion": "[Redacted]",
   "title": "Primarch XI (Redacted)",
+  "name": "Primarch XI",
+  "epithet": "[Redacted]",
+  "homeworld": "Unknown — purged",
+  "allegiance": "Loyalist",
+  "status": "Unknown — expunged from all records",
+  "hue": 0,
+  "lore": [
+    "The eleventh primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge.",
+    "The blank in the Legion numbering is the only testament that they ever existed. What sin warranted such absolute erasure, the Imperium does not say — and the Inquisition does not welcome the question.",
+    "They are gone. Even the shape of their absence is classified."
+  ],
   "page": null,
   "source": null
 }

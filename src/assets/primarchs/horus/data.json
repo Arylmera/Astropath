@@ -1,8 +1,22 @@
 {
   "id": "horus",
+  "num": "XVI",
+  "roman": "XVI",
   "legionNumber": "XVI",
-  "legion": "Sons of Horus / Luna Wolves",
+  "legionId": "sons-of-horus",
+  "legion": "Sons of Horus",
   "title": "Horus Lupercal",
+  "name": "Horus Lupercal",
+  "epithet": "The Warmaster",
+  "homeworld": "Cthonia",
+  "allegiance": "Traitor",
+  "status": "Slain, M31 — Siege of Terra",
+  "hue": 18,
+  "lore": [
+    "Horus Lupercal — the Warmaster, the most favoured son, and ultimately the greatest traitor in the history of Mankind. Master of the XVIth Legion, the Luna Wolves, later renamed the Sons of Horus.",
+    "His homeworld was the hive-world of Cthonia, only a handful of light years from Terra. He was thus the first primarch to be rediscovered by the Emperor after the Great Crusade began in the late 30th Millennium.",
+    "He unleashed the civil war known as the Horus Heresy upon the Imperium in the early 31st Millennium, killing billions in pursuit of his mad ambition to replace the Emperor. He lost his bid for power — but his actions damaged the Imperium beyond repair."
+  ],
   "page": "Horus",
   "source": "https://warhammer40k.fandom.com/wiki/Horus"
 }

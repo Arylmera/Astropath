@@ -2,11 +2,21 @@
   "id": "order-argent-shroud",
   "category": "order-militant",
   "title": "Order of the Argent Shroud",
+  "name": "Order of the Argent Shroud",
   "matriarch": "Saint Silvana",
   "epithet": "The Silent Sisters",
+  "convent": "Convent Prioris · Terra",
+  "founded": "36th Millennium",
+  "parish": "Borders of the Great Rift",
   "dogma": "Deeds, not words",
+  "colors": "Silver · black · unstained white",
   "icon": "shroud",
   "glass": ["#8a8c93", "#1a1b1f", "#e6e7eb"],
+  "lore": [
+    "The Order of the Argent Shroud — Saint Silvana's heirs. She was the quiet one of Dominica's five, struck down by poison before she could ever lead a War of Faith. Her body lay in state for a week — then vanished, unexplained.",
+    "Her sisters speak little. Where other orders preach, the Shroud simply acts. Multiple preceptories once thought lost to the Noctis Aeterna have since been seen in battle on the Rift — appearing without warning, striking at the unprepared, then gone again.",
+    "They never say what became of their sanctuary-worlds. That silence is, itself, the answer."
+  ],
   "page": "Order_of_the_Argent_Shroud",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Argent_Shroud"
 }

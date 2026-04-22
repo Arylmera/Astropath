@@ -1,8 +1,22 @@
 {
   "id": "mortarion",
+  "num": "XIV",
+  "roman": "XIV",
   "legionNumber": "XIV",
+  "legionId": "death-guard",
   "legion": "Death Guard",
   "title": "Mortarion",
+  "name": "Mortarion",
+  "epithet": "The Death Lord",
+  "homeworld": "Barbarus",
+  "allegiance": "Traitor",
+  "status": "Daemon Primarch of Nurgle",
+  "hue": 85,
+  "lore": [
+    "Mortarion — the Pale King, the Death Lord, the Prince of Decay — master of the Death Guard Space Marine Legion, turned to the service of Chaos during the Horus Heresy.",
+    "He came to rest on Barbarus: a world wreathed in poisonous fog where steam power was the height of technology, ruled by necromantic warlords with Warp-derived gifts. He was raised by the most powerful of them — Necare — as a son and heir.",
+    "He is now the greatest Daemon Prince of Nurgle. He recently returned to Imperial space for the first time in ten thousand years when he led the forces of the Plague God in the invasion of Ultramar during the Plague Wars."
+  ],
   "page": "Mortarion",
   "source": "https://warhammer40k.fandom.com/wiki/Mortarion"
 }

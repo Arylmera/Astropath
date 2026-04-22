@@ -1,8 +1,22 @@
 {
   "id": "jaghatai-khan",
+  "num": "V",
+  "roman": "V",
   "legionNumber": "V",
+  "legionId": "white-scars",
   "legion": "White Scars",
   "title": "Jaghatai Khan",
+  "name": "Jaghatai Khan",
+  "epithet": "The Warhawk",
+  "homeworld": "Chogoris",
+  "allegiance": "Loyalist",
+  "status": "Missing — lost in the Webway",
+  "hue": 190,
+  "lore": [
+    "Jaghatai Khan — the Warhawk — primarch of the White Scars, the Vth Legion. Born into the steppe-clans of Chogoris, he took the strategic arts of horse-nomad warfare and adapted them to the warp-speed void.",
+    "The White Scars were the swiftest of all Legions, their assault doctrines built around speed, deception and overwhelming strike. He reached Terra during the final days of the Siege and led counter-attacks against the walls.",
+    "After the Heresy he was lost in the Webway, pursuing the Dark Eldar who preyed upon his people. He has not been seen since — but the storm does not speak of its own ending."
+  ],
   "page": "Jaghatai_Khan",
   "source": "https://warhammer40k.fandom.com/wiki/Jaghatai_Khan"
 }

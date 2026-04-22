@@ -1,8 +1,22 @@
 {
   "id": "fulgrim",
+  "num": "III",
+  "roman": "III",
   "legionNumber": "III",
+  "legionId": "emperors-children",
   "legion": "Emperor's Children",
   "title": "Fulgrim",
+  "name": "Fulgrim",
+  "epithet": "The Phoenician",
+  "homeworld": "Chemos",
+  "allegiance": "Traitor",
+  "status": "Daemon Primarch of Slaanesh",
+  "hue": 320,
+  "lore": [
+    "Fulgrim — the Phoenician — primarch of the Emperor's Children, the IIIrd Legion. A being obsessed with perfection in all things: in war, in art, in craft, in beauty.",
+    "His pursuit of excellence curdled into excess. Seduced by a daemonic blade and by the whispers of She Who Thirsts, he fell further and further from his father's vision.",
+    "He now exists as a Daemon Primarch of Slaanesh — an eternal aesthete of cruelty, ruler of a splintered Legion whose warriors chase ever-sharper sensations across the galaxy."
+  ],
   "page": "Fulgrim",
   "source": "https://warhammer40k.fandom.com/wiki/Fulgrim"
 }

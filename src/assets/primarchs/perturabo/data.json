@@ -1,8 +1,22 @@
 {
   "id": "perturabo",
+  "num": "IV",
+  "roman": "IV",
   "legionNumber": "IV",
+  "legionId": "iron-warriors",
   "legion": "Iron Warriors",
   "title": "Perturabo",
+  "name": "Perturabo",
+  "epithet": "The Lord of Iron",
+  "homeworld": "Olympia (destroyed)",
+  "allegiance": "Traitor",
+  "status": "Daemon Primarch of Chaos Undivided",
+  "hue": 200,
+  "lore": [
+    "Perturabo — the Lord of Iron — primarch of the Iron Warriors, the IVth Legion. A polymath of cold brilliance: mathematician, engineer, architect, and the finest siege-master the Great Crusade produced.",
+    "He was consumed by resentment. His Legion was given the most thankless garrison duties; his own genius was overlooked for the affections lavished on Dorn. When Olympia rose in rebellion he responded with absolute annihilation — and then turned to Horus.",
+    "In the Iron Cage, he humiliated the Imperial Fists so savagely that Rogal Dorn wept on the field. He ascended to daemonhood shortly after. He endures as a being of cold, perfect fury — and the Chaos Gods still find him difficult to control."
+  ],
   "page": "Perturabo",
   "source": "https://warhammer40k.fandom.com/wiki/Perturabo"
 }

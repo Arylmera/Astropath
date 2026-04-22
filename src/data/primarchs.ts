@@ -1,374 +1,64 @@
+import type { Allegiance } from './types/Allegiance'
 import type { Primarch } from './types'
+import primarchsIndex from '../assets/primarchs/index.json'
+
+type RawPrimarch = {
+  id: string
+  num: string
+  roman: string
+  legionNumber: string
+  legionId: string | null
+  legion: string
+  title: string
+  name: string
+  epithet: string
+  roleLabel?: string
+  homeworld: string
+  allegiance: Allegiance
+  status: string
+  isEmperor?: boolean
+  hue: number
+  lore: string[]
+}
+
+const dataModules = import.meta.glob<RawPrimarch>(
+  '../assets/primarchs/*/data.json',
+  { eager: true, import: 'default' },
+)
 
 const portraitModules = import.meta.glob<string>(
   '../assets/primarchs/*/portrait.{jpg,jpeg,png,webp,svg,gif}',
   { eager: true, query: '?url', import: 'default' },
 )
-function p(id: string): string {
-  const key = Object.keys(portraitModules).find(k => k.includes(`/${id}/portrait.`))
-  return key ? portraitModules[key] : ''
+
+const portraitById = new Map<string, string>()
+for (const [path, url] of Object.entries(portraitModules)) {
+  const m = path.match(/\/primarchs\/([^/]+)\/portrait\./)
+  if (m) portraitById.set(m[1], url)
 }
 
-const primarchs: Primarch[] = [
-  {
-    id: 'emperor', num: 'I', roman: 'I',
-    name: 'The Emperor of Mankind',
-    epithet: 'The God-Emperor · The Anathema',
-    legionId: null,
-    legion: 'The Imperium of Man',
-    roleLabel: 'Emperor of Mankind',
-    homeworld: 'Terra',
-    allegiance: 'Loyalist',
-    status: 'Interred — The Golden Throne',
-    portrait: p('emperor'),
-    isEmperor: true,
-    hue: 45,
-    lore: [
-      'The Emperor of Mankind is the immortal Perpetual who forged the Imperium of Man from the embers of Old Night. For ten thousand years he has sat interred upon the Golden Throne, neither alive nor dead — a psychic beacon whose will alone keeps the Astronomican burning and the Imperium from collapse.',
-      "Before his ascension he walked Terra for millennia as scientist, conqueror, and secret shaper of history. In the late 30th Millennium he revealed himself openly, united the Techno-barbarian warlords of Terra, and launched the Great Crusade alongside the twenty primarchs — his gene-forged sons — to reclaim humanity's scattered colonies and lift a species back into the stars.",
-      "His dream was a secular, enlightened Imperium free of the predations of the Warp. That dream died on the floor of the Imperial Palace during the Horus Heresy, when his favoured son Horus betrayed him. Mortally wounded in their final duel aboard the Warmaster's flagship, his broken body was borne to the Throne — and there he remains. Worshipped now as a god over the objections of his own teachings, he is humanity's silent, suffering bastion against the Dark.",
-    ],
-  },
-  {
-    id: 'guilliman', num: 'XIII', roman: 'XIII',
-    name: 'Roboute Guilliman',
-    epithet: 'The Avenging Son',
-    legionId: 'ultramarines',
-    legion: 'Ultramarines',
-    homeworld: 'Macragge',
-    allegiance: 'Loyalist',
-    status: 'Active — Lord Commander',
-    portrait: p('guilliman'),
-    hue: 38,
-    lore: [
-      'Roboute Guilliman — the Avenging Son, Master of Ultramar, the Blade of Unity — is as much a patrician statesman as he is an indefatigable warrior. A being of preternatural intelligence, cold reason and indomitable will.',
-      'He forged the XIIIth Legion into a vast force of conquest and control, a weapon by which he made himself master of a stellar domain in the Eastern Fringe: the Realm of Ultramar, which during his early lifetime spanned five hundred worlds.',
-      'In the wake of the Horus Heresy, he wrote the Codex Astartes — the volume that laid out the proper tactics and military organisation for every Loyalist Chapter now in existence. In the Era Indomitus he has been resurrected and walks among his sons once more.',
-    ],
-  },
-  {
-    id: 'horus', num: 'XVI', roman: 'XVI',
-    name: 'Horus Lupercal',
-    epithet: 'The Warmaster',
-    legionId: 'sons-of-horus',
-    legion: 'Sons of Horus',
-    homeworld: 'Cthonia',
-    allegiance: 'Traitor',
-    status: 'Slain, M31 — Siege of Terra',
-    portrait: p('horus'),
-    hue: 18,
-    lore: [
-      'Horus Lupercal — the Warmaster, the most favoured son, and ultimately the greatest traitor in the history of Mankind. Master of the XVIth Legion, the Luna Wolves, later renamed the Sons of Horus.',
-      'His homeworld was the hive-world of Cthonia, only a handful of light years from Terra. He was thus the first primarch to be rediscovered by the Emperor after the Great Crusade began in the late 30th Millennium.',
-      'He unleashed the civil war known as the Horus Heresy upon the Imperium in the early 31st Millennium, killing billions in pursuit of his mad ambition to replace the Emperor. He lost his bid for power — but his actions damaged the Imperium beyond repair.',
-    ],
-  },
-  {
-    id: 'sanguinius', num: 'IX', roman: 'IX',
-    name: 'Sanguinius',
-    epithet: 'The Great Angel',
-    legionId: 'blood-angels',
-    legion: 'Blood Angels',
-    homeworld: 'Baal',
-    allegiance: 'Loyalist',
-    status: 'Slain — Siege of Terra',
-    portrait: p('sanguinius'),
-    hue: 12,
-    lore: [
-      'Sanguinius — the Great Angel, the Brightest One — primarch of the Blood Angels Legion and genetic ancestor of the Sanguinary Brotherhood of the 41st Millennium.',
-      "He was in many ways considered the noblest and most respected of the primarchs, even by his brothers, including Horus. Winged, luminous, he was the living image of the Imperium's better nature.",
-      "He was tragically slain at the climax of the Horus Heresy, defending the Emperor from the Warmaster aboard the flagship Vengeful Spirit. Imperial legend holds it was his sacrifice that opened the chink in Horus' armour.",
-    ],
-  },
-  {
-    id: 'magnus', num: 'XV', roman: 'XV',
-    name: 'Magnus the Red',
-    epithet: 'The Crimson King',
-    legionId: 'thousand-sons',
-    legion: 'Thousand Sons',
-    homeworld: 'Prospero',
-    allegiance: 'Traitor',
-    status: 'Daemon Primarch of Tzeentch',
-    portrait: p('magnus'),
-    hue: 280,
-    lore: [
-      'Magnus the Red — the Crimson King, the Red Cyclops — primarch of the Thousand Sons and an extremely powerful Daemon Prince of Tzeentch.',
-      'A giant in both physical and mental terms, the copper-skinned Magnus possessed tremendous innate psychic ability, and constantly sought to understand the nature of the Warp — becoming a sorcerer of formidable power.',
-      'His prodigious and careless application of his gifts caused him to fall out of favour with his father. His psychic immaturity, recklessness and arrogance brought about his damnation and eternal servitude to the Changer of Ways.',
-    ],
-  },
-  {
-    id: 'leman-russ', num: 'VI', roman: 'VI',
-    name: 'Leman Russ',
-    epithet: 'The Wolf King',
-    legionId: 'space-wolves',
-    legion: 'Space Wolves',
-    homeworld: 'Fenris',
-    allegiance: 'Loyalist',
-    status: 'Missing — gone to the Wolftime',
-    portrait: p('leman-russ'),
-    hue: 210,
-    lore: [
-      "Leman Russ — the Wolf King, the Great Wolf — currently missing primarch of the Space Wolves. He led the VIth Legion during the Great Crusade and the Horus Heresy, famed in Imperial history for his hatred of sorcery.",
-      "After receiving a disturbing vision during the annual Feast of the Emperor's Ascension in 211.M31, he proclaimed to his Chapter that he was dying. He disappeared with the warriors of his Varagyr bodyguard — his destination and fate unknown.",
-      "Yet the primarch promised he would return at the time of prophesied apocalypse called the Wolftime. He considered himself the Emperor's most loyal son and executioner; among the forces of Chaos he was known simply as the Brawler.",
-    ],
-  },
-  {
-    id: 'mortarion', num: 'XIV', roman: 'XIV',
-    name: 'Mortarion',
-    epithet: 'The Death Lord',
-    legionId: 'death-guard',
-    legion: 'Death Guard',
-    homeworld: 'Barbarus',
-    allegiance: 'Traitor',
-    status: 'Daemon Primarch of Nurgle',
-    portrait: p('mortarion'),
-    hue: 85,
-    lore: [
-      'Mortarion — the Pale King, the Death Lord, the Prince of Decay — master of the Death Guard Space Marine Legion, turned to the service of Chaos during the Horus Heresy.',
-      'He came to rest on Barbarus: a world wreathed in poisonous fog where steam power was the height of technology, ruled by necromantic warlords with Warp-derived gifts. He was raised by the most powerful of them — Necare — as a son and heir.',
-      "He is now the greatest Daemon Prince of Nurgle. He recently returned to Imperial space for the first time in ten thousand years when he led the forces of the Plague God in the invasion of Ultramar during the Plague Wars.",
-    ],
-  },
-  {
-    id: 'fulgrim', num: 'III', roman: 'III',
-    name: 'Fulgrim',
-    epithet: 'The Phoenician',
-    legionId: 'emperors-children',
-    legion: "Emperor's Children",
-    homeworld: 'Chemos',
-    allegiance: 'Traitor',
-    status: 'Daemon Primarch of Slaanesh',
-    portrait: p('fulgrim'),
-    hue: 320,
-    lore: [
-      "Fulgrim — the Phoenician — primarch of the Emperor's Children, the IIIrd Legion. A being obsessed with perfection in all things: in war, in art, in craft, in beauty.",
-      'His pursuit of excellence curdled into excess. Seduced by a daemonic blade and by the whispers of She Who Thirsts, he fell further and further from his father\'s vision.',
-      'He now exists as a Daemon Primarch of Slaanesh — an eternal aesthete of cruelty, ruler of a splintered Legion whose warriors chase ever-sharper sensations across the galaxy.',
-    ],
-  },
-  {
-    id: 'angron', num: 'XII', roman: 'XII',
-    name: 'Angron',
-    epithet: 'The Red Angel',
-    legionId: 'world-eaters',
-    legion: 'World Eaters',
-    homeworld: 'Nuceria',
-    allegiance: 'Traitor',
-    status: 'Daemon Primarch of Khorne',
-    portrait: p('angron'),
-    hue: 8,
-    lore: [
-      "Angron — the Red Angel — primarch of the World Eaters, the XIIth Legion. Taken as a slave-gladiator on Nuceria, his skull fused with the Butcher's Nails: crude neural implants that drowned every thought in rage.",
-      "When the Emperor rediscovered him he was already broken; the Imperium offered him a Legion but could not lift the Nails from his brain. He took the XIIth and turned them into an instrument of his pain.",
-      'He was the first of the primarchs to ascend as a Daemon Prince — ascending to the side of Khorne during the Shadow Crusade. In the Era Indomitus he has returned to the materium, and the galaxy trembles.',
-    ],
-  },
-  {
-    id: 'vulkan', num: 'XVIII', roman: 'XVIII',
-    name: 'Vulkan',
-    epithet: 'The Lord of Drakes',
-    legionId: 'salamanders',
-    legion: 'Salamanders',
-    homeworld: 'Nocturne',
-    allegiance: 'Loyalist',
-    status: 'Perpetual — whereabouts unknown',
-    portrait: p('vulkan'),
-    hue: 28,
-    lore: [
-      'Vulkan — the Lord of Drakes — primarch of the Salamanders, the XVIIIth Legion. Raised on the volcanic death-world of Nocturne, he was a smith before he was a warlord, and he never forgot it.',
-      'Alone among the primarchs he was a Perpetual: an undying being who could be slain only by the hand of another immortal. He walked the Imperium for millennia, unseen, leaving artefacts behind him as legacies for his sons.',
-      'His Salamanders remain the most humane of the Adeptus Astartes — defenders of the common people, smiths of exquisite wargear, kin to their civilian families on Nocturne in a way no other Chapter tolerates.',
-    ],
-  },
-  {
-    id: 'lion', num: 'I', roman: 'I',
-    name: "Lion El'Jonson",
-    epithet: 'The First',
-    legionId: 'dark-angels',
-    legion: 'Dark Angels',
-    homeworld: 'Caliban',
-    allegiance: 'Loyalist',
-    status: 'Returned — Era Indomitus',
-    portrait: p('lion'),
-    hue: 130,
-    lore: [
-      "Lion El'Jonson — the First — primarch of the Ist Legion, the Dark Angels. Found alone in the forests of the death-world Caliban, he was the first primarch to be recovered by the Emperor.",
-      'His Legion was the largest and most secretive of the Great Crusade. When Caliban fell during the Heresy, the shame of that internal betrayal was buried so deep that it is still hunted in silence by the Inner Circle today.',
-      'He lay in stasis for ten thousand years beneath the bones of a dead world. In the Era Indomitus he has returned — the first of the lost primarchs to walk again.',
-    ],
-  },
-  {
-    id: 'rogal-dorn', num: 'VII', roman: 'VII',
-    name: 'Rogal Dorn',
-    epithet: 'The Praetorian',
-    legionId: 'imperial-fists',
-    legion: 'Imperial Fists',
-    homeworld: 'Inwit',
-    allegiance: 'Loyalist',
-    status: 'Missing — presumed dead',
-    portrait: p('rogal-dorn'),
-    hue: 48,
-    lore: [
-      "Rogal Dorn — the Praetorian of Terra — primarch of the Imperial Fists. Implacable, unbreakable, the Emperor's chosen shield.",
-      "It was Dorn who re-fortified the Imperial Palace against the coming storm of the Heresy, and Dorn who held it when the Traitors broke upon its walls. He was the defender who never took a step backwards in his life.",
-      'He vanished leading a boarding action into the Eye of Terror during the Iron Cage war. His sons still await him. He left behind only his skeletal hand, preserved as a relic aboard the Phalanx.',
-    ],
-  },
-  {
-    id: 'jaghatai-khan', num: 'V', roman: 'V',
-    name: 'Jaghatai Khan',
-    epithet: 'The Warhawk',
-    legionId: 'white-scars',
-    legion: 'White Scars',
-    homeworld: 'Chogoris',
-    allegiance: 'Loyalist',
-    status: 'Missing — lost in the Webway',
-    portrait: p('jaghatai-khan'),
-    hue: 190,
-    lore: [
-      'Jaghatai Khan — the Warhawk — primarch of the White Scars, the Vth Legion. Born into the steppe-clans of Chogoris, he took the strategic arts of horse-nomad warfare and adapted them to the warp-speed void.',
-      'The White Scars were the swiftest of all Legions, their assault doctrines built around speed, deception and overwhelming strike. He reached Terra during the final days of the Siege and led counter-attacks against the walls.',
-      'After the Heresy he was lost in the Webway, pursuing the Dark Eldar who preyed upon his people. He has not been seen since — but the storm does not speak of its own ending.',
-    ],
-  },
-  {
-    id: 'primarch-ii', num: 'II', roman: 'II',
-    name: 'Primarch II',
-    epithet: '[Redacted]',
-    legionId: null,
-    legion: '[Redacted]',
-    homeworld: 'Unknown — purged',
-    allegiance: 'Loyalist',
-    status: 'Unknown — expunged from all records',
-    portrait: p('primarch-ii'),
-    hue: 0,
-    lore: [
-      'The second primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge. Even the method of their removal is unknown.',
-      'Whether they died, fell to Chaos, or were erased for some other sin, the Imperium does not say. The blank in the Legion numbering is the only testament that they ever existed.',
-      'Some scholars speculate. The Inquisition does not encourage the habit.',
-    ],
-  },
-  {
-    id: 'perturabo', num: 'IV', roman: 'IV',
-    name: 'Perturabo',
-    epithet: 'The Lord of Iron',
-    legionId: 'iron-warriors',
-    legion: 'Iron Warriors',
-    homeworld: 'Olympia (destroyed)',
-    allegiance: 'Traitor',
-    status: 'Daemon Primarch of Chaos Undivided',
-    portrait: p('perturabo'),
-    hue: 200,
-    lore: [
-      'Perturabo — the Lord of Iron — primarch of the Iron Warriors, the IVth Legion. A polymath of cold brilliance: mathematician, engineer, architect, and the finest siege-master the Great Crusade produced.',
-      'He was consumed by resentment. His Legion was given the most thankless garrison duties; his own genius was overlooked for the affections lavished on Dorn. When Olympia rose in rebellion he responded with absolute annihilation — and then turned to Horus.',
-      "In the Iron Cage, he humiliated the Imperial Fists so savagely that Rogal Dorn wept on the field. He ascended to daemonhood shortly after. He endures as a being of cold, perfect fury — and the Chaos Gods still find him difficult to control.",
-    ],
-  },
-  {
-    id: 'konrad-curze', num: 'VIII', roman: 'VIII',
-    name: 'Konrad Curze',
-    epithet: 'The Night Haunter',
-    legionId: 'night-lords',
-    legion: 'Night Lords',
-    homeworld: 'Nostramo (destroyed)',
-    allegiance: 'Traitor',
-    status: "Slain — M31, assassinated by M'shen",
-    portrait: p('konrad-curze'),
-    hue: 240,
-    lore: [
-      "Konrad Curze — the Night Haunter — primarch of the Night Lords, the VIIIth Legion. Found on Nostramo, a lightless hive world ruled by crime and cruelty, he imposed order through terror before the Emperor came.",
-      'He was a prophet of his own death, cursed with visions of slaughter that drove him to the edge of madness. He believed his methods were necessary; he believed the Imperium was built on the same lies he exposed. He was not entirely wrong.',
-      "At the end he allowed the assassin M'shen to find him — choosing his death as a final proof that fear is the only truth. His Legion still bears his mark: terror as doctrine, murder as sacrament.",
-    ],
-  },
-  {
-    id: 'ferrus-manus', num: 'X', roman: 'X',
-    name: 'Ferrus Manus',
-    epithet: 'The Gorgon',
-    legionId: 'iron-hands',
-    legion: 'Iron Hands',
-    homeworld: 'Medusa',
-    allegiance: 'Loyalist',
-    status: 'Slain — Isstvan V, Drop Site Massacre',
-    portrait: p('ferrus-manus'),
-    hue: 200,
-    lore: [
-      'Ferrus Manus — the Gorgon — primarch of the Iron Hands, the Xth Legion. His hands were encased in living metal from a battle with the great silver wyrm Asirnoth, and they became the symbol of his creed: flesh is weak; iron endures.',
-      'He was among the most physically powerful of all the primarchs. His temper was as iron as his hands — unbending, unyielding, inclined to charge where others would wait.',
-      'That temper killed him. At Isstvan V, surrounded by traitors, he broke from the plan and charged Fulgrim alone. His brother severed his head. The Iron Hands have never forgiven flesh for failing their father.',
-    ],
-  },
-  {
-    id: 'primarch-xi', num: 'XI', roman: 'XI',
-    name: 'Primarch XI',
-    epithet: '[Redacted]',
-    legionId: null,
-    legion: '[Redacted]',
-    homeworld: 'Unknown — purged',
-    allegiance: 'Loyalist',
-    status: 'Unknown — expunged from all records',
-    portrait: p('primarch-xi'),
-    hue: 0,
-    lore: [
-      'The eleventh primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge.',
-      'The blank in the Legion numbering is the only testament that they ever existed. What sin warranted such absolute erasure, the Imperium does not say — and the Inquisition does not welcome the question.',
-      'They are gone. Even the shape of their absence is classified.',
-    ],
-  },
-  {
-    id: 'lorgar', num: 'XVII', roman: 'XVII',
-    name: 'Lorgar Aurelian',
-    epithet: 'The Urizen',
-    legionId: 'word-bearers',
-    legion: 'Word Bearers',
-    homeworld: 'Colchis',
-    allegiance: 'Traitor',
-    status: 'Daemon Primarch of Chaos Undivided',
-    portrait: p('lorgar'),
-    hue: 20,
-    lore: [
-      "Lorgar Aurelian — the Urizen — primarch of the Word Bearers, the XVIIth Legion. A scholar, theologian, and prophet who loved the Emperor as a god — and was humiliated for it when the Emperor razed Monarchia and forbade his worship.",
-      'That humiliation was the crack through which Chaos poured. Lorgar spent a century in secret pilgrimage across the Eye of Terror, studying the Chaos Gods. He returned as a convert — and converted Horus.',
-      "He is the architect of the Horus Heresy. Without Lorgar's faith — or the betrayal of it — the Emperor might have built his secular paradise. Instead, Lorgar gave humanity's greatest enemy a name and a theology.",
-    ],
-  },
-  {
-    id: 'corax', num: 'XIX', roman: 'XIX',
-    name: 'Corvus Corax',
-    epithet: 'The Ravenlord',
-    legionId: 'raven-guard',
-    legion: 'Raven Guard',
-    homeworld: 'Deliverance',
-    allegiance: 'Loyalist',
-    status: 'Missing — self-imposed exile into the Eye of Terror',
-    portrait: p('corax'),
-    hue: 250,
-    lore: [
-      'Corvus Corax — the Ravenlord — primarch of the Raven Guard, the XIXth Legion. Born into the slave-mines of Lycaeus, he led a revolution before he ever led a Legion, carving freedom from a tyrant world with nothing but shadow and will.',
-      'At Isstvan V his Legion was almost annihilated in the Drop Site Massacre — ambushed, pinned, and butchered by Traitor forces. He pulled the survivors out, and in the aftermath received gene-seed from the Emperor himself to rebuild.',
-      'The rebuilding went wrong. Accelerated geneseed produced mutants; Corax destroyed them all. Haunted, he flew into the Eye of Terror to hunt the Night Lords. He has not returned. His Legion carries on in silence, as he would have wanted.',
-    ],
-  },
-  {
-    id: 'alpharius', num: 'XX', roman: 'XX',
-    name: 'Alpharius Omegon',
-    epithet: 'The Hydra',
-    legionId: 'alpha-legion',
-    legion: 'Alpha Legion',
-    homeworld: 'Unknown',
-    allegiance: 'Traitor',
-    status: 'Alpharius slain by Rogal Dorn (disputed) — Omegon status unknown',
-    portrait: p('alpharius'),
-    hue: 170,
-    lore: [
-      'Alpharius Omegon — the Hydra — primarch of the Alpha Legion, the XXth and last. Perhaps two primarchs in one body; perhaps a single being with a twin legend. The Alpha Legion built ambiguity into the very foundation of their identity.',
-      "They are the masters of infiltration, deception and long-horizon planning. Their allegiance during the Heresy was, and remains, genuinely unclear. Alpharius claimed to have joined Horus to ultimately save the Imperium — to test whether it could stand without the Emperor.",
-      "If the head is cut off, ten more shall take its place. Rogal Dorn is said to have slain Alpharius, and yet the Alpha Legion fights on — unchanged, undiminished, and entirely unconcerned whether you believe the story.",
-    ],
-  },
-]
+const byId = new Map<string, RawPrimarch>()
+for (const mod of Object.values(dataModules)) byId.set(mod.id, mod)
+
+const primarchs: Primarch[] = primarchsIndex.order
+  .map(id => byId.get(id))
+  .filter((m): m is RawPrimarch => Boolean(m))
+  .map(m => ({
+    id:         m.id,
+    num:        m.num,
+    roman:      m.roman,
+    name:       m.name,
+    epithet:    m.epithet,
+    legionId:   m.legionId,
+    legion:     m.legion,
+    ...(m.roleLabel ? { roleLabel: m.roleLabel } : {}),
+    homeworld:  m.homeworld,
+    allegiance: m.allegiance,
+    status:     m.status,
+    portrait:   portraitById.get(m.id) ?? '',
+    ...(m.isEmperor ? { isEmperor: true } : {}),
+    hue:        m.hue,
+    lore:       m.lore,
+  }))
 
 export default primarchs

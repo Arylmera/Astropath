@@ -1,8 +1,22 @@
 {
   "id": "alpharius",
+  "num": "XX",
+  "roman": "XX",
   "legionNumber": "XX",
+  "legionId": "alpha-legion",
   "legion": "Alpha Legion",
   "title": "Alpharius Omegon",
+  "name": "Alpharius Omegon",
+  "epithet": "The Hydra",
+  "homeworld": "Unknown",
+  "allegiance": "Traitor",
+  "status": "Alpharius slain by Rogal Dorn (disputed) — Omegon status unknown",
+  "hue": 170,
+  "lore": [
+    "Alpharius Omegon — the Hydra — primarch of the Alpha Legion, the XXth and last. Perhaps two primarchs in one body; perhaps a single being with a twin legend. The Alpha Legion built ambiguity into the very foundation of their identity.",
+    "They are the masters of infiltration, deception and long-horizon planning. Their allegiance during the Heresy was, and remains, genuinely unclear. Alpharius claimed to have joined Horus to ultimately save the Imperium — to test whether it could stand without the Emperor.",
+    "If the head is cut off, ten more shall take its place. Rogal Dorn is said to have slain Alpharius, and yet the Alpha Legion fights on — unchanged, undiminished, and entirely unconcerned whether you believe the story."
+  ],
   "page": "Alpharius_Omegon",
   "source": "https://warhammer40k.fandom.com/wiki/Alpharius_Omegon"
 }
