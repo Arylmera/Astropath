@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import type { Nav, Theme, View } from '@/data/types'
+import type { MechEntry } from '@/data/types/MechEntry'
 import DATA from '@/data/astropath'
 import Chrome from '@/components/shared/Chrome'
 import Tweaks from '@/components/shared/Tweaks'
@@ -18,6 +19,27 @@ import { allegianceClass, formatFileId } from '@/lib/lexicon'
 const NAV_KEY   = 'astropath.nav'
 const THEME_KEY = 'astropath.theme'
 const sororitasDataset = DATASETS.find((dataset) => dataset.key === 'sororitas')
+
+const MECH_PORTRAIT = (
+  <svg viewBox="-180 -180 360 360" width="100%" height="100%">
+    <MechanicalCog teeth={24} outer={170} inner={148} />
+  </svg>
+)
+
+const MECH_CHIP_FIELDS: [keyof MechEntry, string][] = [
+  ['founded',    'Founded'],
+  ['tier',       'Tier'],
+  ['period',     'Period'],
+  ['homeworld',  'Homeworld'],
+  ['allegiance', 'Allegiance'],
+  ['aspect',     'Aspect'],
+  ['worship',    'Worship'],
+  ['dogma',      'Dogma'],
+  ['colors',     'Colors'],
+  ['strength',   'Strength'],
+  ['specialty',  'Specialty'],
+  ['status',     'Status'],
+]
 
 function loadNav(): Nav {
   try {
@@ -189,7 +211,7 @@ export default function App() {
         return (
           <Lexicon
             variant="forge"
-            portrait={<svg viewBox="-180 -180 360 360" width="100%" height="100%"><MechanicalCog teeth={24} outer={170} inner={148} /></svg>}
+            portrait={MECH_PORTRAIT}
             portraitClass="forge-portrait"
             meta={[
               `FORGE · SEGMENTUM ${forge.segmentum.toUpperCase()}`,
@@ -222,23 +244,14 @@ export default function App() {
 
       case 'mech-entry': {
         if (!mechEntry) return <div className="view"><p>Not found.</p></div>
-        const mechChips: { label: string; value: string }[] = []
-        if (mechEntry.founded)    mechChips.push({ label: 'Founded',    value: mechEntry.founded })
-        if (mechEntry.tier)       mechChips.push({ label: 'Tier',       value: mechEntry.tier })
-        if (mechEntry.period)     mechChips.push({ label: 'Period',     value: mechEntry.period })
-        if (mechEntry.homeworld)  mechChips.push({ label: 'Homeworld',  value: mechEntry.homeworld })
-        if (mechEntry.allegiance) mechChips.push({ label: 'Allegiance', value: mechEntry.allegiance })
-        if (mechEntry.aspect)     mechChips.push({ label: 'Aspect',     value: mechEntry.aspect })
-        if (mechEntry.worship)    mechChips.push({ label: 'Worship',    value: mechEntry.worship })
-        if (mechEntry.dogma)      mechChips.push({ label: 'Dogma',      value: mechEntry.dogma })
-        if (mechEntry.colors)     mechChips.push({ label: 'Colors',     value: mechEntry.colors })
-        if (mechEntry.strength)   mechChips.push({ label: 'Strength',   value: mechEntry.strength })
-        if (mechEntry.specialty)  mechChips.push({ label: 'Specialty',  value: mechEntry.specialty })
-        if (mechEntry.status)     mechChips.push({ label: 'Status',     value: mechEntry.status })
+        const mechChips = MECH_CHIP_FIELDS.flatMap(([key, label]) => {
+          const value = mechEntry[key]
+          return value ? [{ label, value }] : []
+        })
         return (
           <Lexicon
             variant="forge"
-            portrait={<svg viewBox="-180 -180 360 360" width="100%" height="100%"><MechanicalCog teeth={24} outer={170} inner={148} /></svg>}
+            portrait={MECH_PORTRAIT}
             portraitClass="forge-portrait"
             meta={[
               `${mechEntry.category.toUpperCase()} · ADEPTUS MECHANICUS`,
