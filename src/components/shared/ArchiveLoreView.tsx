@@ -1,5 +1,5 @@
 import { useState, useEffect, type ReactNode } from 'react'
-import { loadLore } from '@/lib/datasets'
+import { loadLore, type DatasetKey } from '@/lib/datasets'
 
 interface LoreSection {
   title: string | null
@@ -63,7 +63,7 @@ function parseLoreMarkdown(md: string): LoreSection[] {
   return sections
 }
 
-function useLoreDocument(datasetKey: string, id: string | null): LoreState {
+function useLoreDocument(datasetKey: DatasetKey, id: string | null): LoreState {
   const cacheKey = id ? `${datasetKey}:${id}` : null
   const [state, setState] = useState<LoreState>(
     () => (cacheKey && _loreCache[cacheKey]) ? _loreCache[cacheKey] : { status: 'idle' }
@@ -96,7 +96,7 @@ function sectionId(title: string | null, idx: number): string {
 }
 
 interface LoreDocumentProps {
-  datasetKey: string
+  datasetKey: DatasetKey
   id: string
 }
 
@@ -135,7 +135,7 @@ export interface ManifestField {
 }
 
 interface Props {
-  datasetKey: string
+  datasetKey: DatasetKey
   id: string
   filename: string
   title: string
