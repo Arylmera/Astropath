@@ -27,6 +27,10 @@ const MECH_PORTRAIT = (
   </svg>
 )
 
+function mechPortraitFor(image?: string) {
+  return image ? <img src={image} alt="" /> : MECH_PORTRAIT
+}
+
 const MECH_CHIP_FIELDS: [keyof MechEntry, string][] = [
   ['founded',    'Founded'],
   ['tier',       'Tier'],
@@ -213,7 +217,7 @@ export default function App() {
         return (
           <Lexicon
             variant="forge"
-            portrait={MECH_PORTRAIT}
+            portrait={mechPortraitFor(forge.image)}
             portraitClass="forge-portrait"
             meta={[
               `FORGE · SEGMENTUM ${forge.segmentum.toUpperCase()}`,
@@ -278,6 +282,7 @@ export default function App() {
             ]}
             backLabel={`Back to ${forge.name} lexicon`}
             onBack={() => go('forge', forge.id)}
+            image={forge.image}
           />
         )
       }
@@ -291,7 +296,7 @@ export default function App() {
         return (
           <Lexicon
             variant="forge"
-            portrait={MECH_PORTRAIT}
+            portrait={mechPortraitFor(mechEntry.image)}
             portraitClass="forge-portrait"
             meta={[
               `${mechEntry.category.toUpperCase()} · ADEPTUS MECHANICUS`,
@@ -349,6 +354,7 @@ export default function App() {
             manifest={manifest}
             backLabel={`Back to ${mechEntry.title} lexicon`}
             onBack={() => go('mech-entry', mechEntry.id)}
+            image={mechEntry.image}
           />
         )
       }

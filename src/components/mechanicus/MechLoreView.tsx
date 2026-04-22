@@ -171,6 +171,11 @@ export default function MechLoreView({
 
   return (
     <div className="view">
+      {image && (
+        <div className="lore-portrait-bg">
+          <img src={image} alt="" aria-hidden />
+        </div>
+      )}
       <div className="lore-view">
         <header className="lore-mast">
           <div className="lore-mast-top">
