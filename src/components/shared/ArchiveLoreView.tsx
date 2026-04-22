@@ -134,7 +134,7 @@ export interface ManifestField {
   value: ReactNode
 }
 
-interface Props {
+export interface ArchiveLoreViewProps {
   datasetKey: DatasetKey
   id: string
   filename: string
@@ -168,7 +168,7 @@ export default function ArchiveLoreView({
   onBack,
   backLabel,
   footerBackLabel,
-}: Props) {
+}: ArchiveLoreViewProps) {
   const doc = useLoreDocument(datasetKey, id)
 
   const passages     = doc.status === 'ready' ? doc.sections!.reduce((n, s) => n + s.paragraphs.length, 0) : null

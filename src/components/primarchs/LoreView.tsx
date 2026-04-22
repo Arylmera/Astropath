@@ -1,22 +1,27 @@
 import type { Primarch } from '@/data/types'
-import { allegianceClass } from '@/lib/lexicon'
-import ArchiveLoreView from '@/components/shared/ArchiveLoreView'
+import { allegianceClass, formatFileId } from '@/lib/lexicon'
+import { createArchiveView } from '@/components/shared/createArchiveView'
 
 interface Props {
   primarch: Primarch
   onBack: () => void
 }
 
+const PresetView = createArchiveView({
+  datasetKey: 'primarchs',
+  archiveLabel: 'Segmentum Solar',
+  classification: 'Classified · Vermilion',
+  backLabel: 'Back to lexicon',
+})
+
 export default function LoreView({ primarch, onBack }: Props) {
   const metaLabel  = primarch.isEmperor ? 'EMPEROR' : 'PRIMARCH'
   const loyalClass = allegianceClass(primarch.allegiance)
-  const filename   = `FILE-${primarch.num}-${primarch.id.toUpperCase().replace(/-/g, '‑')}`
 
   return (
-    <ArchiveLoreView
-      datasetKey="primarchs"
+    <PresetView
       id={primarch.id}
-      filename={filename}
+      filename={`FILE-${primarch.num}-${formatFileId(primarch.id)}`}
       title={primarch.name}
       epithet={primarch.epithet}
       kicker={<>
@@ -24,8 +29,6 @@ export default function LoreView({ primarch, onBack }: Props) {
         <span className="lore-mast-sep">—</span>
         <span>{primarch.legion}</span>
       </>}
-      classification="Classified · Vermilion"
-      archiveLabel="Segmentum Solar"
       numeral={primarch.roman}
       manifest={[
         { label: 'Homeworld',  value: primarch.homeworld },
@@ -34,7 +37,6 @@ export default function LoreView({ primarch, onBack }: Props) {
       ]}
       image={primarch.portrait}
       onBack={onBack}
-      backLabel="Back to lexicon"
       footerBackLabel={primarch.name.replace(/^The\s+/, '')}
     />
   )

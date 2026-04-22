@@ -1,18 +1,25 @@
 import type { Entry } from '@/lib/datasets'
-import ArchiveLoreView from '@/components/shared/ArchiveLoreView'
+import { formatFileId } from '@/lib/lexicon'
+import { createArchiveView } from '@/components/shared/createArchiveView'
 
 interface Props {
   entry: Entry
   onBack: () => void
 }
 
+const PresetView = createArchiveView({
+  datasetKey: 'sororitas',
+  archiveLabel: 'Sororitas Archive',
+  numeralClass: 'order-roman',
+  backLabel: 'Back to archive',
+  footerBackLabel: 'Sororitas archive',
+})
+
 export default function SororitasRecordView({ entry, onBack }: Props) {
-  const filename = `FILE-${entry.id.toUpperCase().replace(/-/g, '‑')}`
   return (
-    <ArchiveLoreView
-      datasetKey="sororitas"
+    <PresetView
       id={entry.id}
-      filename={filename}
+      filename={`FILE-${formatFileId(entry.id)}`}
       title={entry.title}
       epithet={entry.page.replace(/_/g, ' ')}
       kicker={<>
@@ -21,17 +28,13 @@ export default function SororitasRecordView({ entry, onBack }: Props) {
         <span>{entry.subtitle}</span>
       </>}
       classification={entry.subtitle}
-      archiveLabel="Sororitas Archive"
       numeral={entry.badge}
-      numeralClass="order-roman"
       manifest={[
         { label: 'Classification', value: entry.subtitle },
         { label: 'Archive Mark',   value: entry.badge },
       ]}
       image={entry.portrait ?? undefined}
       onBack={onBack}
-      backLabel="Back to archive"
-      footerBackLabel="Sororitas archive"
     />
   )
 }
