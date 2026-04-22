@@ -432,6 +432,18 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .sororitas-scene .lore-manifest > div { padding: 6px 14px; gap: 2px; }
 .sororitas-scene .lore-manifest dd { font-size: 13px; }
 .sororitas-scene .lore-article { max-width: none; }
+.lore-view .lore-mast { padding: 12px 22px 14px; margin-bottom: 20px; }
+.lore-view .lore-mast-top { padding: 4px 0 10px; margin-bottom: 4px; }
+.lore-view .lore-mast-back { margin-bottom: 12px; }
+.lore-view .lore-mast-body { gap: 20px; padding: 4px 0 10px; }
+.lore-view .lore-mast-numeral { font-size: clamp(56px, 10vw, 108px); min-width: 92px; }
+.lore-view .lore-mast-title { gap: 6px; }
+.lore-view .lore-mast-name { font-size: clamp(30px, 4.2vw, 48px); line-height: 1; }
+.lore-view .lore-mast-epithet { font-size: clamp(13px, 1.2vw, 16px); }
+.lore-view .lore-manifest { padding-top: 10px; }
+.lore-view .lore-manifest > div { padding: 6px 14px; gap: 2px; }
+.lore-view .lore-manifest dd { font-size: 13px; }
+.lore-view .lore-article { max-width: none; }
 
 /* ====== Lore record view ====== */
 .lore-view { max-width: 1280px; height: calc(100vh - 64px); box-sizing: border-box; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
