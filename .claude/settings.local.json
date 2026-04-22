@@ -17,7 +17,8 @@
       "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
       "mcp__plugin_context-mode_context-mode__ctx_execute",
       "mcp__plugin_context-mode_context-mode__ctx_execute_file",
-      "Bash(git reset *)"
+      "Bash(git reset *)",
+      "Bash(curl -sL -o src/assets/sororitas/order-valorous-heart/portrait.webp \"https://artwork.40k.gallery/wp-content/uploads/2024/08/Saint-Lucia-768x960.jpg.webp\")"
     ]
   }
 }

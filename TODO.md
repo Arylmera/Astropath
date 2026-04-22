@@ -14,7 +14,6 @@ Entries with JSON+MD but no `<slug>/portrait.{jpg,webp}`:
 - `battle-sister`
 - `canoness`
 - `living-saint`
-- `order-valorous-heart`
 
 ## Code quality
 
