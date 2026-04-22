@@ -160,6 +160,8 @@ body {
   min-height: 100vh;
 }
 html[data-theme="archive"] body { background: var(--bg) !important; }
+body:has(.lore-view), body:has(.sororitas-scene) { overflow: hidden; }
+body:has(.lore-view) .app-footer, body:has(.sororitas-scene) .app-footer { display: none; }
 img { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
 a { color: inherit; text-decoration: none; }
@@ -412,7 +414,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 
 /* ====== Sororitas Record ====== */
-.sororitas-scene { position: relative; height: 100vh; overflow: hidden; }
+.sororitas-scene { position: relative; height: calc(100vh - 64px); overflow: hidden; box-sizing: border-box; }
 .sororitas-portrait-bg { position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; }
 .sororitas-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
 .sororitas-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
@@ -420,7 +422,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 @media (max-width: 720px) { .sororitas-portrait-bg { width: 100%; opacity: 0.12; } }
 
 /* ====== Lore record view ====== */
-.lore-view { max-width: 1280px; height: 100vh; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
+.lore-view { max-width: 1280px; height: calc(100vh - 64px); box-sizing: border-box; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
 .lore-mast { position: relative; border: 1px solid var(--border-soft); background: linear-gradient(180deg, oklch(from var(--bg-raised) l c h / 0.6), oklch(from var(--bg) l c h / 0.4)), radial-gradient(1200px 280px at 80% -40%, var(--glow), transparent 60%); padding: 18px 28px 24px; margin-bottom: 40px; overflow: hidden; }
 .lore-mast::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; opacity: 0.7; }
 .lore-mast::after { content: ''; position: absolute; inset: 8px; border: 1px solid transparent; border-top-color: var(--accent-dim); border-left-color: var(--accent-dim); width: 18px; height: 18px; pointer-events: none; }
