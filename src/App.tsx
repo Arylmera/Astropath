@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import type { Nav, Theme, View } from '@/data/types'
-import type { MechEntry } from '@/data/types/MechEntry'
 import DATA from '@/data/astropath'
 import Chrome from '@/components/shared/Chrome'
 import Tweaks from '@/components/shared/Tweaks'
@@ -32,7 +31,9 @@ function mechPortraitFor(image?: string) {
   return image ? <img src={image} alt="" /> : MECH_PORTRAIT
 }
 
-const MECH_CHIP_FIELDS: [keyof MechEntry, string][] = [
+type MechStringField = 'founded' | 'tier' | 'period' | 'homeworld' | 'allegiance' | 'aspect' | 'worship' | 'dogma' | 'colors' | 'strength' | 'specialty' | 'status'
+
+const MECH_CHIP_FIELDS: [MechStringField, string][] = [
   ['founded',    'Founded'],
   ['tier',       'Tier'],
   ['period',     'Period'],
@@ -226,7 +227,7 @@ export default function App() {
                 go('forge', id)
               } else {
                 const entry = Object.values(DATA.mechCategories).flat().find(e => e.id === id)
-                if (entry) setMechTab(entry.category)
+                if (entry) setMechTab(entry.category as MechTab)
                 go('mech-entry', id)
               }
             }}
@@ -320,7 +321,8 @@ export default function App() {
             portrait={mechPortraitFor(mechEntry.image)}
             portraitClass="forge-portrait"
             meta={[
-              `${mechEntry.category.toUpperCase()} · ADEPTUS MECHANICUS`,
+              mechEntry.category.toUpperCase(),
+              'ADEPTUS MECHANICUS',
               `FILE · ${formatFileId(mechEntry.id)}`,
             ]}
             roman="⚙"
