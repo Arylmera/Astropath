@@ -420,7 +420,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 @media (max-width: 720px) { .sororitas-portrait-bg { width: 100%; opacity: 0.12; } }
 
 /* ====== Lore record view ====== */
-.lore-view { max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
+.lore-view { max-width: 1280px; height: 100vh; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
 .lore-mast { position: relative; border: 1px solid var(--border-soft); background: linear-gradient(180deg, oklch(from var(--bg-raised) l c h / 0.6), oklch(from var(--bg) l c h / 0.4)), radial-gradient(1200px 280px at 80% -40%, var(--glow), transparent 60%); padding: 18px 28px 24px; margin-bottom: 40px; overflow: hidden; }
 .lore-mast::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; opacity: 0.7; }
 .lore-mast::after { content: ''; position: absolute; inset: 8px; border: 1px solid transparent; border-top-color: var(--accent-dim); border-left-color: var(--accent-dim); width: 18px; height: 18px; pointer-events: none; }

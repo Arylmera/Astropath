@@ -207,11 +207,7 @@ export default function LoreView({ primarch, onBack }: Props) {
                     href={`#${s.anchor}`}
                     onClick={e => {
                       e.preventDefault()
-                      const el = document.getElementById(s.anchor)
-                      if (el) {
-                        const y = el.getBoundingClientRect().top + window.scrollY - 40
-                        window.scrollTo({ top: y, behavior: 'smooth' })
-                      }
+                      document.getElementById(s.anchor)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }}
                   >
                     <span className="lore-toc-num">§{String(i + 1).padStart(2, '0')}</span>
