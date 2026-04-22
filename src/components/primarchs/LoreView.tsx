@@ -154,13 +154,14 @@ export default function LoreView({ primarch, onBack }: Props) {
     : []
 
   return (
-    <div className="view lore-view">
+    <div className="view">
       {primarch.portrait && (
         <div className="lore-portrait-bg">
           <img src={primarch.portrait} alt="" aria-hidden />
         </div>
       )}
-      <header className="lore-mast">
+      <div className="lore-view">
+        <header className="lore-mast">
         <div className="lore-mast-top">
           <div className="lore-mast-rail">
             <span className="lore-mast-mark">ASTROPATH</span>
@@ -199,9 +200,9 @@ export default function LoreView({ primarch, onBack }: Props) {
           <div><dt>Passages</dt><dd>{passages ?? '—'}</dd></div>
           <div><dt>Sections</dt><dd>{sectionCount ?? '—'}</dd></div>
         </dl>
-      </header>
+        </header>
 
-      <div className="lore-grid">
+        <div className="lore-grid">
         <aside className="lore-toc">
           <div className="lore-toc-head">Table of Contents</div>
           {titledSections.length > 0 ? (
@@ -243,6 +244,7 @@ export default function LoreView({ primarch, onBack }: Props) {
             </button>
           </div>
         </article>
+        </div>
       </div>
     </div>
   )
