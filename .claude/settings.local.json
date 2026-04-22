@@ -18,7 +18,12 @@
       "mcp__plugin_context-mode_context-mode__ctx_execute",
       "mcp__plugin_context-mode_context-mode__ctx_execute_file",
       "Bash(git reset *)",
-      "Bash(curl -sL -o src/assets/sororitas/order-valorous-heart/portrait.webp \"https://artwork.40k.gallery/wp-content/uploads/2024/08/Saint-Lucia-768x960.jpg.webp\")"
+      "Bash(curl -sL -o src/assets/sororitas/order-valorous-heart/portrait.webp \"https://artwork.40k.gallery/wp-content/uploads/2024/08/Saint-Lucia-768x960.jpg.webp\")",
+      "Bash(mkdir -p src/assets/sororitas/battle-sister src/assets/sororitas/canoness src/assets/sororitas/living-saint src/assets/sororitas/abbess-sanctorum)",
+      "Bash(curl -sL -o src/assets/sororitas/battle-sister/portrait.jpg \"https://static.wikia.nocookie.net/warhammer40k/images/6/68/Sister_of_Battle_Anna_Steinbauer.jpg/revision/latest?cb=20150804074745\")",
+      "Bash(curl -sL -o src/assets/sororitas/canoness/portrait.jpg \"https://illuminatorhobby.wordpress.com/wp-content/uploads/2017/02/jb146c-sisters-of-battle.jpg\")",
+      "Bash(curl -sL -o src/assets/sororitas/living-saint/portrait.png \"https://static.wikia.nocookie.net/warhammer40k/images/c/cb/Saint_Celestine.png/revision/latest?cb=20170216222128\")",
+      "Bash(curl -sL -o src/assets/sororitas/abbess-sanctorum/portrait.jpg \"https://www.warhammerart.com/cdn/shop/files/Morvenn-Vahl-Abbess-Sanctorum-of-the-Adepta-Sororitas.jpg?v=1741515268&width=1200\")"
     ]
   }
 }
