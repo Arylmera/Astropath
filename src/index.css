@@ -625,7 +625,7 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .forge-roman { font-family: var(--font-mono); color: var(--mech-line); opacity: 0.25; font-size: 320px; line-height: 1; font-weight: 300; user-select: none; }
 .order-roman { font-family: serif; font-weight: 300; color: var(--accent); opacity: 0.2; font-size: 380px; line-height: 1; user-select: none; }
 
-.app-footer { text-align: center; padding: 24px 20px 32px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; transition: opacity 0.2s ease; }
+.app-footer { display: flex; justify-content: center; padding: 24px 20px 32px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; transition: opacity 0.2s ease; }
 .app-footer:hover { opacity: 1; }
 .app-footer-link { color: inherit; text-decoration: none; }
 .app-footer-link:hover { color: var(--accent); }
