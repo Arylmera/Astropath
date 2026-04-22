@@ -8,6 +8,7 @@ import Tweaks from '@/components/shared/Tweaks'
 import Lexicon from '@/components/shared/Lexicon'
 import LegionView from '@/components/primarchs/LegionView'
 import LoreView from '@/components/primarchs/LoreView'
+import MechLoreView from '@/components/mechanicus/MechLoreView'
 import SororitasRecordView from '@/components/adeptaSororitas/SororitasRecordView'
 import StainedGlass from '@/components/adeptaSororitas/StainedGlass'
 import PrimarchsScreen from '@/screens/PrimarchsScreen'
@@ -55,7 +56,7 @@ function loadTheme(): Theme {
 }
 
 function archiveOf(view: View): string {
-  if (view === 'mechanicus' || view === 'forge' || view === 'mech-entry') return 'mechanicus'
+  if (view === 'mechanicus' || view === 'forge' || view === 'mech-entry' || view === 'mech-lore') return 'mechanicus'
   if (view === 'sororitas'  || view === 'order') return 'sororitas'
   return 'primarchs'
 }
@@ -86,6 +87,7 @@ export default function App() {
     if (nav.view === 'primarch' || nav.view === 'lore') return primarch?.name ?? null
     if (nav.view === 'legion')  return legion?.name ?? null
     if (nav.view === 'forge')   return forge?.name ?? null
+    if (nav.view === 'mech-entry' || nav.view === 'mech-lore') return mechEntry?.title ?? null
     if (nav.view === 'order')   return order?.name ?? sororitasEntry?.title ?? null
     return null
   })()
@@ -269,8 +271,32 @@ export default function App() {
             name={mechEntry.title}
             epithet={mechEntry.epithet}
             chips={mechChips}
-            lore={mechEntry.lore}
+            lore={(mechEntry.lore ?? []).slice(0, 1)}
             loreLabel="Lore"
+          >
+            <div
+              className="lexicon-links lore-link"
+              onClick={() => go('mech-lore', mechEntry.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && go('mech-lore', mechEntry.id)}
+            >
+              <div className="lexicon-links-l">
+                <div className="lexicon-links-kicker">Full Archive Record · {mechEntry.category.toUpperCase()}</div>
+                <div className="lexicon-links-name">Read the complete file on {mechEntry.title.replace(/^The\s+/, '')}</div>
+              </div>
+              <div className="lexicon-links-arrow">Open record →</div>
+            </div>
+          </Lexicon>
+        )
+      }
+
+      case 'mech-lore': {
+        if (!mechEntry) return <div className="view"><p>Not found.</p></div>
+        return (
+          <MechLoreView
+            entry={mechEntry}
+            onBack={() => go('mech-entry', mechEntry.id)}
           />
         )
       }
