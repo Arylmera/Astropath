@@ -575,7 +575,7 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .sor-panel:not(:hover) { filter: saturate(0.85) brightness(0.92); }
 .sor-panel-glass { aspect-ratio: 3 / 4.3; overflow: hidden; box-shadow: 0 20px 40px -20px oklch(0 0 0 / 0.6), inset 0 0 0 2px #050505; position: relative; }
 .sor-panel-glass::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, transparent 40%, oklch(0 0 0 / 0.3) 100%); pointer-events: none; }
-.sor-panel:hover .sor-panel-glass { box-shadow: 0 30px 50px -20px var(--glass-a), inset 0 0 0 2px #050505, 0 0 0 1px var(--glass-c); }
+.sor-panel:hover .sor-panel-glass { box-shadow: 0 30px 50px -20px var(--glass-a), inset 0 0 0 2px #050505; }
 .sor-panel-glass svg { display: block; width: 100%; height: 100%; }
 .sor-panel-seal {
   width: 100%;
