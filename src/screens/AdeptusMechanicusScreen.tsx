@@ -270,8 +270,7 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
         ))}
       </nav>
 
-      {(
-        <div className="mech-stage">
+      <div className="mech-stage">
           <svg className="mech-diagram" viewBox="-500 -450 1000 900" preserveAspectRatio="xMidYMid meet">
             <defs>
               <radialGradient id="mech-bg" cx="50%" cy="50%" r="50%">
@@ -368,7 +367,6 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
             Hover a node · click to open the schematic
           </div>
         </div>
-      )}
     </div>
   )
 }
