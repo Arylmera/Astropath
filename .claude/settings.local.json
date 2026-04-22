@@ -11,7 +11,8 @@
       "Bash(git commit -m 'feat\\(sororitas\\): fix record view height; scroll article internally *)",
       "Bash(git push *)",
       "Bash(git commit -m 'feat\\(primarchs\\): fix record view height; scroll article internally *)",
-      "Bash(git commit -m 'fix\\(lore\\): prevent page scroll on record views *)"
+      "Bash(git commit -m 'fix\\(lore\\): prevent page scroll on record views *)",
+      "Bash(git commit *)"
     ]
   }
 }
