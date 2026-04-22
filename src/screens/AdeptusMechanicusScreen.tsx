@@ -123,8 +123,8 @@ export function MechanicalCog({ teeth, outer, inner, small, cogFill, innerFill }
 
 // ---- Tab config ------------------------------------------------------------
 
-const TABS = ['Forge Worlds', 'Organisation', 'Theology', 'Rank', 'Character', 'Military', 'Technology', 'History'] as const
-type Tab = typeof TABS[number]
+export const TABS = ['Forge Worlds', 'Organisation', 'Theology', 'Rank', 'Character', 'Military', 'Technology', 'History'] as const
+export type Tab = typeof TABS[number]
 
 const TAB_META: Record<Tab, { title: string; lede: string }> = {
   'Forge Worlds': {
@@ -224,11 +224,12 @@ interface ArchiveProps {
   forges: Forge[]
   entries: Record<MechCategory, MechEntry[]>
   onOpen: (id: string) => void
+  tab: Tab
+  onTabChange: (tab: Tab) => void
 }
 
-export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: ArchiveProps) {
+export default function AdeptusMechanicusScreen({ forges, entries, onOpen, tab, onTabChange }: ArchiveProps) {
   const [hoverId, setHover] = useState<string | null>(null)
-  const [tab, setTab]       = useState<Tab>('Forge Worlds')
 
   const nodes = useMemo<MechNode[]>(() => {
     if (tab === 'Forge Worlds') return forges.map(forgeToNode)
@@ -263,7 +264,7 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
           <button
             key={t}
             className={`mech-tab${tab === t ? ' active' : ''}`}
-            onClick={() => setTab(t)}
+            onClick={() => onTabChange(t)}
           >
             {t}
           </button>

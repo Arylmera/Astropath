@@ -12,13 +12,14 @@ import MechLoreView from '@/components/mechanicus/MechLoreView'
 import SororitasRecordView from '@/components/adeptaSororitas/SororitasRecordView'
 import StainedGlass from '@/components/adeptaSororitas/StainedGlass'
 import PrimarchsScreen from '@/screens/PrimarchsScreen'
-import AdeptusMechanicusScreen, { MechanicalCog } from '@/screens/AdeptusMechanicusScreen'
+import AdeptusMechanicusScreen, { MechanicalCog, type Tab as MechTab } from '@/screens/AdeptusMechanicusScreen'
 import AdeptaSororitasScreen from '@/screens/AdeptaSororitasScreen'
 import { DATASETS } from '@/lib/datasets'
 import { allegianceClass, formatFileId } from '@/lib/lexicon'
 
-const NAV_KEY   = 'astropath.nav'
-const THEME_KEY = 'astropath.theme'
+const NAV_KEY      = 'astropath.nav'
+const THEME_KEY    = 'astropath.theme'
+const MECH_TAB_KEY = 'astropath.mechTab'
 const sororitasDataset = DATASETS.find((dataset) => dataset.key === 'sororitas')
 
 const MECH_PORTRAIT = (
@@ -59,6 +60,10 @@ function loadTheme(): Theme {
   return (localStorage.getItem(THEME_KEY) as Theme) || 'void'
 }
 
+function loadMechTab(): MechTab {
+  return (localStorage.getItem(MECH_TAB_KEY) as MechTab) || 'Forge Worlds'
+}
+
 function archiveOf(view: View): string {
   if (view === 'mechanicus' || view === 'forge' || view === 'forge-lore' || view === 'mech-entry' || view === 'mech-lore') return 'mechanicus'
   if (view === 'sororitas'  || view === 'order') return 'sororitas'
@@ -66,8 +71,13 @@ function archiveOf(view: View): string {
 }
 
 export default function App() {
-  const [nav,   setNav]   = useState<Nav>(loadNav)
-  const [theme, setTheme] = useState<Theme>(loadTheme)
+  const [nav,     setNav]     = useState<Nav>(loadNav)
+  const [theme,   setTheme]   = useState<Theme>(loadTheme)
+  const [mechTab, setMechTab] = useState<MechTab>(loadMechTab)
+
+  useEffect(() => {
+    localStorage.setItem(MECH_TAB_KEY, mechTab)
+  }, [mechTab])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -208,7 +218,18 @@ export default function App() {
           <AdeptusMechanicusScreen
             forges={DATA.mechanicus}
             entries={DATA.mechCategories}
-            onOpen={id => go(DATA.mechanicus.some(f => f.id === id) ? 'forge' : 'mech-entry', id)}
+            tab={mechTab}
+            onTabChange={setMechTab}
+            onOpen={id => {
+              if (DATA.mechanicus.some(f => f.id === id)) {
+                setMechTab('Forge Worlds')
+                go('forge', id)
+              } else {
+                const entry = Object.values(DATA.mechCategories).flat().find(e => e.id === id)
+                if (entry) setMechTab(entry.category)
+                go('mech-entry', id)
+              }
+            }}
           />
         )
 
