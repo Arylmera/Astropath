@@ -413,25 +413,6 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .see-more-btn { margin-top: 4px; padding: 12px 20px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); background: transparent; border: 1px solid var(--border); cursor: pointer; transition: all 0.15s ease; }
 .see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 
-/* ====== Sororitas Record ====== */
-.sororitas-scene { position: relative; height: calc(100vh - 64px); overflow: hidden; box-sizing: border-box; }
-.sororitas-portrait-bg { position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; }
-.sororitas-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
-.sororitas-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
-.sororitas-content { position: relative; z-index: 1; max-width: 1280px; height: 100%; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
-@media (max-width: 720px) { .sororitas-portrait-bg { width: 100%; opacity: 0.12; } }
-.sororitas-scene .lore-mast { padding: 12px 22px 14px; margin-bottom: 20px; }
-.sororitas-scene .lore-mast-top { padding: 4px 0 10px; margin-bottom: 4px; }
-.sororitas-scene .lore-mast-back { margin-bottom: 12px; }
-.sororitas-scene .lore-mast-body { gap: 20px; padding: 4px 0 10px; }
-.sororitas-scene .lore-mast-numeral { font-size: clamp(56px, 10vw, 108px); min-width: 92px; }
-.sororitas-scene .lore-mast-title { gap: 6px; }
-.sororitas-scene .lore-mast-name { font-size: clamp(30px, 4.2vw, 48px); line-height: 1; }
-.sororitas-scene .lore-mast-epithet { font-size: clamp(13px, 1.2vw, 16px); }
-.sororitas-scene .lore-manifest { padding-top: 10px; }
-.sororitas-scene .lore-manifest > div { padding: 6px 14px; gap: 2px; }
-.sororitas-scene .lore-manifest dd { font-size: 13px; }
-.sororitas-scene .lore-article { max-width: none; }
 .lore-view .lore-mast { padding: 12px 22px 14px; margin-bottom: 20px; }
 .lore-view .lore-mast-top { padding: 4px 0 10px; margin-bottom: 4px; }
 .lore-view .lore-mast-back { margin-bottom: 12px; }
@@ -447,7 +428,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-view .lore-manifest dd { font-size: 13px; }
 .lore-view .lore-article { max-width: none; }
 .lore-view { position: relative; z-index: 1; overflow: hidden; }
-.view:has(.lore-view), .view:has(.sororitas-scene) { animation: fadeInOpacity 0.35s ease; }
+.view:has(.lore-view) { animation: fadeInOpacity 0.35s ease; }
 @keyframes fadeInOpacity { from { opacity: 0; } to { opacity: 1; } }
 .lore-portrait-bg { position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; }
 .lore-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
