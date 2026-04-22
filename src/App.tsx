@@ -7,7 +7,6 @@ import Tweaks from '@/components/shared/Tweaks'
 import Lexicon from '@/components/shared/Lexicon'
 import LegionView from '@/components/primarchs/LegionView'
 import LoreView from '@/components/primarchs/LoreView'
-import ForgeSchematic from '@/components/adeptusMechanicus/ForgeSchematic'
 import SororitasRecordView from '@/components/adeptaSororitas/SororitasRecordView'
 import StainedGlass from '@/components/adeptaSororitas/StainedGlass'
 import PrimarchsScreen from '@/screens/PrimarchsScreen'
@@ -190,7 +189,7 @@ export default function App() {
         return (
           <Lexicon
             variant="forge"
-            portrait={<ForgeSchematic seed={forge.iconSeed} label={forge.name} />}
+            portrait={<svg viewBox="-180 -180 360 360" width="100%" height="100%"><MechanicalCog teeth={24} outer={170} inner={148} /></svg>}
             portraitClass="forge-portrait"
             meta={[
               `FORGE · SEGMENTUM ${forge.segmentum.toUpperCase()}`,

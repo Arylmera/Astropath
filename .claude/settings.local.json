@@ -16,7 +16,8 @@
       "Bash(curl -L \"https://preview.redd.it/return-of-rogal-dorn-v0-c2cfkj7sf8re1.png?auto=webp&s=e24d2f7977493cf8c6c63f6b0f4ba7ca0013d390\" -o \"C:/Users/guill/Documents/git/astropath/src/assets/primarchs/rogal-dorn/portrait.jpg\")",
       "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
       "mcp__plugin_context-mode_context-mode__ctx_execute",
-      "mcp__plugin_context-mode_context-mode__ctx_execute_file"
+      "mcp__plugin_context-mode_context-mode__ctx_execute_file",
+      "Bash(git reset *)"
     ]
   }
 }
