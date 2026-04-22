@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import type { MechEntry } from '@/data/types/MechEntry'
+import { useState, useEffect, type ReactNode } from 'react'
 import { loadLore } from '@/lib/datasets'
 import { formatFileId } from '@/lib/lexicon'
 import { MechanicalCog } from '@/screens/AdeptusMechanicusScreen'
@@ -133,14 +132,34 @@ function LoreDocument({ id }: LoreDocumentProps) {
   )
 }
 
-interface Props {
-  entry: MechEntry
-  onBack: () => void
+interface ManifestField {
+  label: string
+  value: ReactNode
 }
 
-export default function MechLoreView({ entry, onBack }: Props) {
-  const doc      = useLoreDocument(entry.id)
-  const filename = `FILE-${formatFileId(entry.id)}`
+interface Props {
+  id: string
+  title: string
+  epithet?: string
+  kicker: ReactNode
+  classification?: string
+  manifest?: ManifestField[]
+  onBack: () => void
+  backLabel?: string
+}
+
+export default function MechLoreView({
+  id,
+  title,
+  epithet,
+  kicker,
+  classification = 'Classified · Ferrum',
+  manifest = [],
+  onBack,
+  backLabel,
+}: Props) {
+  const doc      = useLoreDocument(id)
+  const filename = `FILE-${formatFileId(id)}`
 
   const passages     = doc.status === 'ready' ? doc.sections!.reduce((n, s) => n + s.paragraphs.length, 0) : null
   const sectionCount = doc.status === 'ready' ? doc.sections!.filter(s => s.title).length : null
@@ -161,13 +180,13 @@ export default function MechLoreView({ entry, onBack }: Props) {
               <span>{filename}</span>
             </div>
             <div className="lore-mast-rail right">
-              <span>Classified · Ferrum</span>
+              <span>{classification}</span>
               <span className="lore-mast-sep">/</span>
               <span>Adeptus Mechanicus</span>
             </div>
           </div>
 
-          <button className="back-btn lore-mast-back" onClick={onBack}>← Back to lexicon</button>
+          <button className="back-btn lore-mast-back" onClick={onBack}>← {backLabel ?? 'Back to lexicon'}</button>
 
           <div className="lore-mast-body">
             <div className="lore-mast-numeral forge-roman" aria-hidden>
@@ -178,19 +197,17 @@ export default function MechLoreView({ entry, onBack }: Props) {
             <div className="lore-mast-title">
               <div className="lore-mast-kicker">
                 <span className="lore-mast-dot" />
-                <span>{entry.category.toUpperCase()}</span>
-                <span className="lore-mast-sep">—</span>
-                <span>Adeptus Mechanicus</span>
+                {kicker}
               </div>
-              <h1 className="lore-mast-name">{entry.title}</h1>
-              {entry.epithet && <div className="lore-mast-epithet">"{entry.epithet}"</div>}
+              <h1 className="lore-mast-name">{title}</h1>
+              {epithet && <div className="lore-mast-epithet">"{epithet}"</div>}
             </div>
           </div>
 
           <dl className="lore-manifest">
-            <div><dt>Category</dt><dd>{entry.category}</dd></div>
-            {entry.homeworld && <div><dt>Homeworld</dt><dd>{entry.homeworld}</dd></div>}
-            {entry.status && <div><dt>Status</dt><dd>{entry.status}</dd></div>}
+            {manifest.map((f, i) => (
+              <div key={i}><dt>{f.label}</dt><dd>{f.value}</dd></div>
+            ))}
             <div><dt>Passages</dt><dd>{passages ?? '—'}</dd></div>
             <div><dt>Sections</dt><dd>{sectionCount ?? '—'}</dd></div>
           </dl>
@@ -226,7 +243,7 @@ export default function MechLoreView({ entry, onBack }: Props) {
               <span>SOURCE · Warhammer 40k Fandom · CC-BY-SA</span>
               <span>{filename}</span>
             </div>
-            <LoreDocument id={entry.id} />
+            <LoreDocument id={id} />
             <footer className="lore-end">
               <span className="lore-end-rule" />
               <span className="lore-end-stamp">End of Record</span>
@@ -234,7 +251,7 @@ export default function MechLoreView({ entry, onBack }: Props) {
             </footer>
             <div className="lore-article-back">
               <button className="back-btn" onClick={onBack}>
-                ← Return to {entry.title} lexicon
+                ← Return to {title} lexicon
               </button>
             </div>
           </article>

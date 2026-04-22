@@ -56,7 +56,7 @@ function loadTheme(): Theme {
 }
 
 function archiveOf(view: View): string {
-  if (view === 'mechanicus' || view === 'forge' || view === 'mech-entry' || view === 'mech-lore') return 'mechanicus'
+  if (view === 'mechanicus' || view === 'forge' || view === 'forge-lore' || view === 'mech-entry' || view === 'mech-lore') return 'mechanicus'
   if (view === 'sororitas'  || view === 'order') return 'sororitas'
   return 'primarchs'
 }
@@ -86,7 +86,7 @@ export default function App() {
   const currentLabel: string | null = (() => {
     if (nav.view === 'primarch' || nav.view === 'lore') return primarch?.name ?? null
     if (nav.view === 'legion')  return legion?.name ?? null
-    if (nav.view === 'forge')   return forge?.name ?? null
+    if (nav.view === 'forge' || nav.view === 'forge-lore') return forge?.name ?? null
     if (nav.view === 'mech-entry' || nav.view === 'mech-lore') return mechEntry?.title ?? null
     if (nav.view === 'order')   return order?.name ?? sororitasEntry?.title ?? null
     return null
@@ -238,8 +238,46 @@ export default function App() {
               { label: 'Primacy',      value: forge.primacy },
               { label: 'Fabricator',   value: forge.fabricator },
             ]}
-            lore={forge.lore}
+            lore={(forge.lore ?? []).slice(0, 1)}
             loreLabel="Lore"
+          >
+            <div
+              className="lexicon-links lore-link"
+              onClick={() => go('forge-lore', forge.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && go('forge-lore', forge.id)}
+            >
+              <div className="lexicon-links-l">
+                <div className="lexicon-links-kicker">Full Archive Record · FORGE WORLD · SEGMENTUM {forge.segmentum.toUpperCase()}</div>
+                <div className="lexicon-links-name">Read the complete file on {forge.name.replace(/^The\s+/, '')}</div>
+              </div>
+              <div className="lexicon-links-arrow">Open record →</div>
+            </div>
+          </Lexicon>
+        )
+      }
+
+      case 'forge-lore': {
+        if (!forge) return <div className="view"><p>Not found.</p></div>
+        return (
+          <MechLoreView
+            id={forge.id}
+            title={forge.name}
+            epithet={forge.epithet}
+            kicker={<>
+              <span>FORGE WORLD</span>
+              <span className="lore-mast-sep">—</span>
+              <span>Segmentum {forge.segmentum}</span>
+            </>}
+            manifest={[
+              { label: 'Segmentum',    value: forge.segmentum },
+              { label: 'Titan Legion', value: forge.titanLegion },
+              { label: 'Fabricator',   value: forge.fabricator },
+              { label: 'Primacy',      value: forge.primacy },
+            ]}
+            backLabel={`Back to ${forge.name} lexicon`}
+            onBack={() => go('forge', forge.id)}
           />
         )
       }
@@ -293,9 +331,23 @@ export default function App() {
 
       case 'mech-lore': {
         if (!mechEntry) return <div className="view"><p>Not found.</p></div>
+        const manifest = [
+          { label: 'Category', value: mechEntry.category },
+          ...(mechEntry.homeworld ? [{ label: 'Homeworld', value: mechEntry.homeworld }] : []),
+          ...(mechEntry.status    ? [{ label: 'Status',    value: mechEntry.status    }] : []),
+        ]
         return (
           <MechLoreView
-            entry={mechEntry}
+            id={mechEntry.id}
+            title={mechEntry.title}
+            epithet={mechEntry.epithet}
+            kicker={<>
+              <span>{mechEntry.category.toUpperCase()}</span>
+              <span className="lore-mast-sep">—</span>
+              <span>Adeptus Mechanicus</span>
+            </>}
+            manifest={manifest}
+            backLabel={`Back to ${mechEntry.title} lexicon`}
             onBack={() => go('mech-entry', mechEntry.id)}
           />
         )
