@@ -564,7 +564,7 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .sor-header-lede { font-family: var(--font-sans); font-size: 15px; line-height: 1.6; color: var(--text-dim); max-width: 620px; margin: 0 auto; }
 .sor-sections { width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
 .sor-section { display: flex; flex-direction: column; gap: 14px; }
-.sor-section-head { max-width: 780px; }
+.sor-section-head { max-width: 780px; margin: 0 auto; text-align: center; }
 .sor-section-kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
 .sor-section-head h2 { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-weight: 400; letter-spacing: -0.01em; color: var(--text); }
 .sor-section-head p { margin: 10px 0 0; font-family: var(--font-sans); font-size: 14px; line-height: 1.6; color: var(--text-dim); }
