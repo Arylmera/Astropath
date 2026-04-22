@@ -412,11 +412,11 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 
 /* ====== Sororitas Record ====== */
-.sororitas-scene { position: relative; min-height: 100vh; overflow-x: clip; }
+.sororitas-scene { position: relative; height: 100vh; overflow: hidden; }
 .sororitas-portrait-bg { position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; }
 .sororitas-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
 .sororitas-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
-.sororitas-content { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
+.sororitas-content { position: relative; z-index: 1; max-width: 1280px; height: 100%; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
 @media (max-width: 720px) { .sororitas-portrait-bg { width: 100%; opacity: 0.12; } }
 
 /* ====== Lore record view ====== */
@@ -449,9 +449,9 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-manifest-v.loyal { color: var(--loyal); }
 .lore-manifest-v.traitor { color: var(--traitor); }
 @media (max-width: 720px) { .lore-view { padding: 20px 20px 60px; } .lore-mast { padding: 14px 18px 18px; } .lore-mast-body { grid-template-columns: 1fr; gap: 12px; } .lore-mast-numeral { display: none; } .lore-mast-portrait-bg { display: none; } .lore-manifest { grid-template-columns: repeat(2, 1fr); } .lore-manifest > div { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 10px 0; } .lore-manifest > div:nth-child(odd) { padding-right: 16px; } }
-.lore-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; }
+.lore-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; flex: 1; min-height: 0; }
 @media (max-width: 960px) { .lore-grid { grid-template-columns: 1fr; gap: 28px; } }
-.lore-toc { position: sticky; top: 24px; align-self: start; font-family: var(--font-mono); font-size: 12px; max-height: calc(100vh - 48px); overflow-y: auto; padding-right: 8px; }
+.lore-toc { align-self: stretch; font-family: var(--font-mono); font-size: 12px; max-height: 100%; overflow-y: auto; padding-right: 8px; }
 .lore-toc-head { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); padding: 6px 0 10px; border-bottom: 1px solid var(--border-soft); margin-bottom: 10px; }
 .lore-toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .lore-toc-list a { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 7px 6px; color: var(--text-dim); text-decoration: none; border-left: 2px solid transparent; font-size: 12px; line-height: 1.35; transition: color 140ms, border-color 140ms, background 140ms; cursor: pointer; }
@@ -460,7 +460,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-toc-name { font-family: var(--font-display); letter-spacing: 0; text-transform: none; }
 .lore-toc-empty { color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; }
 @media (max-width: 960px) { .lore-toc { position: static; max-height: none; border: 1px solid var(--border-soft); padding: 14px 16px; background: var(--bg-raised); } }
-.lore-article { max-width: 68ch; font-family: var(--font-display); }
+.lore-article { max-width: 68ch; font-family: var(--font-display); max-height: 100%; overflow-y: auto; padding-right: 16px; min-height: 0; }
 .lore-article-meta { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; margin-bottom: 28px; border-bottom: 1px solid var(--border-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); gap: 16px; }
 .lore-doc { display: flex; flex-direction: column; gap: 36px; }
 .lore-doc-state { padding: 40px 0; color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; }

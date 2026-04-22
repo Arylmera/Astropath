@@ -112,10 +112,7 @@ export default function SororitasRecordView({ entry, onBack }: Props) {
                     onClick={(event) => {
                       event.preventDefault()
                       const element = document.getElementById(section.anchor)
-                      if (element) {
-                        const y = element.getBoundingClientRect().top + window.scrollY - 40
-                        window.scrollTo({ top: y, behavior: 'smooth' })
-                      }
+                      element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }}
                   >
                     <span className="lore-toc-num">§{String(index + 1).padStart(2, '0')}</span>
