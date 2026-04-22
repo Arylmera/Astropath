@@ -29,6 +29,7 @@ const mechanicus: Forge[] = admechIndex.order
     primacy:     m['primacy']     as string,
     iconSeed:    m['iconSeed']    as string,
     lore:        m['lore']        as string[],
+    ...(m['image'] ? { image: m['image'] as string } : {}),
   }))
 
 const CATEGORY_ORDER: MechCategory[] = ['Organisation', 'Theology', 'Rank', 'Character', 'Military', 'Technology', 'History']
@@ -60,6 +61,7 @@ for (const id of admechIndex.order) {
     ...(m['strength']   ? { strength:   m['strength']   as string } : {}),
     ...(m['status']     ? { status:     m['status']     as string } : {}),
     ...(m['period']     ? { period:     m['period']     as string } : {}),
+    ...(m['image']      ? { image:      m['image']      as string } : {}),
   })
 }
 

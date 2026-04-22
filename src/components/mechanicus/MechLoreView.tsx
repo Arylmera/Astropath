@@ -146,6 +146,7 @@ interface Props {
   manifest?: ManifestField[]
   onBack: () => void
   backLabel?: string
+  image?: string
 }
 
 export default function MechLoreView({
@@ -157,6 +158,7 @@ export default function MechLoreView({
   manifest = [],
   onBack,
   backLabel,
+  image,
 }: Props) {
   const doc      = useLoreDocument(id)
   const filename = `FILE-${formatFileId(id)}`

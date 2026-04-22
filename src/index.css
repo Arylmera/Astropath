@@ -437,6 +437,8 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-view .lore-mast-back { margin-bottom: 12px; }
 .lore-view .lore-mast-body { gap: 20px; padding: 4px 0 10px; }
 .lore-view .lore-mast-numeral { font-size: clamp(56px, 10vw, 108px); min-width: 92px; }
+.lore-view .lore-mast-numeral.forge-roman { font-size: clamp(56px, 10vw, 108px); }
+.lore-view .lore-mast-numeral.forge-roman svg { width: clamp(56px, 10vw, 108px); height: clamp(56px, 10vw, 108px); }
 .lore-view .lore-mast-title { gap: 6px; }
 .lore-view .lore-mast-name { font-size: clamp(30px, 4.2vw, 48px); line-height: 1; }
 .lore-view .lore-mast-epithet { font-size: clamp(13px, 1.2vw, 16px); }
