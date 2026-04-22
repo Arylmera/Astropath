@@ -2,14 +2,25 @@
   "id": "dark-angels",
   "founding": "First",
   "legionNumber": "I",
+  "primarchId": "lion",
   "primarch": "Lion El'Jonson",
   "allegiance": "Loyalist",
   "title": "Dark Angels",
+  "name": "Dark Angels",
   "homeworld": "The Rock (forteresse mobile, anciennement Caliban)",
   "fortressMonastery": "The Rock",
   "colors": ["Vert sombre", "Noir"],
+  "colorsString": "Bone white & black (Ist Legion) / Dark green (current)",
   "battleCry": "Repent! For tomorrow you die!",
+  "motto": "Repent! For tomorrow you die!",
+  "strength": "Full chapter strength — Inner Circle vigilant",
   "specialty": "Chasse aux Déchus, armes plasma",
+  "image": "https://i.redd.it/giuggenglqqa1.jpg",
+  "lore": [
+    "The Ist Legion of Lion El'Jonson — the oldest and most secretive of all the First Founding Chapters. Their history is a palimpsest of redaction: what the Imperium knows of them is a fraction of what they know of themselves.",
+    "At the end of the Horus Heresy, Caliban was torn apart in a civil war between the Lion and Luther, his brother-in-arms. The fallen Dark Angels who sided with Luther were scattered across time and space by the Warp. They are known only as the Fallen — and hunting them is the Chapter's true crusade.",
+    "The Lion returned in the Era Indomitus, emerging from ten thousand years of hidden stasis. He walks again — but the Inner Circle's ancient shame has not been resolved, and the hunt for the Fallen continues as it always has."
+  ],
   "page": "Dark_Angels",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Ang%C3%A9lus_Sombres"
 }

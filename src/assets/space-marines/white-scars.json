@@ -2,14 +2,25 @@
   "id": "white-scars",
   "founding": "First",
   "legionNumber": "V",
+  "primarchId": "jaghatai-khan",
   "primarch": "Jaghatai Khan",
   "allegiance": "Loyalist",
   "title": "White Scars",
+  "name": "White Scars",
   "homeworld": "Chogoris",
   "fortressMonastery": "Quan Zhou",
   "colors": ["Blanc"],
+  "colorsString": "White & red",
   "battleCry": "For the Khan and the Emperor!",
+  "motto": "For the Khan and the Emperor!",
+  "strength": "At full operational strength",
   "specialty": "Assaut de cavalerie éclair, motos",
+  "image": "https://artwork.40k.gallery/wp-content/uploads/2020/12/The-Hunt-for-Voldorius.jpg",
+  "lore": [
+    "The Vth Legion of Jaghatai Khan. Born of the steppe-warriors of Chogoris, the White Scars are the masters of lightning warfare — striking from impossible angles, never holding ground, never standing still long enough to be pinned.",
+    "Their doctrine of constant movement and overwhelming momentum made them the most feared fast-assault force in the Great Crusade. Where other Legions crushed worlds, the White Scars swept over them like a storm and were gone.",
+    "After the Heresy, the Khan rode into the Webway in pursuit of Dark Eldar raiders and never returned. His sons still race across the galaxy in his name — swift, proud, and waiting for the storm to come back."
+  ],
   "page": "White_Scars",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Cicatrices_Blanches"
 }

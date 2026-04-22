@@ -2,14 +2,25 @@
   "id": "word-bearers",
   "founding": "First",
   "legionNumber": "XVII",
+  "primarchId": "lorgar",
   "primarch": "Lorgar Aurelian",
   "allegiance": "Traitor",
   "title": "Word Bearers",
+  "name": "Word Bearers",
   "homeworld": "Colchis (détruite)",
   "fortressMonastery": "N/A (Légion Traitre)",
   "colors": ["Rouge sombre", "Cramoisi"],
+  "colorsString": "Dark red & silver",
   "battleCry": "We bring the truth to the unenlightened!",
+  "motto": "The Truth of Chaos",
+  "strength": "Grand Host — intact and zealous",
   "specialty": "Invocation de démons, liturgie noire, endoctrinement",
+  "image": "https://i.redd.it/d0suw23oy8e61.jpg",
+  "lore": [
+    "The XVIIth Legion of Lorgar Aurelian. They were the first to turn — and the reason any others turned. Lorgar converted the Legion to Chaos long before the Heresy began, hiding it beneath a century of apparent compliance.",
+    "The Word Bearers are the most organised and theologically coherent of the Traitor Legions. Where the others fight for warlords, vengeance, or raw sensation, the Word Bearers fight for faith — for the propagation of the Ruinous Powers as legitimate gods.",
+    "They were the first to summon daemons in open battle. They corrupted Isstvan III. They guided Horus to his damnation. They are the missionaries of Chaos, and they have not stopped preaching."
+  ],
   "page": "Word_Bearers",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Porteurs_de_la_Parole"
 }

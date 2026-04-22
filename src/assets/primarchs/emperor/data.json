@@ -1,8 +1,24 @@
 {
   "id": "emperor",
+  "num": "I",
+  "roman": "I",
   "legionNumber": "0",
-  "legion": null,
+  "legionId": null,
+  "legion": "The Imperium of Man",
   "title": "The Emperor of Mankind",
+  "name": "The Emperor of Mankind",
+  "epithet": "The God-Emperor · The Anathema",
+  "roleLabel": "Emperor of Mankind",
+  "homeworld": "Terra",
+  "allegiance": "Loyalist",
+  "status": "Interred — The Golden Throne",
+  "isEmperor": true,
+  "hue": 45,
+  "lore": [
+    "The Emperor of Mankind is the immortal Perpetual who forged the Imperium of Man from the embers of Old Night. For ten thousand years he has sat interred upon the Golden Throne, neither alive nor dead — a psychic beacon whose will alone keeps the Astronomican burning and the Imperium from collapse.",
+    "Before his ascension he walked Terra for millennia as scientist, conqueror, and secret shaper of history. In the late 30th Millennium he revealed himself openly, united the Techno-barbarian warlords of Terra, and launched the Great Crusade alongside the twenty primarchs — his gene-forged sons — to reclaim humanity's scattered colonies and lift a species back into the stars.",
+    "His dream was a secular, enlightened Imperium free of the predations of the Warp. That dream died on the floor of the Imperial Palace during the Horus Heresy, when his favoured son Horus betrayed him. Mortally wounded in their final duel aboard the Warmaster's flagship, his broken body was borne to the Throne — and there he remains. Worshipped now as a god over the objections of his own teachings, he is humanity's silent, suffering bastion against the Dark."
+  ],
   "page": "The_Emperor_of_Mankind",
   "source": "https://warhammer40k.fandom.com/wiki/The_Emperor_of_Mankind"
 }

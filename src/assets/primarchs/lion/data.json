@@ -1,8 +1,22 @@
 {
   "id": "lion",
+  "num": "I",
+  "roman": "I",
   "legionNumber": "I",
+  "legionId": "dark-angels",
   "legion": "Dark Angels",
   "title": "Lion El'Jonson",
+  "name": "Lion El'Jonson",
+  "epithet": "The First",
+  "homeworld": "Caliban",
+  "allegiance": "Loyalist",
+  "status": "Returned — Era Indomitus",
+  "hue": 130,
+  "lore": [
+    "Lion El'Jonson — the First — primarch of the Ist Legion, the Dark Angels. Found alone in the forests of the death-world Caliban, he was the first primarch to be recovered by the Emperor.",
+    "His Legion was the largest and most secretive of the Great Crusade. When Caliban fell during the Heresy, the shame of that internal betrayal was buried so deep that it is still hunted in silence by the Inner Circle today.",
+    "He lay in stasis for ten thousand years beneath the bones of a dead world. In the Era Indomitus he has returned — the first of the lost primarchs to walk again."
+  ],
   "page": "Lion_El'Jonson",
   "source": "https://warhammer40k.fandom.com/wiki/Lion_El'Jonson"
 }

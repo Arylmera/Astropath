@@ -2,11 +2,21 @@
   "id": "order-bloody-rose",
   "category": "order-militant",
   "title": "Order of the Bloody Rose",
+  "name": "Order of the Bloody Rose",
   "matriarch": "Saint Mina",
   "epithet": "Blades in Earnest",
+  "convent": "Convent Sanctorum · Ophelia VII",
+  "founded": "38th Millennium",
+  "parish": "Drusus Marches · Southern Rift",
   "dogma": "Martial prowess above all",
+  "colors": "Deep crimson · black · silver",
   "icon": "rose-and-sword",
   "glass": ["#6d0f1d", "#1a0a0c", "#9aa0a8"],
+  "lore": [
+    "The Order of the Bloody Rose — Saint Mina's heirs. She was said to be Dominica's champion, and to have duelled the leader of the Custodians in the Ecclesiarchal Palace to a standstill before terms of alliance were spoken.",
+    "Where their sisters pray, the Bloody Rose spar. They revere Mina as the epitome of martial virtue and dedicate themselves to emulating her prowess — blade, bolt, and the long reach of the power-maul.",
+    "They stand against the Hive Fleets in the galactic south and against the Cult of Duplicity that serves the Thousand Sons. Against sorcery they answer only with the sharpened edge."
+  ],
   "page": "Order_of_the_Bloody_Rose",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Bloody_Rose"
 }

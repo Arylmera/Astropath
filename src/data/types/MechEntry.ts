@@ -18,4 +18,5 @@ export interface MechEntry {
   strength?: string
   status?: string
   period?: string
+  image?: string
 }

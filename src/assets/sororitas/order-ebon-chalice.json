@@ -2,11 +2,21 @@
   "id": "order-ebon-chalice",
   "category": "order-militant",
   "title": "Order of the Ebon Chalice",
+  "name": "Order of the Ebon Chalice",
   "matriarch": "Saint Alicia Dominica",
   "epithet": "The Eldest Daughters",
+  "convent": "Convent Prioris · Terra",
+  "founded": "36th Millennium",
+  "parish": "Segmentum Solar",
   "dogma": "Keepers of the first truth",
+  "colors": "Black · gold · bone",
   "icon": "chalice",
   "glass": ["#0a0a0c", "#c9a042", "#efe6cd"],
+  "lore": [
+    "The Order of the Ebon Chalice — oldest of the Orders Militant, founded at the very birth of the Adepta Sororitas by Saint Alicia Dominica herself.",
+    "The most honoured of their sisters are entrusted with a fragment of the hallowed truth Dominica learned in the chamber of the Golden Throne. What she saw there, the order does not say.",
+    "In the Era Indomitus they have stood shoulder to shoulder with the Custodes and the Mechanicus, and eradicated more than one warband marching for Terra. The Chalice does not empty."
+  ],
   "page": "Order_of_the_Ebon_Chalice",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Ebon_Chalice"
 }

@@ -10,4 +10,5 @@ export interface Forge {
   primacy: string
   iconSeed: string
   lore: string[]
+  image?: string
 }

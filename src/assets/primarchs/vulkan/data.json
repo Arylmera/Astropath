@@ -1,8 +1,22 @@
 {
   "id": "vulkan",
+  "num": "XVIII",
+  "roman": "XVIII",
   "legionNumber": "XVIII",
+  "legionId": "salamanders",
   "legion": "Salamanders",
   "title": "Vulkan",
+  "name": "Vulkan",
+  "epithet": "The Lord of Drakes",
+  "homeworld": "Nocturne",
+  "allegiance": "Loyalist",
+  "status": "Perpetual — whereabouts unknown",
+  "hue": 28,
+  "lore": [
+    "Vulkan — the Lord of Drakes — primarch of the Salamanders, the XVIIIth Legion. Raised on the volcanic death-world of Nocturne, he was a smith before he was a warlord, and he never forgot it.",
+    "Alone among the primarchs he was a Perpetual: an undying being who could be slain only by the hand of another immortal. He walked the Imperium for millennia, unseen, leaving artefacts behind him as legacies for his sons.",
+    "His Salamanders remain the most humane of the Adeptus Astartes — defenders of the common people, smiths of exquisite wargear, kin to their civilian families on Nocturne in a way no other Chapter tolerates."
+  ],
   "page": "Vulkan",
   "source": "https://warhammer40k.fandom.com/wiki/Vulkan"
 }

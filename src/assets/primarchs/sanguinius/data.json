@@ -1,8 +1,22 @@
 {
   "id": "sanguinius",
+  "num": "IX",
+  "roman": "IX",
   "legionNumber": "IX",
+  "legionId": "blood-angels",
   "legion": "Blood Angels",
   "title": "Sanguinius",
+  "name": "Sanguinius",
+  "epithet": "The Great Angel",
+  "homeworld": "Baal",
+  "allegiance": "Loyalist",
+  "status": "Slain — Siege of Terra",
+  "hue": 12,
+  "lore": [
+    "Sanguinius — the Great Angel, the Brightest One — primarch of the Blood Angels Legion and genetic ancestor of the Sanguinary Brotherhood of the 41st Millennium.",
+    "He was in many ways considered the noblest and most respected of the primarchs, even by his brothers, including Horus. Winged, luminous, he was the living image of the Imperium's better nature.",
+    "He was tragically slain at the climax of the Horus Heresy, defending the Emperor from the Warmaster aboard the flagship Vengeful Spirit. Imperial legend holds it was his sacrifice that opened the chink in Horus' armour."
+  ],
   "page": "Sanguinius",
   "source": "https://warhammer40k.fandom.com/wiki/Sanguinius"
 }

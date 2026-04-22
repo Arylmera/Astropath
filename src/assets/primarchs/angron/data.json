@@ -1,8 +1,22 @@
 {
   "id": "angron",
+  "num": "XII",
+  "roman": "XII",
   "legionNumber": "XII",
+  "legionId": "world-eaters",
   "legion": "World Eaters",
   "title": "Angron",
+  "name": "Angron",
+  "epithet": "The Red Angel",
+  "homeworld": "Nuceria",
+  "allegiance": "Traitor",
+  "status": "Daemon Primarch of Khorne",
+  "hue": 8,
+  "lore": [
+    "Angron — the Red Angel — primarch of the World Eaters, the XIIth Legion. Taken as a slave-gladiator on Nuceria, his skull fused with the Butcher's Nails: crude neural implants that drowned every thought in rage.",
+    "When the Emperor rediscovered him he was already broken; the Imperium offered him a Legion but could not lift the Nails from his brain. He took the XIIth and turned them into an instrument of his pain.",
+    "He was the first of the primarchs to ascend as a Daemon Prince — ascending to the side of Khorne during the Shadow Crusade. In the Era Indomitus he has returned to the materium, and the galaxy trembles."
+  ],
   "page": "Angron",
   "source": "https://warhammer40k.fandom.com/wiki/Angron"
 }

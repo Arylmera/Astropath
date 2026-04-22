@@ -1,8 +1,22 @@
 {
   "id": "ferrus-manus",
+  "num": "X",
+  "roman": "X",
   "legionNumber": "X",
+  "legionId": "iron-hands",
   "legion": "Iron Hands",
   "title": "Ferrus Manus",
+  "name": "Ferrus Manus",
+  "epithet": "The Gorgon",
+  "homeworld": "Medusa",
+  "allegiance": "Loyalist",
+  "status": "Slain — Isstvan V, Drop Site Massacre",
+  "hue": 200,
+  "lore": [
+    "Ferrus Manus — the Gorgon — primarch of the Iron Hands, the Xth Legion. His hands were encased in living metal from a battle with the great silver wyrm Asirnoth, and they became the symbol of his creed: flesh is weak; iron endures.",
+    "He was among the most physically powerful of all the primarchs. His temper was as iron as his hands — unbending, unyielding, inclined to charge where others would wait.",
+    "That temper killed him. At Isstvan V, surrounded by traitors, he broke from the plan and charged Fulgrim alone. His brother severed his head. The Iron Hands have never forgiven flesh for failing their father."
+  ],
   "page": "Ferrus_Manus",
   "source": "https://warhammer40k.fandom.com/wiki/Ferrus_Manus"
 }

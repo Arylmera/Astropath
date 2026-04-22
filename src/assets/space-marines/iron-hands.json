@@ -2,14 +2,25 @@
   "id": "iron-hands",
   "founding": "First",
   "legionNumber": "X",
+  "primarchId": "ferrus-manus",
   "primarch": "Ferrus Manus",
   "allegiance": "Loyalist",
   "title": "Iron Hands",
+  "name": "Iron Hands",
   "homeworld": "Medusa",
   "fortressMonastery": "Clan Barracks, Medusa",
   "colors": ["Noir", "Argent"],
+  "colorsString": "Black & silver",
   "battleCry": "The Flesh is Weak!",
+  "motto": "The Flesh is Weak",
+  "strength": "Ten Clans — full operational strength",
   "specialty": "Cybernétique, alliance avec le Mechanicum, puissance de feu lourde",
+  "image": "https://www.wargamer.com/wp-content/sites/wargamer/2023/01/warhammer-40k-iron-hands-vs-orks.jpg",
+  "lore": [
+    "The Xth Legion of Ferrus Manus — the Iron Hands. Their creed is simple and brutal: the flesh is weak. Replace it. Every weakness of the body is a failure to be corrected with iron and bionics.",
+    "At Isstvan V they watched their primarch die, and something broke in them that has never healed. They withdrew from feeling, from mercy, from the very humanness that makes a warrior more than a weapon.",
+    "They are extraordinarily effective. They are cold, methodical, and unforgiving — of enemies and of themselves. The question of whether Ferrus Manus would approve of what his sons became is one the Iron Hands do not ask."
+  ],
   "page": "Iron_Hands",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Mains_de_Fer"
 }

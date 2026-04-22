@@ -1,8 +1,22 @@
 {
   "id": "lorgar",
+  "num": "XVII",
+  "roman": "XVII",
   "legionNumber": "XVII",
+  "legionId": "word-bearers",
   "legion": "Word Bearers",
   "title": "Lorgar Aurelian",
+  "name": "Lorgar Aurelian",
+  "epithet": "The Urizen",
+  "homeworld": "Colchis",
+  "allegiance": "Traitor",
+  "status": "Daemon Primarch of Chaos Undivided",
+  "hue": 20,
+  "lore": [
+    "Lorgar Aurelian — the Urizen — primarch of the Word Bearers, the XVIIth Legion. A scholar, theologian, and prophet who loved the Emperor as a god — and was humiliated for it when the Emperor razed Monarchia and forbade his worship.",
+    "That humiliation was the crack through which Chaos poured. Lorgar spent a century in secret pilgrimage across the Eye of Terror, studying the Chaos Gods. He returned as a convert — and converted Horus.",
+    "He is the architect of the Horus Heresy. Without Lorgar's faith — or the betrayal of it — the Emperor might have built his secular paradise. Instead, Lorgar gave humanity's greatest enemy a name and a theology."
+  ],
   "page": "Lorgar_Aurelian",
   "source": "https://warhammer40k.fandom.com/wiki/Lorgar_Aurelian"
 }

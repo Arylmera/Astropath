@@ -2,14 +2,25 @@
   "id": "iron-warriors",
   "founding": "First",
   "legionNumber": "IV",
+  "primarchId": "perturabo",
   "primarch": "Perturabo",
   "allegiance": "Traitor",
   "title": "Iron Warriors",
+  "name": "Iron Warriors",
   "homeworld": "Olympia (détruite)",
   "fortressMonastery": "N/A (Légion Traitre)",
   "colors": ["Fer", "Argent", "Jaune et noir (marques d'avertissement)"],
+  "colorsString": "Iron & hazard-stripe",
   "battleCry": "Iron within, Iron without!",
+  "motto": "Iron Within, Iron Without",
+  "strength": "Grand Companies — uncounted",
   "specialty": "Guerre de siège, artillerie lourde, fortification",
+  "image": "https://i.redd.it/w2jzqdk5vtxd1.jpeg",
+  "lore": [
+    "The IVth Legion of Perturabo. The siege-masters of the Great Crusade — no wall they could not breach, no fortress they could not reduce to rubble. They were indispensable and utterly thankless, assigned the grinding garrison work while other Legions won glory.",
+    "They turned. In their fury they annihilated Olympia — their own homeworld — and then joined the Warmaster. They directed the Traitor siege of the Imperial Palace and came closer to breaching it than any force since.",
+    "Since the Heresy they have fortified immense daemon-worlds within the Eye of Terror and warred ceaselessly with the Imperial Fists — their ancient rivals in the art of siege."
+  ],
   "page": "Iron_Warriors",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Guerriers_de_Fer"
 }

@@ -2,14 +2,25 @@
   "id": "salamanders",
   "founding": "First",
   "legionNumber": "XVIII",
+  "primarchId": "vulkan",
   "primarch": "Vulkan",
   "allegiance": "Loyalist",
   "title": "Salamanders",
+  "name": "Salamanders",
   "homeworld": "Nocturne",
   "fortressMonastery": "Prométhée (lune de Nocturne)",
   "colors": ["Vert sombre", "Noir"],
+  "colorsString": "Dark green & black",
   "battleCry": "Into the fires of battle, unto the anvil of war!",
+  "motto": "Into the fires of battle, unto the anvil of war",
+  "strength": "Seven over-strength companies",
   "specialty": "Flammes, armes à fusion, armurerie maîtresse, protection des civils",
+  "image": "https://www.warhammerart.com/cdn/shop/files/Salamanders.jpg?v=1741514773&width=1200",
+  "lore": [
+    "The Salamanders are one of the Loyalist First Founding Chapters of the Space Marines — originally the XVIIIth Legion of the Great Crusade. Born of the volcanic death-world Nocturne, they are warriors of extraordinary resilience and craftsmen without peer, forging the finest wargear in the Imperium in honour of their gene-father Vulkan.",
+    "Uniquely among the Adeptus Astartes, the Salamanders maintain deep bonds with their mortal kin. Battle-brothers live among the Nocturnean people between campaigns, standing as guardians and leaders of the seven Sanctuary Cities. Their faith, the Promethean Cult, teaches that strength exists to protect — not to rule.",
+    "At Isstvan V they were nearly annihilated in the Drop Site Massacre, betrayed alongside the Iron Hands and Raven Guard. They endured. Vulkan himself was lost in the centuries after the Heresy, leaving behind the Tome of Fire and nine sacred artefacts for his sons to recover. When all are found, so the legend holds, the Lord of Drakes shall return."
+  ],
   "page": "Salamanders",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Salamandres"
 }

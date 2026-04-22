@@ -1,8 +1,22 @@
 {
   "id": "rogal-dorn",
+  "num": "VII",
+  "roman": "VII",
   "legionNumber": "VII",
+  "legionId": "imperial-fists",
   "legion": "Imperial Fists",
   "title": "Rogal Dorn",
+  "name": "Rogal Dorn",
+  "epithet": "The Praetorian",
+  "homeworld": "Inwit",
+  "allegiance": "Loyalist",
+  "status": "Missing — presumed dead",
+  "hue": 48,
+  "lore": [
+    "Rogal Dorn — the Praetorian of Terra — primarch of the Imperial Fists. Implacable, unbreakable, the Emperor's chosen shield.",
+    "It was Dorn who re-fortified the Imperial Palace against the coming storm of the Heresy, and Dorn who held it when the Traitors broke upon its walls. He was the defender who never took a step backwards in his life.",
+    "He vanished leading a boarding action into the Eye of Terror during the Iron Cage war. His sons still await him. He left behind only his skeletal hand, preserved as a relic aboard the Phalanx."
+  ],
   "page": "Rogal_Dorn",
   "source": "https://warhammer40k.fandom.com/wiki/Rogal_Dorn"
 }

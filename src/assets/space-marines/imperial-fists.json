@@ -2,14 +2,25 @@
   "id": "imperial-fists",
   "founding": "First",
   "legionNumber": "VII",
+  "primarchId": "rogal-dorn",
   "primarch": "Rogal Dorn",
   "allegiance": "Loyalist",
   "title": "Imperial Fists",
+  "name": "Imperial Fists",
   "homeworld": "Phalanx (forteresse mobile)",
   "fortressMonastery": "Phalanx",
   "colors": ["Jaune"],
+  "colorsString": "Imperial yellow & black",
   "battleCry": "If I die, I die. But I shall not falter.",
+  "motto": "If I die, I die. But I shall not falter.",
+  "strength": "Multiple successor chapters",
   "specialty": "Guerre de siège, fortification",
+  "image": "https://static.wikia.nocookie.net/chapterquest/images/2/2b/Imperial_Fists_1st_Company.jpg/revision/latest?cb=20130403161447",
+  "lore": [
+    "The VIIth Legion of Rogal Dorn. The Emperor's chosen siege-masters, and the Legion that fortified the Imperial Palace against the Traitors. They paid for every inch of that wall in blood.",
+    "They have no homeworld — their fortress-monastery is the Phalanx, a star fort of staggering scale that drifts the void. To earn the right to serve aboard the Phalanx is the highest honour an Imperial Fist can receive.",
+    "Rogal Dorn vanished leading a boarding action into the Eye of Terror in the Iron Cage war. Of him, only a skeletal hand returned — preserved to this day as the Chapter's most sacred relic."
+  ],
   "page": "Imperial_Fists",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Poings_Imp%C3%A9riaux"
 }

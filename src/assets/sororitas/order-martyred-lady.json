@@ -2,11 +2,21 @@
   "id": "order-martyred-lady",
   "category": "order-militant",
   "title": "Order of Our Martyred Lady",
+  "name": "Order of Our Martyred Lady",
   "matriarch": "Saint Katherine",
   "epithet": "Fire of the Righteous",
+  "convent": "Convent Sanctorum · Ophelia VII",
+  "founded": "36th Millennium",
+  "parish": "Segmentum Obscurus",
   "dogma": "Unrelenting pursuit of the faithless",
+  "colors": "Black · bone white · bloody crimson",
   "icon": "skull-and-tears",
   "glass": ["#a31622", "#1b1a1c", "#e5dccd"],
+  "lore": [
+    "The Order of Our Martyred Lady — Saint Katherine's own. The most numerous and most widely spread of all Orders Militant, their name evokes hope in the righteous and terror in the faithless alike.",
+    "On Armageddon half their number was martyred holding the Sanctorum of Saint Katherine against Ghazghkull Thraka — but they drew so many greenskins into the siege that other fronts were lit by their sacrifice.",
+    "On Cadia during the Thirteenth Black Crusade, their faith called the Living Saint herself into being. Where Celestine walks, the Martyred Lady walks first."
+  ],
   "page": "Order_of_Our_Martyred_Lady",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_Our_Martyred_Lady"
 }

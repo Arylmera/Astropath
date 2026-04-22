@@ -1,8 +1,22 @@
 {
   "id": "corax",
+  "num": "XIX",
+  "roman": "XIX",
   "legionNumber": "XIX",
+  "legionId": "raven-guard",
   "legion": "Raven Guard",
   "title": "Corvus Corax",
+  "name": "Corvus Corax",
+  "epithet": "The Ravenlord",
+  "homeworld": "Deliverance",
+  "allegiance": "Loyalist",
+  "status": "Missing — self-imposed exile into the Eye of Terror",
+  "hue": 250,
+  "lore": [
+    "Corvus Corax — the Ravenlord — primarch of the Raven Guard, the XIXth Legion. Born into the slave-mines of Lycaeus, he led a revolution before he ever led a Legion, carving freedom from a tyrant world with nothing but shadow and will.",
+    "At Isstvan V his Legion was almost annihilated in the Drop Site Massacre — ambushed, pinned, and butchered by Traitor forces. He pulled the survivors out, and in the aftermath received gene-seed from the Emperor himself to rebuild.",
+    "The rebuilding went wrong. Accelerated geneseed produced mutants; Corax destroyed them all. Haunted, he flew into the Eye of Terror to hunt the Night Lords. He has not returned. His Legion carries on in silence, as he would have wanted."
+  ],
   "page": "Corvus_Corax",
   "source": "https://warhammer40k.fandom.com/wiki/Corvus_Corax"
 }

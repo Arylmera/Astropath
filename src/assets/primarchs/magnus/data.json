@@ -1,8 +1,22 @@
 {
   "id": "magnus",
+  "num": "XV",
+  "roman": "XV",
   "legionNumber": "XV",
+  "legionId": "thousand-sons",
   "legion": "Thousand Sons",
   "title": "Magnus the Red",
+  "name": "Magnus the Red",
+  "epithet": "The Crimson King",
+  "homeworld": "Prospero",
+  "allegiance": "Traitor",
+  "status": "Daemon Primarch of Tzeentch",
+  "hue": 280,
+  "lore": [
+    "Magnus the Red — the Crimson King, the Red Cyclops — primarch of the Thousand Sons and an extremely powerful Daemon Prince of Tzeentch.",
+    "A giant in both physical and mental terms, the copper-skinned Magnus possessed tremendous innate psychic ability, and constantly sought to understand the nature of the Warp — becoming a sorcerer of formidable power.",
+    "His prodigious and careless application of his gifts caused him to fall out of favour with his father. His psychic immaturity, recklessness and arrogance brought about his damnation and eternal servitude to the Changer of Ways."
+  ],
   "page": "Magnus_the_Red",
   "source": "https://warhammer40k.fandom.com/wiki/Magnus_the_Red"
 }

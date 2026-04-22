@@ -2,14 +2,25 @@
   "id": "alpha-legion",
   "founding": "First",
   "legionNumber": "XX",
+  "primarchId": "alpharius",
   "primarch": "Alpharius Omegon",
   "allegiance": "Traitor",
   "title": "Alpha Legion",
+  "name": "Alpha Legion",
   "homeworld": "Inconnu",
   "fortressMonastery": "Inconnu",
   "colors": ["Bleu-vert", "Argent"],
+  "colorsString": "Iridescent blue-green",
   "battleCry": "We are all Alpharius.",
+  "motto": "Hydra Dominatus",
+  "strength": "Unknown — cells operate independently",
   "specialty": "Infiltration, déception, opérations en cellules",
+  "image": "https://i.redd.it/what-is-your-favorite-alpha-legion-color-scheme-v0-ri79i1knclsb1.jpg?width=512&format=pjpg&auto=webp&s=e20a81875a02032d7251e3ae9508f00a1dd539d3",
+  "lore": [
+    "The XXth and last Legion — the Alpha Legion. Last to be founded, last to join the Great Crusade, first to confound anyone trying to understand them. Their methods, their loyalties, and even the number of their primarchs remain genuinely disputed.",
+    "They are the masters of infiltration, sleeper agents, disinformation and long-horizon manipulation. Every enemy who thinks they have outwitted the Alpha Legion may simply be executing the plan the Alpha Legion laid for them.",
+    "Hydra Dominatus. Cut off one head and ten more take its place. The Alpha Legion does not have a command structure — it has a philosophy. And that philosophy has survived ten thousand years intact, which is more than can be said for most."
+  ],
   "page": "Alpha_Legion",
   "source": "https://wh40k-fr.lexicanum.com/wiki/L%C3%A9gion_Alpha"
 }

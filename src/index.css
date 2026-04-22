@@ -160,6 +160,8 @@ body {
   min-height: 100vh;
 }
 html[data-theme="archive"] body { background: var(--bg) !important; }
+body:has(.lore-view), body:has(.mechanicus-view), body:has(.galaxy) { overflow: hidden; }
+body:has(.lore-view) .app-footer { display: none; }
 img { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
 a { color: inherit; text-decoration: none; }
@@ -217,7 +219,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ====== Galaxy map ====== */
 .galaxy {
-  position: relative; min-height: calc(100vh - 64px);
+  position: relative; min-height: calc(100vh - 130px);
   display: grid; grid-template-columns: 1fr; gap: 0;
 }
 .galaxy-header {
@@ -411,16 +413,31 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .see-more-btn { margin-top: 4px; padding: 12px 20px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); background: transparent; border: 1px solid var(--border); cursor: pointer; transition: all 0.15s ease; }
 .see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 
-/* ====== Sororitas Record ====== */
-.sororitas-scene { position: relative; min-height: 100vh; overflow-x: clip; }
-.sororitas-portrait-bg { position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; }
-.sororitas-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
-.sororitas-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
-.sororitas-content { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
-@media (max-width: 720px) { .sororitas-portrait-bg { width: 100%; opacity: 0.12; } }
+.lore-view .lore-mast { padding: 12px 22px 14px; margin-bottom: 20px; }
+.lore-view .lore-mast-top { padding: 4px 0 10px; margin-bottom: 4px; }
+.lore-view .lore-mast-back { margin-bottom: 12px; }
+.lore-view .lore-mast-body { gap: 20px; padding: 4px 0 10px; }
+.lore-view .lore-mast-numeral { font-size: clamp(56px, 10vw, 108px); min-width: 92px; }
+.lore-view .lore-mast-numeral.forge-roman { font-size: clamp(56px, 10vw, 108px); }
+.lore-view .lore-mast-numeral.forge-roman svg { width: clamp(56px, 10vw, 108px); height: clamp(56px, 10vw, 108px); }
+.lore-view .lore-mast-title { gap: 6px; }
+.lore-view .lore-mast-name { font-size: clamp(30px, 4.2vw, 48px); line-height: 1; }
+.lore-view .lore-mast-epithet { font-size: clamp(13px, 1.2vw, 16px); }
+.lore-view .lore-manifest { padding-top: 10px; }
+.lore-view .lore-manifest > div { padding: 6px 14px; gap: 2px; }
+.lore-view .lore-manifest dd { font-size: 13px; }
+.lore-view .lore-article { max-width: none; }
+.lore-view { position: relative; z-index: 1; overflow: hidden; }
+.view:has(.lore-view) { animation: fadeInOpacity 0.35s ease; }
+@keyframes fadeInOpacity { from { opacity: 0; } to { opacity: 1; } }
+.lore-portrait-bg { position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; }
+.lore-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.35; }
+.lore-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, var(--bg) 0%, transparent 20%, transparent 55%, var(--bg) 95%), linear-gradient(to bottom, transparent 65%, var(--bg) 100%); pointer-events: none; }
+
+@media (max-width: 720px) { .lore-portrait-bg { width: 100%; opacity: 0.12; } }
 
 /* ====== Lore record view ====== */
-.lore-view { max-width: 1280px; margin: 0 auto; padding: 28px 48px 96px; color: var(--text); }
+.lore-view { max-width: 1280px; height: calc(100vh - 64px); box-sizing: border-box; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
 .lore-mast { position: relative; border: 1px solid var(--border-soft); background: linear-gradient(180deg, oklch(from var(--bg-raised) l c h / 0.6), oklch(from var(--bg) l c h / 0.4)), radial-gradient(1200px 280px at 80% -40%, var(--glow), transparent 60%); padding: 18px 28px 24px; margin-bottom: 40px; overflow: hidden; }
 .lore-mast::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; opacity: 0.7; }
 .lore-mast::after { content: ''; position: absolute; inset: 8px; border: 1px solid transparent; border-top-color: var(--accent-dim); border-left-color: var(--accent-dim); width: 18px; height: 18px; pointer-events: none; }
@@ -449,9 +466,9 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-manifest-v.loyal { color: var(--loyal); }
 .lore-manifest-v.traitor { color: var(--traitor); }
 @media (max-width: 720px) { .lore-view { padding: 20px 20px 60px; } .lore-mast { padding: 14px 18px 18px; } .lore-mast-body { grid-template-columns: 1fr; gap: 12px; } .lore-mast-numeral { display: none; } .lore-mast-portrait-bg { display: none; } .lore-manifest { grid-template-columns: repeat(2, 1fr); } .lore-manifest > div { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 10px 0; } .lore-manifest > div:nth-child(odd) { padding-right: 16px; } }
-.lore-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; }
+.lore-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; flex: 1; min-height: 0; }
 @media (max-width: 960px) { .lore-grid { grid-template-columns: 1fr; gap: 28px; } }
-.lore-toc { position: sticky; top: 24px; align-self: start; font-family: var(--font-mono); font-size: 12px; max-height: calc(100vh - 48px); overflow-y: auto; padding-right: 8px; }
+.lore-toc { align-self: stretch; font-family: var(--font-mono); font-size: 12px; max-height: 100%; overflow-y: auto; padding-right: 8px; }
 .lore-toc-head { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); padding: 6px 0 10px; border-bottom: 1px solid var(--border-soft); margin-bottom: 10px; }
 .lore-toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .lore-toc-list a { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 7px 6px; color: var(--text-dim); text-decoration: none; border-left: 2px solid transparent; font-size: 12px; line-height: 1.35; transition: color 140ms, border-color 140ms, background 140ms; cursor: pointer; }
@@ -460,7 +477,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-toc-name { font-family: var(--font-display); letter-spacing: 0; text-transform: none; }
 .lore-toc-empty { color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; }
 @media (max-width: 960px) { .lore-toc { position: static; max-height: none; border: 1px solid var(--border-soft); padding: 14px 16px; background: var(--bg-raised); } }
-.lore-article { max-width: 68ch; font-family: var(--font-display); }
+.lore-article { max-width: 68ch; font-family: var(--font-display); max-height: 100%; overflow-y: auto; padding-right: 16px; min-height: 0; }
 .lore-article-meta { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; margin-bottom: 28px; border-bottom: 1px solid var(--border-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); gap: 16px; }
 .lore-doc { display: flex; flex-direction: column; gap: 36px; }
 .lore-doc-state { padding: 40px 0; color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; }
@@ -477,8 +494,8 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-article-back { margin-top: 24px; }
 
 /* ====== Mechanicus Archive ====== */
-.mechanicus-view { padding: 40px 24px 40px; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, var(--mech-glow) 0%, transparent 55%), var(--bg); }
-.mech-header { max-width: 760px; margin: 0 auto 16px; text-align: center; }
+.mechanicus-view { padding: 40px 24px 40px; min-height: calc(100vh - 66px); background: radial-gradient(ellipse at 50% 30%, var(--mech-glow) 0%, transparent 55%), var(--bg); }
+.mech-header { max-width: 1100px; margin: 0 auto 16px; text-align: center; }
 .mech-header-kicker { display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mech-line); opacity: 0.9; margin-bottom: 10px; }
 .mech-cog-sm { font-size: 14px; }
 .mech-header h1 { font-family: var(--font-display); font-weight: 300; font-size: 56px; letter-spacing: -0.01em; line-height: 1; margin: 0 0 10px; color: var(--text); }
@@ -528,20 +545,20 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .sor-cross { font-family: serif; font-size: 18px; line-height: 1; }
 .sor-header h1 { font-family: var(--font-display); font-weight: 300; font-size: 56px; letter-spacing: -0.01em; line-height: 1; margin: 0 0 16px; color: var(--text); }
 .sor-header-lede { font-family: var(--font-sans); font-size: 15px; line-height: 1.6; color: var(--text-dim); max-width: 620px; margin: 0 auto; }
-.sor-sections { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+.sor-sections { width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
 .sor-section { display: flex; flex-direction: column; gap: 14px; }
-.sor-section-head { max-width: 780px; }
+.sor-section-head { max-width: 780px; margin: 0 auto; text-align: center; }
 .sor-section-kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
 .sor-section-head h2 { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-weight: 400; letter-spacing: -0.01em; color: var(--text); }
 .sor-section-head p { margin: 10px 0 0; font-family: var(--font-sans); font-size: 14px; line-height: 1.6; color: var(--text-dim); }
-.sor-nave { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-items: end; padding: 16px 0 0; position: relative; }
+.sor-nave { width: 100%; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 240px)); justify-content: center; gap: 12px; align-items: end; padding: 16px 0 0; position: relative; }
 .sor-nave::before { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--border); opacity: 0.5; }
 .sor-panel { position: relative; cursor: pointer; display: flex; flex-direction: column; transition: transform 0.3s ease, filter 0.3s ease; background: transparent; }
 .sor-panel:hover { transform: translateY(-6px); }
 .sor-panel:not(:hover) { filter: saturate(0.85) brightness(0.92); }
 .sor-panel-glass { aspect-ratio: 3 / 4.3; overflow: hidden; box-shadow: 0 20px 40px -20px oklch(0 0 0 / 0.6), inset 0 0 0 2px #050505; position: relative; }
 .sor-panel-glass::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, transparent 40%, oklch(0 0 0 / 0.3) 100%); pointer-events: none; }
-.sor-panel:hover .sor-panel-glass { box-shadow: 0 30px 50px -20px var(--glass-a), inset 0 0 0 2px #050505, 0 0 0 1px var(--glass-c); }
+.sor-panel:hover .sor-panel-glass { box-shadow: 0 30px 50px -20px var(--glass-a), inset 0 0 0 2px #050505; }
 .sor-panel-glass svg { display: block; width: 100%; height: 100%; }
 .sor-panel-seal {
   width: 100%;
@@ -577,10 +594,9 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .sor-footer-link { color: inherit; text-decoration: none; }
 .sor-footer-link:hover { color: var(--accent); }
 .sororitas-record-view { padding: 120px 48px 80px; }
-@media (max-width: 980px) { .sor-nave { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) {
   .sor-sections { gap: 28px; }
-  .sor-nave { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .sor-nave { gap: 10px; }
   .mech-header h1, .sor-header h1 { font-size: 40px; }
   .mechanicus-view, .sororitas-view, .sororitas-record-view { padding: 60px 20px 60px; }
 }
@@ -591,7 +607,7 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .forge-roman { font-family: var(--font-mono); color: var(--mech-line); opacity: 0.25; font-size: 320px; line-height: 1; font-weight: 300; user-select: none; }
 .order-roman { font-family: serif; font-weight: 300; color: var(--accent); opacity: 0.2; font-size: 380px; line-height: 1; user-select: none; }
 
-.app-footer { text-align: center; padding: 24px 20px 32px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; transition: opacity 0.2s ease; }
+.app-footer { display: flex; justify-content: center; padding: 24px 20px 32px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; transition: opacity 0.2s ease; }
 .app-footer:hover { opacity: 1; }
 .app-footer-link { color: inherit; text-decoration: none; }
 .app-footer-link:hover { color: var(--accent); }

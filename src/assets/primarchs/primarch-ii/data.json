@@ -1,8 +1,22 @@
 {
   "id": "primarch-ii",
+  "num": "II",
+  "roman": "II",
   "legionNumber": "II",
+  "legionId": null,
   "legion": "[Redacted]",
   "title": "Primarch II (Redacted)",
+  "name": "Primarch II",
+  "epithet": "[Redacted]",
+  "homeworld": "Unknown — purged",
+  "allegiance": "Loyalist",
+  "status": "Unknown — expunged from all records",
+  "hue": 0,
+  "lore": [
+    "The second primarch and his Legion have been deliberately expunged from all Imperial records. No name, no deed, no world survives the purge. Even the method of their removal is unknown.",
+    "Whether they died, fell to Chaos, or were erased for some other sin, the Imperium does not say. The blank in the Legion numbering is the only testament that they ever existed.",
+    "Some scholars speculate. The Inquisition does not encourage the habit."
+  ],
   "page": null,
   "source": null
 }

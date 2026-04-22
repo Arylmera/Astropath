@@ -1,8 +1,22 @@
 {
   "id": "konrad-curze",
+  "num": "VIII",
+  "roman": "VIII",
   "legionNumber": "VIII",
+  "legionId": "night-lords",
   "legion": "Night Lords",
   "title": "Konrad Curze",
+  "name": "Konrad Curze",
+  "epithet": "The Night Haunter",
+  "homeworld": "Nostramo (destroyed)",
+  "allegiance": "Traitor",
+  "status": "Slain — M31, assassinated by M'shen",
+  "hue": 240,
+  "lore": [
+    "Konrad Curze — the Night Haunter — primarch of the Night Lords, the VIIIth Legion. Found on Nostramo, a lightless hive world ruled by crime and cruelty, he imposed order through terror before the Emperor came.",
+    "He was a prophet of his own death, cursed with visions of slaughter that drove him to the edge of madness. He believed his methods were necessary; he believed the Imperium was built on the same lies he exposed. He was not entirely wrong.",
+    "At the end he allowed the assassin M'shen to find him — choosing his death as a final proof that fear is the only truth. His Legion still bears his mark: terror as doctrine, murder as sacrament."
+  ],
   "page": "Konrad_Curze",
   "source": "https://warhammer40k.fandom.com/wiki/Konrad_Curze"
 }

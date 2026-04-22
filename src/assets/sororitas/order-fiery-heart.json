@@ -2,8 +2,21 @@
   "id": "order-fiery-heart",
   "category": "order-militant",
   "title": "Order of the Fiery Heart",
+  "name": "Order of the Fiery Heart",
+  "matriarch": "Saint Katherine",
+  "epithet": "The Burning Faithful",
+  "convent": "Convent Sanctorum · Ophelia VII",
+  "founded": "36th Millennium",
+  "parish": "Segmentum Solar · the Ember Worlds",
+  "dogma": "Faith purified through flame",
+  "colors": "White · flame-red · gold",
   "icon": "flaming-heart",
   "glass": ["#c44010", "#e8920a", "#f5deb0"],
+  "lore": [
+    "The Order of the Fiery Heart — Saint Katherine's own line, eldest daughters of righteous fire. Where the Martyred Lady mourns, the Fiery Heart burns. Their faith is not a shield; it is a pyre.",
+    "They are recorded as the hammer to the Valorous Heart's anvil — drawn forward into the hottest engagements, trusting that the Emperor's will ignites them where lesser warriors would break.",
+    "Many of their sanctuaries were consumed in the opening of the Great Rift. The surviving sisters did not retreat. They advanced into the flame."
+  ],
   "page": "Order_of_the_Fiery_Heart",
   "source": "https://warhammer40k.fandom.com/wiki/Order_of_the_Fiery_Heart"
 }
