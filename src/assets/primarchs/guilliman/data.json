@@ -1,8 +1,22 @@
 {
   "id": "guilliman",
+  "num": "XIII",
+  "roman": "XIII",
   "legionNumber": "XIII",
+  "legionId": "ultramarines",
   "legion": "Ultramarines",
   "title": "Roboute Guilliman",
+  "name": "Roboute Guilliman",
+  "epithet": "The Avenging Son",
+  "homeworld": "Macragge",
+  "allegiance": "Loyalist",
+  "status": "Active — Lord Commander",
+  "hue": 38,
+  "lore": [
+    "Roboute Guilliman — the Avenging Son, Master of Ultramar, the Blade of Unity — is as much a patrician statesman as he is an indefatigable warrior. A being of preternatural intelligence, cold reason and indomitable will.",
+    "He forged the XIIIth Legion into a vast force of conquest and control, a weapon by which he made himself master of a stellar domain in the Eastern Fringe: the Realm of Ultramar, which during his early lifetime spanned five hundred worlds.",
+    "In the wake of the Horus Heresy, he wrote the Codex Astartes — the volume that laid out the proper tactics and military organisation for every Loyalist Chapter now in existence. In the Era Indomitus he has been resurrected and walks among his sons once more."
+  ],
   "page": "Roboute_Guilliman",
   "source": "https://warhammer40k.fandom.com/wiki/Roboute_Guilliman"
 }

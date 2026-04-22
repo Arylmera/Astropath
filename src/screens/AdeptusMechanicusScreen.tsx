@@ -161,7 +161,16 @@ const TAB_META: Record<Tab, { title: string; lede: string }> = {
   },
 }
 
-// ---- MechCard --------------------------------------------------------------
+// ---- Node model ------------------------------------------------------------
+
+interface MechNode {
+  id: string
+  name: string
+  epithet: string
+  sublabel: string
+  fields: [string, string][]
+  kicker: string
+}
 
 function entryFields(e: MechEntry): [string, string][] {
   const pairs: [string, string][] = []
@@ -180,25 +189,33 @@ function entryFields(e: MechEntry): [string, string][] {
   return pairs
 }
 
-function MechCard({ entry }: { entry: MechEntry }) {
-  const fields = entryFields(entry)
-  return (
-    <article className="mech-card">
-      <h3 className="mech-card-title">{entry.title}</h3>
-      <p className="mech-card-epithet">"{entry.epithet}"</p>
-      {fields.length > 0 && (
-        <dl className="mech-card-fields">
-          {fields.map(([k, v]) => (
-            <div key={k} className="mech-card-field">
-              <dt>{k}</dt>
-              <dd>{v}</dd>
-            </div>
-          ))}
-        </dl>
-      )}
-      <p className="mech-card-lore">{entry.lore[0]}</p>
-    </article>
-  )
+function forgeToNode(f: Forge): MechNode {
+  return {
+    id: f.id,
+    name: f.name,
+    epithet: f.epithet,
+    sublabel: `SEG. ${f.segmentum.toUpperCase()}`,
+    kicker: 'FORGE WORLD',
+    fields: [
+      ['Titan Legion', f.titanLegion],
+      ['Primacy',      f.primacy],
+      ['Dogma',        f.dogma],
+      ['Segmentum',    f.segmentum],
+    ],
+  }
+}
+
+function entryToNode(e: MechEntry, kicker: string): MechNode {
+  const fields = entryFields(e)
+  const sub    = fields[0]?.[1] ?? e.category
+  return {
+    id: e.id,
+    name: e.title,
+    epithet: e.epithet,
+    sublabel: sub.toUpperCase(),
+    kicker,
+    fields: fields.slice(0, 4),
+  }
 }
 
 // ---- AdeptusMechanicusScreen -----------------------------------------------
@@ -212,15 +229,21 @@ interface ArchiveProps {
 export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: ArchiveProps) {
   const [hoverId, setHover] = useState<string | null>(null)
   const [tab, setTab]       = useState<Tab>('Forge Worlds')
-  const hovered = useMemo(() => forges.find(f => f.id === hoverId) ?? null, [hoverId, forges])
 
-  const n = forges.length
+  const nodes = useMemo<MechNode[]>(() => {
+    if (tab === 'Forge Worlds') return forges.map(forgeToNode)
+    return entries[tab].map(e => entryToNode(e, tab.toUpperCase()))
+  }, [tab, forges, entries])
+
+  const hovered = useMemo(() => nodes.find(node => node.id === hoverId) ?? null, [hoverId, nodes])
+
+  const n = nodes.length
   const R = 310
 
-  const positions = useMemo(() => forges.map((f, i) => {
-    const a = (i / n) * Math.PI * 2 - Math.PI / 2
-    return { id: f.id, x: Math.cos(a) * R, y: Math.sin(a) * R, a }
-  }), [forges, n])
+  const positions = useMemo(() => nodes.map((node, i) => {
+    const a = (i / Math.max(n, 1)) * Math.PI * 2 - Math.PI / 2
+    return { id: node.id, x: Math.cos(a) * R, y: Math.sin(a) * R, a }
+  }), [nodes, n])
 
   const meta = TAB_META[tab]
 
@@ -247,7 +270,7 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
         ))}
       </nav>
 
-      {tab === 'Forge Worlds' ? (
+      {(
         <div className="mech-stage">
           <svg className="mech-diagram" viewBox="-500 -450 1000 900" preserveAspectRatio="xMidYMid meet">
             <defs>
@@ -280,15 +303,15 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
             <MechanicalCog teeth={24} outer={170} inner={148} />
 
             {positions.map((pos, i) => {
-              const forge   = forges[i]
-              const isHover = hoverId === forge.id
+              const node    = nodes[i]
+              const isHover = hoverId === node.id
               return (
-                <g key={forge.id}
+                <g key={node.id}
                   className={`mech-node ${isHover ? 'hover' : ''}`}
                   transform={`translate(${pos.x} ${pos.y})`}
-                  onMouseEnter={() => setHover(forge.id)}
-                  onMouseLeave={() => setHover(h => h === forge.id ? null : h)}
-                  onClick={() => onOpen(forge.id)}
+                  onMouseEnter={() => setHover(node.id)}
+                  onMouseLeave={() => setHover(h => h === node.id ? null : h)}
+                  onClick={() => onOpen(node.id)}
                 >
                   <circle r="36" fill="none" stroke="var(--mech-line)" strokeWidth="0.5" opacity="0.5" />
                   <circle r="40" fill="rgba(0,0,0,0.001)" />
@@ -306,7 +329,7 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
                       fontWeight="600" fontSize="15" letterSpacing="1"
                       fill="var(--mech-label)"
                     >
-                      {forge.name.toUpperCase()}
+                      {node.name.toUpperCase()}
                     </text>
                     <text
                       textAnchor={Math.cos(pos.a) > 0.2 ? 'start' : Math.cos(pos.a) < -0.2 ? 'end' : 'middle'}
@@ -315,7 +338,7 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
                       fontSize="10" letterSpacing="2"
                       fill="var(--mech-label-dim)"
                     >
-                      SEG. {forge.segmentum.toUpperCase()}
+                      {node.sublabel}
                     </text>
                   </g>
                 </g>
@@ -325,15 +348,16 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
 
           {hovered && (
             <div className="mech-focus show">
-              <div className="mech-focus-kicker">FORGE WORLD</div>
+              <div className="mech-focus-kicker">{hovered.kicker}</div>
               <h2>{hovered.name}</h2>
               <p className="mech-focus-epithet">"{hovered.epithet}"</p>
-              <div className="mech-focus-grid">
-                <div><span>Titan Legion</span><b>{hovered.titanLegion}</b></div>
-                <div><span>Primacy</span><b>{hovered.primacy}</b></div>
-                <div><span>Dogma</span><b>{hovered.dogma}</b></div>
-                <div><span>Segmentum</span><b>{hovered.segmentum}</b></div>
-              </div>
+              {hovered.fields.length > 0 && (
+                <div className="mech-focus-grid">
+                  {hovered.fields.map(([k, v]) => (
+                    <div key={k}><span>{k}</span><b>{v}</b></div>
+                  ))}
+                </div>
+              )}
               <button className="mech-focus-open" onClick={() => onOpen(hovered.id)}>
                 Open Schematic ↗
               </button>
@@ -341,14 +365,8 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen }: Arc
           )}
 
           <div className="mech-hint">
-            Hover a forge node · click to open the schematic
+            Hover a node · click to open the schematic
           </div>
-        </div>
-      ) : (
-        <div className="mech-cat-grid">
-          {entries[tab].map(entry => (
-            <MechCard key={entry.id} entry={entry} />
-          ))}
         </div>
       )}
     </div>
