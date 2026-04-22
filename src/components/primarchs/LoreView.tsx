@@ -156,11 +156,9 @@ export default function LoreView({ primarch, onBack }: Props) {
   return (
     <div className="view lore-view">
       {primarch.portrait && (
-        <div
-          className="lore-portrait-bg"
-          style={{ backgroundImage: `url(${primarch.portrait})` }}
-          aria-hidden
-        />
+        <div className="lore-portrait-bg">
+          <img src={primarch.portrait} alt="" aria-hidden />
+        </div>
       )}
       <header className="lore-mast">
         <div className="lore-mast-top">
