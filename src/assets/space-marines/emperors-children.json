@@ -2,14 +2,25 @@
   "id": "emperors-children",
   "founding": "First",
   "legionNumber": "III",
+  "primarchId": "fulgrim",
   "primarch": "Fulgrim",
   "allegiance": "Traitor",
   "title": "Emperor's Children",
+  "name": "Emperor's Children",
   "homeworld": "Chemos",
   "fortressMonastery": "N/A (Légion Traitre)",
   "colors": ["Violet", "Or"],
+  "colorsString": "Porcelain & violet",
   "battleCry": "None shall find us wanting!",
+  "motto": "Strive for perfection",
+  "strength": "Warband fragments",
   "specialty": "Perfection au combat, armes soniques, dédié à Slaanesh",
+  "image": "https://assets.warhammer-community.com/40k_ecfaction-image1_wide-np2esvztls.jpg",
+  "lore": [
+    "The IIIrd Legion of Fulgrim. The only Legion permitted to wear the Emperor's palatine aquila upon their armour. Their pursuit of perfection in war became a cult, and the cult became damnation.",
+    "At Isstvan III they turned on their loyalist brothers. By the end of the Heresy they were no longer the Legion the Emperor had recognised — they were Slaanesh's eldest children.",
+    "They fractured almost immediately after Horus fell. They remain fractured — a cloud of warbands, all chasing the same shining, unreachable note."
+  ],
   "page": "Emperor's_Children",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Enfants_de_l%27Empereur"
 }

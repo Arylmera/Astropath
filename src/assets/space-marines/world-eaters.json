@@ -2,14 +2,25 @@
   "id": "world-eaters",
   "founding": "First",
   "legionNumber": "XII",
+  "primarchId": "angron",
   "primarch": "Angron",
   "allegiance": "Traitor",
   "title": "World Eaters",
+  "name": "World Eaters",
   "homeworld": "Nuceria (détruite par Angron)",
   "fortressMonastery": "N/A (Légion Traitre)",
   "colors": ["Blanc et bleu (origine)", "Rouge et laiton (après corruption)"],
+  "colorsString": "Bone & blood",
   "battleCry": "Blood for the Blood God! Skulls for the Skull Throne!",
+  "motto": "Blood for the Blood God",
+  "strength": "Eight Warbands",
   "specialty": "Assaut berserk, combat rapproché, dédié à Khorne",
+  "image": "https://www.warhammerart.com/cdn/shop/files/World-Eaters.jpg?v=1741514824&width=1200",
+  "lore": [
+    "The XIIth Legion of Angron. Once the War Hounds — reforged by their primarch's Butcher's Nails into frenzied berserkers who know no command but the kill.",
+    "They worship Khorne not by choice but by inescapable physiology. The Nails drive every son of Angron toward violence the way hunger drives lesser men toward food.",
+    "In the Era Indomitus their primarch walks the materium again and the Legion is whole once more, ravaging Imperial worlds in his red wake."
+  ],
   "page": "World_Eaters",
   "source": "https://wh40k-fr.lexicanum.com/wiki/D%C3%A9voreurs_de_Mondes"
 }

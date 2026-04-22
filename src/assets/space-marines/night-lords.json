@@ -2,14 +2,25 @@
   "id": "night-lords",
   "founding": "First",
   "legionNumber": "VIII",
+  "primarchId": "konrad-curze",
   "primarch": "Konrad Curze",
   "allegiance": "Traitor",
   "title": "Night Lords",
+  "name": "Night Lords",
   "homeworld": "Nostramo (détruite)",
   "fortressMonastery": "N/A (Légion Traitre)",
   "colors": ["Bleu nuit", "Éclairs d'or"],
+  "colorsString": "Midnight blue & lightning",
   "battleCry": "Ave Dominus Nox!",
+  "motto": "Ave Dominus Nox",
+  "strength": "Warbands — no unified structure",
   "specialty": "Terreur, guerre psychologique, sabotage",
+  "image": "assets/legions/night-lords.webp",
+  "lore": [
+    "The VIIIth Legion of Konrad Curze. Born of the nightmare hive-world Nostramo, they learned terror before they learned war. They were the Emperor's instruments of dread — sent ahead of the Crusade to break worlds psychologically before a shot was fired.",
+    "They fell when Curze fell, or perhaps Curze fell because they were always falling. Fear as a weapon has no restraint; the Night Lords became the very horror they once wielded on behalf of the Imperium.",
+    "Since the Heresy they have fractured into warbands with no unifying goal but cruelty. They do not serve Chaos so much as ignore it — predators without a pack, haunting the dark between stars."
+  ],
   "page": "Night_Lords",
   "source": "https://wh40k-fr.lexicanum.com/wiki/Seigneurs_de_la_Nuit"
 }
