@@ -562,13 +562,13 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .sor-cross { font-family: serif; font-size: 18px; line-height: 1; }
 .sor-header h1 { font-family: var(--font-display); font-weight: 300; font-size: 56px; letter-spacing: -0.01em; line-height: 1; margin: 0 0 16px; color: var(--text); }
 .sor-header-lede { font-family: var(--font-sans); font-size: 15px; line-height: 1.6; color: var(--text-dim); max-width: 620px; margin: 0 auto; }
-.sor-sections { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+.sor-sections { width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
 .sor-section { display: flex; flex-direction: column; gap: 14px; }
 .sor-section-head { max-width: 780px; }
 .sor-section-kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
 .sor-section-head h2 { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-weight: 400; letter-spacing: -0.01em; color: var(--text); }
 .sor-section-head p { margin: 10px 0 0; font-family: var(--font-sans); font-size: 14px; line-height: 1.6; color: var(--text-dim); }
-.sor-nave { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-items: end; padding: 16px 0 0; position: relative; }
+.sor-nave { width: 100%; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; align-items: end; padding: 16px 0 0; position: relative; }
 .sor-nave::before { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--border); opacity: 0.5; }
 .sor-panel { position: relative; cursor: pointer; display: flex; flex-direction: column; transition: transform 0.3s ease, filter 0.3s ease; background: transparent; }
 .sor-panel:hover { transform: translateY(-6px); }
@@ -611,10 +611,9 @@ html[data-theme="archive"] .sororitas-view { background: radial-gradient(ellipse
 .sor-footer-link { color: inherit; text-decoration: none; }
 .sor-footer-link:hover { color: var(--accent); }
 .sororitas-record-view { padding: 120px 48px 80px; }
-@media (max-width: 980px) { .sor-nave { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) {
   .sor-sections { gap: 28px; }
-  .sor-nave { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .sor-nave { gap: 10px; }
   .mech-header h1, .sor-header h1 { font-size: 40px; }
   .mechanicus-view, .sororitas-view, .sororitas-record-view { padding: 60px 20px 60px; }
 }
