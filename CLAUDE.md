@@ -17,27 +17,27 @@ Local dev server runs at http://192.168.1.101:5137/
 ## Hot file map
 Before reading these files, pick the section from the index below and use `Read offset/limit` (e.g. `Read offset:220 limit:80`). Open the full file only when editing across regions. Update this map in the same commit if line numbers shift materially.
 
-### src/index.css (~613 lines)
+### src/index.css (~619 lines)
 Theme tokens + CSS variables. Four themes via `html[data-theme]`: void (default `:root`), archive, cathedral, codex.
-Token families: `--bg*`, `--text`, `--accent`, `--mech-*` (Mechanicus), `--forge-*` (Forge).
+Token families: `--bg*`, `--text`, `--accent`, `--sor-glow` (Sororitas ambience), `--mech-*` (Mechanicus), `--forge-*` (Forge).
 
 Section index (line → banner / block):
 - `1` — header comment + `:root` token block (void defaults)
-- `44` — `html[data-theme="archive"]` tokens
+- `43` — `html[data-theme="archive"]` tokens
 - `77` — `html[data-theme="cathedral"]` tokens
-- `110` — `html[data-theme="codex"]` tokens
-- `143` — Base
-- `169` — Chrome
-- `213` — View container
-- `220` — Galaxy map
-- `293` — Lexicon
-- `335` — Legion
-- `378` — Tweaks
-- `408` — Misc
-- `439` — Lore record view
-- `496` — Mechanicus Archive
-- `540` — Sororitas Archive
-- `604` — Forge + Order lexicon portraits
+- `111` — `html[data-theme="codex"]` tokens
+- `145` — Base
+- `171` — Chrome
+- `215` — View container
+- `222` — Galaxy map
+- `295` — Lexicon
+- `337` — Legion
+- `380` — Tweaks
+- `410` — Misc (incl. focus-visible, ::selection, reduced-motion)
+- `446` — Lore record view
+- `503` — Mechanicus Archive
+- `547` — Sororitas Archive
+- `610` — Forge + Order lexicon portraits
 
 ### src/data/astropath.ts (9 lines)
 Aggregator. Default export `DATA: AstropathData = { primarchs, legions, mechanicus, mechCategories, sororitas }`. Re-exports from `./primarchs`, `./legions`, `./mechanicus`, `./sororitas`. Single data entry point.
