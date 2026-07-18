@@ -10,6 +10,3 @@ Entries that could not be fetched. Revisit with alternate sources (Lexicanum, of
 
 - **`.github/workflows/publish-image.yml`** — GitHub Actions logged a deprecation warning on the last run (2026-07-18): Node.js 20 is deprecated and the pinned actions are being forced onto Node 24. Latest releases available (checked 2026-07-18): `actions/checkout` v4→v7.0.0, `docker/setup-buildx-action` v3→v4.2.0, `docker/login-action` v3→v4.4.0, `docker/metadata-action` v5→v6.2.0, `docker/build-push-action` v6→v7.3.0. All are major bumps — read each changelog before bumping.
 
-## Code quality
-
-- **Bundle size** — faction chunks exceed 500 kB (up to 615 kB for dark-angels). Investigate: likely large JSON/MD data bundled in. Consider lazy-loading per-faction data via `fetch` instead of `import`.

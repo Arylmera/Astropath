@@ -55,8 +55,11 @@ const sororitasModules = import.meta.glob<RawEntry>(
   { eager: true, import: 'default' },
 )
 
-const loreLoaders = import.meta.glob<string>('../assets/**/*.md', {
-  query: '?raw',
+// Lore is fetched as an asset rather than imported: `?raw` would inline ~11 MB
+// of markdown into JS chunks (up to 615 kB each) for the engine to parse.
+const loreUrls = import.meta.glob<string>('../assets/**/*.md', {
+  eager: true,
+  query: '?url',
   import: 'default',
 })
 
@@ -86,7 +89,11 @@ export async function loadLore(
   datasetKey: DatasetKey,
   id: string,
 ): Promise<string> {
-  return (await loreLoaders[lorePath(datasetKey, id)]?.()) ?? ''
+  const url = loreUrls[lorePath(datasetKey, id)]
+  if (!url) return ''
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`Lore fetch failed: ${res.status}`)
+  return res.text()
 }
 
 function initials(title: string): string {
