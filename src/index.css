@@ -164,6 +164,9 @@ body {
 html[data-theme="archive"] body { background: var(--bg) !important; }
 body:has(.lore-view), body:has(.mechanicus-view), body:has(.galaxy) { overflow: hidden; }
 body:has(.lore-view) .app-footer { display: none; }
+@media (max-width: 960px) {
+  body:has(.lore-view), body:has(.mechanicus-view), body:has(.galaxy) { overflow: auto; }
+}
 img { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
 a { color: inherit; text-decoration: none; }
@@ -211,6 +214,13 @@ a { color: inherit; text-decoration: none; }
   padding: 8px 14px; border: 1px solid var(--border); background: var(--bg-raised);
 }
 .chrome-archives button { white-space: nowrap; }
+@media (max-width: 720px) {
+  .chrome { padding: 10px 14px; background: linear-gradient(to bottom, var(--bg) 60%, transparent 100%); }
+  .chrome-sub { display: none; }
+  .chrome-nav { flex-wrap: wrap; justify-content: flex-end; row-gap: 2px; }
+  .chrome-nav button { padding: 6px 8px; letter-spacing: 0.08em; }
+  .chrome-crumb { max-width: 44vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
 
 /* ====== View container ====== */
 .view {
@@ -228,7 +238,13 @@ a { color: inherit; text-decoration: none; }
   padding: 40px 48px 24px;
   display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: end;
   border-bottom: 1px solid var(--border-soft);
-      height: 20rem;
+  min-height: 20rem;
+}
+@media (max-width: 900px) {
+  .galaxy-header { grid-template-columns: 1fr; min-height: 0; gap: 18px; padding: 32px 24px 20px; align-items: start; }
+  .galaxy-stats { justify-content: flex-start; }
+  .galaxy-stats > div { text-align: left; }
+  .galaxy-sub { max-width: none; }
 }
 .galaxy-title {
   font-family: var(--font-display); font-weight: 300;
@@ -285,6 +301,10 @@ a { color: inherit; text-decoration: none; }
 .galaxy-focus-open { margin-top: 18px; width: 100%; padding: 10px 14px; background: var(--accent); color: var(--bg-deep); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; transition: background 0.15s ease; }
 html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .galaxy-focus-open:hover { background: var(--accent-2); }
+@media (max-width: 900px) {
+  .galaxy-focus { top: auto; bottom: 40px; left: 16px; right: 16px; width: auto; transform: none; }
+  .galaxy-legend { top: 12px; right: 20px; }
+}
 .galaxy-hint { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-muted); pointer-events: none; }
 .galaxy-hint-link { pointer-events: auto; color: inherit; text-decoration: none; }
 .galaxy-hint-link:hover { color: var(--accent); }
@@ -305,7 +325,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lexicon-corner.tr { top: 24px; right: 24px; border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
 .lexicon-portrait-meta { position: absolute; left: 32px; bottom: 32px; z-index: 2; display: flex; flex-direction: column; gap: 4px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); }
 .lexicon-portrait-meta > span:first-child { color: var(--accent); }
-.lexicon-info { padding: 72px 64px 80px 56px; max-width: 720px; position: relative; }
+.lexicon-info { padding: 72px 64px 80px 56px; max-width: 880px; position: relative; }
 @media (max-width: 900px) { .lexicon-info { padding: 48px 32px 64px; } }
 .lexicon-roman { position: absolute; top: 40px; right: 48px; font-family: var(--font-display); font-weight: 300; font-size: clamp(120px, 18vw, 240px); line-height: 0.8; color: var(--accent); opacity: 0.07; letter-spacing: -0.04em; pointer-events: none; user-select: none; }
 .lexicon-kicker { display: flex; align-items: center; gap: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); }
@@ -339,7 +359,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .legion-portrait-bg { position: absolute; top: 0; left: 0; width: 46%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
 .legion-portrait-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.08) saturate(0.75); opacity: 0.28; }
 .legion-portrait-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--bg) 0%, transparent 18%, transparent 55%, var(--bg) 96%), linear-gradient(to bottom, transparent 60%, var(--bg) 100%); pointer-events: none; }
-.legion { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 40px 48px 80px; }
+.legion { position: relative; z-index: 1; max-width: min(1720px, 100%); margin: 0 auto; padding: 40px 48px 80px; }
 @media (max-width: 720px) { .legion-portrait-bg { width: 100%; opacity: 0.15; } }
 @media (max-width: 720px) { .legion { padding: 32px 24px 60px; } }
 .legion-header { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: end; padding: 32px 0 28px; border-bottom: 1px solid var(--border-soft); position: relative; }
@@ -417,8 +437,23 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
-.see-more-btn { margin-top: 4px; padding: 12px 20px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); background: transparent; border: 1px solid var(--border); cursor: pointer; transition: all 0.15s ease; }
-.see-more-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+/* ====== Motion ====== */
+@keyframes riseIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes mechSpin { to { transform: rotate(360deg); } }
+@keyframes corePulse { 0%, 100% { opacity: 0.08; } 50% { opacity: 0.18; } }
+@keyframes dotPulse { 0%, 100% { box-shadow: 0 0 8px var(--accent); } 50% { box-shadow: 0 0 18px var(--accent); } }
+.mech-cog-center { animation: mechSpin 120s linear infinite; transform-box: fill-box; transform-origin: center; }
+.galaxy-core-glow { animation: corePulse 7s ease-in-out infinite; }
+.galaxy-core-group.hover .galaxy-core-glow { animation: none; }
+.lore-mast-dot { animation: dotPulse 3.5s ease-in-out infinite; }
+.sor-panel { animation: riseIn 0.5s ease backwards; animation-delay: calc(var(--stagger, 0) * 60ms); }
+.lexicon-kicker, .lexicon-name, .lexicon-epithet, .lexicon-chips, .lexicon-lore, .lexicon-links { animation: riseIn 0.45s ease backwards; }
+.lexicon-kicker  { animation-delay: 0.05s; }
+.lexicon-name    { animation-delay: 0.10s; }
+.lexicon-epithet { animation-delay: 0.15s; }
+.lexicon-chips   { animation-delay: 0.20s; }
+.lexicon-lore    { animation-delay: 0.26s; }
+.lexicon-links   { animation-delay: 0.32s; }
 
 .lore-view .lore-mast { padding: 12px 22px 14px; margin-bottom: 20px; }
 .lore-view .lore-mast-top { padding: 4px 0 10px; margin-bottom: 4px; }
@@ -444,7 +479,11 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 @media (max-width: 720px) { .lore-portrait-bg { width: 100%; opacity: 0.12; } }
 
 /* ====== Lore record view ====== */
-.lore-view { max-width: 1280px; height: calc(100vh - 64px); box-sizing: border-box; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
+.lore-view { max-width: min(1720px, 100%); height: calc(100vh - 64px); box-sizing: border-box; margin: 0 auto; padding: 28px 48px 28px; color: var(--text); display: flex; flex-direction: column; }
+@media (max-width: 960px) {
+  .lore-view { height: auto; }
+  .lore-article, .lore-toc { max-height: none; overflow: visible; }
+}
 .lore-mast { position: relative; border: 1px solid var(--border-soft); background: linear-gradient(180deg, oklch(from var(--bg-raised) l c h / 0.6), oklch(from var(--bg) l c h / 0.4)), radial-gradient(1200px 280px at 80% -40%, var(--glow), transparent 60%); padding: 18px 28px 24px; margin-bottom: 40px; overflow: hidden; }
 .lore-mast::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; opacity: 0.7; }
 .lore-mast::after { content: ''; position: absolute; inset: 8px; border: 1px solid transparent; border-top-color: var(--accent-dim); border-left-color: var(--accent-dim); width: 18px; height: 18px; pointer-events: none; }
@@ -484,7 +523,7 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .lore-toc-name { font-family: var(--font-display); letter-spacing: 0; text-transform: none; }
 .lore-toc-empty { color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; }
 @media (max-width: 960px) { .lore-toc { position: static; max-height: none; border: 1px solid var(--border-soft); padding: 14px 16px; background: var(--bg-raised); } }
-.lore-article { max-width: 68ch; font-family: var(--font-display); max-height: 100%; overflow-y: auto; padding-right: 16px; min-height: 0; }
+.lore-article { max-width: 74ch; font-family: var(--font-display); max-height: 100%; overflow-y: auto; padding-right: 16px; min-height: 0; }
 .lore-article-meta { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; margin-bottom: 28px; border-bottom: 1px solid var(--border-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); gap: 16px; }
 .lore-doc { display: flex; flex-direction: column; gap: 36px; }
 .lore-doc-state { padding: 40px 0; color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; }
@@ -532,17 +571,6 @@ html[data-theme="archive"] .galaxy-focus-open { color: #f7f2e6; }
 .mech-tab { background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 8px 16px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mech-label-dim); cursor: pointer; transition: color 0.15s, border-color 0.15s; }
 .mech-tab:hover { color: var(--mech-label); }
 .mech-tab.active { color: var(--mech-line); border-bottom-color: var(--mech-line); }
-.mech-cat-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: color-mix(in oklab, var(--mech-line) 20%, transparent); border: 1px solid color-mix(in oklab, var(--mech-line) 20%, transparent); }
-.mech-card { background: var(--bg); padding: 24px 22px 20px; display: flex; flex-direction: column; position: relative; }
-.mech-card::before { content: ""; position: absolute; top: 0; left: 0; width: 24px; height: 24px; border-top: 1px solid var(--mech-line); border-left: 1px solid var(--mech-line); opacity: 0.5; }
-.mech-card-kicker { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mech-line); opacity: 0.8; margin-bottom: 8px; }
-.mech-card-title { font-family: var(--font-display); font-weight: 400; font-size: 20px; color: var(--text); margin: 0 0 4px; line-height: 1.15; }
-.mech-card-epithet { font-size: 12px; font-style: italic; color: var(--text-dim); margin: 0 0 14px; line-height: 1.4; }
-.mech-card-fields { display: flex; flex-direction: column; gap: 4px; margin: 0 0 14px; }
-.mech-card-field { display: flex; justify-content: space-between; gap: 10px; border-top: 1px solid var(--border-soft); padding-top: 4px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; }
-.mech-card-field dt { color: var(--text-muted); text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
-.mech-card-field dd { color: var(--text); text-align: right; margin: 0; }
-.mech-card-lore { font-family: var(--font-sans); font-size: 13px; line-height: 1.65; color: var(--text-dim); margin: 0; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* ====== Sororitas Archive ====== */
 .sororitas-view { padding: 120px 48px 80px; min-height: 100vh; background: radial-gradient(ellipse at 50% 10%, var(--sor-glow) 0%, transparent 55%), var(--bg); }

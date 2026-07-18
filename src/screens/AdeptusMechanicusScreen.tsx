@@ -300,7 +300,9 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen, tab, 
               )
             })}
 
-            <MechanicalCog teeth={24} outer={170} inner={148} />
+            <g className="mech-cog-center">
+              <MechanicalCog teeth={24} outer={170} inner={148} />
+            </g>
 
             {positions.map((pos, i) => {
               const node    = nodes[i]
@@ -309,9 +311,14 @@ export default function AdeptusMechanicusScreen({ forges, entries, onOpen, tab, 
                 <g key={node.id}
                   className={`mech-node ${isHover ? 'hover' : ''}`}
                   transform={`translate(${pos.x} ${pos.y})`}
+                  role="button"
+                  tabIndex={0}
                   onMouseEnter={() => setHover(node.id)}
                   onMouseLeave={() => setHover(h => h === node.id ? null : h)}
+                  onFocus={() => setHover(node.id)}
+                  onBlur={() => setHover(h => h === node.id ? null : h)}
                   onClick={() => onOpen(node.id)}
+                  onKeyDown={e => e.key === 'Enter' && onOpen(node.id)}
                 >
                   <circle r="36" fill="none" stroke="var(--mech-line)" strokeWidth="0.5" opacity="0.5" />
                   <circle r="40" fill="rgba(0,0,0,0.001)" />

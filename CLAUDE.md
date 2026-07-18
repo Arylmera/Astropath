@@ -17,7 +17,7 @@ Local dev server runs at http://192.168.1.101:5137/
 ## Hot file map
 Before reading these files, pick the section from the index below and use `Read offset/limit` (e.g. `Read offset:220 limit:80`). Open the full file only when editing across regions. Update this map in the same commit if line numbers shift materially.
 
-### src/index.css (~619 lines)
+### src/index.css (~628 lines)
 Theme tokens + CSS variables. Four themes via `html[data-theme]`: void (default `:root`), archive, cathedral, codex.
 Token families: `--bg*`, `--text`, `--accent`, `--sor-glow` (Sororitas ambience), `--mech-*` (Mechanicus), `--forge-*` (Forge).
 
@@ -26,28 +26,29 @@ Section index (line → banner / block):
 - `43` — `html[data-theme="archive"]` tokens
 - `77` — `html[data-theme="cathedral"]` tokens
 - `111` — `html[data-theme="codex"]` tokens
-- `145` — Base
-- `171` — Chrome
-- `215` — View container
-- `222` — Galaxy map
-- `295` — Lexicon
-- `337` — Legion
-- `380` — Tweaks
-- `410` — Misc (incl. focus-visible, ::selection, reduced-motion)
-- `446` — Lore record view
-- `503` — Mechanicus Archive
-- `547` — Sororitas Archive
-- `610` — Forge + Order lexicon portraits
+- `145` — Base (incl. mobile overflow unlocks)
+- `174` — Chrome (incl. mobile header media query)
+- `225` — View container
+- `232` — Galaxy map (incl. responsive header/focus)
+- `315` — Lexicon
+- `357` — Legion
+- `400` — Tweaks
+- `430` — Misc (focus-visible, ::selection, reduced-motion)
+- `440` — Motion (riseIn, mechSpin, corePulse, dotPulse, staggers)
+- `481` — Lore record view
+- `542` — Mechanicus Archive
+- `575` — Sororitas Archive
+- `638` — Forge + Order lexicon portraits
 
 ### src/data/astropath.ts (9 lines)
 Aggregator. Default export `DATA: AstropathData = { primarchs, legions, mechanicus, mechCategories, sororitas }`. Re-exports from `./primarchs`, `./legions`, `./mechanicus`, `./sororitas`. Single data entry point.
 
-### src/App.tsx (~466 lines)
+### src/App.tsx (~449 lines)
 Root component: nav state, theme switching, view routing.
 - State: `nav {view, id}`, `theme` (void|archive|cathedral|codex), `mechTab`.
 - LocalStorage keys: `astropath.nav`, `astropath.theme`, `astropath.mechTab`.
-- Views → screens: `galaxy`→PrimarchsScreen; `primarch`→Lexicon; `lore`→LoreView; `legion`→LegionView; `mechanicus|forge|forge-lore|mech-entry|mech-lore`→AdeptusMechanicusScreen; `sororitas|order`→AdeptaSororitasScreen.
-- Helpers: `archiveOf(view)` maps view→archive section; `MECH_CHIP_FIELDS` lists Mechanicus entry chips.
+- Views → screens: `galaxy`→PrimarchsScreen; `primarch`→Lexicon; `lore`→LoreView; `legion`→LegionView; `mechanicus|forge|forge-lore|mech-entry|mech-lore`→AdeptusMechanicusScreen; `sororitas|order|order-lore`→AdeptaSororitasScreen.
+- Helpers: `archiveOf(view)` maps view→archive section; `RecordLink` renders lexicon cross-links; `MECH_CHIP_FIELDS` lists Mechanicus entry chips.
 
 Section index:
 - `1–17` — imports
@@ -56,4 +57,5 @@ Section index:
 - `34–49` — `MechStringField` type + `MECH_CHIP_FIELDS` table
 - `51–67` — `loadNav` / `loadTheme` / `loadMechTab`
 - `68–73` — `archiveOf(view)`
-- `74–end` — `export default function App()` body: state, effects, view switch, theme + tab handlers
+- `74–98` — `RecordLink` shared lexicon-link component
+- `100–end` — `export default function App()` body: state, effects (incl. scroll-to-top on nav), view switch, theme + tab handlers

@@ -20,7 +20,10 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
           <div className="legion-portrait-bg">
             <img
               src={legion.image ?? primarch!.portrait}
-              alt={legion.name}
+              alt=""
+              aria-hidden
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )}
@@ -46,7 +49,7 @@ export default function LegionView({ legion, primarch, onOpenPrimarch, onBack }:
               {primarch && (
                 <div className="primarch-card" onClick={() => onOpenPrimarch(primarch.id)} role="button" tabIndex={0} onKeyDown={e => e.key === 'Enter' && onOpenPrimarch(primarch.id)}>
                   <div className="primarch-card-img">
-                    <img src={primarch.portrait} alt={primarch.name} />
+                    <img src={primarch.portrait} alt={primarch.name} loading="lazy" decoding="async" />
                   </div>
                   <div className="primarch-card-body">
                     <div>

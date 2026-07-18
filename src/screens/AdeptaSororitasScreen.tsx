@@ -69,7 +69,7 @@ export default function AdeptaSororitasScreen({ entries, onOpen }: Props) {
             </div>
 
             <div className="sor-nave">
-              {section.entries.map((entry) => {
+              {section.entries.map((entry, index) => {
                 const [halo, gold, stroke] = entry.glass ?? PANEL_DEFAULTS.glass
 
                 return (
@@ -80,8 +80,12 @@ export default function AdeptaSororitasScreen({ entries, onOpen }: Props) {
                       '--glass-a': halo,
                       '--glass-b': gold,
                       '--glass-c': stroke,
+                      '--stagger': Math.min(index, 8),
                     } as CSSProperties}
                     onClick={() => onOpen(entry.id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && onOpen(entry.id)}
                   >
                     <div className="sor-panel-glass">
                       {entry.icon && entry.glass ? (
@@ -104,7 +108,6 @@ export default function AdeptaSororitasScreen({ entries, onOpen }: Props) {
                         {entry.dogma ?? PANEL_DEFAULTS.dogma}
                       </div>
                     </div>
-                    <div className="sor-panel-rule" />
                   </article>
                 )
               })}
