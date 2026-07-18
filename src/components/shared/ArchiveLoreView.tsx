@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from 'react'
+import { useEffect, useSyncExternalStore, type ReactNode } from 'react'
 import { loadLore, type DatasetKey } from '@/lib/datasets'
 
 interface LoreSection {
@@ -12,7 +12,19 @@ interface LoreState {
   error?: string
 }
 
+const IDLE: LoreState = { status: 'idle' }
 const _loreCache: Record<string, LoreState> = {}
+const _listeners = new Set<() => void>()
+
+function subscribeLore(fn: () => void) {
+  _listeners.add(fn)
+  return () => { _listeners.delete(fn) }
+}
+
+function setLore(key: string, state: LoreState) {
+  _loreCache[key] = state
+  _listeners.forEach(fn => fn())
+}
 
 function cleanLoreLine(s: string): string {
   return s
@@ -65,26 +77,17 @@ function parseLoreMarkdown(md: string): LoreSection[] {
 
 function useLoreDocument(datasetKey: DatasetKey, id: string | null): LoreState {
   const cacheKey = id ? `${datasetKey}:${id}` : null
-  const [state, setState] = useState<LoreState>(
-    () => (cacheKey && _loreCache[cacheKey]) ? _loreCache[cacheKey] : { status: 'idle' }
+  const state = useSyncExternalStore(
+    subscribeLore,
+    () => (cacheKey && _loreCache[cacheKey]) || IDLE
   )
   useEffect(() => {
-    if (!cacheKey || !id) return
-    if (_loreCache[cacheKey]?.status === 'ready') { setState(_loreCache[cacheKey]); return }
-    let cancelled = false
-    _loreCache[cacheKey] = { status: 'loading' }
-    setState(_loreCache[cacheKey])
+    // Cache is shared, so an entry that already exists is loading or settled elsewhere.
+    if (!cacheKey || !id || _loreCache[cacheKey]) return
+    setLore(cacheKey, { status: 'loading' })
     loadLore(datasetKey, id)
-      .then(text => {
-        const parsed = parseLoreMarkdown(text)
-        _loreCache[cacheKey] = { status: 'ready', sections: parsed }
-        if (!cancelled) setState(_loreCache[cacheKey])
-      })
-      .catch(err => {
-        _loreCache[cacheKey] = { status: 'error', error: String(err) }
-        if (!cancelled) setState(_loreCache[cacheKey])
-      })
-    return () => { cancelled = true }
+      .then(text => setLore(cacheKey, { status: 'ready', sections: parseLoreMarkdown(text) }))
+      .catch(err => setLore(cacheKey, { status: 'error', error: String(err) }))
   }, [cacheKey, datasetKey, id])
   return state
 }

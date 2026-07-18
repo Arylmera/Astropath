@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import type { Forge } from '@/data/types'
 import type { MechEntry, MechCategory } from '@/data/types/MechEntry'
+import { TABS, type Tab } from '@/screens/mechTabs'
 
 // ---- MechanicalCog ---------------------------------------------------------
 
@@ -122,9 +123,6 @@ export function MechanicalCog({ teeth, outer, inner, small, cogFill, innerFill }
 }
 
 // ---- Tab config ------------------------------------------------------------
-
-export const TABS = ['Forge Worlds', 'Organisation', 'Theology', 'Rank', 'Character', 'Military', 'Technology', 'History'] as const
-export type Tab = typeof TABS[number]
 
 const TAB_META: Record<Tab, { title: string; lede: string }> = {
   'Forge Worlds': {

@@ -1,12 +1,15 @@
-# TODO — Missing Data
+# TODO
 
-Entries that could not be fetched. Revisit with alternate sources (Lexicanum, official codex, newer wiki page).
+No open gaps. When a fetch or lookup fails, append it here.
 
-## Space Marines — Lexicanum enrichment
+## Notes
 
-- **wh40k-fr.lexicanum.com** — Returns HTTP 402 (access blocked). Could not fetch French Lexicanum pages for any Space Marine faction. Alternate approach: use training knowledge or try a proxy/mirror. Target fields: `homeworld`, `fortressMonastery`, `colors`, `battleCry`, `specialty`.
+**Fetching lore sources.** Lexicanum and Fandom reject requests with no `User-Agent` — a bare `curl` gets **403 from every one of them**, which reads like the site is blocking us when it is not. Always send a browser UA:
 
-## Code quality
+```sh
+curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36" <url>
+```
 
-- **App.tsx:51-68** — `useEffect` calling `setState` synchronously (flagged by `react-hooks/set-state-in-effect`). Refactor lore loading to derived state or event handler per CODING_PRACTICE.md §7.
-- **Bundle size** — faction chunks exceed 500 kB (up to 615 kB for dark-angels). Investigate: likely large JSON/MD data bundled in. Consider lazy-loading per-faction data via `fetch` instead of `import`.
+With that header, `wh40k-fr.lexicanum.com`, `wh40k.lexicanum.com` and `warhammer40k.fandom.com` all return 200 (verified 2026-07-18).
+
+**Validating CI changes.** `publish-image.yml` builds with `push: false` on pull requests, so a PR to `main` exercises the full build without publishing to GHCR.
