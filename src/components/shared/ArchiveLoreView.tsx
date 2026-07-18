@@ -181,7 +181,7 @@ export default function ArchiveLoreView({
     <div className="view">
       {image && (
         <div className="lore-portrait-bg">
-          <img src={image} alt="" aria-hidden />
+          <img src={image} alt="" aria-hidden loading="lazy" decoding="async" />
         </div>
       )}
       <div className="lore-view">

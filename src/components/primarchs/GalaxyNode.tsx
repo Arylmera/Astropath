@@ -20,9 +20,15 @@ export default function GalaxyNode({ node, isActive, onMouseEnter, onMouseLeave,
   return (
     <g
       className={`galaxy-node ${isActive ? 'active' : ''}`}
+      role="button"
+      tabIndex={0}
+      aria-label={`${p.name} · ${p.legion}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onFocus={onMouseEnter}
+      onBlur={onMouseLeave}
       onClick={onClick}
+      onKeyDown={e => e.key === 'Enter' && onClick()}
     >
       <circle cx={x} cy={y} r="14" className="galaxy-node-ring" />
       <circle cx={x} cy={y} r={isActive ? 7 : 5} className={`galaxy-node-dot ${cls}`} />

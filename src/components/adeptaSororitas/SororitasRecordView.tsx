@@ -5,6 +5,8 @@ import { createArchiveView } from '@/components/shared/createArchiveView'
 interface Props {
   entry: Entry
   onBack: () => void
+  backLabel?: string
+  footerBackLabel?: string
 }
 
 const PresetView = createArchiveView({
@@ -15,10 +17,12 @@ const PresetView = createArchiveView({
   footerBackLabel: 'Sororitas archive',
 })
 
-export default function SororitasRecordView({ entry, onBack }: Props) {
+export default function SororitasRecordView({ entry, onBack, backLabel, footerBackLabel }: Props) {
   return (
     <PresetView
       id={entry.id}
+      {...(backLabel ? { backLabel } : {})}
+      {...(footerBackLabel ? { footerBackLabel } : {})}
       filename={`FILE-${formatFileId(entry.id)}`}
       title={entry.title}
       epithet={entry.page.replace(/_/g, ' ')}

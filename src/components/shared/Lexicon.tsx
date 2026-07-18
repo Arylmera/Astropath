@@ -57,7 +57,7 @@ export default function Lexicon({
           <BackButton label={backLabel} onClick={onBack} />
           <div className="lexicon-kicker">{kicker}</div>
           <h1 className="lexicon-name">{name}</h1>
-          <p className="lexicon-epithet">"{epithet}"</p>
+          {epithet && <p className="lexicon-epithet">"{epithet}"</p>}
 
           <div className="lexicon-chips">
             {chips.map((c, i) => (

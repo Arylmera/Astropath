@@ -28,7 +28,7 @@ const MECH_PORTRAIT = (
 )
 
 function mechPortraitFor(image?: string) {
-  return image ? <img src={image} alt="" /> : MECH_PORTRAIT
+  return image ? <img src={image} alt="" decoding="async" /> : MECH_PORTRAIT
 }
 
 type MechStringField = 'founded' | 'tier' | 'period' | 'homeworld' | 'allegiance' | 'aspect' | 'worship' | 'dogma' | 'colors' | 'strength' | 'specialty' | 'status'
@@ -67,8 +67,34 @@ function loadMechTab(): MechTab {
 
 function archiveOf(view: View): string {
   if (view === 'mechanicus' || view === 'forge' || view === 'forge-lore' || view === 'mech-entry' || view === 'mech-lore') return 'mechanicus'
-  if (view === 'sororitas'  || view === 'order') return 'sororitas'
+  if (view === 'sororitas'  || view === 'order' || view === 'order-lore') return 'sororitas'
   return 'primarchs'
+}
+
+interface RecordLinkProps {
+  kicker: string
+  name: string
+  arrow?: string
+  className?: string
+  onOpen: () => void
+}
+
+function RecordLink({ kicker, name, arrow = 'Open record →', className = 'lore-link', onOpen }: RecordLinkProps) {
+  return (
+    <div
+      className={`lexicon-links ${className}`}
+      onClick={onOpen}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => e.key === 'Enter' && onOpen()}
+    >
+      <div className="lexicon-links-l">
+        <div className="lexicon-links-kicker">{kicker}</div>
+        <div className="lexicon-links-name">{name}</div>
+      </div>
+      <div className="lexicon-links-arrow">{arrow}</div>
+    </div>
+  )
 }
 
 export default function App() {
@@ -87,6 +113,7 @@ export default function App() {
 
   useEffect(() => {
     localStorage.setItem(NAV_KEY, JSON.stringify(nav))
+    window.scrollTo(0, 0)
   }, [nav])
 
   const go = (view: View, id: string | null = null) => setNav({ view, id })
@@ -103,7 +130,7 @@ export default function App() {
     if (nav.view === 'legion')  return legion?.name ?? null
     if (nav.view === 'forge' || nav.view === 'forge-lore') return forge?.name ?? null
     if (nav.view === 'mech-entry' || nav.view === 'mech-lore') return mechEntry?.title ?? null
-    if (nav.view === 'order')   return order?.name ?? sororitasEntry?.title ?? null
+    if (nav.view === 'order' || nav.view === 'order-lore') return order?.name ?? sororitasEntry?.title ?? null
     return null
   })()
 
@@ -136,7 +163,7 @@ export default function App() {
         return (
           <Lexicon
             variant={primarch.isEmperor ? 'emperor' : 'primarch'}
-            portrait={<img src={primarch.portrait} alt={primarch.name} />}
+            portrait={<img src={primarch.portrait} alt={primarch.name} decoding="async" />}
             meta={[
               `${metaLabel} · ${primarch.num}`,
               primarch.homeworld.toUpperCase(),
@@ -162,33 +189,19 @@ export default function App() {
             ]}
             lore={(primarch.lore ?? []).slice(0, 1)}
           >
-            <div
-              className="lexicon-links lore-link"
-              onClick={() => go('lore', primarch.id)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && go('lore', primarch.id)}
-            >
-              <div className="lexicon-links-l">
-                <div className="lexicon-links-kicker">Full Archive Record · {metaLabel} · {primarch.num}</div>
-                <div className="lexicon-links-name">Read the complete file on {primarch.name.replace(/^The\s+/, '')}</div>
-              </div>
-              <div className="lexicon-links-arrow">Open record →</div>
-            </div>
+            <RecordLink
+              kicker={`Full Archive Record · ${metaLabel} · ${primarch.num}`}
+              name={`Read the complete file on ${primarch.name.replace(/^The\s+/, '')}`}
+              onOpen={() => go('lore', primarch.id)}
+            />
             {leg && (
-              <div
-                className="lexicon-links"
-                onClick={() => go('legion', leg.id)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={e => e.key === 'Enter' && go('legion', leg.id)}
-              >
-                <div className="lexicon-links-l">
-                  <div className="lexicon-links-kicker">His Legion · {leg.num} · {leg.allegiance}</div>
-                  <div className="lexicon-links-name">{leg.name}</div>
-                </div>
-                <div className="lexicon-links-arrow">Open file →</div>
-              </div>
+              <RecordLink
+                className=""
+                kicker={`His Legion · ${leg.num} · ${leg.allegiance}`}
+                name={leg.name}
+                arrow="Open file →"
+                onOpen={() => go('legion', leg.id)}
+              />
             )}
           </Lexicon>
         )
@@ -267,19 +280,11 @@ export default function App() {
             lore={(forge.lore ?? []).slice(0, 1)}
             loreLabel="Lore"
           >
-            <div
-              className="lexicon-links lore-link"
-              onClick={() => go('forge-lore', forge.id)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && go('forge-lore', forge.id)}
-            >
-              <div className="lexicon-links-l">
-                <div className="lexicon-links-kicker">Full Archive Record · FORGE WORLD · SEGMENTUM {forge.segmentum.toUpperCase()}</div>
-                <div className="lexicon-links-name">Read the complete file on {forge.name.replace(/^The\s+/, '')}</div>
-              </div>
-              <div className="lexicon-links-arrow">Open record →</div>
-            </div>
+            <RecordLink
+              kicker={`Full Archive Record · FORGE WORLD · SEGMENTUM ${forge.segmentum.toUpperCase()}`}
+              name={`Read the complete file on ${forge.name.replace(/^The\s+/, '')}`}
+              onOpen={() => go('forge-lore', forge.id)}
+            />
           </Lexicon>
         )
       }
@@ -340,19 +345,11 @@ export default function App() {
             lore={(mechEntry.lore ?? []).slice(0, 1)}
             loreLabel="Lore"
           >
-            <div
-              className="lexicon-links lore-link"
-              onClick={() => go('mech-lore', mechEntry.id)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && go('mech-lore', mechEntry.id)}
-            >
-              <div className="lexicon-links-l">
-                <div className="lexicon-links-kicker">Full Archive Record · {mechEntry.category.toUpperCase()}</div>
-                <div className="lexicon-links-name">Read the complete file on {mechEntry.title.replace(/^The\s+/, '')}</div>
-              </div>
-              <div className="lexicon-links-arrow">Open record →</div>
-            </div>
+            <RecordLink
+              kicker={`Full Archive Record · ${mechEntry.category.toUpperCase()}`}
+              name={`Read the complete file on ${mechEntry.title.replace(/^The\s+/, '')}`}
+              onOpen={() => go('mech-lore', mechEntry.id)}
+            />
           </Lexicon>
         )
       }
@@ -428,7 +425,27 @@ export default function App() {
               { label: 'Parish',    value: order.parish },
               { label: 'Colours',   value: order.colors },
             ]}
-            lore={order.lore}
+            lore={sororitasEntry ? order.lore.slice(0, 1) : order.lore}
+          >
+            {sororitasEntry && (
+              <RecordLink
+                kicker={`Full Archive Record · ORDER MILITANT · ${order.convent.toUpperCase()}`}
+                name={`Read the complete file on ${order.name.replace(/^The\s+/, '')}`}
+                onOpen={() => go('order-lore', order.id)}
+              />
+            )}
+          </Lexicon>
+        )
+      }
+
+      case 'order-lore': {
+        if (!sororitasEntry) return <div className="view"><p>Not found.</p></div>
+        return (
+          <SororitasRecordView
+            entry={sororitasEntry}
+            onBack={() => go(order ? 'order' : 'sororitas', order ? order.id : null)}
+            backLabel={order ? `Back to ${order.name} lexicon` : undefined}
+            footerBackLabel={order?.name.replace(/^The\s+/, '')}
           />
         )
       }
